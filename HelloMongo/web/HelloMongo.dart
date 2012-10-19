@@ -1,5 +1,5 @@
 import 'dart:html';
-import 'package:../mongo/lib/mongo_dart.dart';
+import 'package:../../mongo/lib/mongo_dart.dart';
 
 main(){
   Db db = new Db('mongodb://127.0.0.1/mongo_dart-test');
