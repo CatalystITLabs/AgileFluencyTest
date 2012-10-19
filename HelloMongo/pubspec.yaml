@@ -1,0 +1,5 @@
+name:  HelloDart
+description:  A sample application
+
+#dependencies:
+#  unittest: { sdk: unittest }
