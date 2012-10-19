@@ -1,4 +1,6 @@
-import 'package:mongo_dart/mongo_dart.dart';
+import 'dart:html';
+import 'package:../mongo/lib/mongo_dart.dart';
+
 main(){
   Db db = new Db('mongodb://127.0.0.1/mongo_dart-test');
  
@@ -24,4 +26,7 @@ main(){
   };
   
   db.open().then((c)=>simpleUpdate()); 
+  
+  query("#text")
+  ..text = "Updated MongoDB!";
 }
