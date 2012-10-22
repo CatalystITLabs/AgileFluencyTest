@@ -1,1 +1,25 @@
-The purpose of this document will be to see how development teams are reaching their agile goals. This project references an article written by...
+The Agile Fluency Test project is an open-source project. Inspired by "Your Path through Agile Fluency" (http://martinfowler.com/articles/agileFluency.html), an article written by Diana Larsen and James Shore, the purpose of this project is help developments teams assess if they are reaching their agile goals.
+
+There are a number of great resources available for agile fluency test questions, following the concepts introduced in the article above. Here are some of the articles we used to develop and inspire test questions:
+
+One Star Fluency:
+http://www.piratson.se/archive/Agile_Karlskrona_test.html
+http://agileconsortium.blogspot.com/2007/12/nokia-test.html
+
+Two Star Fluency:
+http://en.wikipedia.org/wiki/Continuous_delivery
+http://www.extremeprogramming.org/rules.html
+http://www.jera.com/techinfo/xpfaq.html
+http://en.wikipedia.org/wiki/Extreme_Programming
+
+Three Star Fluency:
+http://www.agilesnerpa.org/agile_coach/product_planning/chartering/
+http://theleanstartup.com/principles
+http;//www.slideshare.net/dmc500hats/startup-metrics-for-pirates-sf-jan-2010
+http://www.industriallogic.com/blog/agile-vs-lean-startup/
+http://en.wikipedia.org/wiki/Lean_software_development
+http://en.wikipedia.org/wiki/Lean_Startup
+http://steveblank.com/2010/02/25/customer-development-for-web-startups/
+
+Four Star Fluency:
+Yet to be adequately explained because it is the cutting edge of agile development! As resources are located, they should be added and referenced to verify question usefulness.
