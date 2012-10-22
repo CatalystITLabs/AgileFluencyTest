@@ -1,0 +1,5 @@
+name:  client
+description:  A sample application
+
+#dependencies:
+#  unittest: { sdk: unittest }
