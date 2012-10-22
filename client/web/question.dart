@@ -24,4 +24,8 @@ abstract class Question {
    * Get the question displayed in html.
    */
   String display();
+  
+  bool gotMaxPoints();
+  
+  String explain();
 }

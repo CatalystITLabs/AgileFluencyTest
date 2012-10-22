@@ -18,10 +18,8 @@ p {
   position: relative;
   border: 1px solid #ccc;
   background-color: #fff;
-}
-
-#text {
-  font-size: 24pt;
+  line-height: 1.2em;
+  font-size: 20pt;
   text-align: center;
-  margin-top: 140px;
+  margin-top: 50px;
 }
