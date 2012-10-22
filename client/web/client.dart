@@ -6,13 +6,19 @@ part "multiple_choice.dart";
 part "multiple_select.dart";
 part "test_section.dart";
 
-MultipleChoice testQuestion = new MultipleChoice("What color is the sky?");
-Answer a1 = new Answer(0,"Red.","Perhaps you have some form of color blindness. If the sky is actually red, you may be in trouble.");
-Answer a2 = new Answer(1,"Blue.","The sky is indeed blue most of the time.");
+TestSection oneStar = new TestSection(1);
+MultipleSelect q1 = new MultipleSelect("How often in development do you produce fully working, documented, and tested software?");
+Answer q1a1 = new Answer(0,"When it's finished","Q");
+Answer q1a2 = new Answer(1,"Q","Q");
+Answer q1a3 = new Answer(2,"Q","Q");
+MultipleSelect q2 = new MultipleSelect("");
+Answer answerFour = new Answer(0,"Q","Q");
 
 void main() {
-  testQuestion.answers.add(a1);
-  testQuestion.answers.add(a2);
+  q1.answers.add(q1a1);
+  q1.answers.add(q1a2);
+  q1.answers.add(q1a3);
+  oneStar.questions.add(q1);
   
-  query("#container").innerHTML = testQuestion.display();
+  query("#container").innerHTML = q1.display();
 }
