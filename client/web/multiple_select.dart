@@ -55,4 +55,38 @@ class MultipleSelect extends Question{
     
     return output.toString();
   }
+  
+  /**
+   * Get the greatest number of points it is possible to receive on this question
+   */
+  int getMaximumPoints()
+  {
+    var total = 0;
+    for (var iterator in this.answers)
+    {
+      if (iterator.points > 0)
+      {
+        total += iterator.points;
+      }
+    }
+    return total;
+  }
+  
+  /**
+   * Get the number of points the user earns for their answer to the question.
+   */
+  int getUserAnswerPoints()
+  {
+    var total = 0;
+    for (var iterator in this.selected)
+    {
+      total += iterator.points;
+    }
+    return total;
+  }
+  
+  /**
+   * Explain why the answer why the test taker was scored the way they were.
+   */
+  String explain();
 }
