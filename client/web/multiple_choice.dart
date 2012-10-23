@@ -196,7 +196,6 @@ class MultipleChoice extends Question
     return output;
   }
   
-  
   bool gotMaxPoints() 
   {
     return selected.points == this.getMaximumPoints(); 
@@ -204,19 +203,16 @@ class MultipleChoice extends Question
     
   String explain() {
     var output = new StringBuffer();
-    output.add("You selected: ");
-    output.add(selected.text);
-    output.add("<br/>");
-    output.add(selected.explanation);
+    output.add("You selected: ${selected.text}");
+    output.add("<br/>${selected.explanation}");
+    
     for (var iterator in this.answers)
     {
       if (iterator.points == this.getMaximumPoints()) 
       {
-        output.add("<br/>");
-        output.add("A maximally agile answer is: ");
+        output.add("<br/> The best option is: ");
         output.add(iterator.text);
-        output.add("<br/>");
-        output.add(iterator.explanation);
+        output.add("<br/> ${iterator.explanation}");
       }
     }
     return output.toString();
