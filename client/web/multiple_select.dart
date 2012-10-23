@@ -3,23 +3,17 @@ part of test;
 /**
  * a multiple select question
  */
-class MultipleSelect extends Question{
-  /**
-   * the selectable answers for this question
-   */
-  List<Answer> answers = new List<Answer>();
+class MultipleSelect extends MultipleChoice{
   
   /**
    * the answer selected by the test taker
    */
-  List<Answer> selected = new List<Answer>();
+  List<Answer> selectedAnswers = new List<Answer>();
   
   /**
    * constructor
    */
-  MultipleSelect(text){
-    this.text = text;
-  }
+  MultipleSelect(text): super(text){}
   
   /**
    * Get the greatest number of points it is possible to receive on this question
@@ -36,32 +30,12 @@ class MultipleSelect extends Question{
   /**
    * Return a DOM element radio button with an onclick event for this answer
    */
-  Element _makeCheckBox(Answer answer, int number)
+  Element _makeButton(Answer answer, int number)
   {
     var element = new Element.html("<input type=\"checkbox\" name=\"${number.toString()}\">");
     //element.on.click.add(
     //    (event) => this.setAnswer(number));
     return element;
-  }
-  
-  /**
-   * Get the question displayed in html.
-   */
-  Element display()
-  {
-    var output = new DivElement();
-    output.insertAdjacentElement('beforeEnd',new Element.html("""<p>${this.text}</p>"""));
-    var number = 0;
-    for (var iterator in this.answers)
-    {
-      var button = this._makeCheckBox(iterator, number);
-      number++;
-      output.insertAdjacentElement('beforeEnd', button);
-      output.addText(iterator.text);
-      output.addHTML("<br/>");
-    }
-    output.addHTML("<input id=\"submit\" type=\"button\" value=\"Click Me.\">");
-    return output;
   }
   
   /**
@@ -86,7 +60,7 @@ class MultipleSelect extends Question{
   int getUserAnswerPoints()
   {
     var total = 0;
-    for (var iterator in this.selected)
+    for (var iterator in this.selectedAnswers)
     {
       total += iterator.points;
     }
@@ -101,7 +75,7 @@ class MultipleSelect extends Question{
     var output = new StringBuffer();
     
     output.add("You selected: <br/>");
-    for (var iterator in this.selected)
+    for (var iterator in this.selectedAnswers)
     {
       output.add("${iterator.text}<br/>");
       output.add("${iterator.explanation}<br/>");
