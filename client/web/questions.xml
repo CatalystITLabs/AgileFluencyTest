@@ -1,7 +1,7 @@
 <assessment>
 	<section level="one">
 	    <questionList>
-			<question id="1">
+			<question id="1" type="MultipleSelect">
 				<text>How often in development do you produce fully working, documented, and tested software?</text>
 				<answerList>
 					<answer>
@@ -21,7 +21,7 @@
 					</answer>
 				</answerList>
 			</question>
-			<question id="2">
+			<question id="2" type="MultipleSelect">
 			    <text>How much is documented before start of implementation?</text>
 			    <answerList>
 			        <answer>
@@ -46,7 +46,7 @@
 			        </answer>
 			    </answerList>
 			</question>
-			<question id="3">
+			<question id="3" type="MultipleSelect">
 			    <text>How often do you adjust or improve your way of working?</text>
 			    <answerList>
 			        <answer>
@@ -71,7 +71,7 @@
 			        </answer>
 			    </answerList>
 			</question>
-			<question id="4">
+			<question id="4" type="MultipleSelect">
 			    <text>Is there a collection of items and features describing the product?</text>
 			    <answerList>
 			        <answer>
@@ -96,7 +96,7 @@
 			        </answer>
 			    </answerList>
 			</question>
-			<question id="5">
+			<question id="5" type="MultipleSelect">
 			    <text>Do you know someone who is responsible for the product?</text>
 			    <answerList>
 			        <answer>
@@ -121,7 +121,7 @@
 			        </answer>
 			    </answerList>
 			</question>
-			<question id="6">
+			<question id="6" type="MultipleSelect">
 			    <text>How is the team's work planned?</text>
 			    <answerList>
 			        <answer>
@@ -146,7 +146,7 @@
 			        </answer>
 			    </answerList>
 			</question>
-			<question id="7">
+			<question id="7" type="MultipleSelect">
 			    <text>How do teams track their work?</text>
 			    <answerList>
 			        <answer>
@@ -171,7 +171,7 @@
 			        </answer>
 			    </answerList>
 			</question>
-			<question id="8">
+			<question id="8" type="MultipleSelect">
 			    <text>Do you know if your team efficiency improves over time?</text>
 			    <answerList>
 			        <answer>
@@ -196,7 +196,7 @@
 			        </answer>
 			    </answerList>
 			</question>
-			<question id="9">
+			<question id="9" type="MultipleSelect">
 			    <text>How are big decisions make during development?</text>
 			    <answerList>
 			        <answer>
@@ -222,5 +222,307 @@
 			    </answerList>
 			</question>		
 		</questionList>
+	</section>
+	<section level="2">
+	    <questionList>
+	        <question id="1" type="MultipleSelect">
+	            <text>Without changing your team's programming habits, how often could your team release a working product to the customer?</text>
+	            <answerList>
+	                <answer id="a">
+	                    <points>0</points>
+	                    <text>Once the product is finished</text>
+	                    <explanation></explanation>
+	                </answer>
+	                <answer id="b">
+	                    <points>1</points>
+	                    <text>The end of each iteration or sprint</text>
+	                    <explanation></explanation>
+	                </answer>
+	                <answer id="c">
+	                    <points>2</points>
+	                    <text>More than once an iteration or sprint</text>
+	                    <explanation></explanation>
+	                </answer>
+	                <answer id="d">
+	                    <points>3</points>
+	                    <text>Every day or many times a day</text>
+	                    <explanation></explanation>
+	                </answer>
+	            </answerList>
+	        </question>
+	        <question id="2" type="MultipleSelect">
+	            <text>How do you organize responsibility for different parts of the project?</text>
+	            <answerList>
+	                <answer id="a">
+	                    <points>0</points>
+	                    <text>we have a project architect that helps direct things</text>
+	                    <explanation></explanation>
+	                </answer>
+	                <answer id="b">
+	                    <points>0</points>
+	                    <text>Different developers take responsiblity for different parts of the code dependign on their skill set</text>
+	                    <explanation></explanation>
+	                </answer>
+	                <answer id="c">
+	                    <points>0</points>
+	                    <text>Whoever wrote a class or file usually approves changes to it</text>
+	                    <explanation></explanation>
+	                </answer>
+	                <answer id="d">
+	                    <points>1</points>
+	                    <text>Everyone contributes changes to all parts of the project freely</text>
+	                    <explanation></explanation>
+	                </answer>
+	            </answerList>
+	        </question>
+	        <question id="3" type="MultipleSelect">
+	            <text>When do you test new code?</text>
+	            <answerList>
+	                <answer id="a">
+	                    <points>0</points>
+	                    <text>In the testing phase of the project</text>
+	                    <explanation></explanation>
+	                </answer>
+	                <answer id="b">
+	                    <points>1</points>
+	                    <text>Before the end of the sprint or iteration</text>
+	                    <explanation></explanation>
+	                </answer>
+	                <answer id="c">
+	                    <points>2</points>
+	                    <text>Before moving on to another task</text>
+	                    <explanation></explanation>
+	                </answer>
+	                <answer id="d">
+	                    <points>3</points>
+	                    <text>The test is already written before any new code</text>
+	                    <explanation></explanation>
+	                </answer>
+	            </answerList>
+	        </question>
+	        <question id="4" type="MultipleSelect">
+	            <text>How often does your team rely on pair programming?</text>
+	            <answerList>
+	                <answer id="a">
+	                    <points>0</points>
+	                    <text>Never</text>
+	                    <explanation></explanation>
+	                </answer>
+	                <answer id="b">
+	                    <points>1</points>
+	                    <text>Its useful sometimes and we encourage it</text>
+	                    <explanation></explanation>
+	                </answer>
+	                <answer id="c">
+	                    <points>2</points>
+	                    <text>All code is programmed in pairs</text>
+	                    <explanation></explanation>
+	                </answer>
+	                <answer id="d">
+	                    <points>3</points>
+	                    <text>All code is programmed, reviewed, and integrated in pairs</text>
+	                    <explanation></explanation>
+	                </answer>
+	            </answerList>
+	        </question>
+	        <question id="5" type="MultipleSelect">
+	            <text>Check all that apply</text>
+	            <answerList>
+	                <answer id="a">
+	                    <points>1</points>
+	                    <text>Our whole team works in the same room</text>
+	                    <explanation></explanation>
+	                </answer>
+	                <answer id="b">
+	                    <points>1</points>
+	                    <text>My whole team always practices test-driven development using the red/green/refactor rule</text>
+	                    <explanation></explanation>
+	                </answer>
+	                <answer id="c">
+	                    <points>1</points>
+	                    <text>Our team understands and uses continuous integration</text>
+	                    <explanation></explanation>
+	                </answer>
+	                <answer id="d">
+	                    <points>1</points>
+	                    <text>We never work overtime and if it looks like we won't compelte our planned iteration goals, we have a meeting to re-scope the iteration</text>
+	                    <explanation></explanation>
+	                </answer>
+	            </answerList>
+	        </question>
+	    </questionList>
+	</section>
+	<section level="3">
+	    <questionList>
+	        <question id="1" type="MultipleChoice">
+	            <text>Does the development team track concrete measurements of customer satisfaction, not just feedback?</text>
+	            <answerList>
+	                <answer id="y">
+	                    <points>1</points>
+	                    <text>Yes</text>
+	                    <explanation></explanation>
+	                </answer>
+	                <answer id="n">
+	                    <points>0</points>
+	                    <text>No</text>
+	                    <explanation></explanation>
+	                </answer>
+	            </answerList>
+	        </question>
+	        <question id="2" type="MultipleChoice">
+	            <text>Does the development team track multiple concrete financial measures about their software like sales, revenue, profit, return on investment, profit per employee?</text>
+	            <answerList>
+	                <answer id="y">
+	                    <points>1</points>
+	                    <text>Yes</text>
+	                    <explanation></explanation>
+	                </answer>
+	                <answer id="n">
+	                    <points>0</points>
+	                    <text>No</text>
+	                    <explanation></explanation>
+	                </answer>
+	            </answerList>
+	        </question>
+	        <question id="3" type="MultipleChoice">
+	            <text>Is the development team ready to change directions or abandon a project, and will it know when it needs to do so, without being surprised by management?</text>
+	            <answerList>
+	                <answer id="y">
+	                    <points>1</points>
+	                    <text>Yes</text>
+	                    <explanation></explanation>
+	                </answer>
+	                <answer id="n">
+	                    <points>0</points>
+	                    <text>No</text>
+	                    <explanation></explanation>
+	                </answer>
+	            </answerList>
+	        </question>
+	        <question id="4" type="MultipleChoice">
+	            <text>Does the development process often offer multiple versions of a product in a split test and measure which one is preferred?</text>
+	            <answerList>
+	                <answer id="y">
+	                    <points>1</points>
+	                    <text>Yes</text>
+	                    <explanation></explanation>
+	                </answer>
+	                <answer id="n">
+	                    <points>0</points>
+	                    <text>No</text>
+	                    <explanation></explanation>
+	                </answer>
+	            </answerList>
+	        </question>
+	        <question id="5" type="MultipleChoice">
+	            <text>My development team...</text>
+	            <answerList>
+	                <answer id="y">
+	                    <points>1</points>
+	                    <text>acknowledges and plans around many options, and develops the software to be able to easily accomodate any of these options as long as possible. (Waiting until as much objective information as possible is acquired, not subjective information or assumptions, before finalizing)</text>
+	                    <explanation></explanation>
+	                </answer>
+	                <answer id="n">
+	                    <points>0</points>
+	                    <text>comes up with a plan early for important decisions in a scrum or sprint planning session to keep the velocity up.</text>
+	                    <explanation></explanation>
+	                </answer>
+	            </answerList>
+	        </question>
+	        <question id="6" type="MultipleChoice">
+	            <text>Is there at least one business expert or professional who is a true member of the development team?</text>
+	            <answerList>
+	                <answer id="y">
+	                    <points>1</points>
+	                    <text>Yes</text>
+	                    <explanation></explanation>
+	                </answer>
+	                <answer id="n">
+	                    <points>0</points>
+	                    <text>No</text>
+	                    <explanation></explanation>
+	                </answer>
+	            </answerList>
+	        </question>
+	    </questionList>
+	</section>
+	<section level="4">
+	    <questionList>
+	        <question id="1" type="MultipleChoice">
+	            <text>Do your development teams understand how they affect the business's value stream?</text>
+	            <answerList>
+	                <answer id="y">
+	                    <points>1</points>
+	                    <text>Yes</text>
+	                    <explanation></explanation>
+	                </answer>
+	                <answer id="n">
+	                    <points>0</points>
+	                    <text>No</text>
+	                    <explanation></explanation>
+	                </answer>
+	            </answerList>
+	        </question>
+	        <question id="2" type="MultipleChoice">
+	            <text>Does your development team report its actions in terms of how they are influencing the entire enterprise?</text>
+	            <answerList>
+	                <answer id="y">
+	                    <points>1</points>
+	                    <text>Yes</text>
+	                    <explanation></explanation>
+	                </answer>
+	                <answer id="n">
+	                    <points>0</points>
+	                    <text>No</text>
+	                    <explanation></explanation>
+	                </answer>
+	            </answerList>
+	        </question>
+	        <question id="3" type="MultipleChoice">
+	            <text>Do your development teams understand the business's priorities?</text>
+	            <answerList>
+	                <answer id="y">
+	                    <points>1</points>
+	                    <text>Yes</text>
+	                    <explanation></explanation>
+	                </answer>
+	                <answer id="n">
+	                    <points>0</points>
+	                    <text>No</text>
+	                    <explanation></explanation>
+	                </answer>
+	            </answerList>
+	        </question>
+	        <question id="4" type="MultipleChoice">
+	            <text>Does your team work with other teams and spread and share new or improved ideas?</text>
+	            <answerList>
+	                <answer id="y">
+	                    <points>1</points>
+	                    <text>Yes</text>
+	                    <explanation></explanation>
+	                </answer>
+	                <answer id="n">
+	                    <points>0</points>
+	                    <text>No</text>
+	                    <explanation></explanation>
+	                </answer>
+	            </answerList>
+	        </question>
+	        <question id="5" type="MultipleChoice">
+	            <text>Is your development team a part of testing the vision of the organization's future?</text>
+	            <answerList>
+	                <answer id="y">
+	                    <points>1</points>
+	                    <text>Yes</text>
+	                    <explanation></explanation>
+	                </answer>
+	                <answer id="n">
+	                    <points>0</points>
+	                    <text>No</text>
+	                    <explanation></explanation>
+	                </answer>
+	            </answerList>
+	        </question>
+	    </questionList>
 	</section>
 </assessment>
