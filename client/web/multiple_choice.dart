@@ -5,7 +5,8 @@ part of test;
 /**
  * A multiple choice question
  */
-class MultipleChoice extends Question{
+class MultipleChoice extends Question
+{
   
   /**
    * the selectable answers for this question
@@ -20,18 +21,21 @@ class MultipleChoice extends Question{
   /**
    * Constructor
    */
-  MultipleChoice(text){
+  MultipleChoice(text)
+  {
     this.text = text;
   }
   
   /**
    * Get the greatest number of points it is possible to receive on this question
    */
-  int getMaximumPoints() {
+  int getMaximumPoints()
+  {
     var highest = 0;
-    for (var iterator in this.answers) {
-      if (iterator.getPoints() > highest)
-        highest = iterator.getPoints();
+    for (var iterator in this.answers)
+    {
+      if (iterator.points > highest)
+        highest = iterator.points;
     }
     return highest;
   }
@@ -39,38 +43,66 @@ class MultipleChoice extends Question{
   /**
    * Get the number of points the user earns for their answer to the question.
    */
-  int getSelectedPoints() {
+  int getSelectedPoints()
+  {
     if (selected == null)
       return 0;
     return selected.points;
   }
   
   /**
-   * Get the question displayed in html.
+   * Sets the selected answer to a given index in the answers arraylist
    */
-  String display()
+  void setAnswer(int number)
   {
-    var output = new StringBuffer();
-    output.add("<p>");
-    output.add(this.text);
-    output.add("</p>");
+    print("setting answer to $number");
+    this.selected = this.answers[number];
+    print("answer: ${this.selected.text}");
+  }
+  
+  /**
+   * Return a DOM element radio button with an onclick event for this answer
+   */
+  Element _makeRadioButton(Answer answer, int number)
+  {
+    var sb = new StringBuffer();
+    sb.add("<input type=\"radio\" name=\"group1\">");
+    sb.add(number);
+    sb.add(");\">");
+    /*
+    var button = new ButtonElement();
+    button.innerHTML = sb.toString();
+    */
+    var element = new Element.html("<input type=\"radio\" name=\"group1\">");
+    element.on.click.add(
+        (event) => this.setAnswer(number));
+    return element;
+  }
+  
+  /**
+   * Build the question into a DOM element.
+   */
+  Element display()
+  {
+    var output = new DivElement();
+    output.insertAdjacentElement('beforeEnd',new Element.html("""<p>${this.text}</p>"""));
+    var number = 0;
     for (var iterator in this.answers)
     {
-      output.add("<input type=\"radio\" name=\"group1\" onClick=\"test()\"");
-      output.add(iterator.text);
-      output.add("\">");
-      output.add(iterator.text);
-      output.add("<br/>");
+      var button = this._makeRadioButton(iterator, number);
+      number++;
+      output.insertAdjacentElement('beforeEnd', button);
+      output.addText(iterator.text);
+      output.addHTML("<br/>");
     }
-    output.add("<br/>");
-    output.add("<input type=\"button\" value=\"Click Me.\">");
-    return output.toString();
+    output.addHTML("<input id=\"submit\" type=\"button\" value=\"Click Me.\">");
+    return output;
   }
   
   
   bool gotMaxPoints() 
   {
-   return selected.points == this.getMaximumPoints(); 
+    return selected.points == this.getMaximumPoints(); 
   }
     
   String explain() {
@@ -90,6 +122,6 @@ class MultipleChoice extends Question{
         output.add(iterator.explanation);
       }
     }
+    return output.toString();
   }
-  
 }

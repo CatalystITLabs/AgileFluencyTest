@@ -23,7 +23,7 @@ abstract class Question {
   /**
    * Get the question displayed in html.
    */
-  String display();
+  Element display();
   
   bool gotMaxPoints();
   
