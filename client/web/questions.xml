@@ -1,0 +1,20 @@
+<section level="one">
+	<question>
+		<text>How often in development do you produce fully working, documented, and tested software?</text>
+		<answerList>
+			<answer>
+				<points>0</points>
+				<text>When it's finished</text>
+				<explanation></explanation>
+			</answer>
+			<answer>
+				<points>1</points>
+				<text>We go through many iterations</text>
+				<explanation></explanation>
+			</answer>
+			<answer>
+				<points>2</points>
+				<text>We do iterations of a fixed length less than 4 weeks</text>
+				<explanation></explanation>
+		</answerList>
+</section>
