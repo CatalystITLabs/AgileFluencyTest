@@ -88,5 +88,22 @@ class MultipleSelect extends Question{
   /**
    * Explain why the answer why the test taker was scored the way they were.
    */
-  String explain();
+  String explain()
+  {
+    var output = new StringBuffer();
+    
+    output.add("You selected: <br/>");
+    for (var iterator in this.selected)
+    {
+      output.add("${iterator.text}<br/>");
+      output.add("${selected.explanation}<br/>");
+    }
+    output.add("<br/>The best set of option is: <br/>");
+    for (var iterator in this.getAgileAnswers())
+    {
+      output.add("${iterator.text}<br/>");
+      output.add("${iterator.explanation}<br/>");
+    }
+    return output.toString();
+  }
 }
