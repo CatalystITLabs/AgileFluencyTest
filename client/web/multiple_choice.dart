@@ -65,14 +65,6 @@ class MultipleChoice extends Question
    */
   Element _makeRadioButton(Answer answer, int number)
   {
-    var sb = new StringBuffer();
-    sb.add("<input type=\"radio\" name=\"group1\">");
-    sb.add(number);
-    sb.add(");\">");
-    /*
-    var button = new ButtonElement();
-    button.innerHTML = sb.toString();
-    */
     var element = new Element.html("<input type=\"radio\" name=\"group1\">");
     element.on.click.add(
         (event) => this.setAnswer(number));

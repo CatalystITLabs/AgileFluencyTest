@@ -12,7 +12,7 @@ class MultipleSelect extends Question{
   /**
    * the answer selected by the test taker
    */
-  List<Answer> selected;
+  List<Answer> selected = new List<Answer>();
   
   /**
    * constructor
@@ -24,36 +24,44 @@ class MultipleSelect extends Question{
   /**
    * Get the greatest number of points it is possible to receive on this question
    */
-  List<Answer> getAgileAnswers() {
-    List<Answer> answers;
+  List<Answer> getBestAnswers() {
+    List<Answer> best = new List<Answer>();;
     for (var iterator in this.answers) {
       if (iterator.points > 0)
-        answers.add(iterator);
+        best.add(iterator);
     }
     return answers;
   }
   
   /**
+   * Return a DOM element radio button with an onclick event for this answer
+   */
+  Element _makeCheckBox(Answer answer, int number)
+  {
+    var element = new Element.html("<input type=\"checkbox\" name=\"${number.toString()}\">");
+    //element.on.click.add(
+    //    (event) => this.setAnswer(number));
+    return element;
+  }
+  
+  /**
    * Get the question displayed in html.
    */
-  String display()
+  Element display()
   {
-    var output = new StringBuffer();
-    output.add("<p>");
-    output.add(this.text);
-    output.add("</p>");
+    var output = new DivElement();
+    output.insertAdjacentElement('beforeEnd',new Element.html("""<p>${this.text}</p>"""));
+    var number = 0;
     for (var iterator in this.answers)
     {
-      output.add("<input type=\"checkbox\" name=\"group1\"");
-      output.add(iterator.text);
-      output.add(">");
-      output.add(iterator.text);
-      output.add("<br/>");
+      var button = this._makeCheckBox(iterator, number);
+      number++;
+      output.insertAdjacentElement('beforeEnd', button);
+      output.addText(iterator.text);
+      output.addHTML("<br/>");
     }
-    output.add("<br/>");
-    output.add("<input type=\"button\" value=\"Submit\">");
-    
-    return output.toString();
+    output.addHTML("<input id=\"submit\" type=\"button\" value=\"Click Me.\">");
+    return output;
   }
   
   /**
@@ -96,10 +104,10 @@ class MultipleSelect extends Question{
     for (var iterator in this.selected)
     {
       output.add("${iterator.text}<br/>");
-      output.add("${selected.explanation}<br/>");
+      output.add("${iterator.explanation}<br/>");
     }
     output.add("<br/>The best set of option is: <br/>");
-    for (var iterator in this.getAgileAnswers())
+    for (var iterator in this.getBestAnswers())
     {
       output.add("${iterator.text}<br/>");
       output.add("${iterator.explanation}<br/>");
