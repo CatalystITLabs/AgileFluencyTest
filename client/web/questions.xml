@@ -1,58 +1,59 @@
 <assessment>
 	<section level="1">
 	    <questionList>
-			<question id="1" type="MultipleSelect">
+			<question id="1" type="MultipleChoice">
 				<text>How often in development do you produce fully working, documented, and tested software?</text>
 				<answerList>
 					<answer>
 						<points>0</points>
 						<text>When it's finished</text>
-						<explanation></explanation>
+						<explanation>This corresponds to the waterfall method. Agile's most fundamental principal is replacing this model with a cyclical process. This way the customer gets software earlier and can change requirements of the software during development as needed.</explanation>
 					</answer>
 					<answer>
 						<points>1</points>
 						<text>We go through many iterations</text>
-						<explanation></explanation>
+						<explanation>Any iterative process is closer to Agile than Waterfall development, but simply iterating may be closer to the spiral method of development.</explanation>
 					</answer>
 					<answer>
 						<points>2</points>
 						<text>We do iterations of a fixed length less than 4 weeks</text>
-						<explanation></explanation>
+						<explanation>This is the most agile option. The third principle of Agile states, "Agile seeks to deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale."</explanation>
 					</answer>
 				</answerList>
 			</question>
-			<question id="2" type="MultipleSelect">
+			<question id="2" type="MultipleChoice">
 			    <text>How much is documented before start of implementation?</text>
 			    <answerList>
 			        <answer>
 			            <points>0</points>
-			            <text>Complete product is specified</text>
-			            <explanation></explanation>
+			            <text>Complete product is specified.</text>
+			            <explanation>This is not an Agile method. A key part of Agile is being receptive to changes in requirements during development. Additionally agile proponents often argue that in practice you cannot perfectly complete any phase of software development for any non-trivial project. You should anticipate discovering unforseen problems or better solutions at any point in development.</explanation>
 			        </answer>
 			        <answer>
 			            <points>1</points>
 			            <text>Basic product features, expected to change</text>
-			            <explanation></explanation>
+			            <explanation>Agile places strong emphasis on doing everything in iterations, including planning, and welcoming changing requirements.</explanation>
 			        </answer>
 			        <answer>
 			            <points>0</points>
 			            <text>Little, someone decides what to do</text>
-			            <explanation></explanation>
+			            <explanation>This answer could mean that you are practicing cowboy development without structured planning, or relying on some individual to plan the project. </explanation>
 			        </answer>
 			        <answer>
 			            <points>1</points>
 			            <text>Clearly defined goals, details will be worked out</text>
-			            <explanation></explanation>
+			            <explanation>In Scrum's flat management structure, everyone meets at the beginning of every cycle to plan out the tasks of that cycle as a team. This is a broadly endorsed agile practice.</explanation>
 			        </answer>
 			    </answerList>
 			</question>
-			<question id="3" type="MultipleSelect">
+			<question id="3" type="MultipleChoice">
 			    <text>How often do you adjust or improve your way of working?</text>
+			    <explanation>The 12th Agile principal states, "At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly."</explanation>
 			    <answerList>
 			        <answer>
 			            <points>0</points>
 			            <text>Nearly never, management takes care</text>
-			            <explanation></explanation>
+			            <explanation>Agile encourages team meetings to address issues.</explanation>
 			        </answer>
 			        <answer>
 			            <points>1</points>
@@ -62,7 +63,7 @@
 			        <answer>
 			            <points>0</points>
 			            <text>After something important went wrong</text>
-			            <explanation></explanation>
+			            <explanation>Agile encourages regular meetings. In Scrum there are daily meetings to discuss any current tasks and any big issues, as well as sprint retrospective meetings where the past sprint is discussed and ways to improve productivity are considered.</explanation>
 			        </answer>
 			        <answer>
 			            <points>1</points>
@@ -71,8 +72,9 @@
 			        </answer>
 			    </answerList>
 			</question>
-			<question id="4" type="MultipleSelect">
+			<question id="4" type="MultipleChoice">
 			    <text>Is there a collection of items and features describing the product?</text>
+			    <explanation>Agile believes in customer collaboration over contract negotiation and responding to change over following a plan. To this end Scrum's List with user stories and estimated difficulty is well suited.</explanation>
 			    <answerList>
 			        <answer>
 			            <points>0</points>
@@ -98,6 +100,7 @@
 			</question>
 			<question id="5" type="MultipleSelect">
 			    <text>Do you know someone who is responsible for the product?</text>
+			    <explanation>Agile believes in customer collaboration over contract negotiation. The more easy and regular and involved the contact with the product owner, t</explanation>
 			    <answerList>
 			        <answer>
 			            <points>0</points>

@@ -70,13 +70,12 @@ class MultipleChoice extends Question
   }
   
   /**
-   * Build the question into a DOM element.
+   * Builds the answers into a dom element with an html form
    */
-  Element display()
+  Element displayAnswers()
   {
     var output = new DivElement();
-    output.insertAdjacentElement('beforeEnd',new Element.html("""<p>${this.text}</p>"""));
-    var number = 0;
+    output.id = "answers";
     for (var iterator in this.answers)
     {
       var button = this._makeRadioButton(iterator, number);
@@ -85,6 +84,18 @@ class MultipleChoice extends Question
       output.addText(iterator.text);
       output.addHTML("<br/>");
     }
+    return output;
+  }
+  
+  /**
+   * Build the question into a DOM element.
+   */
+  Element display()
+  {
+    var output = new DivElement();
+    output.insertAdjacentElement('beforeEnd',new Element.html("""<p>${this.text}</p>"""));
+    var number = 0;
+    output.insertAdjacentElement('beforeEnd', this.displayAnswers);
     output.addHTML("<input id=\"submit\" type=\"button\" value=\"Click Me.\">");
     return output;
   }

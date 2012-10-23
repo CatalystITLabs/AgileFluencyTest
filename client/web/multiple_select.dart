@@ -30,7 +30,7 @@ class MultipleSelect extends Question{
       if (iterator.points > 0)
         best.add(iterator);
     }
-    return answers;
+    return best;
   }
   
   /**
