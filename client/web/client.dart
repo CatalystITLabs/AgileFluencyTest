@@ -10,7 +10,7 @@ TestSection oneStar = new TestSection(1);
 
 void main() {
 
-  query("#container").insertAdjacentElement('beforeEnd', oneStar.questions[0].display());
+  query("#container").insertAdjacentElement('beforeEnd', oneStar.questions[1].display());
   for (var iterator in oneStar.questions)
   {
     //query("#container").insert = iterator.display();
