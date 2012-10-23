@@ -15,7 +15,7 @@ http://en.wikipedia.org/wiki/Extreme_Programming
 Three Star Fluency:
 http://www.agilesnerpa.org/agile_coach/product_planning/chartering/
 http://theleanstartup.com/principles
-http;//www.slideshare.net/dmc500hats/startup-metrics-for-pirates-sf-jan-2010
+http://www.slideshare.net/dmc500hats/startup-metrics-for-pirates-sf-jan-2010
 http://www.industriallogic.com/blog/agile-vs-lean-startup/
 http://en.wikipedia.org/wiki/Lean_software_development
 http://en.wikipedia.org/wiki/Lean_Startup
