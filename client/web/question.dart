@@ -16,16 +16,22 @@ abstract class Question {
   int getMaximumPoints();
   
   /**
+   * returns whether the users answer actually earns the maximum number of points for this question
+   */
+  bool gotMaxPoints();
+  
+  /**
    * Get the number of points the user earns for their answer to the question.
    */
   int getUserAnswerPoints();
   
   /**
+   * 
+   */
+  String explain();
+  
+  /**
    * Get the question displayed in html.
    */
   Element display();
-  
-  bool gotMaxPoints();
-  
-  String explain();
 }
