@@ -63,7 +63,7 @@ class MultipleChoice extends Question{
       output.add("<br/>");
     }
     output.add("<br/>");
-    output.add("<input type=\"button\" value=\"Click Me.\">");
+    output.add("<input type=\"button\" value=\"Submit\">");
     return output.toString();
   }
   
