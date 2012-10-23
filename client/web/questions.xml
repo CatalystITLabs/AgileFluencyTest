@@ -1,5 +1,5 @@
 <assessment>
-	<section level="one">
+	<section level="1">
 	    <questionList>
 			<question id="1" type="MultipleSelect">
 				<text>How often in development do you produce fully working, documented, and tested software?</text>
