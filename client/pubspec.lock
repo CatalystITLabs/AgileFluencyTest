@@ -1,1 +1,1 @@
-{"packages":{}}
+{"packages":{"xml":{"version":"0.0.1","source":"git","description":{"url":"https://github.com/prujohn/dart-xml.git","ref":null,"resolved-ref":"e88dbd1409a9d26f9f1334e9403ae9534924348a"}},"unittest":{"version":"0.0.0-r.13679","source":"sdk","description":"unittest"}}}
