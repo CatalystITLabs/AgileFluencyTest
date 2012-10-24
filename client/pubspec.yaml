@@ -1,5 +1,6 @@
 name:  client
 description:  A sample application
 
-#dependencies:
-#  unittest: { sdk: unittest }
+dependencies:
+  xml:
+    git: https://github.com/prujohn/dart-xml.git
