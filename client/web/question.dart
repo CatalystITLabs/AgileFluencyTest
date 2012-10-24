@@ -11,6 +11,12 @@ abstract class Question {
   String text;
   
   /**
+   * Optional text on the question to explain a question a user might
+   * have gotten wrong, or just want to know more about.
+   */
+  String explanation;
+  
+  /**
    * Get the greatest number of points it is possible to receive on this question
    */
   int getMaximumPoints();
@@ -31,7 +37,12 @@ abstract class Question {
   /**
    * Explain why the answer why the test taker was scored the way they were.
    */
-  String explain();
+  String explain() {
+    var output = new StringBuffer();
+    output.add("\"$this.text\"<br/>");
+    if (this.explanation != null)
+      output.add("$this.explanation<br/>");
+  }
   
   /**
    * Get the question displayed in html.

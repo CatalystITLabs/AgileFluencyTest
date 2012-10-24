@@ -59,18 +59,25 @@ class SingleSelect extends MultipleChoice{
   
   String explain() {
     var output = new StringBuffer();
-    output.add("You selected: ${selected.text}");
-    output.add("<br/>${selected.explanation}");
+    output.add(super.explain());
     
+    //Explain the user selected answer
+    output.add("You selected: ${selected.text}");
+    if (iterator.explanation != null)
+      output.add("<br/>${selected.explanation}");
+    
+    //Explain the best answer(s)
     for (var iterator in this.answers)
     {
       if (iterator.points == this.getMaximumPoints()) 
       {
         output.add("<br/> The best option is: ");
         output.add(iterator.text);
-        output.add("<br/> ${iterator.explanation}");
+        if (iterator.explanation != null)
+          output.add("<br/> ${iterator.explanation}");
       }
     }
+    
     return output.toString();
   }
 }

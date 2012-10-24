@@ -73,19 +73,26 @@ class MultipleSelect extends MultipleChoice{
   String explain()
   {
     var output = new StringBuffer();
+    output.add(super.explain());
     
+    //explain the user selected answers
     output.add("You selected: <br/>");
     for (var iterator in this.selectedAnswers)
     {
       output.add("${iterator.text}<br/>");
-      output.add("${iterator.explanation}<br/>");
+      if (iterator.explanation != null)
+        output.add("${iterator.explanation}<br/>");
     }
+    
+    //explain the best answers
     output.add("<br/>The best set of option is: <br/>");
     for (var iterator in this.getBestAnswers())
     {
       output.add("${iterator.text}<br/>");
-      output.add("${iterator.explanation}<br/>");
+      if (iterator.explanation != null)
+        output.add("${iterator.explanation}<br/>");
     }
+    
     return output.toString();
   }
 }
