@@ -63,15 +63,19 @@ class SingleSelect extends MultipleChoice{
     
     //Explain the user selected answer
     output.add("You selected: ${selected.text}");
-    if (iterator.explanation != null)
+    if (selected.explanation != null)
       output.add("<br/>${selected.explanation}");
     
-    //Explain the best answer(s)
+    //Explain better answers
     for (var iterator in this.answers)
     {
-      if (iterator.points == this.getMaximumPoints()) 
+      if (iterator.points > this.selected.points) 
       {
-        output.add("<br/> The best option is: ");
+        if (this.selected.points < this.getMaximumPoints())
+          output.add("<br/> A better option is: ");
+        else
+          output.add("<br/> The best option is: ");
+        
         output.add(iterator.text);
         if (iterator.explanation != null)
           output.add("<br/> ${iterator.explanation}");

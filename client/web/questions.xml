@@ -227,11 +227,11 @@
 			            <explanation>Agile encourages regular meetings where the whole team makes collective decisions.</explanation>
 			        </answer>
 			    </answerList>
-			</question>		
+			</question>
 		</questionList>
 	</section>
 	<section level="2">
-	    <questionList>
+		<questionList>
 	        <question id="1" type="MultipleSelect">
 	            <text>Without changing your team's programming habits, how often could your team release a working product to the customer?</text>
 	            <answerList>
@@ -362,7 +362,8 @@
 	<section level="3">
 	    <questionList>
 	        <question id="1" type="MultipleChoice">
-	            <text>Does the development team track concrete measurements of customer satisfaction, not just feedback?</text>
+	            <text>Does the development team track concrete measurements of customer satisfaction?</text>
+	            <explanation>To get the best value returned on the time invested. A dedicated product owner and accurate velocity metrics provide useful feedback for optimizing the process. Some hard numbers tied to customer satisfaction correlate more directly with value created, and may result in better feedback for optimizing the development process.</explanation>
 	            <answerList>
 	                <answer id="y">
 	                    <points>1</points>
@@ -378,6 +379,7 @@
 	        </question>
 	        <question id="2" type="MultipleChoice">
 	            <text>Does the development team track multiple concrete financial measures about their software like sales, revenue, profit, return on investment, profit per employee?</text>
+	            <explanation>To get the best value returned on the time invested. Tracking how many problems are solved over time, ie. velocity, provides useful feedback for optimizing the process. However to optimize the value created tracking feedback that is more closely tied to value may be more helpful.</explanation>
 	            <answerList>
 	                <answer id="y">
 	                    <points>1</points>
@@ -393,6 +395,7 @@
 	        </question>
 	        <question id="3" type="MultipleChoice">
 	            <text>Is the development team ready to change directions or abandon a project, and will it know when it needs to do so, without being surprised by management?</text>
+	            <explanation>When a team understands the values and costs they are creating, they can use this information to make major decisions impacting the project. This eliminates hand offs and speeds decision making which further benefit the return on investment.</explanation>
 	            <answerList>
 	                <answer id="y">
 	                    <points>1</points>
@@ -407,7 +410,8 @@
 	            </answerList>
 	        </question>
 	        <question id="4" type="MultipleChoice">
-	            <text>Does the development process often offer multiple versions of a product in a split test and measure which one is preferred?</text>
+	            <text>Does the development process sometimes offer multiple versions of a product in a split test and measure which one is preferred?</text>
+	            <explanation>Getting opinions from a product owner is helpful to decisions that could impact the quality of the product. However, the best information doesn't come from a single expert's anecdotes or opinions, but the scientific method. By offering 2 pieces of working software you eliminate inaccurate preconceived biases and you can easily sample a large number of customers.</explanation>
 	            <answerList>
 	                <answer id="y">
 	                    <points>1</points>
@@ -423,21 +427,23 @@
 	        </question>
 	        <question id="5" type="MultipleChoice">
 	            <text>My development team...</text>
+	            <explanation>Customers will better realize what they need, new insights will come from meetings, and helpful feedback will continually arrive. The later important decisions are finalized the better the decision will likely be. Additionally with this mindset the work required to maintain flexibility is usually minimal compared to the work involved in revising an approach that was less open.</explanation>
 	            <answerList>
 	                <answer id="y">
 	                    <points>1</points>
-	                    <text>acknowledges and plans around many options, and develops the software to be able to easily accomodate any of these options as long as possible. (Waiting until as much objective information as possible is acquired, not subjective information or assumptions, before finalizing)</text>
+	                    <text>acknowledges and plans around many options, and develops the software to be able to easily accomodate any of these options as long as possible. </text>
 	                    <explanation></explanation>
 	                </answer>
 	                <answer id="n">
 	                    <points>0</points>
-	                    <text>comes up with a plan early for important decisions in a scrum or sprint planning session to keep the velocity up.</text>
+	                    <text>comes up with a plan early for important decisions in a scrum or sprint planning session to keep the efficiency up.</text>
 	                    <explanation></explanation>
 	                </answer>
 	            </answerList>
 	        </question>
 	        <question id="6" type="MultipleChoice">
 	            <text>Is there at least one business expert or professional who is a true member of the development team?</text>
+	            <explanation>Giving a development team the ability react quickly and appropriately on business insights, will maximize their return on investment, but requires someone in the team with more skills than just programming.</explanation>
 	            <answerList>
 	                <answer id="y">
 	                    <points>1</points>
