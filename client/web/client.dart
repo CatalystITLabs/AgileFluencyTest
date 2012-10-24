@@ -1,5 +1,6 @@
 library test;
 import 'dart:html';
+import 'packages/xml/xml.dart';
 part "question.dart";
 part "answer.dart";
 part "multiple_choice.dart";
