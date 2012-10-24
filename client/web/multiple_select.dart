@@ -15,11 +15,13 @@ class MultipleSelect extends MultipleChoice{
    */
   MultipleSelect(text): super(text){}
   
+  
+  
   /**
    * Get the greatest number of points it is possible to receive on this question
    */
   List<Answer> getBestAnswers() {
-    List<Answer> best = new List<Answer>();;
+    List<Answer> best = new List<Answer>();
     for (var iterator in this.answers) {
       if (iterator.points > 0)
         best.add(iterator);
@@ -28,13 +30,26 @@ class MultipleSelect extends MultipleChoice{
   }
   
   /**
+   * Add or remove an answer from the selectedAnswers list
+   */
+  toggleAnswer(int answerIndex)
+  {
+    var answer = this.answers[answerIndex];
+    var selectedIndex = this.selectedAnswers.indexOf(answer, 0);
+    if (selectedIndex == -1)
+      this.selectedAnswers.add(answer);
+    else
+      this.selectedAnswers.removeAt(selectedIndex);
+  }
+  
+  /**
    * Return a DOM element radio button with an onclick event for this answer
    */
   Element _makeButton(Answer answer, int number)
   {
     var element = new Element.html("<input type=\"checkbox\" name=\"${number.toString()}\">");
-    //element.on.click.add(
-    //    (event) => this.setAnswer(number));
+    element.on.click.add(
+        (event) => this.toggleAnswer(number));
     return element;
   }
   

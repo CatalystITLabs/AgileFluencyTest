@@ -1,7 +1,7 @@
 <assessment>
 	<section level="1">
 	    <questionList>
-			<question id="1" type="MultipleChoice">
+			<question id="1" type="SingleSelect">
 				<text>How often in development do you produce fully working, documented, and tested software?</text>
 				<answerList>
 					<answer>
@@ -21,7 +21,7 @@
 					</answer>
 				</answerList>
 			</question>
-			<question id="2" type="MultipleChoice">
+			<question id="2" type="SingleSelect">
 			    <text>How much is documented before start of implementation?</text>
 			    <answerList>
 			        <answer>
@@ -46,7 +46,7 @@
 			        </answer>
 			    </answerList>
 			</question>
-			<question id="3" type="MultipleChoice">
+			<question id="3" type="SingleSelect">
 			    <text>How often do you adjust or improve your way of working?</text>
 			    <explanation>The 12th Agile principal states, "At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly."</explanation>
 			    <answerList>
@@ -72,7 +72,7 @@
 			        </answer>
 			    </answerList>
 			</question>
-			<question id="4" type="MultipleChoice">
+			<question id="4" type="SingleSelect">
 			    <text>Is there a collection of items and features describing the product?</text>
 			    <explanation>Agile believes in customer collaboration over contract negotiation and responding to change over following a plan. To this end Scrum's List with user stories and estimated difficulty is well suited.</explanation>
 			    <answerList>
@@ -98,7 +98,7 @@
 			        </answer>
 			    </answerList>
 			</question>
-			<question id="5" type="MultipleSelect">
+			<question id="5" type="SingleSelect">
 			    <text>Do you know someone who is responsible for the product?</text>
 			    <explanation>Agile believes in customer collaboration over contract negotiation. The more easy and involved the communication with the product owner, the better the product they will receive. The product owner may just be any representative of the customers, but they must be an expert in the products intended use.</explanation>
 			    <answerList>
@@ -124,7 +124,7 @@
 			        </answer>
 			    </answerList>
 			</question>
-			<question id="6" type="MultipleSelect">
+			<question id="6" type="SingleSelect">
 			    <text>How is the team's work planned?</text>
 			    <explanation>Planning must customer-centric, and involve the whole team. In scrum a product owner creates a prioritized wish list called a product backlog. During sprint planning, the team pulls a small chunk from the top of that wishlist, a sprint backlog, and decides how to implement those pieces.</explanation>
 			    <answerList>
@@ -150,9 +150,9 @@
 			        </answer>
 			    </answerList>
 			</question>
-			<question id="7" type="MultipleSelect">
+			<question id="7" type="SingleSelect">
 			    <text>How do teams track their work?</text>
-			    <explanation>The 7th principal of agile states, "Working software is the primary measure of progress." Srcrum, goes a step further to suggest that at any point in time, the total work remaining to reach a goal can be summed. Burndown charts may help visualize this process.</explanation>
+			    <explanation>The 7th principal of agile states, "Working software is the primary measure of progress." Scrum, goes a step further to suggest that at any point in time, the total work remaining to reach a goal can be summed. Burndown charts may help visualize this process.</explanation>
 			    <answerList>
 			        <answer>
 			            <points>0</points>
@@ -176,7 +176,7 @@
 			        </answer>
 			    </answerList>
 			</question>
-			<question id="8" type="MultipleSelect">
+			<question id="8" type="SingleSelect">
 			    <text>Do you know if your team efficiency improves over time?</text>
 			    <explanation>The 12th principle of Agile states, "At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly." By visualizing efficiency with something like a burndown chart, teams will have a better idea of when things are working, and a focus on improving their methods.</explanation>
 			    <answerList>
@@ -202,14 +202,14 @@
 			        </answer>
 			    </answerList>
 			</question>
-			<question id="9" type="MultipleSelect">
+			<question id="9" type="SingleSelect">
 			    <text>How are big decisions make during development?</text>
 			    <explanation>There are two principles of Agile that relate to this question. The 11th, "The best architectures, requirements, and designs emerge from self-organizing teams." and the 5th, "Give them the environment and support they need, and trust them to get the job done."</explanation>
 			    <answerList>
 			        <answer>
 			            <points>0</points>
 			            <text>Management can handle the big decisions for the team</text>
-			            <explanation>While the product owner sets the goals. How to get there should be up to the developers.</explanation>
+			            <explanation>While the product owner sets the goals, how to get there should be up to the developers.</explanation>
 			        </answer>
 			        <answer>
 			            <points>0</points>
@@ -232,7 +232,7 @@
 	</section>
 	<section level="2">
 		<questionList>
-	        <question id="1" type="MultipleSelect">
+	        <question id="1" type="SingleSelect">
 	            <text>Without changing your team's programming habits, how often could your team release a working product to the customer?</text>
 	            <answerList>
 	                <answer id="a">
@@ -257,7 +257,7 @@
 	                </answer>
 	            </answerList>
 	        </question>
-	        <question id="2" type="MultipleSelect">
+	        <question id="2" type="SingleSelect">
 	            <text>How do you organize responsibility for different parts of the project?</text>
 	            <answerList>
 	                <answer id="a">
@@ -282,32 +282,33 @@
 	                </answer>
 	            </answerList>
 	        </question>
-	        <question id="3" type="MultipleSelect">
+	        <question id="3" type="SingleSelect">
 	            <text>When do you test new code?</text>
+	            <explanation>During the life of a project an automated test can save you a hundred times the cost to create it by finding and guarding against bugs.</explain>
 	            <answerList>
 	                <answer id="a">
 	                    <points>0</points>
 	                    <text>In the testing phase of the project</text>
-	                    <explanation>If tests do not pass during the phase, the project would need to return to development to fix the code. This will increase time to deliver.</explanation>
+	                    <explanation>A cornerstone of Agile is iterative development, where there is no testing phase at the end. If tests do not pass during the phase, the project would need to return to development to fix the code. This will increase time to deliver.</explanation>
 	                </answer>
 	                <answer id="b">
 	                    <points>1</points>
 	                    <text>Before the end of the sprint or iteration</text>
-	                    <explanation>Acceptance testing is specified by the customer to test that the overall system is functioning as specified.</explanation>
+	                    <explanation>This is the minimal requirement of Agile. Releasing tested software with every iteration is better than waterfall, but development is still prolonged by not testing as early as possible.</explanation>
 	                </answer>
 	                <answer id="c">
 	                    <points>2</points>
 	                    <text>Before moving on to another task</text>
-	                    <explanation>When all the acceptance tests pass for a given user story, that story is considered complete.</explanation>
+	                    <explanation>When all the acceptance tests pass for a given user story, that story is considered complete. Focusing on one task at a time will improve productivity and prevent bugs from other components from affecting development during a cycle.</explanation>
 	                </answer>
 	                <answer id="d">
 	                    <points>3</points>
 	                    <text>The test is already written before any new code</text>
-	                    <explanation>Unit Testing typically tests only a single class, or a small cluster of classes.</explanation>
+	                    <explanation>Unit Testing typically tests only a single class, or a small cluster of classes. The tests should be written before the functionality that is being tested. This has been claimed to have two benefits. It helps ensure that the application is written for testability, as the developers must consider how to test the application from the outset, rather than worrying about it later. It also ensures that tests for every feature will be written. When writing feature-first code, there is a tendency by developers and the development organisations to push the developer on to the next feature, neglecting testing entirely. The first test might not even compile, at first, because all of the classes and methods it requires may not yet exist. Nevertheless, that first test functions as an executable specification</explanation>
 	                </answer>
 	            </answerList>
 	        </question>
-	        <question id="4" type="MultipleSelect">
+	        <question id="4" type="SingleSelect">
 	            <text>How often does your team rely on pair programming?</text>
 	            <answerList>
 	                <answer id="a">
@@ -323,7 +324,7 @@
 	                <answer id="c">
 	                    <points>2</points>
 	                    <text>All code is programmed in pairs</text>
-	                    <explanation>While you might not make a big gain in avoiding little syntax errors, your temas will avoid the big picture errors, saving time and delivering higher-quality solutions.</explanation>
+	                    <explanation>While you might not make a big gain in avoiding little syntax errors, your teams will avoid the big picture errors, saving time and delivering higher-quality solutions.</explanation>
 	                </answer>
 	                <answer id="d">
 	                    <points>3</points>
@@ -333,7 +334,7 @@
 	            </answerList>
 	        </question>
 	        <question id="5" type="MultipleSelect">
-	            <text>Check all that apply</text>
+	            <text>Check all that apply.</text>
 	            <answerList>
 	                <answer id="a">
 	                    <points>1</points>
@@ -348,7 +349,7 @@
 	                <answer id="c">
 	                    <points>1</points>
 	                    <text>Our team understands and uses continuous integration</text>
-	                    <explanation>Continuous integration often avoids diverging or fragmented development efforts, where develoeprs are not communicating with each other about what can be re-used, or what could be shared. Everyone needs to work with the latest version.</explanation>
+	                    <explanation>Continuous integration often avoids diverging or fragmented development efforts, where developers are not communicating with each other about what can be re-used, or what could be shared. Everyone needs to work with the latest version.</explanation>
 	                </answer>
 	                <answer id="d">
 	                    <points>1</points>
