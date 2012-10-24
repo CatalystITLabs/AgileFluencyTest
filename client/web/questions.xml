@@ -100,7 +100,7 @@
 			</question>
 			<question id="5" type="MultipleSelect">
 			    <text>Do you know someone who is responsible for the product?</text>
-			    <explanation>Agile believes in customer collaboration over contract negotiation. The more easy and regular and involved the contact with the product owner, t</explanation>
+			    <explanation>Agile believes in customer collaboration over contract negotiation. The more easy and involved the communication with the product owner, the better the product they will receive. The product owner may just be any representative of the customers, but they must be an expert in the products intended use.</explanation>
 			    <answerList>
 			        <answer>
 			            <points>0</points>
@@ -126,6 +126,7 @@
 			</question>
 			<question id="6" type="MultipleSelect">
 			    <text>How is the team's work planned?</text>
+			    <explanation>Planning must customer-centric, and involve the whole team. In scrum a product owner creates a prioritized wish list called a product backlog. During sprint planning, the team pulls a small chunk from the top of that wishlist, a sprint backlog, and decides how to implement those pieces.</explanation>
 			    <answerList>
 			        <answer>
 			            <points>0</points>
@@ -151,6 +152,7 @@
 			</question>
 			<question id="7" type="MultipleSelect">
 			    <text>How do teams track their work?</text>
+			    <explanation>The 7th principal of agile states, "Working software is the primary measure of progress." Srcrum, goes a step further to suggest that at any point in time, the total work remaining to reach a goal can be summed. Burndown charts may help visualize this process.</explanation>
 			    <answerList>
 			        <answer>
 			            <points>0</points>
@@ -176,6 +178,7 @@
 			</question>
 			<question id="8" type="MultipleSelect">
 			    <text>Do you know if your team efficiency improves over time?</text>
+			    <explanation>The 12th principle of Agile states, "At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly." By visualizing efficiency with something like a burndown chart, teams will have a better idea of when things are working, and a focus on improving their methods.</explanation>
 			    <answerList>
 			        <answer>
 			            <points>0</points>
@@ -201,26 +204,27 @@
 			</question>
 			<question id="9" type="MultipleSelect">
 			    <text>How are big decisions make during development?</text>
+			    <explanation>There are two principles of Agile that relate to this question. The 11th, "The best architectures, requirements, and designs emerge from self-organizing teams." and the 5th, "Give them the environment and support they need, and trust them to get the job done."</explanation>
 			    <answerList>
 			        <answer>
 			            <points>0</points>
 			            <text>Management can handle the big decisions for the team</text>
-			            <explanation></explanation>
+			            <explanation>While the product owner sets the goals. How to get there should be up to the developers.</explanation>
 			        </answer>
 			        <answer>
 			            <points>0</points>
-			            <text>The project leader or tech leader decides how we solve problems</text>
-			            <explanation></explanation>
+			            <text>The project leader or tech leader decides how we solve problems.</text>
+			            <explanation>In Agile there should be a self-organized team, with a flat management structure, not a heirarchy.</explanation>
+			        </answer>
+			        <answer>
+			            <points>0</points>
+			            <text>We plan everything out from the beginning so that we won't have to make any big decisions during development</text>
+			            <explanation>Agile encourages an iterative process, that is ready to change and adapt to ideas or realizations that occur during development.</explanation>
 			        </answer>
 			        <answer>
 			            <points>1</points>
-			            <text>We plan everything out from the beginning so that we won't have to make any big decisions during development</text>
-			            <explanation></explanation>
-			        </answer>
-			        <answer>
-			            <points>0</points>
-			            <text>We decide everything as a group during our meetings</text>
-			            <explanation></explanation>
+			            <text>We decide everything as a group during our meetings.</text>
+			            <explanation>Agile encourages regular meetings where the whole team makes collective decisions.</explanation>
 			        </answer>
 			    </answerList>
 			</question>		
