@@ -238,22 +238,22 @@
 	                <answer id="a">
 	                    <points>0</points>
 	                    <text>Once the product is finished</text>
-	                    <explanation></explanation>
+	                    <explanation>The longer you wait to introduce an important feature to the system's users the less time you will have to fix it.</explanation>
 	                </answer>
 	                <answer id="b">
 	                    <points>1</points>
 	                    <text>The end of each iteration or sprint</text>
-	                    <explanation></explanation>
+	                    <explanation>Agile emphasizes product owner involvement. These releases provide that opportunity.</explanation>
 	                </answer>
 	                <answer id="c">
 	                    <points>2</points>
 	                    <text>More than once an iteration or sprint</text>
-	                    <explanation></explanation>
+	                    <explanation>Releasing working product to the customer early and often allows the client to provide valuable feedback in time to have an impact on the system's development.</explanation>
 	                </answer>
 	                <answer id="d">
 	                    <points>3</points>
 	                    <text>Every day or many times a day</text>
-	                    <explanation></explanation>
+	                    <explanation>Providing early and often versions of working code will give the client the most opportunities to provide valuable feedback.</explanation>
 	                </answer>
 	            </answerList>
 	        </question>
@@ -263,22 +263,22 @@
 	                <answer id="a">
 	                    <points>0</points>
 	                    <text>we have a project architect that helps direct things</text>
-	                    <explanation></explanation>
+	                    <explanation>This approach limits the developer's influence on the codebase.</explanation>
 	                </answer>
 	                <answer id="b">
 	                    <points>0</points>
 	                    <text>Different developers take responsiblity for different parts of the code dependign on their skill set</text>
-	                    <explanation></explanation>
+	                    <explanation>While developers should take responsiblity for tasks, the code should be available to all developers.</explanation>
 	                </answer>
 	                <answer id="c">
 	                    <points>0</points>
 	                    <text>Whoever wrote a class or file usually approves changes to it</text>
-	                    <explanation></explanation>
+	                    <explanation>No single person should "own" a module. If other developers are working on other tasks, they should be able to edit any part of the codebase as needed.</explanation>
 	                </answer>
 	                <answer id="d">
 	                    <points>1</points>
 	                    <text>Everyone contributes changes to all parts of the project freely</text>
-	                    <explanation></explanation>
+	                    <explanation>The code is not owned by a single person, allowing any and each developer to work on any part of the codebase at any time.</explanation>
 	                </answer>
 	            </answerList>
 	        </question>
@@ -288,22 +288,22 @@
 	                <answer id="a">
 	                    <points>0</points>
 	                    <text>In the testing phase of the project</text>
-	                    <explanation></explanation>
+	                    <explanation>If tests do not pass during the phase, the project would need to return to development to fix the code. This will increase time to deliver.</explanation>
 	                </answer>
 	                <answer id="b">
 	                    <points>1</points>
 	                    <text>Before the end of the sprint or iteration</text>
-	                    <explanation></explanation>
+	                    <explanation>Acceptance testing is specified by the customer to test that the overall system is functioning as specified.</explanation>
 	                </answer>
 	                <answer id="c">
 	                    <points>2</points>
 	                    <text>Before moving on to another task</text>
-	                    <explanation></explanation>
+	                    <explanation>When all the acceptance tests pass for a given user story, that story is considered complete.</explanation>
 	                </answer>
 	                <answer id="d">
 	                    <points>3</points>
 	                    <text>The test is already written before any new code</text>
-	                    <explanation></explanation>
+	                    <explanation>Unit Testing typically tests only a single class, or a small cluster of classes.</explanation>
 	                </answer>
 	            </answerList>
 	        </question>
@@ -313,22 +313,22 @@
 	                <answer id="a">
 	                    <points>0</points>
 	                    <text>Never</text>
-	                    <explanation></explanation>
+	                    <explanation>Pair programming would allow two people to focus on solving both tactical coding issues and strategic "big-picture" issues.</explanation>
 	                </answer>
 	                <answer id="b">
 	                    <points>1</points>
 	                    <text>Its useful sometimes and we encourage it</text>
-	                    <explanation></explanation>
+	                    <explanation>Two programmers working as a pair are more than twice as productive as a single programmer working alone, and produce higher quality code.</explanation>
 	                </answer>
 	                <answer id="c">
 	                    <points>2</points>
 	                    <text>All code is programmed in pairs</text>
-	                    <explanation></explanation>
+	                    <explanation>While you might not make a big gain in avoiding little syntax errors, your temas will avoid the big picture errors, saving time and delivering higher-quality solutions.</explanation>
 	                </answer>
 	                <answer id="d">
 	                    <points>3</points>
 	                    <text>All code is programmed, reviewed, and integrated in pairs</text>
-	                    <explanation></explanation>
+	                    <explanation>Your team is strategic, producing higher quality code productively.</explanation>
 	                </answer>
 	            </answerList>
 	        </question>
@@ -338,22 +338,22 @@
 	                <answer id="a">
 	                    <points>1</points>
 	                    <text>Our whole team works in the same room</text>
-	                    <explanation></explanation>
+	                    <explanation>Agile emphasizes face-to-face communication. Taking down barriers between people encourages this behavior.</explanation>
 	                </answer>
 	                <answer id="b">
 	                    <points>1</points>
 	                    <text>My whole team always practices test-driven development using the red/green/refactor rule</text>
-	                    <explanation></explanation>
+	                    <explanation>Your development team will find it much easier and faster to create your code after writing your tests. It helps the developer to really consider what needs to be done.</explanation>
 	                </answer>
 	                <answer id="c">
 	                    <points>1</points>
 	                    <text>Our team understands and uses continuous integration</text>
-	                    <explanation></explanation>
+	                    <explanation>Continuous integration often avoids diverging or fragmented development efforts, where develoeprs are not communicating with each other about what can be re-used, or what could be shared. Everyone needs to work with the latest version.</explanation>
 	                </answer>
 	                <answer id="d">
 	                    <points>1</points>
-	                    <text>We never work overtime and if it looks like we won't compelte our planned iteration goals, we have a meeting to re-scope the iteration</text>
-	                    <explanation></explanation>
+	                    <text>We never work overtime and if it looks like we won't complete our planned iteration goals, we have a meeting to re-scope the iteration</text>
+	                    <explanation>Overtime suggests that there is an issue with the process.</explanation>
 	                </answer>
 	            </answerList>
 	        </question>
