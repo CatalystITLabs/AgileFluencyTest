@@ -31,13 +31,14 @@ body {
 /* section for questions and answers */
 #container {
   width: 100%;
-  height: 14em;
+  min-height: 14em;
   position: relative;
   border:2px solid #ccc;
   border-radius:1.25em;
   -moz-border-radius:1.25em; /* Firefox 3.6 and earlier */
   background-color: #fff;
   text-align: left;
+  overflow-y:scroll;
 }
 
 /* formats all inputs within container */
