@@ -1,6 +1,7 @@
 library test;
 import 'dart:html';
 import 'packages/xml/xml.dart';
+import 'dart:math';
 part "question.dart";
 part "answer.dart";
 part "multiple_choice.dart";
@@ -38,11 +39,14 @@ class Test {
    * return an html dom element for the current state of the test
    */
   Element display() {
-    var name = this.currentSection.name;
-    if (name == null)
-      name = "Section ${this.sections.indexOf(currentSection) + 1}";
+    var header = this.currentSection.name;
+    if (header == null)
+      header = "Section ${this.sections.indexOf(currentSection) + 1}";
+    var questionNumber = this.currentSection.questions.indexOf(this.currentSection.currentQuestion, 0) + 1;
+    var sectionLength = this.currentSection.questions.length;
+    header = "$header: Question $questionNumber of $sectionLength";
     Element output = this.currentSection.display();
-    output.insertAdjacentHTML("afterBegin", "<h3>$name</h3><br/>");
+    output.insertAdjacentHTML("afterBegin", "<h4>$header</h4><br/>");
     return output;
   }
   

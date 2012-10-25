@@ -102,10 +102,19 @@ class TestSection {
     return this;
   }
   
+  /**
+   * The name of the section
+   */
   String name;
   
+  /**
+   * The current question to be displayed and answered
+   */
   Question currentQuestion;
   
+  /**
+   * Advance this test to the next question
+   */
   Question nextQuestion(){
     var num;
     if (this.currentQuestion == null)
@@ -123,12 +132,17 @@ class TestSection {
     
     return this.currentQuestion;
   }
-  
+  /**
+   * Display the current questions or page
+   */
   Element display()
   {
     return this.currentQuestion.display();
   }
   
+  /**
+   * Explain all questions in the section as needed.
+   */
   Element explain()
   {
     

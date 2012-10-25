@@ -6,6 +6,7 @@ Test test = new Test();
 void nextQuestion()
 {
   query("#question").innerHTML= test.next().innerHTML;
+  query("#question").insertAdjacentElement('beforeEnd', nextButton());
 }
 
 Element nextButton()
@@ -20,5 +21,4 @@ void main()
 {
   test.sections.add(new TestSection(1));
   nextQuestion();
-  query("#container").insertAdjacentElement('beforeEnd', nextButton());
 }
