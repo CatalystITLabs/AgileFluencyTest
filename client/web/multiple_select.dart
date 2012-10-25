@@ -1,7 +1,8 @@
 part of test;
 
 /**
- * a multiple select question
+ * A question allowing for the selection of multiple answers
+ * (ie. "Choose all that apply")
  */
 class MultipleSelect extends MultipleChoice{
   

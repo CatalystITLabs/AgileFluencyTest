@@ -1,7 +1,7 @@
 part of test;
 
 /**
- * A multiple choice question
+ * An abstract question that with a set of answers to choose from
  */
 abstract class MultipleChoice extends Question
 {

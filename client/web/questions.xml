@@ -362,7 +362,7 @@
 	</section>
 	<section level="3">
 	    <questionList>
-	        <question id="1" type="MultipleChoice">
+	        <question id="1" type="SingleSelect">
 	            <text>Does the development team track concrete measurements of customer satisfaction?</text>
 	            <explanation>To get the best return on the time invested (RoI), a dedicated product owner and accurate velocity metrics provide useful feedback for optimizing the process. Some hard numbers tied to customer satisfaction correlate more directly with value created, and may result in better feedback for optimizing the development process.</explanation>
 	            <answerList>
@@ -378,7 +378,7 @@
 	                </answer>
 	            </answerList>
 	        </question>
-	        <question id="2" type="MultipleChoice">
+	        <question id="2" type="SingleSelect">
 	            <text>Does the development team track multiple concrete financial measures about their software like sales, revenue, profit, return on investment, profit per employee?</text>
 	            <explanation>To get the best return on the time invested (RoI), tracking how many problems are solved over time, ie. velocity, provides useful feedback for optimizing the process. However, to optimize the value created, tracking feedback that is more closely tied to value may be more helpful.</explanation>
 	            <answerList>
@@ -394,7 +394,7 @@
 	                </answer>
 	            </answerList>
 	        </question>
-	        <question id="3" type="MultipleChoice">
+	        <question id="3" type="SingleSelect">
 	            <text>Is the development team ready to change directions or abandon a project, and will it know when it needs to do so, without being surprised by management?</text>
 	            <explanation>When a team understands the values and costs they are creating, they can use this information to make major decisions impacting the project. This eliminates hand-offs and speeds decision making, which further benefit the return on investment.</explanation>
 	            <answerList>
@@ -410,7 +410,7 @@
 	                </answer>
 	            </answerList>
 	        </question>
-	        <question id="4" type="MultipleChoice">
+	        <question id="4" type="SingleSelect">
 	            <text>Does the development process sometimes offer multiple versions of a product in a split test and measure which one is preferred?</text>
 	            <explanation>Getting opinions from a product owner is helpful for decisions that could impact the quality of the product. At the same time, the best information doesn't come from a single expert's anecdotes or opinions, but from the scientific method. By offering 2 pieces of working software, you eliminate inaccurate pre-conceived biases, and you can easily samply a large number of customers.</explanation>
 	            <answerList>
@@ -426,7 +426,7 @@
 	                </answer>
 	            </answerList>
 	        </question>
-	        <question id="5" type="MultipleChoice">
+	        <question id="5" type="SingleSelect">
 	            <text>My development team...</text>
 	            <explanation>Customers will better realize what they need, new insights will come from meetings, and helpful feedback will continually arrive. The later important decisions are finalized, the better the decision will likely be. Additionally, with this mindset, the work required to maintain flexibility is usually minimal compared to the work involved in revising an approach that was less open.</explanation>
 	            <answerList>
@@ -442,7 +442,7 @@
 	                </answer>
 	            </answerList>
 	        </question>
-	        <question id="6" type="MultipleChoice">
+	        <question id="6" type="SingleSelect">
 	            <text>Is there at least one business expert or professional who is a true member of the development team?</text>
 	            <explanation>Giving a development team to ability to react quickly and appropriately on business insights will maximize their return on investment, but requires someone in the team with more skills than just programming.</explanation>
 	            <answerList>
@@ -462,7 +462,7 @@
 	</section>
 	<section level="4">
 	    <questionList>
-	        <question id="1" type="MultipleChoice">
+	        <question id="1" type="SingleSelect">
 	            <text>Do your development teams understand how they affect the business's value stream?</text>
 	            <explanation>If your team doesn't understand how its work contributes to the organization's overall value stream, they aren't yet fluent at optimizing for whole system success.</explanation>
 	            <answerList>
@@ -478,7 +478,7 @@
 	                </answer>
 	            </answerList>
 	        </question>
-	        <question id="2" type="MultipleChoice">
+	        <question id="2" type="SingleSelect">
 	            <text>Does your development team report its actions in terms of how they are influencing the entire enterprise?</text>
 	            <explanation>This requires a shift in thinking toward optimizing contribution to the organization.</explanation>
 	            <answerList>
@@ -494,7 +494,7 @@
 	                </answer>
 	            </answerList>
 	        </question>
-	        <question id="3" type="MultipleChoice">
+	        <question id="3" type="SingleSelect">
 	            <text>Do your development teams understand the organization's priorities?</text>
 	            <explanation>For a team to align itself with an organization's priorities, it must understand them explicitly.</explanation>
 	            <answerList>
@@ -510,7 +510,7 @@
 	                </answer>
 	            </answerList>
 	        </question>
-	        <question id="4" type="MultipleChoice">
+	        <question id="4" type="SingleSelect">
 	            <text>Does your team work with other teams and spread and share new or improved ideas?</text>
 	            <explanation>Overall productivity increases if knowlege gained during development is effectively shared between teams.</explanation>
 	            <answerList>
@@ -526,7 +526,7 @@
 	                </answer>
 	            </answerList>
 	        </question>
-	        <question id="5" type="MultipleChoice">
+	        <question id="5" type="SingleSelect">
 	            <text>Are individuals or teams in your organization likely to put their job on hold to support a more critical project.</text>
 	            <explanation>Knowledge of the organization's needs can only go so far without the readiness to pause one's own job to assist in someone elses to assist in someone else's when appropriate.</explanation>
 	            <answerList>

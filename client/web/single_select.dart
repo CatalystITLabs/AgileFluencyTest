@@ -1,5 +1,8 @@
 part of test;
 
+/**
+ * A question allowing the selection of a single answer
+ */
 class SingleSelect extends MultipleChoice{
   
   /**
@@ -52,6 +55,7 @@ class SingleSelect extends MultipleChoice{
     print("setting answer to $number");
     this.selected = this.answers[number];
     print("answer: ${this.selected.text}");
+    enableNextButton();
   }
   
   /**

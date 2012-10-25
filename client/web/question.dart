@@ -56,4 +56,10 @@ abstract class Question {
    * Get the question displayed in html.
    */
   Element display();
+  
+  void enableNextButton()
+  {
+    InputElement nextButton = query("#nextQuestion");
+    nextButton.disabled = false;
+  }
 }

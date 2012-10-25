@@ -59,7 +59,12 @@ class Test {
     if (this.currentSection == null)
       this.nextSection();
     assert(this.currentSection != null);
-    
+
+    if (this.currentSection.currentQuestion == this.currentSection.questions.last())
+    {
+      return this.currentSection.explain();
+    }
+
     this.currentSection.nextQuestion();
     return this.display();
   }

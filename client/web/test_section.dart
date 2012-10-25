@@ -1,14 +1,16 @@
 part of test;
 
+/**
+ * A segment of the test which is graded seperately and
+ * may be explained separately etc.
+ */
 class TestSection
 {
   List<MultipleChoice> questions;
   XmlElement allQnA;
   int star;
   
-  /**
-   * 
-   */
+ 
   TestSection(int level)
   {
     ParseQuestionXml xml = new ParseQuestionXml();
@@ -78,7 +80,18 @@ class TestSection
   Question nextQuestion(){
     var num;
     if (this.currentQuestion == null)
-      num = 0;
+    {
+      if (this.questions.length > 0)
+      {
+        this.currentQuestion = this.questions[0];
+        return this.currentQuestion;
+      }
+      else
+      {
+        print ("Why is the question list empty?");
+        return null;
+      }
+    }
     else
       num = this.questions.indexOf(currentQuestion, 0) + 1;
     
@@ -109,6 +122,12 @@ class TestSection
    */
   Element explain()
   {
-    
+    var output = new DivElement();
+    output.id="explanation";
+    for (var iterator in this.questions)
+    {
+      output.insertAdjacentHTML('beforeEnd', iterator.explain());
+    }
+    return output;
   }
 }
