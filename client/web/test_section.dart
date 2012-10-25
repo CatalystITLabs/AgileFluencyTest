@@ -101,4 +101,29 @@ class TestSection {
   {
     return this;
   }
+  
+  Question currentQuestion;
+  
+  Question nextQuestion(){
+    var num;
+    if (this.currentQuestion == null)
+      num = 0;
+    else
+      num = this.questions.indexOf(currentQuestion, 0) + 1;
+    
+    if (this.questions.length > num)
+    {
+      this.currentQuestion = this.questions[num];
+      print("Next Question.");
+    }
+    else
+      print("Finished. Do something else here.");
+    
+    return this.currentQuestion;
+  }
+  
+  Element display()
+  {
+    return this.currentQuestion.display();
+  }
 }

@@ -63,18 +63,18 @@
 			        <answer>
 			            <points>0</points>
 			            <text>After something important went wrong</text>
-			            <explanation>Agile encourages regular meetings. In Scrum there are daily meetings to discuss any current tasks and any big issues, as well as sprint retrospective meetings where the past sprint is discussed and ways to improve productivity are considered.</explanation>
+			            <explanation>Agile encourages regular meetings. In Scrum every day starts with a standup meeting to briefly discuss the prior days work, current tasks, and any issues blocking progress.</explanation>
 			        </answer>
 			        <answer>
 			            <points>1</points>
-			            <text>Every day we identify issues and take actions</text>
+			            <text>Every day we identify issues and take actions.</text>
 			            <explanation></explanation>
 			        </answer>
 			    </answerList>
 			</question>
 			<question id="4" type="SingleSelect">
 			    <text>Is there a collection of items and features describing the product?</text>
-			    <explanation>Agile believes in customer collaboration over contract negotiation and responding to change over following a plan. To this end Scrum's List with user stories and estimated difficulty is well suited.</explanation>
+			    <explanation>Agile believes in customer collaboration over contract negotiation and responding to change over following a plan. Scrum's list of user stories and their estimated difficulty is well suited to this end.</explanation>
 			    <answerList>
 			        <answer>
 			            <points>0</points>
@@ -100,7 +100,7 @@
 			</question>
 			<question id="5" type="SingleSelect">
 			    <text>Do you know someone who is responsible for the product?</text>
-			    <explanation>Agile believes in customer collaboration over contract negotiation. The more easy and involved the communication with the product owner, the better the product they will receive. The product owner may just be any representative of the customers, but they must be an expert in the products intended use.</explanation>
+			    <explanation>Agile believes in customer collaboration over contract negotiation. The more easy and involved the communication with the product owner, the better the product they will receive. The product owner may be any representative of the customers, but they must be an expert in the product's intended use.</explanation>
 			    <answerList>
 			        <answer>
 			            <points>0</points>
@@ -126,7 +126,7 @@
 			</question>
 			<question id="6" type="SingleSelect">
 			    <text>How is the team's work planned?</text>
-			    <explanation>Planning must customer-centric, and involve the whole team. In scrum a product owner creates a prioritized wish list called a product backlog. During sprint planning, the team pulls a small chunk from the top of that wishlist, a sprint backlog, and decides how to implement those pieces.</explanation>
+			    <explanation>Planning must be customer-centric and involve the whole team. In scrum, a product owner creates a prioritized wish list called a product backlog. During sprint planning, the team pulls a small chunk from the top of that wishlist, a sprint backlog, and decides how to implement those pieces.</explanation>
 			    <answerList>
 			        <answer>
 			            <points>0</points>
@@ -152,7 +152,7 @@
 			</question>
 			<question id="7" type="SingleSelect">
 			    <text>How do teams track their work?</text>
-			    <explanation>The 7th principal of agile states, "Working software is the primary measure of progress." Scrum, goes a step further to suggest that at any point in time, the total work remaining to reach a goal can be summed. Burndown charts may help visualize this process.</explanation>
+			    <explanation>The 7th principal of agile states, "Working software is the primary measure of progress." Scrum goes a step further to suggest that at any point in time, the total work remaining to reach a goal can be summed. Burndown charts may help visualize this process.</explanation>
 			    <answerList>
 			        <answer>
 			            <points>0</points>
@@ -204,7 +204,7 @@
 			</question>
 			<question id="9" type="SingleSelect">
 			    <text>How are big decisions make during development?</text>
-			    <explanation>There are two principles of Agile that relate to this question. The 11th, "The best architectures, requirements, and designs emerge from self-organizing teams." and the 5th, "Give them the environment and support they need, and trust them to get the job done."</explanation>
+			    <explanation>There are two principles of Agile that relate to this question: The 11th, "The best architectures, requirements, and designs emerge from self-organizing teams." and the 5th, "Give them the environment and support they need, and trust them to get the job done."</explanation>
 			    <answerList>
 			        <answer>
 			            <points>0</points>
@@ -214,12 +214,12 @@
 			        <answer>
 			            <points>0</points>
 			            <text>The project leader or tech leader decides how we solve problems.</text>
-			            <explanation>In Agile there should be a self-organized team, with a flat management structure, not a heirarchy.</explanation>
+			            <explanation>In Agile, there should be a self-organized team, with a flat management structure, not a heirarchy.</explanation>
 			        </answer>
 			        <answer>
 			            <points>0</points>
 			            <text>We plan everything out from the beginning so that we won't have to make any big decisions during development</text>
-			            <explanation>Agile encourages an iterative process, that is ready to change and adapt to ideas or realizations that occur during development.</explanation>
+			            <explanation>Agile encourages an iterative process that is ready to change and adapt to ideas or realizations that occur during development.</explanation>
 			        </answer>
 			        <answer>
 			            <points>1</points>
@@ -238,7 +238,7 @@
 	                <answer id="a">
 	                    <points>0</points>
 	                    <text>Once the product is finished</text>
-	                    <explanation>The longer you wait to introduce an important feature to the system's users the less time you will have to fix it.</explanation>
+	                    <explanation>The longer you wait to introduce an important feature to the system's users, the less time you will have to fix it.</explanation>
 	                </answer>
 	                <answer id="b">
 	                    <points>1</points>
@@ -284,7 +284,7 @@
 	        </question>
 	        <question id="3" type="SingleSelect">
 	            <text>When do you test new code?</text>
-	            <explanation>During the life of a project an automated test can save you a hundred times the cost to create it by finding and guarding against bugs.</explain>
+	            <explanation>During the life of a project, an automated test can save you a hundred times the cost to create it by finding and guarding against bugs.</explain>
 	            <answerList>
 	                <answer id="a">
 	                    <points>0</points>
@@ -294,7 +294,7 @@
 	                <answer id="b">
 	                    <points>1</points>
 	                    <text>Before the end of the sprint or iteration</text>
-	                    <explanation>This is the minimal requirement of Agile. Releasing tested software with every iteration is better than waterfall, but development is still prolonged by not testing as early as possible.</explanation>
+	                    <explanation>This is the minimal requirement of Agile. While releasing tested software with every iteration is better than waterfall, development is still prolonged by not testing as early as possible.</explanation>
 	                </answer>
 	                <answer id="c">
 	                    <points>2</points>
@@ -304,7 +304,7 @@
 	                <answer id="d">
 	                    <points>3</points>
 	                    <text>The test is already written before any new code</text>
-	                    <explanation>Unit Testing typically tests only a single class, or a small cluster of classes. The tests should be written before the functionality that is being tested. This has been claimed to have two benefits. It helps ensure that the application is written for testability, as the developers must consider how to test the application from the outset, rather than worrying about it later. It also ensures that tests for every feature will be written. When writing feature-first code, there is a tendency by developers and the development organisations to push the developer on to the next feature, neglecting testing entirely. The first test might not even compile, at first, because all of the classes and methods it requires may not yet exist. Nevertheless, that first test functions as an executable specification</explanation>
+	                    <explanation>Unit Testing typically tests only a single class, or a small cluster of classes. The tests should be written before the functionality that is being tested. This has been claimed to have two benefits. It helps ensure that the application is written for testability, as the developers must consider how to test the application from the outset, rather than worrying about it later. It also ensures that tests for every feature will be written. When writing feature-first code, there is a tendency by developers and the development organizations to push the developer on to the next feature, neglecting testing entirely. The first test might not even compile, at first, because all of the classes and methods it requires may not yet exist. Nevertheless, that first test functions as an executable specification.</explanation>
 	                </answer>
 	            </answerList>
 	        </question>
@@ -364,7 +364,7 @@
 	    <questionList>
 	        <question id="1" type="MultipleChoice">
 	            <text>Does the development team track concrete measurements of customer satisfaction?</text>
-	            <explanation>To get the best value returned on the time invested. A dedicated product owner and accurate velocity metrics provide useful feedback for optimizing the process. Some hard numbers tied to customer satisfaction correlate more directly with value created, and may result in better feedback for optimizing the development process.</explanation>
+	            <explanation>To get the best return on the time invested (RoI), a dedicated product owner and accurate velocity metrics provide useful feedback for optimizing the process. Some hard numbers tied to customer satisfaction correlate more directly with value created, and may result in better feedback for optimizing the development process.</explanation>
 	            <answerList>
 	                <answer id="y">
 	                    <points>1</points>
@@ -380,7 +380,7 @@
 	        </question>
 	        <question id="2" type="MultipleChoice">
 	            <text>Does the development team track multiple concrete financial measures about their software like sales, revenue, profit, return on investment, profit per employee?</text>
-	            <explanation>To get the best value returned on the time invested. Tracking how many problems are solved over time, ie. velocity, provides useful feedback for optimizing the process. However to optimize the value created tracking feedback that is more closely tied to value may be more helpful.</explanation>
+	            <explanation>To get the best return on the time invested (RoI), tracking how many problems are solved over time, ie. velocity, provides useful feedback for optimizing the process. However, to optimize the value created, tracking feedback that is more closely tied to value may be more helpful.</explanation>
 	            <answerList>
 	                <answer id="y">
 	                    <points>1</points>
@@ -396,7 +396,7 @@
 	        </question>
 	        <question id="3" type="MultipleChoice">
 	            <text>Is the development team ready to change directions or abandon a project, and will it know when it needs to do so, without being surprised by management?</text>
-	            <explanation>When a team understands the values and costs they are creating, they can use this information to make major decisions impacting the project. This eliminates hand offs and speeds decision making which further benefit the return on investment.</explanation>
+	            <explanation>When a team understands the values and costs they are creating, they can use this information to make major decisions impacting the project. This eliminates hand-offs and speeds decision making, which further benefit the return on investment.</explanation>
 	            <answerList>
 	                <answer id="y">
 	                    <points>1</points>
@@ -412,7 +412,7 @@
 	        </question>
 	        <question id="4" type="MultipleChoice">
 	            <text>Does the development process sometimes offer multiple versions of a product in a split test and measure which one is preferred?</text>
-	            <explanation>Getting opinions from a product owner is helpful to decisions that could impact the quality of the product. However, the best information doesn't come from a single expert's anecdotes or opinions, but the scientific method. By offering 2 pieces of working software you eliminate inaccurate preconceived biases and you can easily sample a large number of customers.</explanation>
+	            <explanation>Getting opinions from a product owner is helpful for decisions that could impact the quality of the product. At the same time, the best information doesn't come from a single expert's anecdotes or opinions, but from the scientific method. By offering 2 pieces of working software, you eliminate inaccurate pre-conceived biases, and you can easily samply a large number of customers.</explanation>
 	            <answerList>
 	                <answer id="y">
 	                    <points>1</points>
@@ -428,7 +428,7 @@
 	        </question>
 	        <question id="5" type="MultipleChoice">
 	            <text>My development team...</text>
-	            <explanation>Customers will better realize what they need, new insights will come from meetings, and helpful feedback will continually arrive. The later important decisions are finalized the better the decision will likely be. Additionally with this mindset the work required to maintain flexibility is usually minimal compared to the work involved in revising an approach that was less open.</explanation>
+	            <explanation>Customers will better realize what they need, new insights will come from meetings, and helpful feedback will continually arrive. The later important decisions are finalized, the better the decision will likely be. Additionally, with this mindset, the work required to maintain flexibility is usually minimal compared to the work involved in revising an approach that was less open.</explanation>
 	            <answerList>
 	                <answer id="y">
 	                    <points>1</points>
@@ -444,7 +444,7 @@
 	        </question>
 	        <question id="6" type="MultipleChoice">
 	            <text>Is there at least one business expert or professional who is a true member of the development team?</text>
-	            <explanation>Giving a development team the ability react quickly and appropriately on business insights, will maximize their return on investment, but requires someone in the team with more skills than just programming.</explanation>
+	            <explanation>Giving a development team to ability to react quickly and appropriately on business insights will maximize their return on investment, but requires someone in the team with more skills than just programming.</explanation>
 	            <answerList>
 	                <answer id="y">
 	                    <points>1</points>
@@ -464,7 +464,7 @@
 	    <questionList>
 	        <question id="1" type="MultipleChoice">
 	            <text>Do your development teams understand how they affect the business's value stream?</text>
-	            <explanation>If your team doesn’t understand how its work contributes to the organizations overall value stream, they aren’t yet fluent at optimizing for whole system success.</explanation>
+	            <explanation>If your team doesn't understand how its work contributes to the organization's overall value stream, they aren't yet fluent at optimizing for whole system success.</explanation>
 	            <answerList>
 	                <answer id="y">
 	                    <points>1</points>
@@ -480,7 +480,7 @@
 	        </question>
 	        <question id="2" type="MultipleChoice">
 	            <text>Does your development team report its actions in terms of how they are influencing the entire enterprise?</text>
-	            <explanation>This requires a shift in thinking toward optimizing contribution for the organization.</explanation>
+	            <explanation>This requires a shift in thinking toward optimizing contribution to the organization.</explanation>
 	            <answerList>
 	                <answer id="y">
 	                    <points>1</points>
@@ -512,6 +512,7 @@
 	        </question>
 	        <question id="4" type="MultipleChoice">
 	            <text>Does your team work with other teams and spread and share new or improved ideas?</text>
+	            <explanation>Overall productivity increases if knowlege gained during development is effectively shared between teams.</explanation>
 	            <answerList>
 	                <answer id="y">
 	                    <points>1</points>
@@ -527,7 +528,7 @@
 	        </question>
 	        <question id="5" type="MultipleChoice">
 	            <text>Are individuals or teams in your organization likely to put their job on hold to support a more critical project.</text>
-	            <explanation>Knowlege of the organizations needs can only go so far without the readiness to pause one's own job to assist in someone elses as appropriate.</explanation>
+	            <explanation>Knowledge of the organization's needs can only go so far without the readiness to pause one's own job to assist in someone elses to assist in someone else's when appropriate.</explanation>
 	            <answerList>
 	                <answer id="y">
 	                    <points>1</points>
