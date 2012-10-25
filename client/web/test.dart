@@ -38,7 +38,12 @@ class Test {
    * return an html dom element for the current state of the test
    */
   Element display() {
-    return this.currentSection.currentQuestion.display();
+    var name = this.currentSection.name;
+    if (name == null)
+      name = "Section ${this.sections.indexOf(currentSection) + 1}";
+    Element output = this.currentSection.display();
+    output.insertAdjacentHTML("afterBegin", "<h3>$name</h3><br/>");
+    return output;
   }
   
   /**

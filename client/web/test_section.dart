@@ -102,6 +102,8 @@ class TestSection {
     return this;
   }
   
+  String name;
+  
   Question currentQuestion;
   
   Question nextQuestion(){
@@ -125,5 +127,10 @@ class TestSection {
   Element display()
   {
     return this.currentQuestion.display();
+  }
+  
+  Element explain()
+  {
+    
   }
 }
