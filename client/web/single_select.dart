@@ -13,6 +13,14 @@ class SingleSelect extends MultipleChoice{
   SingleSelect(text): super(text){}
   
   /**
+   * Returns true if a valid answer has been given to the question. 
+   */
+  bool validate()
+  {
+    return selected != null;
+  }
+  
+  /**
    * Get the greatest number of points it is possible to receive on this question
    */
   int getMaximumPoints()
