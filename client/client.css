@@ -31,14 +31,15 @@ body {
 /* section for questions and answers */
 #container {
   width: 100%;
-  min-height: 14em;
+  min-height: 12em;
+  height: auto;
   position: relative;
   border:2px solid #ccc;
   border-radius:1.25em;
   -moz-border-radius:1.25em; /* Firefox 3.6 and earlier */
   background-color: #fff;
   text-align: left;
-  overflow-y:scroll;
+  overflow-y:auto;
 }
 
 /* formats all inputs within container */
@@ -52,14 +53,13 @@ body {
 /* within container */
 #question {
   color: #000;
-  height: 3em;
   text-align: center;
   height: 1em;
 }
 
 /* formatting for answers within the container */
 #answers {
-  height: 8em;
+  min-height: 8em;
   margin: 0.2em 0.5em;
   text-align:left;
 }
@@ -71,8 +71,28 @@ body {
   margin: 0.2em 0.5em;
 }
 
+/* formatting for the feedback information */
+#feedback {
+  min-height: 9em;
+  overflow-y: scroll;
+}
+
+#feedback.question {
+  color: #000;
+  text-align:center;
+  height: 1em;
+}
+
+#feedback.selectedAnswer {
+  font-weight: bold;
+}
+
+#feedback.agileAnswers {
+
+}
+
 /*-----------------------------------------------------*/
 /*footer for github project url and other misc. information*/
 #footer {
-  
+  height: 2em;
 }
