@@ -17,6 +17,14 @@ abstract class Question {
   String explanation;
   
   /**
+   * Returns true if a valid answer has been given to the question. 
+   */
+  bool validate()
+  {
+    return true;
+  }
+  
+  /**
    * Get the greatest number of points it is possible to receive on this question
    */
   int getMaximumPoints();

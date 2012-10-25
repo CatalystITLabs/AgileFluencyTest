@@ -15,14 +15,14 @@ class MultipleSelect extends MultipleChoice{
    */
   MultipleSelect(text): super(text){}
   
-  
-  
   /**
    * Get the greatest number of points it is possible to receive on this question
    */
-  List<Answer> getBestAnswers() {
+  List<Answer> getBestAnswers()
+  {
     List<Answer> best = new List<Answer>();
-    for (var iterator in this.answers) {
+    for (var iterator in this.answers)
+    {
       if (iterator.points > 0)
         best.add(iterator);
     }

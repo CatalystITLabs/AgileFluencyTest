@@ -27,12 +27,12 @@
 			        <answer>
 			            <points>0</points>
 			            <text>Complete product is specified.</text>
-			            <explanation>This is not an Agile method. A key part of Agile is being receptive to changes in requirements during development. Additionally agile proponents often argue that in practice you cannot perfectly complete any phase of software development for any non-trivial project. You should anticipate discovering unforseen problems or better solutions at any point in development.</explanation>
+			            <explanation>This is not an Agile method. Agile places strong emphasis on doing everything in iterations, including planning, and welcoming changing requirements.</explanation>
 			        </answer>
 			        <answer>
 			            <points>1</points>
 			            <text>Basic product features, expected to change</text>
-			            <explanation>Agile places strong emphasis on doing everything in iterations, including planning, and welcoming changing requirements.</explanation>
+			            <explanation>While Agile encourages regular planning sessions, a key part of Agile is being receptive to changes in requirements during development. </explanation>
 			        </answer>
 			        <answer>
 			            <points>0</points>
@@ -42,7 +42,7 @@
 			        <answer>
 			            <points>1</points>
 			            <text>Clearly defined goals, details will be worked out</text>
-			            <explanation>In Scrum's flat management structure, everyone meets at the beginning of every cycle to plan out the tasks of that cycle as a team. This is a broadly endorsed agile practice.</explanation>
+			            <explanation>In Scrum's flat management structure, everyone meets at the beginning of every cycle to plan out the tasks of that cycle as a team. In practice you cannot perfectly complete any phase of software development for any non-trivial project. You should anticipate discovering unforseen problems or better solutions at any point in development. Clearly defined goals are still required to make sure all work and planning is going in the right direction.</explanation>
 			        </answer>
 			    </answerList>
 			</question>
@@ -53,7 +53,7 @@
 			        <answer>
 			            <points>0</points>
 			            <text>Nearly never, management takes care</text>
-			            <explanation>Agile encourages team meetings to address issues.</explanation>
+			            <explanation>Agile encourages team meetings to address issues, not intervention from above.</explanation>
 			        </answer>
 			        <answer>
 			            <points>1</points>
