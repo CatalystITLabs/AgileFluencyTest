@@ -15,6 +15,7 @@ class TestSection
     allQnA = xml.allElements;
     questions = new List<MultipleChoice>();
     star = level;
+    getQnA();
   }
   
   void getQnA()
@@ -87,12 +88,16 @@ class TestSection
       print("Next Question.");
     }
     else
+    {
       print("Finished. Do something else here.");
+    }
     
+    assert(this.currentQuestion != null);
     return this.currentQuestion;
   }
+  
   /**
-   * Display the current questions or page
+   * Display the current question or page
    */
   Element display()
   {

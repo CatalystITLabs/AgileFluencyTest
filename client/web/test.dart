@@ -1,11 +1,13 @@
 library test;
 import 'dart:html';
 import 'packages/xml/xml.dart';
-import 'dart:math';
+import 'dart:math' as Math;
 part "question.dart";
 part "answer.dart";
 part "multiple_choice.dart";
 part "multiple_select.dart";
+part "single_select.dart";
+part "parse_question_xml.dart";
 part "test_section.dart";
 
 class Test {
