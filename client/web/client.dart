@@ -11,7 +11,21 @@ part "test_section.dart";
 TestSection currentSection = new TestSection(1);
 Question currentQuestion;
 
-void nextQuestion() {
+void nextSection()
+{
+  var num;
+  if (currentSection == null)
+    num = 1;
+  else if (num != 4)
+    num++;
+  else 
+    return;
+  
+  currentSection = new TestSection(num);
+}
+
+void nextQuestion()
+{
   var num;
   if (currentQuestion == null)
     num = 0;
@@ -37,9 +51,8 @@ Element nextButton()
   return element;
 }
 
-void main() {
+void main()
+{
   nextQuestion();
-  //query("#container").addHTML("<input id=\"nextQuestion\" type=\"button\" value=\"Next Question\">");
-  //query("#nextQuestion").on.click((event) => nextQuestion())
   query("#container").insertAdjacentElement('beforeEnd', nextButton());
 }
