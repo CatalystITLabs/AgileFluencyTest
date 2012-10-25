@@ -464,6 +464,7 @@
 	    <questionList>
 	        <question id="1" type="MultipleChoice">
 	            <text>Do your development teams understand how they affect the business's value stream?</text>
+	            <explanation>If your team doesn’t understand how its work contributes to the organizations overall value stream, they aren’t yet fluent at optimizing for whole system success.</explanation>
 	            <answerList>
 	                <answer id="y">
 	                    <points>1</points>
@@ -479,6 +480,7 @@
 	        </question>
 	        <question id="2" type="MultipleChoice">
 	            <text>Does your development team report its actions in terms of how they are influencing the entire enterprise?</text>
+	            <explanation>This requires a shift in thinking toward optimizing contribution for the organization.</explanation>
 	            <answerList>
 	                <answer id="y">
 	                    <points>1</points>
@@ -493,7 +495,8 @@
 	            </answerList>
 	        </question>
 	        <question id="3" type="MultipleChoice">
-	            <text>Do your development teams understand the business's priorities?</text>
+	            <text>Do your development teams understand the organization's priorities?</text>
+	            <explanation>For a team to align itself with an organization's priorities, it must understand them explicitly.</explanation>
 	            <answerList>
 	                <answer id="y">
 	                    <points>1</points>
@@ -523,7 +526,8 @@
 	            </answerList>
 	        </question>
 	        <question id="5" type="MultipleChoice">
-	            <text>Is your development team a part of testing the vision of the organization's future?</text>
+	            <text>Are individuals or teams in your organization likely to put their job on hold to support a more critical project.</text>
+	            <explanation>Knowlege of the organizations needs can only go so far without the readiness to pause one's own job to assist in someone elses as appropriate.</explanation>
 	            <answerList>
 	                <answer id="y">
 	                    <points>1</points>
