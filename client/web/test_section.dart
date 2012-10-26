@@ -31,6 +31,7 @@ class TestSection
       for(XmlElement questionEle in questionList)
       {
         XmlCollection text = questionEle.query('text');
+        XmlCollection explanation = questionEle.query('explanation');
         XmlCollection answerList = questionEle.queryAll('answer');
         
         Answer answer;
@@ -51,12 +52,14 @@ class TestSection
         if(questionEle.attributes.containsValue('SingleSelect') || questionEle.attributes.containsValue('MultipleChoice'))
         {
           ss_question = new SingleSelect(text[0].text);
+          ss_question.explanation = explanation[0].text;
           ss_question.answers.addAll(answers);
           questions.add(ss_question);
         }
         else if(questionEle.attributes.containsValue('MultipleSelect'))
         {
           ms_question = new MultipleSelect(text[0].text);
+          ms_question.explanation = explanation[0].text;
           ms_question.answers.addAll(answers);
           questions.add(ms_question);
         }
