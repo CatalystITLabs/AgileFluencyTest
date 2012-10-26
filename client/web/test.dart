@@ -48,7 +48,7 @@ class Test {
     var sectionLength = this.currentSection.questions.length;
     header = "$header: Question $questionNumber of $sectionLength";
     Element output = this.currentSection.display();
-    output.insertAdjacentHTML("afterBegin", "<h4>$header</h4><br/>");
+    output.insertAdjacentHTML("afterBegin", "<h4>$header</h4>");
     return output;
   }
   
