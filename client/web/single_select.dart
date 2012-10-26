@@ -40,7 +40,7 @@ class SingleSelect extends MultipleChoice{
   /**
    * Get the number of points the user earns for their answer to the question.
    */
-  int getSelectedPoints()
+  int getUserAnswerPoints()
   {
     if (selected == null)
       return 0;

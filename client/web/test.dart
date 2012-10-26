@@ -56,6 +56,10 @@ class Test {
     
     //display question or explanation
     Element output = this.currentSection.display();
+    if (output == null)
+    {
+      output = new Element.html("<p>No output from TestSection.</p>");
+    }
     //add header
     output.insertAdjacentHTML("afterBegin", "<h4>$header</h4>");
     return output;
@@ -78,9 +82,9 @@ class Test {
     {
       var section = this.nextSection();
       
-      if (section == null)
+      if (section == null || currentSection == null)
       {
-        return Element.html("Its finished! Do something here.");
+        return new Element.html("<p>Its finished! Do something here.</p>");
       }
     }
     

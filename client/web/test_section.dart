@@ -79,6 +79,18 @@ class TestSection
   bool explaining = false;
   bool finished = false;
   
+  void enableNextButton()
+  {
+    InputElement nextButton = query("#nextQuestion");
+    nextButton.disabled = false;
+  }
+  
+  void disableNextButton()
+  {
+    InputElement nextButton = query("#nextQuestion");
+    nextButton.disabled = true;
+  }
+  
   /**
    * Advance this test to the next question
    */
@@ -124,6 +136,7 @@ class TestSection
    */
   Element display()
   {
+    enableNextButton();
     //if the test section is finished stop returning pages
     if (finished)
       return null;
@@ -131,7 +144,12 @@ class TestSection
     if (explaining)
       return this.explain();
     
-    return this.currentQuestion.display();     
+    if (currentQuestion != null)
+    {
+      disableNextButton();
+      return this.currentQuestion.display();
+    }
+    return null;
   }
   
   
@@ -168,12 +186,40 @@ class TestSection
     print("Explaining section.");
     var output = new DivElement();
     output.id="explanation";
-    for (var iterator in this.questions)
+    var percentageScore = (getUserAnswerPoints() * 100 / getMaxPoints()).toInt();
+    output.addHTML("<p>$percentageScore% Agile Fluency</p>");
+    for (var question in this.questions)
     {
       DivElement questionExplanation = new DivElement();
-      questionExplanation.innerHTML = iterator.explain();
+      questionExplanation.innerHTML = question.explain();
       output.insertAdjacentElement('beforeEnd', questionExplanation);
     }
     return output;
+  }
+  
+  /**
+   * Get the maximum number of points achieveable in the TestSection
+   */
+  int getMaxPoints()
+  {
+    var total = 0;
+    for (var question in this.questions)
+    {
+      total += question.getMaximumPoints();
+    }
+    return total;
+  }
+  
+  /**
+   * Get the total points earned by the users answers
+   */
+  int getUserAnswerPoints() 
+  {
+    var total = 0;
+    for (var question in this.questions)
+    {
+      total += question.getUserAnswerPoints();
+    }
+    return total;
   }
 }

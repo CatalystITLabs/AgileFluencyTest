@@ -8,25 +8,28 @@ Test test = new Test();
  */
 void nextQuestion()
 {
+  assert(query("#question") != null);
   //replace the elements in the current question div with the next step in the Test
   query("#question").elements= test.next().elements;
   //add a next button
-  query("#question").insertAdjacentElement('beforeEnd', nextButton());
+  //query("#question").insertAdjacentElement('beforeEnd', nextButton());
 }
 
-/**
- * generates a button that can be added to a page with a script to advance the test
- */
-Element nextButton()
+
+void scriptButton()
 {
-  var element = new Element.html("<input id=\"nextQuestion\" type=\"button\" value=\"Next Question\" disabled=\"disabled\">");
-  element.on.click.add(
+  assert(query("#nextQuestion") != null);
+  Element button = query('#nextQuestion');
+  button.on.click.add(
       (event) => nextQuestion());
-  return element;
 }
 
 void main()
 {
   test.sections.add(new TestSection(1));
+  test.sections.add(new TestSection(2));
+  test.sections.add(new TestSection(3));
+  test.sections.add(new TestSection(4));
+  scriptButton();
   nextQuestion();
 }
