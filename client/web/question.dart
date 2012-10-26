@@ -47,9 +47,9 @@ abstract class Question {
    */
   String explain() {
     var output = new StringBuffer();
-    output.add("\"$this.text\"<br/>");
+    output.add("<br/><h4>${this.text}</h4>");
     if (this.explanation != null)
-      output.add("$this.explanation<br/>");
+      output.add("Explanation: ${this.explanation}<br/>");
     return output.toString();
   }
   

@@ -30,9 +30,9 @@ class Test {
     
     //if the index is valid set current section to it
     if (this.sections.length > num)
-    {
+    { 
+      print("Next Section.");
       this.currentSection = this.sections[num];
-      print("Next Question.");
     }
     else
     {
@@ -70,15 +70,20 @@ class Test {
       this.nextSection();
     assert(this.currentSection != null);
 
-    //if we were already on the last question of its section explain the section
-    if (this.currentSection.currentQuestion == this.currentSection.questions.last())
+    //get the next step from the section
+    var next = this.currentSection.next();
+    
+    //if there is nothing next in the section
+    if (next == null)
     {
-      return this.currentSection.explain();
+      var section = this.nextSection();
+      
+      if (section == null)
+      {
+        return Element.html("Its finished! Do something here.");
+      }
     }
-
-    //go to the next question in the section
-    this.currentSection.nextQuestion();
-
+    
     return this.display();
   }
 }

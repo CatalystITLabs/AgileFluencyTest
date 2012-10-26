@@ -74,6 +74,11 @@ class TestSection
    */
   Question currentQuestion;
   
+  bool explainAllQuestions = false;
+  bool explainWrongQuestions = true;
+  bool explaining = false;
+  bool finished = false;
+  
   /**
    * Advance this test to the next question
    */
@@ -102,11 +107,12 @@ class TestSection
     if (this.questions.length > num)
     {
       this.currentQuestion = this.questions[num];
-      print("Next Question.");
+      //print("Next Question.");
     }
     else
     {
-      print("Finished. Do something else here.");
+      print("No next Question.");
+      return null;
     }
     
     assert(this.currentQuestion != null);
@@ -118,7 +124,40 @@ class TestSection
    */
   Element display()
   {
-    return this.currentQuestion.display();
+    //if the test section is finished stop returning pages
+    if (finished)
+      return null;
+    
+    if (explaining)
+      return this.explain();
+    
+    return this.currentQuestion.display();     
+  }
+  
+  
+  /**
+   * Return the next page of the TestSection
+   */
+  Element next()
+  {
+    //if the test section is finished stop returning pages
+    if (finished)
+    {
+      return null;
+    }
+    
+    //if we're explaining we're finished next
+    if (explaining)
+      finished = true;
+    else
+    {
+      var question = nextQuestion();
+      //if we run out of questions we explain next
+      if (question == null)
+        explaining = true;
+    }
+    
+    return this.display();
   }
   
   /**
@@ -131,7 +170,9 @@ class TestSection
     output.id="explanation";
     for (var iterator in this.questions)
     {
-      output.insertAdjacentHTML('beforeEnd', iterator.explain());
+      DivElement questionExplanation = new DivElement();
+      questionExplanation.innerHTML = iterator.explain();
+      output.insertAdjacentElement('beforeEnd', questionExplanation);
     }
     return output;
   }

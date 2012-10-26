@@ -98,16 +98,16 @@ class MultipleSelect extends MultipleChoice{
     for (var iterator in this.selectedAnswers)
     {
       output.add("${iterator.text}<br/>");
-      if (iterator.explanation != null)
+      if (iterator.explanation != null && iterator.explanation.length > 0)
         output.add("${iterator.explanation}<br/>");
     }
     
     //explain the best answers
-    output.add("<br/>The best set of option is: <br/>");
+    output.add("<br/>The best set of options is: <br/>");
     for (var iterator in this.getBestAnswers())
     {
       output.add("${iterator.text}<br/>");
-      if (iterator.explanation != null)
+      if (iterator.explanation != null && iterator.explanation.length > 0)
         output.add("${iterator.explanation}<br/>");
     }
     print(output.toString());

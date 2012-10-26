@@ -75,8 +75,8 @@ class SingleSelect extends MultipleChoice{
     output.add(super.explain());
     
     //Explain the user selected answer
-    output.add("You selected: ${selected.text}");
-    if (selected.explanation != null)
+    output.add("You selected: ${selected.text}.");
+    if (selected.explanation != null && selected.explanation.length > 0)
       output.add("<br/>${selected.explanation}");
     
     //Explain better answers
@@ -90,7 +90,7 @@ class SingleSelect extends MultipleChoice{
           output.add("<br/> The best option is: ");
         
         output.add(iterator.text);
-        if (iterator.explanation != null)
+        if (iterator.explanation != null && iterator.explanation.length > 0)
           output.add("<br/> ${iterator.explanation}");
       }
     }
