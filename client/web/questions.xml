@@ -267,7 +267,7 @@
 	                </answer>
 	                <answer id="b">
 	                    <points>0</points>
-	                    <text>Different developers take responsiblity for different parts of the code dependign on their skill set</text>
+	                    <text>Different developers take responsiblity for different parts of the code depending on their skill set</text>
 	                    <explanation>While developers should take responsiblity for tasks, the code should be available to all developers.</explanation>
 	                </answer>
 	                <answer id="c">
