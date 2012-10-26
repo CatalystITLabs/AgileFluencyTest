@@ -57,7 +57,7 @@ class Test {
     //display question or explanation
     Element output = this.currentSection.display();
     //add header
-    output.insertAdjacentHTML("afterBegin", "<h4>$header</h4><br/>");
+    output.insertAdjacentHTML("afterBegin", "<h4>$header</h4>");
     return output;
   }
   
