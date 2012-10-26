@@ -19,6 +19,25 @@ class Answer {
    */
   String explanation;
   
+  String displayForExplanation(bool selectedByUser, int maxPoints)
+  {
+    var answerString = this.text;
+    var pointsColorNum = (255 * this.points / maxPoints).toInt();
+    
+    //TODO: better conversion to hex
+    var pointsColorHex = "0";
+    if (pointsColorNum == 255)
+      pointsColorHex = "FF";
+    else if (pointsColorNum > 0)
+      pointsColorHex = 99 * this.points ~/ maxPoints;
+    
+    if (pointsColorNum != 0)
+      answerString = "<font color=\"rgb(0,0,$pointsColorHex)\">$answerString</font>";
+    if (selectedByUser)
+      answerString = "=> $answerString <=";
+    return answerString;
+  }
+  
   /**
    * Constructor
    */

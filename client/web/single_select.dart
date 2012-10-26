@@ -73,7 +73,15 @@ class SingleSelect extends MultipleChoice{
     print("Explaining SingleSelect");
     var output = new StringBuffer();
     output.add(super.explain());
+    output.add("<ul>");
+    for (var answer in this.answers)
+    {
+      var answerString = answer.displayForExplanation(answer == selected, this.getMaximumPoints());
+      output.add("<li>$answerString</li>");
+    }
+    output.add("</ul>");
     
+    /*
     //Explain the user selected answer
     output.add("You selected: ${selected.text}.");
     if (selected.explanation != null && selected.explanation.length > 0)
@@ -94,6 +102,7 @@ class SingleSelect extends MultipleChoice{
           output.add("<br/> ${iterator.explanation}");
       }
     }
+    */
     print(output.toString());
     return output.toString();
   }
