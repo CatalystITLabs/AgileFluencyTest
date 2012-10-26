@@ -41,12 +41,14 @@ body {
   overflow-y:auto;
 }
 
-/* formats all inputs within container */
-#container input {
+/* formats the nextButton within container */
+#container input.nextButton {
   background-color: #CCC;
   color: #333;
   border-radius: 0.5em;
   -moz-border-radius: 0.5em; /* Firefox 3.6 and earlier */
+  height: 1.2em;
+  margin: 0.25em 0em 1em 0em;
 }
 
 /* within container */
@@ -61,13 +63,6 @@ body {
   height:auto;
   margin: 0.2em 0.5em;
   text-align:left;
-}
-
-/* within container */
-#container.nextQuestion {
-  height: 2em;
-  text-align: right;
-  margin: 0.2em 0.5em;
 }
 
 /* formatting for the feedback information */
@@ -87,7 +82,7 @@ body {
 }
 
 #feedback.agileAnswers {
-
+  
 }
 
 /*-----------------------------------------------------*/
