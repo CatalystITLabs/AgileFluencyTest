@@ -50,6 +50,7 @@ abstract class Question {
     output.add("\"$this.text\"<br/>");
     if (this.explanation != null)
       output.add("$this.explanation<br/>");
+    return output.toString();
   }
   
   /**

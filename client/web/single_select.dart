@@ -70,6 +70,7 @@ class SingleSelect extends MultipleChoice{
   }
   
   String explain() {
+    print("Explaining SingleSelect");
     var output = new StringBuffer();
     output.add(super.explain());
     
@@ -93,7 +94,7 @@ class SingleSelect extends MultipleChoice{
           output.add("<br/> ${iterator.explanation}");
       }
     }
-    
+    print(output.toString());
     return output.toString();
   }
 }

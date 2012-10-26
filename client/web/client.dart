@@ -8,7 +8,9 @@ Test test = new Test();
  */
 void nextQuestion()
 {
+  //replace the elements in the current question div with the next step in the Test
   query("#question").elements= test.next().elements;
+  //add a next button
   query("#question").insertAdjacentElement('beforeEnd', nextButton());
 }
 

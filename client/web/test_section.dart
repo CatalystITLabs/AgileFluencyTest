@@ -78,6 +78,7 @@ class TestSection
    * Advance this test to the next question
    */
   Question nextQuestion(){
+    //first get the index of the next question
     var num;
     if (this.currentQuestion == null)
     {
@@ -93,8 +94,11 @@ class TestSection
       }
     }
     else
+    {
       num = this.questions.indexOf(currentQuestion, 0) + 1;
+    }
     
+    //if a question actually corresponds to this index set currentQuestion to it
     if (this.questions.length > num)
     {
       this.currentQuestion = this.questions[num];
@@ -122,6 +126,7 @@ class TestSection
    */
   Element explain()
   {
+    print("Explaining section.");
     var output = new DivElement();
     output.id="explanation";
     for (var iterator in this.questions)

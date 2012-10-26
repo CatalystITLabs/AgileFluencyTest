@@ -41,6 +41,7 @@ class MultipleSelect extends MultipleChoice{
       this.selectedAnswers.add(answer);
     else
       this.selectedAnswers.removeAt(selectedIndex);
+    enableNextButton();
   }
   
   /**
@@ -88,6 +89,7 @@ class MultipleSelect extends MultipleChoice{
    */
   String explain()
   {
+    print("Explaining MultipleSelect");
     var output = new StringBuffer();
     output.add(super.explain());
     
@@ -108,7 +110,7 @@ class MultipleSelect extends MultipleChoice{
       if (iterator.explanation != null)
         output.add("${iterator.explanation}<br/>");
     }
-    
+    print(output.toString());
     return output.toString();
   }
 }
