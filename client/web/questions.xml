@@ -284,7 +284,7 @@
 	        </question>
 	        <question id="3" type="SingleSelect">
 	            <text>When do you test new code?</text>
-	            <explanation>During the life of a project, an automated test can save you a hundred times the cost to create it by finding and guarding against bugs.</explain>
+	            <explanation>During the life of a project, an automated test can save you a hundred times the cost to create it by finding and guarding against bugs.</explanation>
 	            <answerList>
 	                <answer id="a">
 	                    <points>0</points>
