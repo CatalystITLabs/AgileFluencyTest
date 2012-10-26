@@ -31,14 +31,13 @@ body {
 /* section for questions and answers */
 #container {
   width: 100%;
-  min-height: 12em;
   height: auto;
   position: relative;
   border:2px solid #ccc;
   border-radius:1.25em;
   -moz-border-radius:1.25em; /* Firefox 3.6 and earlier */
   background-color: #fff;
-  text-align: left;
+  text-align: center;
   overflow-y:auto;
 }
 
@@ -51,21 +50,21 @@ body {
 }
 
 /* within container */
-#question {
+#container.question {
   color: #000;
   text-align: center;
-  height: 1em;
+ /* height: 1em;*/
 }
 
 /* formatting for answers within the container */
 #answers {
-  min-height: 8em;
+  height:auto;
   margin: 0.2em 0.5em;
   text-align:left;
 }
 
 /* within container */
-#nextQuestion {
+#container.nextQuestion {
   height: 2em;
   text-align: right;
   margin: 0.2em 0.5em;
