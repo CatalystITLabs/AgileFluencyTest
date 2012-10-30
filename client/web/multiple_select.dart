@@ -93,6 +93,17 @@ class MultipleSelect extends MultipleChoice{
     var output = new StringBuffer();
     output.add(super.explain());
     
+    output.add(super.explain());
+    output.add("<ul>");
+    for (var answer in this.answers)
+    {
+      var isSelected = this.selectedAnswers.indexOf(answer) != -1;
+      var answerString = answer.displayForExplanation(isSelected, 1);
+      output.add("<li>$answerString</li>");
+    }
+    output.add("</ul>");
+    
+    /*
     //explain the user selected answers
     output.add("You selected: <br/>");
     for (var iterator in this.selectedAnswers)
@@ -110,6 +121,7 @@ class MultipleSelect extends MultipleChoice{
       if (iterator.explanation != null && iterator.explanation.length > 0)
         output.add("${iterator.explanation}<br/>");
     }
+    */
     print(output.toString());
     return output.toString();
   }
