@@ -10,18 +10,22 @@ class TestSection
   XmlElement allQnA;
   int star;
   
- 
-  TestSection(int level)
+  /**
+   *  constructor inits the star level, list of questions and the XML element to query
+   */ 
+  TestSection(int level, String xml)
   {
-    ParseQuestionXml xml = new ParseQuestionXml();
-    allQnA = xml.allElements;
     questions = new List<MultipleChoice>();
     star = level;
+    allQnA = XML.parse(xml);
     getQnA();
   }
   
+  /**
+   *  queries the XML element by it's star level, then queries for componenets of a question w/i a section
+   */  
   void getQnA()
-  {
+  { 
     XmlCollection sections = allQnA.query({'level':star.toString()});
     
     for(XmlElement section in sections)
@@ -189,7 +193,7 @@ class TestSection
     print("Explaining section.");
     var output = new DivElement();
     output.id="explanation";
-    var percentageScore = (getUserAnswerPoints() * 100 / getMaxPoints()).toInt();
+    var percentageScore = (getUserAnswerPoints() * 100 ~/ getMaxPoints()).toInt();
     output.addHTML("<p>$percentageScore% Agile Fluency</p>");
     for (var question in this.questions)
     {

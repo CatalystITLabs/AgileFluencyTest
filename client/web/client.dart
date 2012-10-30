@@ -24,12 +24,27 @@ void scriptButton()
       (event) => nextQuestion());
 }
 
-void main()
-{
-  test.sections.add(new TestSection(1));
-  test.sections.add(new TestSection(2));
-  test.sections.add(new TestSection(3));
-  test.sections.add(new TestSection(4));
+/**
+ * call back method is called by the request get method
+ * processes the the response text by passing it to the test 
+ * section constructor
+ * 
+ * method also serves as user input entry point
+ */ 
+onSuccess(HttpRequest request)
+{ 
+  for(int i=1; i<5; i++)
+  {
+    test.sections.add(new TestSection(i, request.responseText));
+  }
   scriptButton();
   nextQuestion();
+}
+
+void main()
+{
+  // relative location of the questions on the server
+  var url = "../client/web/questions.xml";
+  // async request to get the file at the given url
+  var request = new HttpRequest.get(url, onSuccess);
 }
