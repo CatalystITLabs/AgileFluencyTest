@@ -38,6 +38,18 @@ class Answer {
     return answerString;
   }
   
+  Element explain(bool selectedByUser, int maxPoints)
+  {
+    var output = new LIElement();
+    output.innerHTML = displayForExplanation(selectedByUser, maxPoints);
+    output.on.mouseOver.add(
+        (event) => output.innerHTML = this.explanation);
+    output.on.mouseOut.add(
+        (event) => output.innerHTML = displayForExplanation(selectedByUser, maxPoints));
+    return output;
+    
+  }
+  
   /**
    * Constructor
    */

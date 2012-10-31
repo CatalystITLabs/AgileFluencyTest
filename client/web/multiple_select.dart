@@ -87,42 +87,19 @@ class MultipleSelect extends MultipleChoice{
   /**
    * Explain why the answer why the test taker was scored the way they were.
    */
-  String explain()
+  Element explain()
   {
     print("Explaining MultipleSelect");
-    var output = new StringBuffer();
-    output.add(super.explain());
-    
-    output.add(super.explain());
-    output.add("<ul>");
+    var output = super.explain();
+    var explainAnswers = new UListElement();
     for (var answer in this.answers)
     {
       var isSelected = this.selectedAnswers.indexOf(answer) != -1;
-      var answerString = answer.displayForExplanation(isSelected, 1);
-      output.add("<li>$answerString</li>");
+      var answerExplanation = answer.explain(isSelected, 1);
+      explainAnswers.insertAdjacentElement("beforeEnd", answerExplanation);
     }
-    output.add("</ul>");
-    
-    /*
-    //explain the user selected answers
-    output.add("You selected: <br/>");
-    for (var iterator in this.selectedAnswers)
-    {
-      output.add("${iterator.text}<br/>");
-      if (iterator.explanation != null && iterator.explanation.length > 0)
-        output.add("${iterator.explanation}<br/>");
-    }
-    
-    //explain the best answers
-    output.add("<br/>The best set of options is: <br/>");
-    for (var iterator in this.getBestAnswers())
-    {
-      output.add("${iterator.text}<br/>");
-      if (iterator.explanation != null && iterator.explanation.length > 0)
-        output.add("${iterator.explanation}<br/>");
-    }
-    */
+    output.insertAdjacentElement("beforeEnd", explainAnswers);
     print(output.toString());
-    return output.toString();
+    return output;
   }
 }

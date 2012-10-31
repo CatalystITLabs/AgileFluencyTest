@@ -197,8 +197,7 @@ class TestSection
     output.addHTML("<p>$percentageScore% Agile Fluency</p>");
     for (var question in this.questions)
     {
-      DivElement questionExplanation = new DivElement();
-      questionExplanation.innerHTML = question.explain();
+      DivElement questionExplanation = question.explain();
       output.insertAdjacentElement('beforeEnd', questionExplanation);
     }
     return output;
