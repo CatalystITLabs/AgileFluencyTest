@@ -19,6 +19,9 @@ class Answer {
    */
   String explanation;
   
+  /**
+   *  returns an html string of the answer text formatted for the explanation
+   */
   String displayForExplanation(bool selectedByUser, int maxPoints)
   {
     var answerString = this.text;
@@ -38,16 +41,38 @@ class Answer {
     return answerString;
   }
   
-  Element explain(bool selectedByUser, int maxPoints)
+  /**
+   * Returns a dom element of the answer for the explanation page.
+   * Takes in parameters for whether this answer was selected by the test taker,
+   * the highest point value answer for the question, and a display mode for the
+   * answer's explanation. 
+   * 0 = don't display answer explanations
+   * 1 = replace text with explanation on hover
+   * 2 = append text with explanation on hover
+   */
+  Element explain(bool selectedByUser, int maxPoints, int displayExplanationMode)
   {
     var output = new LIElement();
-    output.innerHTML = displayForExplanation(selectedByUser, maxPoints);
-    output.on.mouseOver.add(
-        (event) => output.innerHTML = this.explanation);
-    output.on.mouseOut.add(
-        (event) => output.innerHTML = displayForExplanation(selectedByUser, maxPoints));
-    return output;
+    var answerText = displayForExplanation(selectedByUser, maxPoints);
+    output.innerHTML = answerText;
     
+    //replace answer text with explanation on hover
+    if (this.explanation != null && displayExplanationMode == 1)
+    {
+      output.on.mouseOver.add(
+          (event) => output.innerHTML = "<b>$explanation</b>");
+      output.on.mouseOut.add(
+          (event) => output.innerHTML = answerText);
+    }
+    //append answer text with explanation on hover
+    if (this.explanation != null && displayExplanationMode == 2)
+    {
+      output.on.mouseOver.add(
+          (event) => output.insertAdjacentHTML("beforeEnd", "<b>$explanation</b>"));
+      output.on.mouseOut.add(
+          (event) => output.innerHTML = answerText);
+    }
+    return output;
   }
   
   /**

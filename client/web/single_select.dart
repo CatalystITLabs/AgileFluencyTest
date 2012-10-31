@@ -69,13 +69,16 @@ class SingleSelect extends MultipleChoice{
     return element;
   }
   
+  /**
+   * Return a Dom element explaining the question and why the answer why the test taker was scored the way they were.
+   */
   Element explain() {
     print("Explaining SingleSelect");
     var output = super.explain();
     var explainAnswers = new UListElement();
     for (var answer in this.answers)
     {
-      var answerExplanation = answer.explain(answer == selected, this.getMaximumPoints());
+      var answerExplanation = answer.explain(answer == selected, this.getMaximumPoints(), 1);
       explainAnswers.insertAdjacentElement("beforeEnd", answerExplanation);
     }
     output.insertAdjacentElement("beforeEnd", explainAnswers);

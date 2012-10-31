@@ -85,7 +85,7 @@ class MultipleSelect extends MultipleChoice{
   }
   
   /**
-   * Explain why the answer why the test taker was scored the way they were.
+   * Return a Dom element explaining the question and why the answer why the test taker was scored the way they were.
    */
   Element explain()
   {
@@ -96,7 +96,7 @@ class MultipleSelect extends MultipleChoice{
     {
       var isSelected = this.selectedAnswers.indexOf(answer) != -1;
       var answerExplanation = answer.explain(isSelected, 1);
-      explainAnswers.insertAdjacentElement("beforeEnd", answerExplanation);
+      explainAnswers.insertAdjacentElement("beforeEnd", answerExplanation, 1);
     }
     output.insertAdjacentElement("beforeEnd", explainAnswers);
     print(output.toString());
