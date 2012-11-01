@@ -45,12 +45,12 @@ abstract class Question {
   /**
    * Explain why the answer why the test taker was scored the way they were.
    */
-  String explain() {
-    var output = new StringBuffer();
-    output.add("<br/><h4>${this.text}</h4>");
+  Element explain() {
+    var output = new DivElement();
+    output.addHTML("<br/><h4>${this.text}</h4>");
     if (this.explanation != null)
-      output.add("Explanation: ${this.explanation}<br/>");
-    return output.toString();
+      output.addHTML("Explanation: ${this.explanation}<br/>");
+    return output;
   }
   
   /**

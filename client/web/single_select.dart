@@ -69,41 +69,20 @@ class SingleSelect extends MultipleChoice{
     return element;
   }
   
-  String explain() {
+  /**
+   * Return a Dom element explaining the question and why the answer why the test taker was scored the way they were.
+   */
+  Element explain() {
     print("Explaining SingleSelect");
-    var output = new StringBuffer();
-    output.add(super.explain());
-    output.add("<ul>");
+    var output = super.explain();
+    var explainAnswers = new UListElement();
     for (var answer in this.answers)
     {
-      var answerString = answer.displayForExplanation(answer == selected, this.getMaximumPoints());
-      output.add("<li>$answerString</li>");
+      var answerExplanation = answer.explain(answer == selected, this.getMaximumPoints(), 1);
+      explainAnswers.insertAdjacentElement("beforeEnd", answerExplanation);
     }
-    output.add("</ul>");
-    
-    /*
-    //Explain the user selected answer
-    output.add("You selected: ${selected.text}.");
-    if (selected.explanation != null && selected.explanation.length > 0)
-      output.add("<br/>${selected.explanation}");
-    
-    //Explain better answers
-    for (var iterator in this.answers)
-    {
-      if (iterator.points > this.selected.points) 
-      {
-        if (this.selected.points < this.getMaximumPoints())
-          output.add("<br/> A better option is: ");
-        else
-          output.add("<br/> The best option is: ");
-        
-        output.add(iterator.text);
-        if (iterator.explanation != null && iterator.explanation.length > 0)
-          output.add("<br/> ${iterator.explanation}");
-      }
-    }
-    */
+    output.insertAdjacentElement("beforeEnd", explainAnswers);
     print(output.toString());
-    return output.toString();
+    return output;
   }
 }
