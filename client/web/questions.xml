@@ -9,7 +9,7 @@
 					<answer>
 						<points>0</points>
 						<text>When it's finished</text>
-						<explanation>This corresponds to the waterfall method. Agile's most fundamental principal is replacing this model with a cyclical process. This way the customer gets software earlier and can change requirements of the software during development as needed.</explanation>
+						<explanation>This corresponds to the waterfall method. Agile's most fundamental principal is replacing this model with a cyclical and time boxed process. This way the customer gets software earlier and can change requirements of the software during development as needed.</explanation>
 					</answer>
 					<answer>
 						<points>1</points>
@@ -44,7 +44,7 @@
 			        <answer>
 			            <points>1</points>
 			            <text>Clearly defined goals, details will be worked out</text>
-			            <explanation>In Scrum's flat management structure, everyone meets at the beginning of every cycle to plan out the tasks of that cycle as a team. In practice you cannot perfectly complete any phase of software development for any non-trivial project. You should anticipate discovering unforseen problems or better solutions at any point in development. Clearly defined goals are still required to make sure all work and planning is going in the right direction.</explanation>
+			            <explanation>In Scrum's flat management structure, everyone meets at the beginning of every cycle to plan out the tasks of that cycle as a team. In practice you will not complete any phase of software development for the entirety of a non-trivial project ahead of time. You should anticipate discovering unforeseen problems or better solutions at any point in development. Clearly defined goals are still required to make sure all work and planning is going in the right direction.</explanation>
 			        </answer>
 			    </answerList>
 			</question>
@@ -101,7 +101,7 @@
 			    </answerList>
 			</question>
 			<question id="5" type="SingleSelect">
-			    <text>Do you know someone who is responsible for the product?</text>
+			    <text>Do you know someone who is responsible for the product features and direction?</text>
 			    <explanation>Agile believes in customer collaboration over contract negotiation. The more easy and involved the communication with the product owner, the better the product they will receive. The product owner may be any representative of the customers, but they must be an expert in the product's intended use.</explanation>
 			    <answerList>
 			        <answer>
@@ -142,12 +142,12 @@
 			        </answer>
 			        <answer>
 			            <points>0</points>
-			            <text>Developers know what's important</text>
+			            <text>Developers decide what's important</text>
 			            <explanation></explanation>
 			        </answer>
 			        <answer>
 			            <points>1</points>
-			            <text>Team and customer plan multiple iterations</text>
+			            <text>Team and customer plan each iteration together.</text>
 			            <explanation></explanation>
 			        </answer>
 			    </answerList>
@@ -158,7 +158,7 @@
 			    <answerList>
 			        <answer>
 			            <points>0</points>
-			            <text>Write down how many hours spent</text>
+			            <text>Track work against a comprehensive project plan</text>
 			            <explanation></explanation>
 			        </answer>
 			        <answer>
@@ -168,7 +168,7 @@
 			        </answer>
 			        <answer>
 			            <points>0</points>
-			            <text>Write weekly status report</text>
+			            <text>Write periodic status report</text>
 			            <explanation></explanation>
 			        </answer>
 			        <answer>
@@ -180,7 +180,7 @@
 			</question>
 			<question id="8" type="SingleSelect">
 			    <text>Do you know if your team efficiency improves over time?</text>
-			    <explanation>The 12th principle of Agile states, "At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly." By visualizing efficiency with something like a burndown chart, teams will have a better idea of when things are working, and a focus on improving their methods.</explanation>
+			    <explanation>The 12th principle of Agile states, "At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly." By visualizing efficiency with something like a burndown chart, teams can learn their velocity and work to improve it.</explanation>
 			    <answerList>
 			        <answer>
 			            <points>0</points>
@@ -205,12 +205,12 @@
 			    </answerList>
 			</question>
 			<question id="9" type="SingleSelect">
-			    <text>How are big decisions make during development?</text>
+			    <text>How are big decisions made during development?</text>
 			    <explanation>There are two principles of Agile that relate to this question: The 11th, "The best architectures, requirements, and designs emerge from self-organizing teams." and the 5th, "Give them the environment and support they need, and trust them to get the job done."</explanation>
 			    <answerList>
 			        <answer>
 			            <points>0</points>
-			            <text>Management can handle the big decisions for the team</text>
+			            <text>Management usually manages the important decisions</text>
 			            <explanation>While the product owner sets the goals, how to get there should be up to the developers.</explanation>
 			        </answer>
 			        <answer>
@@ -220,7 +220,7 @@
 			        </answer>
 			        <answer>
 			            <points>0</points>
-			            <text>We plan everything out from the beginning so that we won't have to make any big decisions during development</text>
+			            <text>We plan everything out from the beginning so that we predict the entire project ahead of time</text>
 			            <explanation>Agile encourages an iterative process that is ready to change and adapt to ideas or realizations that occur during development.</explanation>
 			        </answer>
 			        <answer>
@@ -241,13 +241,13 @@
 	            <answerList>
 	                <answer id="a">
 	                    <points>0</points>
-	                    <text>Once the product is finished</text>
+	                    <text>Once all features are finished</text>
 	                    <explanation>The longer you wait to introduce an important feature to the system's users, the less time you will have to fix it.</explanation>
 	                </answer>
 	                <answer id="b">
 	                    <points>1</points>
 	                    <text>The end of each iteration or sprint</text>
-	                    <explanation>Agile emphasizes product owner involvement. These releases provide that opportunity.</explanation>
+	                    <explanation>Agile emphasizes user and market feedback. These releases provide that opportunity.</explanation>
 	                </answer>
 	                <answer id="c">
 	                    <points>2</points>
@@ -271,8 +271,8 @@
 	                </answer>
 	                <answer id="b">
 	                    <points>0</points>
-	                    <text>Different developers take responsiblity for different parts of the code depending on their skill set</text>
-	                    <explanation>While developers should take responsiblity for tasks, the code should be available to all developers.</explanation>
+	                    <text>Different developers take responsibility for different parts of the code depending on their skill set</text>
+	                    <explanation>While developers should take responsibility for tasks, the code should be available to all developers.</explanation>
 	                </answer>
 	                <answer id="c">
 	                    <points>0</points>
@@ -323,7 +323,7 @@
 	                <answer id="b">
 	                    <points>1</points>
 	                    <text>Its useful sometimes and we encourage it</text>
-	                    <explanation>Two programmers working as a pair are more than twice as productive as a single programmer working alone, and produce higher quality code.</explanation>
+	                    <explanation>Two programmers working as a pair are proven to be more than twice as productive as a single programmer working alone, and produce higher quality code.</explanation>
 	                </answer>
 	                <answer id="c">
 	                    <points>2</points>
@@ -357,7 +357,7 @@
 	                </answer>
 	                <answer id="d">
 	                    <points>1</points>
-	                    <text>We never work overtime and if it looks like we won't complete our planned iteration goals, we have a meeting to re-scope the iteration</text>
+	                    <text>We rarely work overtime and if it looks like we won't complete our planned iteration goals, we have a meeting to re-scope the iteration</text>
 	                    <explanation>Overtime suggests that there is an issue with the process.</explanation>
 	                </answer>
 	            </answerList>
@@ -385,7 +385,7 @@
 	            </answerList>
 	        </question>
 	        <question id="2" type="SingleSelect">
-	            <text>Does the development team track multiple concrete financial measures about their software like sales, revenue, profit, return on investment, profit per employee?</text>
+	            <text>Does the development team track multiple concrete financial measures about their product like sales, revenue, profit, return on investment, profit per employee?</text>
 	            <explanation>To get the best return on the time invested (RoI), tracking how many problems are solved over time, ie. velocity, provides useful feedback for optimizing the process. However, to optimize the value created, tracking feedback that is more closely tied to value may be more helpful.</explanation>
 	            <answerList>
 	                <answer id="y">
@@ -401,7 +401,7 @@
 	            </answerList>
 	        </question>
 	        <question id="3" type="SingleSelect">
-	            <text>Is the development team ready to change directions or abandon a project, and will it know when it needs to do so, without being surprised by management?</text>
+	            <text>Is the development team ready to change directions or abandon a project, and will it know when it needs to do so?</text>
 	            <explanation>When a team understands the values and costs they are creating, they can use this information to make major decisions impacting the project. This eliminates hand-offs and speeds decision making, which further benefit the return on investment.</explanation>
 	            <answerList>
 	                <answer id="y">
@@ -418,7 +418,7 @@
 	        </question>
 	        <question id="4" type="SingleSelect">
 	            <text>Does the development process sometimes offer multiple versions of a product in a split test and measure which one is preferred?</text>
-	            <explanation>Getting opinions from a product owner is helpful for decisions that could impact the quality of the product. At the same time, the best information doesn't come from a single expert's anecdotes or opinions, but from the scientific method. By offering 2 pieces of working software, you eliminate inaccurate pre-conceived biases, and you can easily samply a large number of customers.</explanation>
+	            <explanation>Getting opinions from a product owner is helpful for decisions that could impact the quality of the product. At the same time, the best information doesn't come from a single expert's anecdotes or opinions, but from the scientific method. By offering 2 pieces of working software, you eliminate inaccurate pre-conceived biases, and you can easily sample a large number of customers.</explanation>
 	            <answerList>
 	                <answer id="y">
 	                    <points>1</points>
@@ -438,7 +438,7 @@
 	            <answerList>
 	                <answer id="y">
 	                    <points>1</points>
-	                    <text>acknowledges and plans around many options, and develops the software to be able to easily accomodate any of these options as long as possible. </text>
+	                    <text>acknowledges and plans around many options, and develops the software to be able to easily accommodate any of these options as long as possible. </text>
 	                    <explanation></explanation>
 	                </answer>
 	                <answer id="n">
@@ -449,8 +449,8 @@
 	            </answerList>
 	        </question>
 	        <question id="6" type="SingleSelect">
-	            <text>Is there at least one business expert or professional who is a true member of the development team?</text>
-	            <explanation>Giving a development team to ability to react quickly and appropriately on business insights will maximize their return on investment, but requires someone in the team with more skills than just programming.</explanation>
+	            <text>Is there at least one person with business expertise and insight who is a true member of the development team?</text>
+	            <explanation>Giving a development team the ability to react quickly and appropriately on business insights will maximize their return on investment, but requires someone in the team with more skills than just programming.</explanation>
 	            <answerList>
 	                <answer id="y">
 	                    <points>1</points>
@@ -471,7 +471,7 @@
 			<description>Your team contributes to enterprise-wide success, and are working at the \“bleeding edge\” of Agile practice. Adapting ideas from advanced management theories and innovating product development methods, your members understand organizational priorities and business direction, and will sacrifice their own needs to support the needs of a product more critical to business success. Techniques include Agile portfolio management, systems thinking, value stream analysis, whole system planning, intact teams, open book management, and radical self-organization.</description>
 	    <questionList>
 	        <question id="1" type="SingleSelect">
-	            <text>Do your development teams understand how they affect the business's value stream?</text>
+	            <text>Do your development teams understand how they affect the business's value stream and do they have the ability to influence it?</text>
 	            <explanation>If your team doesn't understand how its work contributes to the organization's overall value stream, they aren't yet fluent at optimizing for whole system success.</explanation>
 	            <answerList>
 	                <answer id="y">
@@ -520,7 +520,7 @@
 	        </question>
 	        <question id="4" type="SingleSelect">
 	            <text>Does your team work with other teams and spread and share new or improved ideas?</text>
-	            <explanation>Overall productivity increases if knowlege gained during development is effectively shared between teams.</explanation>
+	            <explanation>Overall productivity increases if knowledge gained during development is effectively shared between teams.</explanation>
 	            <answerList>
 	                <answer id="y">
 	                    <points>1</points>
@@ -536,7 +536,7 @@
 	        </question>
 	        <question id="5" type="SingleSelect">
 	            <text>Are individuals or teams in your organization likely to put their job on hold to support a more critical project.</text>
-	            <explanation>Knowledge of the organization's needs can only go so far without the readiness to pause one's own job to assist in someone elses to assist in someone else's when appropriate.</explanation>
+	            <explanation>Knowledge of the organization's needs can only go so far without the readiness to pause one's own job to assist in someone else’s when appropriate.</explanation>
 	            <answerList>
 	                <answer id="y">
 	                    <points>1</points>
