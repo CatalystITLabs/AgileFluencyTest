@@ -160,6 +160,7 @@ class TestSection
       header = "<h4>Destination ${this.star}: ${this.name}<br/>Summary</h4>";
       output.addHTML(header);
       output.elements.add(this.summary());
+      
       output.elements.add(this.explain());
       return output;
     }
@@ -208,7 +209,7 @@ class TestSection
   }
   
   /**
-   * Provide questions and explanations, to be drilled down using CSS3 3D effects (paperfold?)
+   * Provide questions and explanations, to be drilled down using CSS3 3D effects
    */
   Element explain()
   {
@@ -263,7 +264,7 @@ class TestSection
     var agile = 0;
     output.id="summary";
     
-    var image = "../client/web/images/stamp${this.star}.jpg";
+    var image = "../client/web/images/stamp_${this.star}.png";
     
     //calculations
     var percentageScore = (getUserAnswerPoints() * 100 ~/ getMaxPoints()).toInt();
@@ -274,9 +275,12 @@ class TestSection
       if (question.getUserAnswerPoints() > 0)
         agile++;
     }
+        
+    /*
+     * If we want to use the section images for bullets
+     * output.style.listStyleImage = "url($image)";
+     */
     
-    
-    output.style.listStyleImage = "url($image)";
     //stamp image placeholder. The plan will be to zoom into this, to show the summary information.
     output.addHTML("<img src='$image' alt='Placeholder for stamp'/>");
     

@@ -20,6 +20,11 @@ ul {
   text-align: left;
 }
 
+li list-style {
+  height: 1em;
+  width: 1em;
+}
+
 /*-----------------------------------------------------*/
 /*title and subtitle */
 #banner {
