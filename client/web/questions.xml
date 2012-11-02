@@ -1,7 +1,7 @@
 <assessment>
 	<section level="1">
-			<name>Creating Business Value</name>
-			<description>Your team is shifting culture to focus on the overall success of the team, instead of personal contribution. You are learning and practicing with tools such as Scrum and Kanban to deliver business value in terms of what the client, business, or user wants. As a result, your team will be able to focus on part of the work that delivers maximum value!</description>
+			<name>Focus on Value</name>
+			<description>Your team is shifting culture to focus on the overall success of the team, instead of personal contribution. You are learning and practicing with tools such as Scrum and Kanban to deliver business value in terms of what the client, business, or user wants. As a result, your team will be able to focus on the parts of work that deliver maximum value!</description>
 	    <reference>http://martinfowler.com/articles/agileFluency.html#One-starTeamsCreateBusinessValue</reference>
 	    <questionList>
 			<question id="1" type="SingleSelect">
@@ -234,7 +234,7 @@
 		</questionList>
 	</section>
 	<section level="2">
-		<name>Delivering at Market Cadence</name>
+		<name>Deliver Value</name>
 		<description>Your team is building upon the previous destination (Creating Business Value) to realize the value as soon as the market is ready to accept it. By employing methods such as Extreme Programming, in addition to the methods from the first destination’s tools, you consistently and predictably deliver value.</description>
 		<reference>http://martinfowler.com/articles/agileFluency.html#Two-starTeamsDeliverOnTheMarketx2019sCadence</reference>
 		<questionList>
@@ -367,7 +367,7 @@
 	    </questionList>
 	</section>
 	<section level="3">
-			<name>Optimizing Value</name>
+			<name>Optimize Value</name>
 			<description>Your team now focuses on delivering the most value possible for your investment. Your team uses methods such as Lean Startup, and possibly ideas from Lean Software Development. You might employ techniques such as Agile chartering, embedded product management teams, customer discovery, and adaptive planning. By doing this, you understand what the market wants, what your business needs, and how to meet those needs. If you’re in a startup environment, you know what you need to learn and how to go about learning it.</description>
 	    <reference>http://martinfowler.com/articles/agileFluency.html#Three-starTeamsOptimizeTheirValue</reference>
 	    <questionList>
@@ -470,7 +470,7 @@
 	    </questionList>
 	</section>
 	<section level="4">
-			<name>Optimizing the System</name>
+			<name>Optimize for Systems</name>
 			<description>Your team contributes to enterprise-wide success, and are working at the \“bleeding edge\” of Agile practice. Adapting ideas from advanced management theories and innovating product development methods, your members understand organizational priorities and business direction, and will sacrifice their own needs to support the needs of a product more critical to business success. Techniques include Agile portfolio management, systems thinking, value stream analysis, whole system planning, intact teams, open book management, and radical self-organization.</description>
 	    <reference>http://martinfowler.com/articles/agileFluency.html#Four-starTeamsContributeToOptimizingTheSystem</reference>
 	    <questionList>
