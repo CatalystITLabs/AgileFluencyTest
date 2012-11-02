@@ -1,5 +1,6 @@
 <assessment>
 	<section level="1">
+			<name>stamp_1</name>
 	    <questionList>
 			<question id="1" type="SingleSelect">
 				<text>How often in development do you produce fully working, documented, and tested software?</text>
@@ -231,6 +232,7 @@
 		</questionList>
 	</section>
 	<section level="2">
+		<name>stamp_2</name>
 		<questionList>
 	        <question id="1" type="SingleSelect">
 	            <text>Without changing your team's programming habits, how often could your team release a working product to the customer?</text>
@@ -361,6 +363,7 @@
 	    </questionList>
 	</section>
 	<section level="3">
+			<name>stamp_3</name>
 	    <questionList>
 	        <question id="1" type="SingleSelect">
 	            <text>Does the development team track concrete measurements of customer satisfaction?</text>
@@ -461,6 +464,7 @@
 	    </questionList>
 	</section>
 	<section level="4">
+			<name>stamp_4</name>
 	    <questionList>
 	        <question id="1" type="SingleSelect">
 	            <text>Do your development teams understand how they affect the business's value stream and do they have the ability to influence it?</text>
