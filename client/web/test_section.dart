@@ -11,6 +11,7 @@ class TestSection
   int star;
   String name;
   String description;
+  String reference;
   
   /**
    *  constructor inits the star level, list of questions and the XML element to query
@@ -36,6 +37,8 @@ class TestSection
       this.name = sectionName.last().toString();
       XmlCollection sectionDescription = section.query('description');
       this.description = sectionDescription.last().toString();
+      XmlCollection referenceURL = section.query('reference');
+      this.reference = referenceURL.last().text;
       XmlCollection questionList = section.queryAll('question');
       
       for(XmlElement questionEle in questionList)
@@ -278,15 +281,14 @@ class TestSection
     output.addHTML("<img src='$image' alt='Placeholder for stamp'/>");
     
     //Progress information...
-    output.addHTML("<h4>Destination ${this.star} Progress:</h4><ul id=\"right\">");
+    output.addHTML("<h4>Destination ${this.star} Progress:</h4><ul>");
     output.addHTML("<li>Total Agile Answers: $agile/${this.questions.length}</li>");
     output.addHTML("<li>Most Fluent Answers: $best/${this.questions.length}</li>");
     output.addHTML("<li>Estimated Progress: ${percentageScore}%</li></ul>");
     
     //section summary
     output.addHTML("<p>${this.description}</p>");
-//    output.addHTML("$percentageScore% Agile Fluency");
-    
+    output.addHTML("Learn more about ${this.name} <a href='${this.reference}'>here</a>");    
     
     return output;
   }
