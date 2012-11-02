@@ -46,13 +46,6 @@ class Test {
    * return an html dom element for the current state of the test
    */
   Element display() {
-    //build header
-    var header = this.currentSection.name;
-    if (header == null)
-      header = "Section ${this.sections.indexOf(currentSection) + 1}";
-    var questionNumber = this.currentSection.questions.indexOf(this.currentSection.currentQuestion, 0) + 1;
-    var sectionLength = this.currentSection.questions.length;
-    header = "$header: Question $questionNumber of $sectionLength";
     
     //display question or explanation
     Element output = this.currentSection.display();
@@ -60,8 +53,6 @@ class Test {
     {
       output = new Element.html("<p>No output from TestSection.</p>");
     }
-    //add header
-    output.insertAdjacentHTML("afterBegin", "<h4>$header</h4>");
     return output;
   }
   

@@ -9,6 +9,8 @@ class TestSection
   List<MultipleChoice> questions;
   XmlElement allQnA;
   int star;
+  String name;
+  String description;
   
   /**
    *  constructor inits the star level, list of questions and the XML element to query
@@ -30,6 +32,10 @@ class TestSection
     
     for(XmlElement section in sections)
     {
+      XmlCollection sectionName = section.query('name');
+      this.name = sectionName.last().toString();
+      XmlCollection sectionDescription = section.query('description');
+      this.description = sectionDescription.last().toString();
       XmlCollection questionList = section.queryAll('question');
       
       for(XmlElement questionEle in questionList)
@@ -70,11 +76,6 @@ class TestSection
       }
     }
   }
-  
-  /**
-   * The name of the section
-   */
-  String name;
   
   /**
    * The current question to be displayed and answered
@@ -144,17 +145,35 @@ class TestSection
   Element display()
   {
     enableNextButton();
+    
+    var header;
+    var output = new DivElement();
+    
     //if the test section is finished stop returning pages
     if (finished)
       return null;
     
-    if (explaining)
-      return this.explain();
+    if (explaining){
+      header = "<h4>Destination ${this.star}: ${this.name}<br/>Summary</h4>";
+      output.addHTML(header);
+      output.elements.add(this.summary());
+      output.elements.add(this.explain());
+      return output;
+    }
     
     if (currentQuestion != null)
     {
       disableNextButton();
-      return this.currentQuestion.display();
+      
+      if (header == null) {
+        var sectionHeader = "Destination ${this.star}: ${this.name}";
+        var questionNumber = this.questions.indexOf(this.currentQuestion,0) + 1;
+        var sectionLength = this.questions.length;
+        header = "$sectionHeader<br/> Question $questionNumber of $sectionLength";
+      }
+      output.addHTML("<h4>$header</h4>");
+      output.insertAdjacentElement("beforeEnd",this.currentQuestion.display());
+      return output;
     }
     return null;
   }
@@ -186,18 +205,19 @@ class TestSection
   }
   
   /**
-   * Explain all questions in the section as needed.
+   * Provide questions and explanations, to be drilled down using CSS3 3D effects (paperfold?)
    */
   Element explain()
   {
     print("Explaining section.");
     var output = new DivElement();
+     
+    //Explanation section
     output.id="explanation";
-    var percentageScore = (getUserAnswerPoints() * 100 ~/ getMaxPoints()).toInt();
-    output.addHTML("<p>$percentageScore% Agile Fluency</p>");
     for (var question in this.questions)
     {
       DivElement questionExplanation = question.explain();
+      questionExplanation.id="explanation";
       output.insertAdjacentElement('beforeEnd', questionExplanation);
     }
     return output;
@@ -227,5 +247,47 @@ class TestSection
       total += question.getUserAnswerPoints();
     }
     return total;
+  }
+  
+  /**
+   * Brief summary section: stamp, progress, and review of section.
+   */
+  Element summary()
+  {
+    print("Summary section.");
+    var output = new DivElement();
+    var best = 0;
+    var agile = 0;
+    output.id="summary";
+    
+    var image = "../client/web/images/stamp${this.star}.jpg";
+    
+    //calculations
+    var percentageScore = (getUserAnswerPoints() * 100 ~/ getMaxPoints()).toInt();
+    for (var question in this.questions)
+    {
+      if (question.getUserAnswerPoints() == question.getMaximumPoints())
+        best++;
+      if (question.getUserAnswerPoints() > 0)
+        agile++;
+    }
+    
+    
+    output.style.listStyleImage = "url($image)";
+    //stamp image placeholder. The plan will be to zoom into this, to show the summary information.
+    output.addHTML("<img src='$image' alt='Placeholder for stamp'/>");
+    
+    //Progress information...
+    output.addHTML("<h4>Destination ${this.star} Progress:</h4><ul id=\"right\">");
+    output.addHTML("<li>Total Agile Answers: $agile/${this.questions.length}</li>");
+    output.addHTML("<li>Most Fluent Answers: $best/${this.questions.length}</li>");
+    output.addHTML("<li>Estimated Progress: ${percentageScore}%</li></ul>");
+    
+    //section summary
+    output.addHTML("<p>${this.description}</p>");
+//    output.addHTML("$percentageScore% Agile Fluency");
+    
+    
+    return output;
   }
 }
