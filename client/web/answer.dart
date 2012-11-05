@@ -32,7 +32,7 @@ class Answer {
     if (pointsColorNum == 255)
       pointsColorHex = "FF";
     else if (pointsColorNum > 0)
-      pointsColorHex = 99 * this.points ~/ maxPoints;
+      pointsColorHex = pointsColorNum.toRadixString(16);
     
     if (pointsColorNum != 0)
       answerString = "<font color=\"rgb(0,0,$pointsColorHex)\">$answerString</font>";
