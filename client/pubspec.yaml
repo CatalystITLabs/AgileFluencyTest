@@ -4,3 +4,5 @@ description:  A sample application
 dependencies:
   xml:
     git: https://github.com/prujohn/dart-xml.git
+  presentation:
+    git: https://github.com/StephenLujan/presentation.dart
