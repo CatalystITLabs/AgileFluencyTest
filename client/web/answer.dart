@@ -27,12 +27,8 @@ class Answer {
     var answerString = this.text;
     var pointsColorNum = (255 * this.points / maxPoints).toInt();
     
-    //TODO: better conversion to hex
-    var pointsColorHex = "0";
-    if (pointsColorNum == 255)
-      pointsColorHex = "FF";
-    else if (pointsColorNum > 0)
-      pointsColorHex = pointsColorNum.toRadixString(16);
+    //Hex value for the answer formatting, based on points.
+    var pointsColorHex = pointsColorNum.toRadixString(16);
     
     if (pointsColorNum != 0)
       answerString = "<font color=\"rgb(0,0,$pointsColorHex)\">$answerString</font>";
