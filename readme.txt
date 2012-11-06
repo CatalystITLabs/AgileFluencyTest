@@ -3,6 +3,10 @@ The Agile Fluency Test project is an open-source project. Inspired by "Your Path
 There are a number of great resources available for agile fluency test questions, following the concepts introduced in the article above. Here are some of the articles we used to develop and inspire test questions:
 
 One Star Fluency:
+http://www.scrumalliance.org/pages/what_is_scrum
+http://www.scrum.org/ScrumGuide.aspx
+http://en.wikipedia.org/wiki/Kanban_%28development%29
+http://en.wikipedia.org/wiki/Scrum_%28development%29
 http://www.piratson.se/archive/Agile_Karlskrona_test.html
 http://agileconsortium.blogspot.com/2007/12/nokia-test.html
 

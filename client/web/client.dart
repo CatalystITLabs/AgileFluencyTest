@@ -49,6 +49,7 @@ onSuccess(HttpRequest request)
   }
   
   nextQuestion();
+  nextQuestion();
   scriptButton();
 }
 
