@@ -10,7 +10,7 @@ void addBackground()
 {
   var element = new ImageElement();
   element.src = "web/images/pixel_map_generic_wloc.png";
-  var slide = presentation.addElementSlide(element, 100.0, 0, 0, -10000, 0, 0, 0);
+  var slide = presentation.addElementSlide(element, 100.0, 0, 0, -50, 0, 0, 0);
   //no transitions because this slide is never focused / transitioned to.
 }
 
