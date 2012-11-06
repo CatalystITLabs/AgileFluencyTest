@@ -6,6 +6,14 @@ Test test = new Test();
 Presentation presentation = new Presentation(query("#question"));
 num xPosition = 0; 
 
+void addBackground()
+{
+  var element = new ImageElement();
+  element.src = "web/images/pixel_map_generic_wloc.png";
+  var slide = presentation.addElementSlide(element, 100.0, 0, 0, -10000, 0, 0, 0);
+  //no transitions because this slide is never focused / transitioned to.
+}
+
 ///Advance the test to the next question or step
 void nextQuestion()
 {
@@ -49,6 +57,7 @@ onSuccess(HttpRequest request)
   }
   
   nextQuestion();
+  addBackground();
   nextQuestion();
   scriptButton();
 }

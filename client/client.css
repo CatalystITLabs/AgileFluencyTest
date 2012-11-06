@@ -62,10 +62,11 @@ li list-style {
 
 #question {
   width: 100%;
-  height: 30em;
+  height: 35em;
   position: relative;
   border: 1px solid #ccc;
   background-color: #DDDDDD;
+  /*background-image:url('web/images/pixel_map_generic_wloc.png');*/
   overflow-y:hidden;
   overflow-x:hidden;
   
