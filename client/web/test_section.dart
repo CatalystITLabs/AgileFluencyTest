@@ -34,11 +34,11 @@ class TestSection
     for(XmlElement section in sections)
     {
       XmlCollection sectionName = section.query('name');
-      this.name = sectionName.last().toString();
+      this.name = sectionName.last.toString();
       XmlCollection sectionDescription = section.query('description');
-      this.description = sectionDescription.last().toString();
+      this.description = sectionDescription.last.toString();
       XmlCollection referenceURL = section.query('reference');
-      this.reference = referenceURL.last().text;
+      this.reference = referenceURL.last.text;
       XmlCollection questionList = section.queryAll('question');
       
       for(XmlElement questionEle in questionList)

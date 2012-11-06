@@ -1,21 +1,31 @@
 import 'dart:html';
 import "test.dart";
+import "package:presentation/presentation.dart";
 
 Test test = new Test();
+Presentation presentation = new Presentation(query("#question"));
+num xPosition = 0; 
 
-/**
- * Advance the test to the next question or step
- */
+///Advance the test to the next question or step
 void nextQuestion()
 {
-  assert(query("#question") != null);
-  //replace the elements in the current question div with the next step in the Test
-  query("#question").elements= test.next().elements;
-  //add a next button
-  //query("#question").insertAdjacentElement('beforeEnd', nextButton());
+  //get next step from test
+  var element = test.next();
+  assert(element != null);
+  
+  //create and add a new slide for this next test step
+  var slide = presentation.addElementSlide(element, 1.0, xPosition, 0, 0, 0, 0, 0);
+  xPosition += 2000;
+  
+  //create and add the transition to this next test step
+  var transition = new BasicTransition(slide, presentation.currentSlide);
+  presentation.transitions.add(transition);
+  
+  //use the presentation to progress to this next step
+  presentation.next();
 }
 
-
+///Adds on click event to the next question button
 void scriptButton()
 {
   assert(query("#nextQuestion") != null);
@@ -25,7 +35,7 @@ void scriptButton()
 }
 
 /**
- * call back method is called by the request get method
+ * call back method is called by the HttpRequest get method
  * processes the the response text by passing it to the test 
  * section constructor
  * 
@@ -37,8 +47,9 @@ onSuccess(HttpRequest request)
   {
     test.sections.add(new TestSection(i, request.responseText));
   }
-  scriptButton();
+  
   nextQuestion();
+  scriptButton();
 }
 
 void main()

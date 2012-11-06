@@ -1,6 +1,7 @@
 library test;
 import 'dart:html';
 import 'packages/xml/xml.dart';
+import 'packages/presentation/presentation.dart';
 import 'dart:math' as Math;
 
 part "question.dart";
@@ -10,7 +11,7 @@ part "multiple_select.dart";
 part "single_select.dart";
 part "test_section.dart";
 
-class Test {
+class Test {  
   List<TestSection> sections = new List<TestSection>();
   
   TestSection currentSection;
@@ -53,6 +54,7 @@ class Test {
     {
       output = new Element.html("<p>No output from TestSection.</p>");
     }
+    output.style.width = "50em";
     return output;
   }
   
