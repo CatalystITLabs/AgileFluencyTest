@@ -1,5 +1,5 @@
 import 'dart:html';
-import "test.dart";
+import "../../lib/test.dart";
 import "package:presentation/presentation.dart";
 
 Test test = new Test();
@@ -9,7 +9,7 @@ num xPosition = 0;
 void addBackground()
 {
   var element = new ImageElement();
-  element.src = "web/images/pixel_map_generic_wloc.png";
+  element.src = "images/pixel_map_generic_wloc.png";
   //var slide = presentation.addElementSlide(element, 100.0, 0, 0, -50, 0, 0, 0);
   var slide = SlideShow.makeSlideFromElement(element, 100.0, 0, 0, -50, 0, 0, 0);
   presentation.cam.scene.insertAdjacentElement("beforeEnd", slide.element);
@@ -66,7 +66,7 @@ onSuccess(HttpRequest request)
 void main()
 {
   // relative location of the questions on the server
-  var url = "../client/web/questions.xml";
+  var url = "../questions.xml";
   // async request to get the file at the given url
   var request = new HttpRequest.get(url, onSuccess);
 }

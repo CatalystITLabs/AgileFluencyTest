@@ -1,14 +1,14 @@
 library test;
 import 'dart:html';
-import 'packages/xml/xml.dart';
-import 'packages/presentation/presentation.dart';
+import '../packages/xml/xml.dart';
+import '../packages/presentation/presentation.dart';
 import 'dart:math' as Math;
 
-part "question.dart";
-part "answer.dart";
-part "multiple_choice.dart";
-part "multiple_select.dart";
-part "single_select.dart";
+part "src/question.dart";
+part "src/answer.dart";
+part "src/multiple_choice.dart";
+part "src/multiple_select.dart";
+part "src/single_select.dart";
 part "test_section.dart";
 
 class Test {  
