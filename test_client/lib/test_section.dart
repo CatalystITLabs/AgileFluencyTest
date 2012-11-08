@@ -143,40 +143,38 @@ class TestSection
   }
   
   /**
+   * Display the current question
+   */
+  Element displayCurrentQuestion()
+  {
+    var output = new DivElement();
+    var sectionHeader = "Destination ${this.star}: ${this.name}";
+    var questionNumber = this.questions.indexOf(this.currentQuestion,0) + 1;
+    var sectionLength = this.questions.length;
+    var header = "$sectionHeader<br/> Question $questionNumber of $sectionLength";
+    output.addHTML("<h4>$header</h4>");
+    output.insertAdjacentElement("beforeEnd",this.currentQuestion.display());
+  }
+  
+  /**
    * Display the current question or page
    */
   Element display()
   {
     enableNextButton();
     
-    var header;
-    var output = new DivElement();
-    
     //if the test section is finished stop returning pages
     if (finished)
       return null;
     
     if (explaining){
-
-      output = this.summary();
-      
-      //output.elements.add(this.explain());
-      return output;
+      return this.summary();
     }
     
     if (currentQuestion != null)
     {
       disableNextButton();
-      
-      if (header == null) {
-        var sectionHeader = "Destination ${this.star}: ${this.name}";
-        var questionNumber = this.questions.indexOf(this.currentQuestion,0) + 1;
-        var sectionLength = this.questions.length;
-        header = "$sectionHeader<br/> Question $questionNumber of $sectionLength";
-      }
-      output.addHTML("<h4>$header</h4>");
-      output.insertAdjacentElement("beforeEnd",this.currentQuestion.display());
-      return output;
+      return displayCurrentQuestion();
     }
     return null;
   }
