@@ -1,6 +1,6 @@
 import 'dart:html';
 import "../../lib/test.dart";
-import "package:presentation/presentation.dart";
+import "../../packages/presentation/presentation.dart";
 
 Test test = new Test();
 SlideShow presentation = new BasicSlideShow(query("#question"));
