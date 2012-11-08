@@ -13,6 +13,16 @@ class TestSection
   String description;
   String reference;
   
+  //navigation
+  ///The current question to be displayed and answered
+  Question currentQuestion;
+  bool atSummary = false;
+  bool atExplanation = false;
+  bool finished = false;
+  
+  //explantation settings
+  bool explainCorrectQuestions = false;
+  
   /**
    *  constructor inits the star level, list of questions and the XML element to query
    */ 
@@ -79,16 +89,6 @@ class TestSection
       }
     }
   }
-  
-  /**
-   * The current question to be displayed and answered
-   */
-  Question currentQuestion;
-  
-  bool explainAllQuestions = false;
-  bool explainWrongQuestions = true;
-  bool explaining = false;
-  bool finished = false;
   
   void enableNextButton()
   {
@@ -168,8 +168,10 @@ class TestSection
     if (finished)
       return null;
     
-    if (explaining){
-      return this.summary();
+    if (atSummary){
+      if (! this.atExplanation)
+        return this.summary();
+      else return this.explain();
     }
     
     if (currentQuestion != null)
@@ -193,14 +195,14 @@ class TestSection
     }
     
     //if we're explaining we're finished next
-    if (explaining)
+    if (atSummary)
       finished = true;
     else
     {
       var question = nextQuestion();
       //if we run out of questions we explain next
       if (question == null)
-        explaining = true;
+        atSummary = true;
     }
     
     return this.display();
@@ -251,6 +253,12 @@ class TestSection
     return total;
   }
   
+  void toExplanation()
+  {
+    atSummary = false;
+    atExplanation = true;
+  }
+  
   /**
    * Brief summary section: stamp, progress, and review of section.
    */
@@ -295,9 +303,10 @@ class TestSection
     output.addHTML("<p>Learn more about ${this.name} <a href='${this.reference}'>here</a></p>");
    
     //link explanation
+    //TODO: modify on click event to actually do something
     var link = new ButtonElement();
     link.on.click.add(
-        (event) => explain());
+        (event) => toExplanation());
     link.text = "Question Explanations";
     output.insertAdjacentElement("beforeEnd", link);
     return output;
