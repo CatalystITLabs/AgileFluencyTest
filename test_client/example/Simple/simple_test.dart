@@ -1,41 +1,21 @@
 import 'dart:html';
 import "../../lib/test.dart";
-import "../../packages/presentation/presentation.dart";
 
 Test test = new Test();
-SlideShow presentation = new BasicSlideShow(query("#question"));
-num xPosition = 0; 
 
-void addBackground()
-{
-  var element = new ImageElement();
-  element.src = "images/pixel_map_generic_wloc.png";
-  //var slide = presentation.addElementSlide(element, 100.0, 0, 0, -50, 0, 0, 0);
-  var slide = SlideShow.makeSlideFromElement(element, 100.0, 0, 0, -50, 0, 0, 0);
-  presentation.cam.scene.insertAdjacentElement("beforeEnd", slide.element);
-  //no transitions because this slide is never focused / transitioned to.
-}
-
-///Advance the test to the next question or step
+/**
+ * Advance the test to the next question or step
+ */
 void nextQuestion()
 {
-  //get next step from test
-  var element = test.next();
-  assert(element != null);
-  
-  //create and add a new slide for this next test step
-  var slide = presentation.addElementSlide(element, 1.0, xPosition, 0, 0, 0, 0, 0);
-  xPosition += 2000;
-  
-  //create and add the transition to this next test step
-  //var transition = new BasicTransition(slide, presentation.currentSlide);
-  //presentation.transitions.add(transition);
-  
-  //use the presentation to progress to this next step
-  presentation.next();
+  assert(query("#question") != null);
+  //replace the elements in the current question div with the next step in the Test
+  query("#question").elements= test.next().elements;
+  //add a next button
+  //query("#question").insertAdjacentElement('beforeEnd', nextButton());
 }
 
-///Adds on click event to the next question button
+
 void scriptButton()
 {
   assert(query("#nextQuestion") != null);
@@ -45,7 +25,7 @@ void scriptButton()
 }
 
 /**
- * call back method is called by the HttpRequest get method
+ * call back method is called by the request get method
  * processes the the response text by passing it to the test 
  * section constructor
  * 
@@ -57,10 +37,8 @@ onSuccess(HttpRequest request)
   {
     test.sections.add(new TestSection(i, request.responseText));
   }
-  
-  addBackground();
-  nextQuestion();
   scriptButton();
+  nextQuestion();
 }
 
 void main()
