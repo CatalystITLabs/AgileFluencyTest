@@ -157,11 +157,10 @@ class TestSection
       return null;
     
     if (explaining){
-      header = "<h4>Destination ${this.star}: ${this.name}<br/>Summary</h4>";
-      output.addHTML(header);
-      output.elements.add(this.summary());
+
+      output = this.summary();
       
-      output.elements.add(this.explain());
+      //output.elements.add(this.explain());
       return output;
     }
     
@@ -263,6 +262,8 @@ class TestSection
     var best = 0;
     var agile = 0;
     output.id="summary";
+    
+    output.addHTML("<h4>Destination ${this.star}: ${this.name}<br/>Summary</h4>");
     
     var image = "../client/web/images/stamp_${this.star}.png";
     

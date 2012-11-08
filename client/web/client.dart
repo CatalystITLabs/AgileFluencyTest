@@ -3,14 +3,16 @@ import "test.dart";
 import "package:presentation/presentation.dart";
 
 Test test = new Test();
-Presentation presentation = new Presentation(query("#question"));
+SlideShow presentation = new BasicSlideShow(query("#question"));
 num xPosition = 0; 
 
 void addBackground()
 {
   var element = new ImageElement();
   element.src = "web/images/pixel_map_generic_wloc.png";
-  var slide = presentation.addElementSlide(element, 100.0, 0, 0, -50, 0, 0, 0);
+  //var slide = presentation.addElementSlide(element, 100.0, 0, 0, -50, 0, 0, 0);
+  var slide = SlideShow.makeSlideFromElement(element, 100.0, 0, 0, -50, 0, 0, 0);
+  presentation.cam.scene.insertAdjacentElement("beforeEnd", slide.element);
   //no transitions because this slide is never focused / transitioned to.
 }
 
@@ -26,8 +28,8 @@ void nextQuestion()
   xPosition += 2000;
   
   //create and add the transition to this next test step
-  var transition = new BasicTransition(slide, presentation.currentSlide);
-  presentation.transitions.add(transition);
+  //var transition = new BasicTransition(slide, presentation.currentSlide);
+  //presentation.transitions.add(transition);
   
   //use the presentation to progress to this next step
   presentation.next();
@@ -56,7 +58,6 @@ onSuccess(HttpRequest request)
     test.sections.add(new TestSection(i, request.responseText));
   }
   
-  nextQuestion();
   addBackground();
   nextQuestion();
   scriptButton();
