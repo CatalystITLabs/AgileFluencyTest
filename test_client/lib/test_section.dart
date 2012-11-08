@@ -154,6 +154,7 @@ class TestSection
     var header = "$sectionHeader<br/> Question $questionNumber of $sectionLength";
     output.addHTML("<h4>$header</h4>");
     output.insertAdjacentElement("beforeEnd",this.currentQuestion.display());
+    return output;
   }
   
   /**
