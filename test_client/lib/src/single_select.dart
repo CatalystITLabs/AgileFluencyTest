@@ -82,7 +82,6 @@ class SingleSelect extends MultipleChoice{
       explainAnswers.insertAdjacentElement("beforeEnd", answerExplanation);
     }
     output.insertAdjacentElement("beforeEnd", explainAnswers);
-    print(output.toString());
     return output;
   }
 }

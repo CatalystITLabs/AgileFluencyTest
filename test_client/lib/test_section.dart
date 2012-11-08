@@ -292,8 +292,14 @@ class TestSection
     
     //section summary
     output.addHTML("<p>${this.description}</p>");
-    output.addHTML("Learn more about ${this.name} <a href='${this.reference}'>here</a>");    
-    
+    output.addHTML("<p>Learn more about ${this.name} <a href='${this.reference}'>here</a></p>");
+   
+    //link explanation
+    var link = new ButtonElement();
+    link.on.click.add(
+        (event) => explain());
+    link.text = "Question Explanations";
+    output.insertAdjacentElement("beforeEnd", link);
     return output;
   }
 }
