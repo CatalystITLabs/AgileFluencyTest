@@ -45,6 +45,7 @@ class Answer {
    * 0 = don't display answer explanations
    * 1 = replace text with explanation on hover
    * 2 = append text with explanation on hover
+   * 3 = modal text with explanations on click
    */
   Element explain(bool selectedByUser, int maxPoints, int displayExplanationMode)
   {
@@ -68,6 +69,26 @@ class Answer {
       output.on.mouseOut.add(
           (event) => output.innerHTML = answerText);
     }
+    if (this.explanation != null && displayExplanationMode == 3)
+    {
+      var modal = new DivElement();
+      modal.innerHTML= "<p>$explanation</p>";
+      modal.style
+      ..height = "0px"
+      //..top = "0em"
+      ..margin = "0px"
+      ..position = "absolute";
+  
+      //..visibility = "hidden";
+      
+      output.insertAdjacentElement("beforeEnd", modal);
+      output.on.click.add(
+          (event) => modal.style.visibility = "Abracadabra");
+          //(event) => print("test worked"));
+      //output.on.mouseOut.add(
+      //    (event) => modal.style.visibility = "hidden");
+    }
+
     return output;
   }
   
