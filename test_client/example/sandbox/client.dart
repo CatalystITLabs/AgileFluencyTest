@@ -4,7 +4,25 @@ import "../../packages/presentation/presentation.dart";
 
 Test test = new Test();
 SlideShow presentation = new BasicSlideShow(query("#viewBox"));
-num xPosition = 0; 
+
+void addTestSlide()
+{
+  // your content here
+  //var slideElement = test.currentSection.displayCurrentQuestion();
+  //var slideElement = test.currentSection.explain();
+  var slideElement = test.currentSection.summary();
+  
+  //your callbacks here
+  slideElement.on.click.add((event) => done());
+  
+  presentation.addElementSlide(slideElement, 1.0, 200, 200, 0, 0, 0, 0);
+  
+}
+
+void done()
+{
+  presentation.cam.move(1.0, 0, 0, 100000, 0, 0, 0);
+}
 
 void addBackground()
 {
@@ -14,34 +32,6 @@ void addBackground()
   var slide = new Slide(element, 100.0, 0, 0, -50, 0, 0, 0);
   presentation.addBackgroundSlide(slide);
   //no transitions because this slide is never focused / transitioned to.
-}
-
-///Advance the test to the next question or step
-void nextQuestion()
-{
-  //get next step from test
-  var element = test.next();
-  assert(element != null);
-  
-  //create and add a new slide for this next test step
-  var slide = new DynamicSlide(element, 1.0, xPosition, 0, 0, 0, 0, 0);
-  xPosition += 2000;
-  
-  //create and add the transition to this next test step
-  //var transition = new BasicTransition(slide, presentation.currentSlide);
-  //presentation.transitions.add(transition);
-  
-  //use the presentation to progress to this next step
-  presentation.next();
-}
-
-///Adds on click event to the next question button
-void scriptButton()
-{
-  assert(query("#nextQuestion") != null);
-  Element button = query('#nextQuestion');
-  button.on.click.add(
-      (event) => nextQuestion());
 }
 
 /**
@@ -57,10 +47,10 @@ onSuccess(HttpRequest request)
   {
     test.sections.add(new TestSection(i, request.responseText));
   }
-  
+  test.next();
   addBackground();
+  addTestSlide();
   presentation.start();
-  scriptButton();
 }
 
 void main()

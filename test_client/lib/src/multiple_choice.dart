@@ -49,8 +49,8 @@ abstract class MultipleChoice extends Question
   Element display()
   {
     var output = new DivElement();
-    output.id="question";
-    output.insertAdjacentElement('beforeEnd',new Element.html("""<p>${this.text}</p>"""));
+    output.id = "question";
+    output.insertAdjacentElement('beforeEnd', new Element.html("""<p>${this.text}</p>"""));
     output.insertAdjacentElement('beforeEnd', this.displayAnswers());
     //output.addHTML("<input id=\"nextQuestion\" type=\"button\" value=\"Next Question\">");
     return output;
