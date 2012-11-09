@@ -217,11 +217,11 @@ class TestSection
     var output = new DivElement();
      
     //Explanation section
-    output.id="explanation";
+    output.id = "explanation";
     for (var question in this.questions)
     {
       DivElement questionExplanation = question.explain();
-      questionExplanation.id="explanation";
+      questionExplanation.id = "explanation";
       output.insertAdjacentElement('beforeEnd', questionExplanation);
     }
     return output;
@@ -268,7 +268,7 @@ class TestSection
     var output = new DivElement();
     var best = 0;
     var agile = 0;
-    output.id="summary";
+    output.id = "summary";
     
     output.addHTML("<h4>Destination ${this.star}: ${this.name}<br/>Summary</h4>");
     
