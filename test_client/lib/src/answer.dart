@@ -54,7 +54,7 @@ class Answer {
     output.innerHTML = answerText;
     
     //replace answer text with explanation on hover
-    if (this.explanation != null && displayExplanationMode == 1)
+    if (this.explanation != null && this.explanation != "" && displayExplanationMode == 1)
     {
       output.on.mouseOver.add(
           (event) => output.innerHTML = "<b>$explanation</b>");
@@ -62,14 +62,14 @@ class Answer {
           (event) => output.innerHTML = answerText);
     }
     //append answer text with explanation on hover
-    if (this.explanation != null && displayExplanationMode == 2)
+    if (this.explanation != null && this.explanation != "" && displayExplanationMode == 2)
     {
       output.on.mouseOver.add(
           (event) => output.insertAdjacentHTML("beforeEnd", "<b>$explanation</b>"));
       output.on.mouseOut.add(
           (event) => output.innerHTML = answerText);
     }
-    if (this.explanation != null && displayExplanationMode == 3)
+    if (this.explanation != null && this.explanation != "" && displayExplanationMode == 3)
     {
       //Add explanation button
       var explainButton = new ButtonElement();
@@ -83,16 +83,71 @@ class Answer {
       modal.style
       ..visibility = "hidden";
       output.insertAdjacentElement("beforeEnd", modal);
+      //var showEvent = (event) => showModal(output, modal);
+      //var hideEvent = (event) => hideModal(output, modal);
       
-     
-      output.on.click.add(
-          (event) => modal.style.visibility = "visible");
-          //(event) => print("test worked"));
-      output.on.mouseOut.add(
-          (event) => modal.style.visibility = "hidden");
+      hideModal(explainButton, modal);
     }
     return output;
   }
+  
+  // listeners for toggleListener
+  // These must be in object scope to remove them during different executions
+  //  of the toggleListener.
+  var _showEvent;
+  var _hideEvent;
+  var _skipEvent; 
+  
+  ///Switches the on click event listeners for showing/hiding the modal explanation
+  void toggleListener(int step, Element button, Element modal)
+  {
+    /*
+     * Unfortunately it seems that document.on.click is processed after the
+     * answer.on.click is done processing. That means that even if your answer.on.click
+     * event adds a document.on.click, the document.on.click will be invoked
+     * immediately of the same click. To get around this problem, answer.on.click
+     * adds an intermediary document.on.click event that does nothing but add the 
+     * true desired document.on.click event.
+     */
+    if (_showEvent == null)
+      _showEvent = (event) => showModal(button, modal);
+    if (_hideEvent == null)
+      _hideEvent = (event) => hideModal(button, modal);
+    if (_skipEvent == null)
+      _skipEvent = (event) => toggleListener(3, button, modal);
+    
+    if (step == 1)
+    {
+      button.on.click.add(_showEvent);
+      document.on.click.remove(_hideEvent);
+    } 
+    else if (step == 2)
+    {
+      button.on.click.remove(_showEvent);
+      document.on.click.add(_skipEvent);
+    }
+    else
+    {
+      document.on.click.remove(_skipEvent);
+      document.on.click.add(_hideEvent);
+    }
+    
+  }
+  
+  /// show the modal and set up event to hide on document click
+  void showModal(Element button, Element modal)
+  {
+    modal.style.visibility = "visible";
+    toggleListener(2, button, modal);
+  }
+  
+  /// hide the modal and set up event to show on button click
+  void hideModal(Element button, Element modal)
+  {
+    modal.style.visibility = "hidden";
+    toggleListener(1, button, modal);
+  }
+  
   
   /**
    * Constructor
