@@ -51,7 +51,7 @@ class Answer {
   {
     var output = new LIElement();
     var answerText = displayForExplanation(selectedByUser, maxPoints);
-    output.innerHTML = answerText;
+    output.innerHTML = "$answerText &nbsp";
     
     //replace answer text with explanation on hover
     if (this.explanation != null && this.explanation != "" && displayExplanationMode == 1)
@@ -72,8 +72,8 @@ class Answer {
     if (this.explanation != null && this.explanation != "" && displayExplanationMode == 3)
     {
       //Add explanation button
-      var explainButton = new ButtonElement();
-      explainButton.addHTML("<img src=\"../../example/3D/images/question_8bit.png\" alt=\"?\"/>");
+      var explainButton = new ImageElement();
+      explainButton.src = "../../example/3D/images/question_8bit.png";
       output.insertAdjacentElement("beforeEnd", explainButton);
       
       //Add modal explanation
