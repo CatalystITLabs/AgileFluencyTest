@@ -80,8 +80,6 @@ class Answer {
       var modal = new DivElement();
       modal.innerHTML= "<p>$explanation</p>";
       modal.classes.add("modal");
-      modal.style
-      ..visibility = "hidden";
       output.insertAdjacentElement("beforeEnd", modal);
       //var showEvent = (event) => showModal(output, modal);
       //var hideEvent = (event) => hideModal(output, modal);
@@ -137,14 +135,24 @@ class Answer {
   /// show the modal and set up event to hide on document click
   void showModal(Element button, Element modal)
   {
-    modal.style.visibility = "visible";
+    modal.style
+    ..boxShadow = "1.0em 1.0em 0.5em rgba(0,0,0,0.2)"
+    //..transform = "translateZ(3em)"
+    ..transform = "translateX(-1em) translateY(-1em)"
+    ..opacity = "1"
+    ..visibility = "visible";
     toggleListener(2, button, modal);
   }
   
   /// hide the modal and set up event to show on button click
   void hideModal(Element button, Element modal)
   {
-    modal.style.visibility = "hidden";
+    modal.style
+    ..boxShadow = "0em 0em 0em rgba(0,0,0,0.3)"
+    //..transform = "translateZ(-3em)"
+    ..transform = "translateX(0em) translateY(0em)"
+    ..opacity = "0"
+    ..visibility = "hidden";
     toggleListener(1, button, modal);
   }
   
