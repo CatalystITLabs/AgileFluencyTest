@@ -9,7 +9,7 @@ num xPosition = 0;
 void addBackground()
 {
   var element = new ImageElement();
-  element.src = "images/pixel_map_generic_wloc.png";
+  element.src = "images/world_8bit.png";
   //var slide = presentation.addElementSlide(element, 100.0, 0, 0, -50, 0, 0, 0);
   var slide = new Slide(element, 100.0, 0, 0, -50, 0, 0, 0);
   presentation.addBackgroundSlide(slide);
