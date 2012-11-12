@@ -3,16 +3,15 @@ import "../../lib/test.dart";
 import "../../packages/presentation/presentation.dart";
 
 Test test = new Test();
-SlideShow presentation = new BasicSlideShow(query("#viewBox"));
+SlideShow slideshow = new BasicSlideShow(query("#viewBox"));
 num xPosition = 0;
 
 void addBackground()
 {
   var element = new ImageElement();
   element.src = "images/pixel_map_generic_wloc.png";
-  //var slide = presentation.addElementSlide(element, 100.0, 0, 0, -50, 0, 0, 0);
   var slide = new Slide(element, 100.0, 0, 0, -50, 0, 0, 0);
-  presentation.addBackgroundSlide(slide);
+  slideshow.addBackgroundSlide(slide);
   //no transitions because this slide is never focused / transitioned to.
 }
 
@@ -24,7 +23,7 @@ void nextQuestion()
   assert(slideElement != null);
   
   //create and add a new slide for this next test step
-  var slide = presentation.addElementSlide(slideElement, 1.0, xPosition, 0, 0, 0, 0, 0);
+  var slide = slideshow.addElementSlide(slideElement, 1.0, xPosition, 0, 0, 0, 0, 0);
   xPosition += 2000;
   
   //create and add the transition to this next test step
@@ -32,7 +31,7 @@ void nextQuestion()
   //presentation.transitions.add(transition);
   
   //use the presentation to progress to this next step
-  presentation.next();
+  slideshow.next();
 }
 
 ///Adds on click event to the next question button
@@ -60,14 +59,14 @@ onSuccess(HttpRequest request)
   
   addBackground();
   nextQuestion();
-  presentation.start();
+  slideshow.start();
   scriptButton();
 }
 
 void main()
 {
   // relative location of the questions on the server
-  var url = "../questions.xml";
+  var url = "../questions.xml";//"../testQs.xml";//"../questions.xml";
   // async request to get the file at the given url
   var request = new HttpRequest.get(url, onSuccess);
 }
