@@ -95,7 +95,7 @@ class MultipleSelect extends MultipleChoice{
     for (var answer in this.answers)
     {
       var isSelected = this.selectedAnswers.indexOf(answer) != -1;
-      var answerExplanation = answer.explain(isSelected, this.getMaximumPoints(), 2);
+      var answerExplanation = answer.explain(isSelected, this.getMaximumPoints(), 3);
       explainAnswers.insertAdjacentElement("beforeEnd", answerExplanation);
     }
     output.insertAdjacentElement("beforeEnd", explainAnswers);
