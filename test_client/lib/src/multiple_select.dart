@@ -17,7 +17,7 @@ class MultipleSelect extends MultipleChoice{
   MultipleSelect(text): super(text){}
   
   /**
-   * Get the greatest number of points it is possible to receive on this question
+   * Get a list containing the highest scoring combination of answers
    */
   List<Answer> getBestAnswers()
   {

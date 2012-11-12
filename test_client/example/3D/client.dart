@@ -4,7 +4,7 @@ import "../../packages/presentation/presentation.dart";
 
 Test test = new Test();
 SlideShow presentation = new BasicSlideShow(query("#viewBox"));
-num xPosition = 0; 
+num xPosition = 0;
 
 void addBackground()
 {
@@ -20,11 +20,11 @@ void addBackground()
 void nextQuestion()
 {
   //get next step from test
-  var element = test.next();
-  assert(element != null);
+  var slideElement = test.next();
+  assert(slideElement != null);
   
   //create and add a new slide for this next test step
-  var slide = new DynamicSlide(element, 1.0, xPosition, 0, 0, 0, 0, 0);
+  var slide = presentation.addElementSlide(slideElement, 1.0, xPosition, 0, 0, 0, 0, 0);
   xPosition += 2000;
   
   //create and add the transition to this next test step
@@ -59,6 +59,7 @@ onSuccess(HttpRequest request)
   }
   
   addBackground();
+  nextQuestion();
   presentation.start();
   scriptButton();
 }
