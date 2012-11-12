@@ -78,7 +78,7 @@ class SingleSelect extends MultipleChoice{
     var explainAnswers = new UListElement();
     for (var answer in this.answers)
     {
-      var answerExplanation = answer.explain(answer == selected, this.getMaximumPoints(), 2);
+      var answerExplanation = answer.explain(answer == selected, this.getMaximumPoints(), 3);
       explainAnswers.insertAdjacentElement("beforeEnd", answerExplanation);
     }
     output.insertAdjacentElement("beforeEnd", explainAnswers);

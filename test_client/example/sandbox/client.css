@@ -47,9 +47,11 @@ li list-style {
 }
 
 /*-----------------------------------------------------*/
+
 /* section for questions and answers */
 #container {
-  width: 100%;
+  width: 96%;
+  margin: auto;
   height: auto;
   position: relative;
   border:2px solid #ccc;
@@ -57,9 +59,12 @@ li list-style {
   -moz-border-radius:1.25em; /* Firefox 3.6 and earlier */
   background-color: #fff;
   text-align: center;
-  overflow-y:auto;
+  padding: 1.0em;
+  overflow-y:hidden;
+  overflow-x:hidden;
 }
 
+/* viewport into the 3d scene */
 #viewBox {
   width: 100%;
   height: 30em;
@@ -76,12 +81,28 @@ li list-style {
   -webkit-perspective: 800px;
 }
 
-#question {
+/* common css for all slides */
+.slide {
   width: 90%;
-  height: 20em;
-  position: relative;
-  border: 1px solid #bbb;
-  background-color: #CCCCCC;
+  height: 25em;
+  border: 2px solid #bbb;
+  background-color: #DDDDDD;
+  margin: 0;
+  padding: 1em;
+}
+
+ /* CSS for the modal dialog window */
+.modal {
+  background-color: #EEEEEE;
+  color: black;
+  border: 0.1em solid #FFFF00;
+  padding: 1em;
+  display: block;
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  width: 25em;
+  /*height: 15em;*/
 }
 
 /* formats the nextButton within container */
