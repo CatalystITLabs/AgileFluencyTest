@@ -89,6 +89,7 @@ li list-style {
   background-color: #DDDDDD;
   margin: 0;
   padding: 1em;
+  overflow-y: auto;
 }
 
  /* CSS for the modal dialog window */
