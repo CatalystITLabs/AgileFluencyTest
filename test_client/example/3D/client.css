@@ -85,17 +85,21 @@ li list-style {
 .slide {
   width: 90%;
   height: 25em;
-  border: 2px solid #bbb;
+  border: 2px solid #CCC;
   background-color: #DDDDDD;
   margin: 0;
   padding: 1em;
+  border-radius:1.0em;
+  -moz-border-radius:1.0em; /* Firefox 3.6 and earlier */
+  overflow-y: auto;
 }
 
  /* CSS for the modal dialog window */
 .modal {
   background-color: #EEEEEE;
   color: black;
-  border: 0.1em solid #FFFF00;
+  border: 0.1em solid #CCCCCC;
+  box-shadow: -0.5em 0.5em 0.5em #333;
   padding: 1em;
   display: block;
   position: absolute;

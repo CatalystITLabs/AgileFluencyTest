@@ -13,7 +13,6 @@ part "test_section.dart";
 
 class Test {  
   List<TestSection> sections = new List<TestSection>();
-  
   TestSection currentSection;
 
   /**
@@ -34,6 +33,11 @@ class Test {
     { 
       print("Next Section.");
       this.currentSection = this.sections[num];
+      //set the next question if not at the beginning of the section
+      if(num!=0)
+      {
+        currentSection.nextQuestion();  
+      }
     }
     else
     {
