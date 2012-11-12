@@ -10,7 +10,9 @@ void addTestSlide()
   // your content here
   //var slideElement = test.currentSection.displayCurrentQuestion();
   //var slideElement = test.currentSection.explain();
-  var slideElement = test.currentSection.summary();
+  var slideElement = new DivElement();
+  slideElement.style.backgroundImage = "../3D/images/splash_8bit.png";
+    
   
   //your callbacks here
   slideElement.on.click.add((event) => done());
@@ -27,11 +29,29 @@ void done()
 void addBackground()
 {
   var element = new ImageElement();
-  element.src = "images/pixel_map_generic_wloc.png";
+  element.src = "../../example/3D/images/world_8bit.png";
   //var slide = presentation.addElementSlide(element, 100.0, 0, 0, -50, 0, 0, 0);
   var slide = new Slide(element, 100.0, 0, 0, -50, 0, 0, 0);
   presentation.addBackgroundSlide(slide);
   //no transitions because this slide is never focused / transitioned to.
+}
+
+void startSplash()
+{
+  var element = new DivElement();
+  element.id = "splash";
+  element.style.backgroundImage = "../../example/3D/images/splash_8bit.png";
+  element.style.width = "100%";
+  element.style.height = "100%";
+  element.style.opacity = "1.0";
+  
+  var _testEvent;
+  if (_testEvent == null)
+    _testEvent = (event) => addBackground();
+  
+  var startButton = new ImageElement();
+  startButton.src = "../../example/3D/images/start_8bit.png";
+  startButton.on.click.add(_testEvent);
 }
 
 /**
@@ -49,12 +69,14 @@ onSuccess(HttpRequest request)
   }
   test.next();
   addBackground();
+  startSplash();
   addTestSlide();
   presentation.start();
 }
 
 void main()
 {
+  startSplash();
   // relative location of the questions on the server
   var url = "../questions.xml";
   // async request to get the file at the given url
