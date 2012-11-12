@@ -71,24 +71,26 @@ class Answer {
     }
     if (this.explanation != null && displayExplanationMode == 3)
     {
+      //Add explanation button
+      var explainButton = new ButtonElement();
+      explainButton.text = "?";
+      output.insertAdjacentElement("beforeEnd", explainButton);
+      
+      //Add modal explanation
       var modal = new DivElement();
       modal.innerHTML= "<p>$explanation</p>";
+      modal.classes.add("modal");
       modal.style
-      ..height = "0px"
-      //..top = "0em"
-      ..margin = "0px"
-      ..position = "absolute";
-  
-      //..visibility = "hidden";
-      
+      ..visibility = "hidden";
       output.insertAdjacentElement("beforeEnd", modal);
+      
+     
       output.on.click.add(
-          (event) => modal.style.visibility = "Abracadabra");
+          (event) => modal.style.visibility = "visible");
           //(event) => print("test worked"));
-      //output.on.mouseOut.add(
-      //    (event) => modal.style.visibility = "hidden");
+      output.on.mouseOut.add(
+          (event) => modal.style.visibility = "hidden");
     }
-
     return output;
   }
   
