@@ -73,7 +73,7 @@ class Answer {
     {
       //Add explanation button
       var explainButton = new ButtonElement();
-      explainButton.text = "?";
+      explainButton.addHTML("<img src=\"../../example/3D/images/question_8bit.png\" alt=\"?\"/>");
       output.insertAdjacentElement("beforeEnd", explainButton);
       
       //Add modal explanation
