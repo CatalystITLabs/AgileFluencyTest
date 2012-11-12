@@ -17,7 +17,7 @@ class MultipleSelect extends MultipleChoice{
   MultipleSelect(text): super(text){}
   
   /**
-   * Get the greatest number of points it is possible to receive on this question
+   * Get a list containing the highest scoring combination of answers
    */
   List<Answer> getBestAnswers()
   {
@@ -95,7 +95,7 @@ class MultipleSelect extends MultipleChoice{
     for (var answer in this.answers)
     {
       var isSelected = this.selectedAnswers.indexOf(answer) != -1;
-      var answerExplanation = answer.explain(isSelected, this.getMaximumPoints(), 1);
+      var answerExplanation = answer.explain(isSelected, this.getMaximumPoints(), 2);
       explainAnswers.insertAdjacentElement("beforeEnd", answerExplanation);
     }
     output.insertAdjacentElement("beforeEnd", explainAnswers);
