@@ -55,6 +55,9 @@ class SingleSelect extends MultipleChoice{
     print("setting answer to $number");
     this.selected = this.answers[number];
     print("answer: ${this.selected.text}");
+    
+    query("#nextQuestion").style
+    ..visibility = "visible";
     enableNextButton();
   }
   
