@@ -1,0 +1,215 @@
+
+body {
+  background-color: #CCC;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  font-weight: normal;
+  line-height: 1.2em;
+  margin: 0em 0.25em;
+}
+
+p {
+  text-indent: 1em;
+}
+
+h4 {
+  text-align: center;
+}
+
+ul {
+  text-align: left;
+}
+
+li list-style {
+  height: 1em;
+  width: 1em;
+}
+
+/*-----------------------------------------------------*/
+/*title and subtitle */
+#banner {
+  background-color:#CCC;
+  width: 100%;
+  margin: 0em;
+}
+
+#banner h1 {
+  color: #333;
+  text-shadow: 0.1em 0.1em 0.1em #FFF;
+  line-height: 1em;
+  margin: 0.1em 0.25em;
+}
+
+#banner h4 {
+  color: #333;
+  line-height: 1em;
+  margin: 0.2em 0.5em;
+}
+
+/*-----------------------------------------------------*/
+
+/* section for questions and answers */
+#container {
+  width: 96%;
+  margin: auto;
+  height: auto;
+  position: relative;
+  border:2px solid #ccc;
+  border-radius:1.25em;
+  -moz-border-radius:1.25em; /* Firefox 3.6 and earlier */
+  background-color: #fff;
+  text-align: center;
+  padding: 1.0em;
+  overflow-y:hidden;
+  overflow-x:hidden;
+}
+
+/* viewport into the 3d scene */
+#viewBox {
+  width: 100%;
+  height: 36em;
+  position: relative;
+  border: 1px solid #ccc;
+  background-color: #DDDDDD;
+  /*background-image:url('web/images/pixel_map_generic_wloc.png');*/
+  overflow-y:hidden;
+  overflow-x:hidden;
+  
+  perspective: 800px;
+  -ms-perspective: 800px;
+  -moz-perspective: 800px;
+  -webkit-perspective: 800px;
+}
+
+/* common css for all slides */
+.slide {
+  width: 90%;
+  height: 33em;
+  border: 2px solid #CCC;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin: 0.5em;
+  
+  padding: 1em;
+  border-radius:1.0em;
+  -moz-border-radius:1.0em; /* Firefox 3.6 and earlier */
+  overflow-y: hidden;
+  
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+ /* CSS for the modal dialog window */
+.modal {
+  background-color: #EEEEEE;
+  color: black;
+  border: 0.1em solid #CCCCCC;
+  box-shadow: -0.5em 0.5em 0.5em #333;
+  padding: 1em;
+  display: block;
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  width: 25em;
+  
+  transition: 0.5s;
+	-moz-transition: 0.5s; /* Firefox 4 */
+	-webkit-transition: 0.5s; /* Safari and Chrome */
+	-o-transition: 0.5s; /* Opera */
+  /*height: 15em;*/
+}
+
+/* formats the nextButton within container */
+#container input.nextButton {
+  background-color: #CCC;
+  color: #333;
+  border-radius: 0.5em;
+  -moz-border-radius: 0.5em; /* Firefox 3.6 and earlier */
+  height: 1.2em;
+  margin: 0.25em 0em 1em 0em;
+}
+
+/* within container */
+#container.question {
+  color: #000;
+  text-align: center;
+}
+
+/* formatting for answers within the container */
+#answers {
+  height:auto;
+  margin: 0.2em 0.5em;
+  text-align:left;
+}
+
+/* formatting for the feedback information */
+#feedback {
+  min-height: 9em;
+  overflow-y: scroll;
+}
+
+#feedback.question {
+  color: #000;
+  text-align:center;
+  height: 1em;
+}
+
+#feedback.selectedAnswer {
+  font-weight: bold;
+}
+
+#feedback.agileAnswers {
+  
+}
+
+#summary {
+/*  float:right;*/
+  text-align: left;
+  font-size: 1em;
+  margin: 0.2em 0.5em;
+}
+
+#summary h4 {
+  line-height: 1em;
+  text-align: right;
+}
+
+#summary img {
+  float: left;
+  padding: 0em 3em 0.5em 0em;
+}
+
+#summary li {
+  clear:both;
+  text-align:right;
+  margin: 0em;
+  text-indent: 0em;
+  padding: 0em;
+}
+
+#summary p {
+  clear:both;
+  width: 100%;
+  text-indent: 2em;
+  font-style: italic;
+}
+
+#explanation {
+  clear:both;
+  text-align: left;
+  font-size: smaller;
+}
+
+#explanation h4 {
+  text-align: center;
+  font-size: larger;
+}
+
+#explanation ul {
+  font-size: larger;
+}
+
+/*-----------------------------------------------------*/
+/*footer for github project url and other misc. information*/
+#footer {
+  height: 2em;
+}
