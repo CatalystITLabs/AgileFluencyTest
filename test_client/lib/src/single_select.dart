@@ -56,9 +56,13 @@ class SingleSelect extends MultipleChoice{
     this.selected = this.answers[number];
     print("answer: ${this.selected.text}");
     
-    query("#nextQuestion").style
-    ..visibility = "visible";
+    Element nxtQuBtn = query("#nextQuestion");
     enableNextButton();
+    /*
+     * Code programmatically calls a click event on the next button when an answer is selected
+     */ 
+    MouseEvent mouseEvent = new MouseEvent('click', window, 0, 0, 0, 5, 5, 0);
+    nxtQuBtn.on.click.dispatch(mouseEvent);
   }
   
   /**
