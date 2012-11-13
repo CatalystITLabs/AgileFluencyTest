@@ -48,6 +48,7 @@ onSuccess(HttpRequest request)
     test.sections.add(new TestSection(i, request.responseText));
   }
   test.next();
+  test.nextSection();
   addBackground();
   addTestSlide();
   presentation.start();

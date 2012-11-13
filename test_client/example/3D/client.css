@@ -107,16 +107,25 @@ li list-style {
   -webkit-transform-style: preserve-3d;
 }
 
+.backgroundSlide {
+  margin: 0;
+  padding: 0;
+  overflow:visible;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
  /* CSS for the modal dialog window */
 .modal {
   background-color: #EEEEEE;
   color: black;
   border: 0.1em solid #CCCCCC;
-  box-shadow: -0.5em 0.5em 0.5em #333;
   padding: 1em;
   display: block;
   position: absolute;
+  /*
   bottom: 1em;
+  */
   right: 1em;
   width: 25em;
   

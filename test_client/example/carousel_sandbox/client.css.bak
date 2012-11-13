@@ -26,15 +26,6 @@ li list-style {
 }
 
 /*-----------------------------------------------------*/
-.advance
-{
-  visibility: hidden;
-  width:auto;
-  position: relative;
-  bottom:30px;
-}
-
-/*-----------------------------------------------------*/
 /*title and subtitle */
 #banner {
   background-color:#CCC;
@@ -93,7 +84,7 @@ li list-style {
 /* common css for all slides */
 .slide {
   width: 90%;
-  height: 30em;
+  height: 25em;
   border: 2px solid #CCC;
   background-color: rgba(255, 255, 255, 0.7);;
   margin: 0;
@@ -123,16 +114,14 @@ li list-style {
   padding: 1em;
   display: block;
   position: absolute;
-  /*
   bottom: 1em;
-  */
   right: 1em;
   width: 25em;
   
   transition: 0.5s;
-  -moz-transition: 0.5s; /* Firefox 4 */
-  -webkit-transition: 0.5s; /* Safari and Chrome */
-  -o-transition: 0.5s; /* Opera */
+	-moz-transition: 0.5s; /* Firefox 4 */
+	-webkit-transition: 0.5s; /* Safari and Chrome */
+	-o-transition: 0.5s; /* Opera */
   /*height: 15em;*/
 }
 
@@ -180,43 +169,34 @@ li list-style {
 }
 
 #summary {
+/*  float:right;*/
   text-align: left;
   font-size: 1em;
   margin: 0.2em 0.5em;
 }
 
-
-.passportImage {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-.detail {
-  position: absolute;
-  left: 50%;
-  width: 40%;
-  text-align: center;
-}
-
-.detail h4 {
+#summary h4 {
   line-height: 1em;
+  text-align: right;
 }
 
-.detail li {
+#summary img {
+  float: left;
+  padding: 0em 3em 0.5em 0em;
+}
+
+#summary li {
   clear:both;
-  text-align: left;
+  text-align:right;
   margin: 0em;
   text-indent: 0em;
   padding: 0em;
 }
 
-.detail p {
-  clear: both;
+#summary p {
+  clear:both;
   width: 100%;
-  text-indent: 1em;
+  text-indent: 2em;
   font-style: italic;
 }
 
