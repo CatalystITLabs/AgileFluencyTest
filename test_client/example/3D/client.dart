@@ -24,10 +24,13 @@ void nextQuestion()
   var slideElement = test.next();
   assert(slideElement != null);
   
-  if(slideElement.id.startsWith("summary"))
+  if(test.currentSection != test.sections.last)
   {
-    continueBtn.style
-    ..visibility = "visible";
+    if(slideElement.id.startsWith("summary"))
+    {
+      continueBtn.style
+      ..visibility = "visible";
+    }
   }
   else
   {
