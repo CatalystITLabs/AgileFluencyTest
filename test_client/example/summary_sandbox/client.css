@@ -26,28 +26,6 @@ li list-style {
 }
 
 /*-----------------------------------------------------*/
-.advance
-{
-  visibility: hidden;
-  width:auto;
-  position: relative;
-  bottom:30px;
-  border:none;
-}
-
-.summary
-{
-  width: 100%;
-  height: 50%;
-}
-
-.summary p
-{
-  width: 5%;
-  height: 15%;
-}
-
-/*-----------------------------------------------------*/
 /*title and subtitle */
 #banner {
   background-color:#CCC;
@@ -120,32 +98,23 @@ li list-style {
   -webkit-transform-style: preserve-3d;
 }
 
-.backgroundSlide {
-  margin: 0;
-  padding: 0;
-  overflow:visible;
-  transform-style: preserve-3d;
-  -webkit-transform-style: preserve-3d;
-}
-
  /* CSS for the modal dialog window */
 .modal {
   background-color: #EEEEEE;
   color: black;
   border: 0.1em solid #CCCCCC;
+  box-shadow: -0.5em 0.5em 0.5em #333;
   padding: 1em;
   display: block;
   position: absolute;
-  /*
   bottom: 1em;
-  */
   right: 1em;
   width: 25em;
   
   transition: 0.5s;
-  -moz-transition: 0.5s; /* Firefox 4 */
-  -webkit-transition: 0.5s; /* Safari and Chrome */
-  -o-transition: 0.5s; /* Opera */
+	-moz-transition: 0.5s; /* Firefox 4 */
+	-webkit-transition: 0.5s; /* Safari and Chrome */
+	-o-transition: 0.5s; /* Opera */
   /*height: 15em;*/
 }
 
@@ -193,34 +162,43 @@ li list-style {
 }
 
 #summary {
-/*  float:right;*/
   text-align: left;
   font-size: 1em;
   margin: 0.2em 0.5em;
 }
 
-#summary h4 {
+
+.passportImage {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.detail {
+  position: absolute;
+  left: 50%;
+  width: 40%;
+  text-align: center;
+}
+
+.detail h4 {
   line-height: 1em;
-  text-align: right;
 }
 
-#summary img {
-  float: left;
-  padding: 0em 3em 0.5em 0em;
-}
-
-#summary li {
+.detail li {
   clear:both;
-  text-align:right;
+  text-align: left;
   margin: 0em;
   text-indent: 0em;
   padding: 0em;
 }
 
-#summary p {
-  clear:both;
+.detail p {
+  clear: both;
   width: 100%;
-  text-indent: 2em;
+  text-indent: 1em;
   font-style: italic;
 }
 

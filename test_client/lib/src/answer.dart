@@ -73,7 +73,7 @@ class Answer {
     {
       //Add explanation button
       var explainButton = new ImageElement();
-      explainButton.src = "../../example/3D/images/question_8bit.png";
+      explainButton.src = "images/question_8bit.png";
       output.insertAdjacentElement("beforeEnd", explainButton);
       
       //Add modal explanation
@@ -99,6 +99,7 @@ class Answer {
   ///Switches the on click event listeners for showing/hiding the modal explanation
   void toggleListener(int step, Element button, Element modal)
   {
+    print("toggleListener: step: $step");
     /*
      * Unfortunately it seems that document.on.click is processed after the
      * answer.on.click is done processing. That means that even if your answer.on.click
@@ -136,7 +137,7 @@ class Answer {
   void showModal(Element button, Element modal)
   {
     modal.style
-    ..boxShadow = "1.0em 1.0em 0.5em rgba(0,0,0,0.2)"
+    ..boxShadow = "1.0em 1.0em 1.0em rgba(0,0,0,0.2)"
     //..transform = "translateZ(3em)"
     ..transform = "translateX(-1em) translateY(-1em)"
     ..opacity = "1"
@@ -148,7 +149,7 @@ class Answer {
   void hideModal(Element button, Element modal)
   {
     modal.style
-    ..boxShadow = "0em 0em 0em rgba(0,0,0,0.3)"
+    ..boxShadow = "-0.2em -0.2em -0.2em rgba(0,0,0,0.3)"
     //..transform = "translateZ(-3em)"
     ..transform = "translateX(0em) translateY(0em)"
     ..opacity = "0"

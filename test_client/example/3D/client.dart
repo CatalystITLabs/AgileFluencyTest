@@ -1,10 +1,13 @@
 import 'dart:html';
+import 'dart:math';
 import "../../lib/test.dart";
 import "../../packages/presentation/presentation.dart";
 
 Test test = new Test();
 SlideShow slideshow = new BasicSlideShow(query("#viewBox"));
-num xPosition = 0;
+num xPosition = -10;
+num xScale = 2000;
+
 InputElement nextBtn = query("#nextQuestion");
 InputElement continueBtn = query("#continue");
 InputElement explainBtn = query("#explain");
@@ -13,7 +16,7 @@ void addBackground()
 {
   var element = new ImageElement();
   element.src = "images/world_8bit.png";
-  var slide = new Slide(element, 100.0, 0, 0, -50, 0, 0, 0);
+  var slide = new Slide(element, 60.0, 0, 0, -50, 0, 0, 0);
   slideshow.addBackgroundSlide(slide);
   //no transitions because this slide is never focused / transitioned to.
 }
@@ -42,9 +45,12 @@ void nextQuestion()
     ..visibility = "hidden";
   }
   
+  slideshow.useDynamic = true;
   //create and add a new slide for this next test step
-  var slide = slideshow.addElementSlide(slideElement, 1.0, xPosition, 0, 0, 0, 0, 0);
-  xPosition += 2000;
+  var x = xPosition * xScale;
+  var y = sin(xPosition) * xScale * 2;
+  var slide = slideshow.addElementSlide(slideElement, 1.0, xPosition * xScale, y, 0, 0, 0, 0);
+  xPosition += 1;
   
   //create and add the transition to this next test step
   //var transition = new BasicTransition(slide, presentation.currentSlide);
@@ -117,6 +123,7 @@ onSuccess(HttpRequest request)
   }
   
   addBackground();
+  slideshow.cam.move(0, 0, 0, 50000, 0, 0, 0);
   nextQuestion();
   slideshow.start();
   scriptButton();

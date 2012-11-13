@@ -48,6 +48,7 @@ abstract class Question {
   Element explain() {
     var output = new DivElement();
     output.addHTML("<br/><h4>${this.text}</h4>");
+    output.classes.add("explanation");
     if (this.explanation != null)
       output.addHTML("Explanation: ${this.explanation}<br/>");
     return output;

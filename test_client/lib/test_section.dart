@@ -219,13 +219,30 @@ class TestSection
     //Explanation section
     //output.id = "explanation";
     
-    for (var question in this.questions)
+    for (var questionExplanation in this.explanations())
     {
       //DivElement questionExplanation = question.explain();
       //questionExplanation.id = "explanation";
       output.insertAdjacentElement('afterBegin', question.explain());
     }
     //return output;
+  }
+  
+  /**
+   * output a list of divs of each question explanation
+   */
+  List<Element> explanations()
+  {
+    var output = new List<Element>();
+    var index = 0;
+    for (var question in this.questions)
+    {
+      index++;
+      Element questionExplanation = question.explain();
+      questionExplanation.id = "Section${star}Explanation{$index}";
+      output.add(questionExplanation);
+    }
+    return output;
   }
   
   /**
@@ -271,9 +288,19 @@ class TestSection
     var agile = 0;
     output.id = "summary${star}";
     
-    output.addHTML("<h4>Destination ${this.star}: ${this.name}<br/>Summary</h4>");
+    //passport image as a backdrop
+    var passport = new ImageElement();
+    passport.classes.add("passportImage");
+    //TODO: add logic to use the correct passport (with animation).
+    passport.src = "images/passport_0.png";
+    output.insertAdjacentElement("beforeEnd", passport);
     
-    var image = "../3D/images/stamp_${this.star}.png";
+    //content for the right side
+    var content = new ParagraphElement();
+    content.classes.add("detail");
+    content.addHTML("<h4>Destination ${this.star}: ${this.name}<br/>Summary</h4>");
+    
+//    var image = "../3D/images/stamp_${this.star}.png";
     
     //calculations
     var percentageScore = (getUserAnswerPoints() * 100 ~/ getMaxPoints()).toInt();
@@ -291,17 +318,17 @@ class TestSection
      */
     
     //stamp image placeholder. The plan will be to zoom into this, to show the summary information.
-    output.addHTML("<img src='$image' alt='Placeholder for stamp'/>");
+//    output.addHTML("<img src='$image' alt='Placeholder for stamp'/>");
     
     //Progress information...
-    output.addHTML("<h4>Destination ${this.star} Progress:</h4><ul>");
-    output.addHTML("<li>Total Agile Answers: $agile/${this.questions.length}</li>");
-    output.addHTML("<li>Most Fluent Answers: $best/${this.questions.length}</li>");
-    output.addHTML("<li>Estimated Progress: ${percentageScore}%</li></ul>");
+    content.addHTML("<h4>Destination ${this.star} Progress:</h4><ul>");
+    content.addHTML("<li>Total Agile Answers: $agile/${this.questions.length}</li>");
+    content.addHTML("<li>Most Fluent Answers: $best/${this.questions.length}</li>");
+    content.addHTML("<li>Estimated Progress: ${percentageScore}%</li></ul>");
     
     //section summary
-    output.addHTML("<p>${this.description}</p>");
-    output.addHTML("<p>Learn more about ${this.name} <a href='${this.reference}'>here</a></p>");
+    content.addHTML("<p>${this.description}</p>");
+    content.addHTML("<p>Learn more about ${this.name} <a href='${this.reference}'>here</a></p>");
    
     //link explanation
     //TODO: modify on click event to actually do something

@@ -9,11 +9,11 @@ void addTestSlide()
 {
   // your content here
   //var slideElement = test.currentSection.displayCurrentQuestion();
-  var slideElement = test.currentSection.explain();
-  //var slideElement = test.currentSection.summary();
+  //var slideElement = test.currentSection.explain();
+  var slideElement = test.currentSection.summary();
   
   //your callbacks here
-  //slideElement.on.click.add((event) => done());
+  slideElement.on.click.add((event) => done());
   
   presentation.addElementSlide(slideElement, 1.0, 200, 200, 0, 0, 0, 0);
   
