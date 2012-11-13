@@ -168,6 +168,14 @@ li list-style {
   height: 26em;
 }
 
+#summary img {
+  position: absolute;
+}
+
+.stamp {
+  width: 20%;
+  height: auto;
+}
 
 .passportImage {
   height: 100%;
