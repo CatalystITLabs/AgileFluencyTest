@@ -162,18 +162,20 @@ li list-style {
 }
 
 #summary {
-  text-align: left;
+  text-align: center;
   font-size: 1em;
   margin: 0.2em 0.5em;
+  height: 26em;
 }
 
 
 .passportImage {
+  height: 100%;
   width: 100%;
-  height: auto;
   position: absolute;
   left: 0;
   top: 0;
+  text-align:center;
 }
 
 .detail {
