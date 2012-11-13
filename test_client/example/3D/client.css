@@ -26,6 +26,15 @@ li list-style {
 }
 
 /*-----------------------------------------------------*/
+.advance
+{
+  visibility: hidden;
+  width:auto;
+  position: relative;
+  bottom:30px;
+}
+
+/*-----------------------------------------------------*/
 /*title and subtitle */
 #banner {
   background-color:#CCC;

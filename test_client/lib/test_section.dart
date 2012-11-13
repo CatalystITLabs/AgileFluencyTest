@@ -287,7 +287,7 @@ class TestSection
     
     output.addHTML("<h4>Destination ${this.star}: ${this.name}<br/>Summary</h4>");
     
-    var image = "../../example/3D/images/stamp_${this.star}.png";
+    var image = "../3D/images/stamp_${this.star}.png";
     
     //calculations
     var percentageScore = (getUserAnswerPoints() * 100 ~/ getMaxPoints()).toInt();

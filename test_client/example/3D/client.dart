@@ -5,6 +5,8 @@ import "../../packages/presentation/presentation.dart";
 Test test = new Test();
 SlideShow slideshow = new BasicSlideShow(query("#viewBox"));
 num xPosition = 0;
+InputElement nextBtn = query("#nextQuestion");
+InputElement continueBtn = query("#continue");
 
 void addBackground()
 {
@@ -22,6 +24,17 @@ void nextQuestion()
   var slideElement = test.next();
   assert(slideElement != null);
   
+  if(slideElement.id.startsWith("summary"))
+  {
+    continueBtn.style
+    ..visibility = "visible";
+  }
+  else
+  {
+    continueBtn.style
+    ..visibility = "hidden";
+  }
+  
   //create and add a new slide for this next test step
   var slide = slideshow.addElementSlide(slideElement, 1.0, xPosition, 0, 0, 0, 0, 0);
   xPosition += 2000;
@@ -38,9 +51,28 @@ void nextQuestion()
 void scriptButton()
 {
   assert(query("#nextQuestion") != null);
+  
   Element button = query('#nextQuestion');
-  button.on.click.add(
-      (event) => nextQuestion());
+  Element continueBtn = query("#continue");
+  
+  button.on.click.add((event)
+  {
+    nextBtn.style
+    ..visibility = "hidden";
+    
+    nextQuestion();
+  });
+  
+  continueBtn.on.click.add((event)
+  {
+    nextQuestion();
+    
+    if(!test.currentSection.atSummary)
+    {
+      continueBtn.style
+      ..visibility = "hidden";
+    }
+  });
 }
 
 /**
