@@ -161,18 +161,15 @@ li list-style {
   
 }
 
-#summary {
+.summary {
   text-align: center;
   font-size: 1em;
   margin: 0.2em 0.5em;
   height: 26em;
 }
 
-#summary img {
-  position: absolute;
-}
-
 .stamp {
+  position: absolute;
   width: 20%;
   height: auto;
 }
@@ -205,11 +202,19 @@ li list-style {
   padding: 0em;
 }
 
-.detail p {
+p {
   clear: both;
   width: 100%;
+}
+
+p .italicIndent {
   text-indent: 1em;
-  font-style: italic;
+  font-style:italic;
+}
+
+p .smallerLeft {
+  font-size: smaller;
+  text-align: left;
 }
 
 #explanation {

@@ -287,6 +287,7 @@ class TestSection
     var best = 0;
     var agile = 0;
     output.id = "summary${star}";
+    output.classes.add("summary");
     
     //passport image as a backdrop
     var passport = new ImageElement();
@@ -326,9 +327,10 @@ class TestSection
     content.addHTML("<li>Most Fluent Answers: $best/${this.questions.length}</li></ul>");
     
     //section summary
-    content.addHTML("<p>${this.description}</p>");
-    content.addHTML("<p>Learn more about ${this.name} <a href='${this.reference}'>here</a></p>");
+    content.addHTML("<p class=\"italicIndent\">${this.description}</p>");
+    content.addHTML("<p class=\"smallerLeft\">Learn more about ${this.name} <a href='${this.reference}'>here</a></p>");
    
+    output.insertAdjacentElement("beforeEnd", content);
     //link explanation
     //TODO: modify on click event to actually do something
 //    var link = new ButtonElement();
