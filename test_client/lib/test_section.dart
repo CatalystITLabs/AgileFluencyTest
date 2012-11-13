@@ -223,7 +223,7 @@ class TestSection
     {
       //DivElement questionExplanation = question.explain();
       //questionExplanation.id = "explanation";
-      output.insertAdjacentElement('afterBegin', question.explain());
+      output.insertAdjacentElement('afterBegin', questionExplanation);
     }
     //return output;
   }
@@ -292,7 +292,7 @@ class TestSection
     var passport = new ImageElement();
     passport.classes.add("passportImage");
     //TODO: add logic to use the correct passport (with animation).
-    passport.src = "images/passport_0.png";
+    passport.src = "../3D/images/passport_0.png";
     output.insertAdjacentElement("beforeEnd", passport);
     
     //content for the right side

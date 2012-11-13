@@ -43,6 +43,9 @@ void nextQuestion()
   {
     continueBtn.style
     ..visibility = "hidden";
+    
+    explainBtn.style
+    ..visibility = "hidden";
   }
   
   slideshow.useDynamic = true;
@@ -62,17 +65,30 @@ void nextQuestion()
 
 void displaySectionExplanation()
 {
+  explainBtn.style
+  ..visibility = "hidden";
+  
+  query("#return").style
+  ..visibility = "visible";
+  
   String summaryId = "#summary${test.currentSection.star}";
   Element explainDiv = query("#explainSection");
   Element summaryDiv = query(summaryId);
   
   test.currentSection.explain();
   
+  var x = xPosition * xScale;
+  var y = sin(xPosition) * xScale * 2;
+  var slide = slideshow.addElementSlide(explainDiv, 1.0, xPosition * xScale, y, 0, 0, 0, 0);
+  xPosition += 1;
+  
   summaryDiv.style
   ..visibility = "hidden";
   
   explainDiv.style
   ..visibility = "visible";
+  
+  slideshow.next();
 }
 
 ///Adds on click event to the next question button
@@ -93,6 +109,9 @@ void scriptButton()
   
   continueBtn.on.click.add((event)
   {
+    explainBtn.style
+    ..visibility = "hidden";
+    
     nextQuestion();
     
     if(!test.currentSection.atSummary)
@@ -103,8 +122,36 @@ void scriptButton()
   });
   
   explainBtn.on.click.add((event)
-  {
+  {  
     displaySectionExplanation();
+  });
+  
+  query("#return").on.click.add((event)
+  {
+    explainBtn.style
+    ..visibility = "visible";
+    
+    query("#return").style
+    ..visibility = "hidden";
+    
+    String summaryId = "#summary${test.currentSection.star}";
+    Element explainDiv = query("#explainSection");
+    Element summaryDiv = query(summaryId);
+    
+    test.currentSection.explain();
+    
+    var x = xPosition * xScale;
+    var y = sin(xPosition) * xScale * 2;
+    var slide = slideshow.addElementSlide(summaryDiv, 1.0, xPosition * xScale, y, 0, 0, 0, 0);
+    xPosition += 1;
+    
+    explainDiv.style
+    ..visibility = "hidden";
+    
+    summaryDiv.style
+    ..visibility = "visible";
+    
+    slideshow.next();
   });
 }
 
