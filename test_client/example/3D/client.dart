@@ -7,6 +7,7 @@ SlideShow slideshow = new BasicSlideShow(query("#viewBox"));
 num xPosition = 0;
 InputElement nextBtn = query("#nextQuestion");
 InputElement continueBtn = query("#continue");
+InputElement explainBtn = query("#explain");
 
 void addBackground()
 {
@@ -30,6 +31,9 @@ void nextQuestion()
     {
       continueBtn.style
       ..visibility = "visible";
+      
+      explainBtn.style
+      ..visibility = "visible";
     }
   }
   else
@@ -48,6 +52,21 @@ void nextQuestion()
   
   //use the presentation to progress to this next step
   slideshow.next();
+}
+
+void displaySectionExplanation()
+{
+  String summaryId = "#summary${test.currentSection.star}";
+  Element explainDiv = query("#explainSection");
+  Element summaryDiv = query(summaryId);
+  
+  test.currentSection.explain();
+  
+  summaryDiv.style
+  ..visibility = "hidden";
+  
+  explainDiv.style
+  ..visibility = "visible";
 }
 
 ///Adds on click event to the next question button
@@ -75,6 +94,11 @@ void scriptButton()
       continueBtn.style
       ..visibility = "hidden";
     }
+  });
+  
+  explainBtn.on.click.add((event)
+  {
+    displaySectionExplanation();
   });
 }
 

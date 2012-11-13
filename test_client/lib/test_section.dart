@@ -171,7 +171,7 @@ class TestSection
     if (atSummary){
       if (! this.atExplanation)
         return this.summary();
-      else return this.explain();
+      else return query("#explainSection");//this.explain();
     }
     
     if (currentQuestion != null)
@@ -211,20 +211,21 @@ class TestSection
   /**
    * Provide questions and explanations, to be drilled down using CSS3 3D effects
    */
-  Element explain()
+  void explain()
   {
     print("Explaining section.");
-    var output = new DivElement();
+    var output = query("#explainSection");
      
     //Explanation section
-    output.id = "explanation";
+    //output.id = "explanation";
+    
     for (var question in this.questions)
     {
-      DivElement questionExplanation = question.explain();
-      questionExplanation.id = "explanation";
-      output.insertAdjacentElement('beforeEnd', questionExplanation);
+      //DivElement questionExplanation = question.explain();
+      //questionExplanation.id = "explanation";
+      output.insertAdjacentElement('afterBegin', question.explain());
     }
-    return output;
+    //return output;
   }
   
   /**
@@ -268,7 +269,7 @@ class TestSection
     var output = new DivElement();
     var best = 0;
     var agile = 0;
-    output.id = "summary";
+    output.id = "summary${star}";
     
     output.addHTML("<h4>Destination ${this.star}: ${this.name}<br/>Summary</h4>");
     
@@ -304,11 +305,11 @@ class TestSection
    
     //link explanation
     //TODO: modify on click event to actually do something
-    var link = new ButtonElement();
-    link.on.click.add(
-        (event) => toExplanation());
-    link.text = "Question Explanations";
-    output.insertAdjacentElement("beforeEnd", link);
+//    var link = new ButtonElement();
+//    link.on.click.add(
+//        (event) => toExplanation());
+//    link.text = "Question Explanations";
+//    output.insertAdjacentElement("beforeEnd", link);
     return output;
   }
 }
