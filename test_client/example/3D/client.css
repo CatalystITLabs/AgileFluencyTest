@@ -93,7 +93,7 @@ li list-style {
 /* common css for all slides */
 .slide {
   width: 90%;
-  height: 30em;
+  height: 25em;
   border: 2px solid #CCC;
   background-color: rgba(255, 255, 255, 0.7);;
   margin: 0;
