@@ -26,6 +26,15 @@ li list-style {
 }
 
 /*-----------------------------------------------------*/
+.advance
+{
+  visibility: hidden;
+  width:auto;
+  position: relative;
+  bottom:30px;
+}
+
+/*-----------------------------------------------------*/
 /*title and subtitle */
 #banner {
   background-color:#CCC;
@@ -84,7 +93,7 @@ li list-style {
 /* common css for all slides */
 .slide {
   width: 90%;
-  height: 25em;
+  height: 30em;
   border: 2px solid #CCC;
   background-color: rgba(255, 255, 255, 0.7);;
   margin: 0;
@@ -98,23 +107,32 @@ li list-style {
   -webkit-transform-style: preserve-3d;
 }
 
+.backgroundSlide {
+  margin: 0;
+  padding: 0;
+  overflow:visible;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
  /* CSS for the modal dialog window */
 .modal {
   background-color: #EEEEEE;
   color: black;
   border: 0.1em solid #CCCCCC;
-  box-shadow: -0.5em 0.5em 0.5em #333;
   padding: 1em;
   display: block;
   position: absolute;
+  /*
   bottom: 1em;
+  */
   right: 1em;
   width: 25em;
   
   transition: 0.5s;
-	-moz-transition: 0.5s; /* Firefox 4 */
-	-webkit-transition: 0.5s; /* Safari and Chrome */
-	-o-transition: 0.5s; /* Opera */
+  -moz-transition: 0.5s; /* Firefox 4 */
+  -webkit-transition: 0.5s; /* Safari and Chrome */
+  -o-transition: 0.5s; /* Opera */
   /*height: 15em;*/
 }
 

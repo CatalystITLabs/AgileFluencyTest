@@ -137,7 +137,7 @@ class Answer {
   void showModal(Element button, Element modal)
   {
     modal.style
-    ..boxShadow = "1.0em 1.0em 0.5em rgba(0,0,0,0.2)"
+    ..boxShadow = "1.0em 1.0em 1.0em rgba(0,0,0,0.2)"
     //..transform = "translateZ(3em)"
     ..transform = "translateX(-1em) translateY(-1em)"
     ..opacity = "1"
@@ -149,7 +149,7 @@ class Answer {
   void hideModal(Element button, Element modal)
   {
     modal.style
-    ..boxShadow = "0em 0em 0em rgba(0,0,0,0.3)"
+    ..boxShadow = "-0.2em -0.2em -0.2em rgba(0,0,0,0.3)"
     //..transform = "translateZ(-3em)"
     ..transform = "translateX(0em) translateY(0em)"
     ..opacity = "0"
