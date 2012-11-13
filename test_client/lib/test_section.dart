@@ -171,7 +171,7 @@ class TestSection
     if (atSummary){
       if (! this.atExplanation)
         return this.summary();
-      else return this.explain();
+      else return query("#explainSection");//this.explain();
     }
     
     if (currentQuestion != null)
@@ -211,18 +211,21 @@ class TestSection
   /**
    * Provide questions and explanations, to be drilled down using CSS3 3D effects
    */
-  Element explain()
+  void explain()
   {
     print("Explaining section.");
-    var output = new DivElement();
+    var output = query("#explainSection");
      
     //Explanation section
-    output.id = "explanation";
+    //output.id = "explanation";
+    
     for (var questionExplanation in this.explanations())
     {
-      output.insertAdjacentElement('beforeEnd', questionExplanation);
+      //DivElement questionExplanation = question.explain();
+      //questionExplanation.id = "explanation";
+      output.insertAdjacentElement('afterBegin', questionExplanation);
     }
-    return output;
+    //return output;
   }
   
   /**
@@ -283,13 +286,13 @@ class TestSection
     var output = new DivElement();
     var best = 0;
     var agile = 0;
-    output.id = "summary";
+    output.id = "summary${star}";
     
     //passport image as a backdrop
     var passport = new ImageElement();
     passport.classes.add("passportImage");
     //TODO: add logic to use the correct passport (with animation).
-    passport.src = "images/passport_m.png";
+    passport.src = "../3D/images/passport_0.png";
     output.insertAdjacentElement("beforeEnd", passport);
     
     //content for the right side
@@ -328,15 +331,11 @@ class TestSection
    
     //link explanation
     //TODO: modify on click event to actually do something
-    var link = new ButtonElement();
-    //link.on.click.add((event) => toExplanation());
-    link.id = "toExplanation";
-    link.text = "Question Explanations";
-    content.insertAdjacentElement("beforeEnd", link);
-    
-    //add the content to output
-    output.insertAdjacentElement("beforeEnd", content);
-    
+//    var link = new ButtonElement();
+//    link.on.click.add(
+//        (event) => toExplanation());
+//    link.text = "Question Explanations";
+//    output.insertAdjacentElement("beforeEnd", link);
     return output;
   }
 }
