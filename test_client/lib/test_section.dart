@@ -289,7 +289,7 @@ class TestSection
     var passport = new ImageElement();
     passport.classes.add("passportImage");
     //TODO: add logic to use the correct passport (with animation).
-    passport.src = "images/passport_0.png";
+    passport.src = "images/passport_m.png";
     output.insertAdjacentElement("beforeEnd", passport);
     
     //content for the right side
@@ -318,10 +318,9 @@ class TestSection
 //    output.addHTML("<img src='$image' alt='Placeholder for stamp'/>");
     
     //Progress information...
-    content.addHTML("<h4>Destination ${this.star} Progress:</h4><ul>");
+    content.addHTML("<h4>Estimated Progress: ${percentageScore}%</h4>");
     content.addHTML("<li>Total Agile Answers: $agile/${this.questions.length}</li>");
-    content.addHTML("<li>Most Fluent Answers: $best/${this.questions.length}</li>");
-    content.addHTML("<li>Estimated Progress: ${percentageScore}%</li></ul>");
+    content.addHTML("<li>Most Fluent Answers: $best/${this.questions.length}</li></ul>");
     
     //section summary
     content.addHTML("<p>${this.description}</p>");
