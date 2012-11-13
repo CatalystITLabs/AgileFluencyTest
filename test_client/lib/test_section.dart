@@ -218,11 +218,26 @@ class TestSection
      
     //Explanation section
     output.id = "explanation";
+    for (var questionExplanation in this.explanations())
+    {
+      output.insertAdjacentElement('beforeEnd', questionExplanation);
+    }
+    return output;
+  }
+  
+  /**
+   * output a list of divs of each question explanation
+   */
+  List<Element> explanations()
+  {
+    var output = new List<Element>();
+    var index = 0;
     for (var question in this.questions)
     {
-      DivElement questionExplanation = question.explain();
-      questionExplanation.id = "explanation";
-      output.insertAdjacentElement('beforeEnd', questionExplanation);
+      index++;
+      Element questionExplanation = question.explain();
+      questionExplanation.id = "Section${star}Explanation{$index}";
+      output.add(questionExplanation);
     }
     return output;
   }
@@ -305,8 +320,8 @@ class TestSection
     //link explanation
     //TODO: modify on click event to actually do something
     var link = new ButtonElement();
-    link.on.click.add(
-        (event) => toExplanation());
+    //link.on.click.add((event) => toExplanation());
+    link.id = "toExplanation";
     link.text = "Question Explanations";
     output.insertAdjacentElement("beforeEnd", link);
     return output;
