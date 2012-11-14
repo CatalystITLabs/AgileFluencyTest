@@ -42,6 +42,9 @@ li list-style {
   width: 1em;
 }
 
+/*-----------------------------------------------------*/
+/***** Outside 3d Scene / Page Frame *****/
+
 /* navigation buttons */
 .advance
 {
@@ -52,7 +55,6 @@ li list-style {
   border:none;
 }
 
-/*-----------------------------------------------------*/
 /*title and subtitle */
 #banner {
   background-color:#CCC;
@@ -73,9 +75,13 @@ li list-style {
   margin: 0.2em 0.5em;
 }
 
-/*-----------------------------------------------------*/
+/*footer for github project url and other misc. information*/
+#footer {
+  height: 2em;
+}
 
-/* section for questions and answers */
+/*-----------------------------------------------------*/
+/***** 3d Scene *****/
 #container {
   width: 96%;
   margin: auto;
@@ -125,6 +131,7 @@ li list-style {
   -webkit-transform-style: preserve-3d;
 }
 
+/* used to add background images like the map into the scene */
 .backgroundSlide {
   margin: 0;
   padding: 0;
@@ -133,36 +140,8 @@ li list-style {
   -webkit-transform-style: preserve-3d;
 }
 
- /* CSS for the modal dialog window */
-.modal {
-  background-color: #EEEEEE;
-  color: black;
-  border: 0.1em solid #CCCCCC;
-  padding: 1em;
-  display: block;
-  position: absolute;
-  /*
-  bottom: 1em;
-  */
-  right: 1em;
-  width: 25em;
-  
-  transition: 0.5s;
-  -moz-transition: 0.5s; /* Firefox 4 */
-  -webkit-transition: 0.5s; /* Safari and Chrome */
-  -o-transition: 0.5s; /* Opera */
-  /*height: 15em;*/
-}
-
-/* formats the nextButton within container */
-#container input.nextButton {
-  background-color: #CCC;
-  color: #333;
-  border-radius: 0.5em;
-  -moz-border-radius: 0.5em; /* Firefox 3.6 and earlier */
-  height: 1.2em;
-  margin: 0.25em 0em 1em 0em;
-}
+/*-----------------------------------------------------*/
+/***** Questions and Answers *****/
 
 /* within container */
 #container.question {
@@ -179,7 +158,7 @@ li list-style {
 }
 
 /*-----------------------------------------------------*/
-/******Summary Page*******/
+/******Section Summary Page*******/
 
 .summary
 {
@@ -234,8 +213,31 @@ li list-style {
   text-indent: 0em;
   padding: 0em;
 }
+
 /*-----------------------------------------------------*/
 /******Explanation Page*******/
+
+ /* CSS for the modal dialogue window used in the explanation section */
+.modal {
+  background-color: #EEEEEE;
+  color: black;
+  border: 0.1em solid #CCCCCC;
+  padding: 1em;
+  display: block;
+  position: absolute;
+  /*
+  bottom: 1em;
+  */
+  right: 1em;
+  width: 25em;
+  
+  transition: 0.5s;
+  -moz-transition: 0.5s; /* Firefox 4 */
+  -webkit-transition: 0.5s; /* Safari and Chrome */
+  -o-transition: 0.5s; /* Opera */
+  /*height: 15em;*/
+}
+
 
 #explainSection
 {
@@ -257,10 +259,4 @@ li list-style {
 
 #explanation ul {
   font-size: larger;
-}
-
-/*-----------------------------------------------------*/
-/*footer for github project url and other misc. information*/
-#footer {
-  height: 2em;
 }
