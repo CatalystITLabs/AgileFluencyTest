@@ -7,7 +7,8 @@ body {
   font-size: 1em;
   font-weight: normal;
   line-height: 1.2em;
-  margin: 0em 0.25em;
+  margin: 0em 0.0em;
+  padding: 0;
 }
 
 p {
@@ -29,8 +30,12 @@ p .smallerLeft {
   font-size: smaller;
   text-align: left;
 }
-
+h1 {
+  margin: 0.25em;
+  text-align: center;
+}
 h4 {
+  margin: 0.25em;
   text-align: center;
 }
 
@@ -117,10 +122,10 @@ li list-style {
 
 /* common css for all slides */
 .slide {
-  width: 90%;
+  width: 80%;
   height: 26em;
-  border: 0.3em solid #999;
-  background-color: rgba(255, 255, 255, 0.7);;
+  border: 0.3em solid #FFF;
+  background-color: rgba(255, 255, 255, 0.85);
   margin: 0;
   
   padding: 1em;
@@ -164,9 +169,11 @@ li list-style {
 
 .summary
 {
-  width: 100%;
+/*
+  width: 95%;
   height: 50%;
   height: 26em;
+  */
 }
 /*
 .summary p
@@ -189,11 +196,14 @@ li list-style {
 }
 
 .passportImage {
-  height: 100%;
-  width: 100%;
   position: absolute;
-  left: 0;
-  top: 0;
+  height: 94%;
+  width: 94%;
+  left: 2%;
+  top: 2%;
+  background-color: none;
+  /* shadow doesn't appear under transparency! */
+  /*box-shadow: 0.9em 0.9em 0.9em rgba(0,0,0,0.3);*/
   text-align:center;
 }
 
@@ -229,6 +239,7 @@ li list-style {
   padding: 1em;
   display: block;
   position: absolute;
+  
   /*
   bottom: 1em;
   */
