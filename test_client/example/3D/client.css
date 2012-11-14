@@ -1,4 +1,6 @@
 
+/*******Global*******/
+
 body {
   background-color: #CCC;
   font-family: 'Open Sans', sans-serif;
@@ -10,6 +12,21 @@ body {
 
 p {
   text-indent: 1em;
+}
+
+p {
+  clear: both;
+  width: 100%;
+}
+
+p .italicIndent {
+  text-indent: 1em;
+  font-style:italic;
+}
+
+p .smallerLeft {
+  font-size: smaller;
+  text-align: left;
 }
 
 h4 {
@@ -25,7 +42,7 @@ li list-style {
   width: 1em;
 }
 
-/*-----------------------------------------------------*/
+/* navigation buttons */
 .advance
 {
   visibility: hidden;
@@ -33,25 +50,6 @@ li list-style {
   position: relative;
   bottom:30px;
   border:none;
-}
-
-.summary
-{
-  width: 100%;
-  height: 50%;
-}
-
-.summary p
-{
-  width: 5%;
-  height: 15%;
-}
-
-#explainSection
-{
-  width: 80%;
-  font-size: 0.7em;
-  overflow: 300px;
 }
 
 /*-----------------------------------------------------*/
@@ -173,62 +171,77 @@ li list-style {
 }
 
 /* formatting for answers within the container */
+/* id added by multiple_choice.dart */
 #answers {
   height:auto;
   margin: 0.2em 0.5em;
   text-align:left;
 }
 
-/* formatting for the feedback information */
-#feedback {
-  min-height: 9em;
-  overflow-y: scroll;
+/*-----------------------------------------------------*/
+/******Summary Page*******/
+
+.summary
+{
+  width: 100%;
+  height: 50%;
 }
 
-#feedback.question {
-  color: #000;
-  text-align:center;
-  height: 1em;
+.summary p
+{
+  width: 5%;
+  height: 15%;
 }
 
-#feedback.selectedAnswer {
-  font-weight: bold;
-}
-
-#feedback.agileAnswers {
-  
-}
-
-#summary {
-/*  float:right;*/
-  text-align: left;
+.summary {
+  text-align: center;
   font-size: 1em;
   margin: 0.2em 0.5em;
+  height: 26em;
 }
 
-#summary h4 {
+.stamp {
+  position: absolute;
+  width: 20%;
+  height: auto;
+}
+
+.passportImage {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-align:center;
+}
+
+/* summary/passport right side details */
+.detail {
+  position: absolute;
+  left: 50%;
+  width: 40%;
+  text-align: center;
+}
+
+.detail h4 {
   line-height: 1em;
-  text-align: right;
 }
 
-#summary img {
-  float: left;
-  padding: 0em 3em 0.5em 0em;
-}
-
-#summary li {
+.detail li {
   clear:both;
-  text-align:right;
+  text-align: left;
   margin: 0em;
   text-indent: 0em;
   padding: 0em;
 }
+/*-----------------------------------------------------*/
+/******Explanation Page*******/
 
-#summary p {
-  clear:both;
-  width: 100%;
-  text-indent: 2em;
-  font-style: italic;
+#explainSection
+{
+  width: 80%;
+  font-size: 0.7em;
+  overflow: 300px;
 }
 
 #explanation {
