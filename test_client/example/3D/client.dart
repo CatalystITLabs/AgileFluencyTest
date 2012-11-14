@@ -16,7 +16,7 @@ void addBackground()
 {
   var element = new ImageElement();
   element.src = "images/world_8bit.png";
-  var slide = new Slide(element, 60.0, 0, 0, -50, 0, 0, 0);
+  var slide = new Slide(element, 55.0, 0 , 0, 0, 0, 0);  
   slideshow.addBackgroundSlide(slide);
   //no transitions because this slide is never focused / transitioned to.
 }
@@ -170,7 +170,8 @@ onSuccess(HttpRequest request)
   }
   
   addBackground();
-  slideshow.cam.move(0, 0, 0, 50000, 0, 0, 0);
+  // why are these x and y coordinates needed to center the background?
+  slideshow.cam.move(0, 1330, 400, 50000, 0, 0, 0);
   nextQuestion();
   slideshow.start();
   scriptButton();
