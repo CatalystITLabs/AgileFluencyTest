@@ -22,6 +22,7 @@ p {
 p .italicIndent {
   text-indent: 1em;
   font-style:italic;
+  text-align: left;
 }
 
 p .smallerLeft {
@@ -117,14 +118,15 @@ li list-style {
 /* common css for all slides */
 .slide {
   width: 90%;
-  height: 25em;
-  border: 2px solid #CCC;
+  height: 26em;
+  border: 0.3em solid #999;
   background-color: rgba(255, 255, 255, 0.7);;
   margin: 0;
   
   padding: 1em;
-  border-radius:1.0em;
-  -moz-border-radius:1.0em; /* Firefox 3.6 and earlier */
+  border-radius:1.5em;
+  -moz-border-radius:1.5em; /* Firefox 3.6 and earlier */
+  
   overflow-y: auto;
   
   transform-style: preserve-3d;
@@ -198,6 +200,7 @@ li list-style {
 /* summary/passport right side details */
 .detail {
   position: absolute;
+  margin: 0em;
   left: 50%;
   width: 40%;
   text-align: center;

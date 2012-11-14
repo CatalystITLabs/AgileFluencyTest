@@ -58,7 +58,6 @@ class Test {
     {
       output = new Element.html("<p>No output from TestSection.</p>");
     }
-    output.style.width = "50em";
     return output;
   }
   
