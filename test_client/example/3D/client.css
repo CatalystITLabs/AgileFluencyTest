@@ -123,9 +123,9 @@ li list-style {
 /* common css for all slides */
 .slide {
   width: 80%;
-  height: 26em;
+  height: 26em; /* slightly smaller than the viewBox */
   border: 0.3em solid #FFF;
-  background-color: rgba(255, 255, 255, 0.85);
+  /*background-color: rgba(255, 255, 255, 0.85);*/
   margin: 0;
   
   padding: 1em;
@@ -145,6 +145,20 @@ li list-style {
   overflow:visible;
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
+}
+
+/* The slide in focus gains this style */ 
+.focused {
+  /*width: 80%;*/ /*dynamically altering width of slides breaks the code that centers them*/
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.80);
+}
+
+/* Non-background out of focus slides should use this style. */ 
+.unfocused {
+  /*width: 26em;*/
+  opacity: 1; 
+  background-color: rgba(255, 0, 0, 1.0);
 }
 
 /*-----------------------------------------------------*/
