@@ -1,4 +1,6 @@
 
+/*******Global*******/
+
 body {
   background-color: #CCC;
   font-family: 'Open Sans', sans-serif;
@@ -10,6 +12,21 @@ body {
 
 p {
   text-indent: 1em;
+}
+
+p {
+  clear: both;
+  width: 100%;
+}
+
+p .italicIndent {
+  text-indent: 1em;
+  font-style:italic;
+}
+
+p .smallerLeft {
+  font-size: smaller;
+  text-align: left;
 }
 
 h4 {
@@ -26,15 +43,18 @@ li list-style {
 }
 
 /*-----------------------------------------------------*/
+/***** Outside 3d Scene / Page Frame *****/
+
+/* navigation buttons */
 .advance
 {
   visibility: hidden;
   width:auto;
   position: relative;
   bottom:30px;
+  border:none;
 }
 
-/*-----------------------------------------------------*/
 /*title and subtitle */
 #banner {
   background-color:#CCC;
@@ -55,9 +75,13 @@ li list-style {
   margin: 0.2em 0.5em;
 }
 
-/*-----------------------------------------------------*/
+/*footer for github project url and other misc. information*/
+#footer {
+  height: 2em;
+}
 
-/* section for questions and answers */
+/*-----------------------------------------------------*/
+/***** 3d Scene *****/
 #container {
   width: 96%;
   margin: auto;
@@ -93,7 +117,7 @@ li list-style {
 /* common css for all slides */
 .slide {
   width: 90%;
-  height: 30em;
+  height: 25em;
   border: 2px solid #CCC;
   background-color: rgba(255, 255, 255, 0.7);;
   margin: 0;
@@ -107,6 +131,7 @@ li list-style {
   -webkit-transform-style: preserve-3d;
 }
 
+/* used to add background images like the map into the scene */
 .backgroundSlide {
   margin: 0;
   padding: 0;
@@ -115,7 +140,85 @@ li list-style {
   -webkit-transform-style: preserve-3d;
 }
 
- /* CSS for the modal dialog window */
+/*-----------------------------------------------------*/
+/***** Questions and Answers *****/
+
+/* within container */
+#container.question {
+  color: #000;
+  text-align: center;
+}
+
+/* formatting for answers within the container */
+/* id added by multiple_choice.dart */
+#answers {
+  height:auto;
+  margin: 0.2em 0.5em;
+  text-align:left;
+}
+
+/*-----------------------------------------------------*/
+/******Section Summary Page*******/
+
+.summary
+{
+  width: 100%;
+  height: 50%;
+  height: 26em;
+}
+/*
+.summary p
+{
+  width: 5%;
+  height: 15%;
+}
+
+.summary {
+  text-align: center;
+  font-size: 1em;
+  margin: 0.2em 0.5em;
+  
+}
+*/
+.stamp {
+  position: absolute;
+  width: 20%;
+  height: auto;
+}
+
+.passportImage {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-align:center;
+}
+
+/* summary/passport right side details */
+.detail {
+  position: absolute;
+  left: 50%;
+  width: 40%;
+  text-align: center;
+}
+
+.detail h4 {
+  line-height: 1em;
+}
+
+.detail li {
+  clear:both;
+  text-align: left;
+  margin: 0em;
+  text-indent: 0em;
+  padding: 0em;
+}
+
+/*-----------------------------------------------------*/
+/******Explanation Page*******/
+
+ /* CSS for the modal dialogue window used in the explanation section */
 .modal {
   background-color: #EEEEEE;
   color: black;
@@ -136,88 +239,12 @@ li list-style {
   /*height: 15em;*/
 }
 
-/* formats the nextButton within container */
-#container input.nextButton {
-  background-color: #CCC;
-  color: #333;
-  border-radius: 0.5em;
-  -moz-border-radius: 0.5em; /* Firefox 3.6 and earlier */
-  height: 1.2em;
-  margin: 0.25em 0em 1em 0em;
-}
 
-/* within container */
-#container.question {
-  color: #000;
-  text-align: center;
-}
-
-/* formatting for answers within the container */
-#answers {
-  height:auto;
-  margin: 0.2em 0.5em;
-  text-align:left;
-}
-
-/* formatting for the feedback information */
-#feedback {
-  min-height: 9em;
-  overflow-y: scroll;
-}
-
-#feedback.question {
-  color: #000;
-  text-align:center;
-  height: 1em;
-}
-
-#feedback.selectedAnswer {
-  font-weight: bold;
-}
-
-#feedback.agileAnswers {
-  
-}
-
-#summary {
-  text-align: left;
-  font-size: 1em;
-  margin: 0.2em 0.5em;
-}
-
-
-.passportImage {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-.detail {
-  position: absolute;
-  left: 50%;
-  width: 40%;
-  text-align: center;
-}
-
-.detail h4 {
-  line-height: 1em;
-}
-
-.detail li {
-  clear:both;
-  text-align: left;
-  margin: 0em;
-  text-indent: 0em;
-  padding: 0em;
-}
-
-.detail p {
-  clear: both;
-  width: 100%;
-  text-indent: 1em;
-  font-style: italic;
+#explainSection
+{
+  width: 80%;
+  font-size: 0.7em;
+  overflow: 300px;
 }
 
 #explanation {
@@ -233,10 +260,4 @@ li list-style {
 
 #explanation ul {
   font-size: larger;
-}
-
-/*-----------------------------------------------------*/
-/*footer for github project url and other misc. information*/
-#footer {
-  height: 2em;
 }

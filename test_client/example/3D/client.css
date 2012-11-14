@@ -164,8 +164,9 @@ li list-style {
 {
   width: 100%;
   height: 50%;
+  height: 26em;
 }
-
+/*
 .summary p
 {
   width: 5%;
@@ -176,9 +177,9 @@ li list-style {
   text-align: center;
   font-size: 1em;
   margin: 0.2em 0.5em;
-  height: 26em;
+  
 }
-
+*/
 .stamp {
   position: absolute;
   width: 20%;
