@@ -242,22 +242,21 @@ li list-style {
 
 #explainSection
 {
-  width: 80%;
-  font-size: 0.7em;
+  width: 85%;
+  font-size: 1.0em;
+  /*
   overflow: 300px;
-}
-
-#explanation {
   clear:both;
   text-align: left;
   font-size: smaller;
+  */
 }
 
-#explanation h4 {
+#explainSection h4 {
   text-align: center;
   font-size: larger;
 }
 
-#explanation ul {
-  font-size: larger;
+#explainSection ul {
+  /*font-size: larger;*/
 }
