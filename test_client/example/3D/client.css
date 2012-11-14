@@ -50,10 +50,7 @@ li list-style {
 #explainSection
 {
   width: 80%;
-  height: 100%;
   font-size: 0.7em;
-  position:relative;
-  bottom: 250px;
   overflow: 300px;
 }
 
