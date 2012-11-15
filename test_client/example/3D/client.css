@@ -142,6 +142,8 @@ li list-style {
 .backgroundSlide {
   margin: 0;
   padding: 0;
+  height: auto;
+  width: auto;
   overflow:visible;
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
@@ -162,6 +164,25 @@ li list-style {
 }
 
 /*-----------------------------------------------------*/
+/***** Splash Page *****/
+
+#startButton {
+  position: absolute;
+  bottom: 5em;
+  left: 55%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#splashBackground {
+  height: 98%;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*-----------------------------------------------------*/
 /***** Questions and Answers *****/
 
 /* within container */
@@ -173,9 +194,9 @@ li list-style {
 /* formatting for answers within the container */
 /* id added by multiple_choice.dart */
 #answers {
-  height:auto;
+  height: auto;
   margin: 0.2em 0.5em;
-  text-align:left;
+  text-align: left;
 }
 
 /*-----------------------------------------------------*/

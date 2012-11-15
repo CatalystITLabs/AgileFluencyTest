@@ -2,3 +2,4 @@ packages
 
 /test_client/pubspec.lock
 /test_client/*.lock
+*.lock

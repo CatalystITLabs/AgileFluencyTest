@@ -12,6 +12,7 @@ InputElement nextBtn = query("#nextQuestion");
 InputElement continueBtn = query("#continue");
 InputElement explainBtn = query("#explain");
 
+/// adds a huge map to the scene
 void addBackground()
 {
   var element = new ImageElement();
@@ -155,6 +156,42 @@ void scriptButton()
   });
 }
 
+/// move the camera back to see the map and trigger the test to begin
+void startTest()
+{
+  // Why are these x and y coordinates needed to center the background?
+  slideshow.cam.move(1, 1330, 400, 50000, 0, 0, 0);
+  window.setTimeout(()
+  {
+    nextQuestion();
+    scriptButton();
+  }, 1500);
+}
+
+/// add splash screen and event to trigger the test
+void addSplash()
+{
+  // add splash background image
+  var splashBackground = new ImageElement();  splashBackground.src = "images/splash_8bit.png";  splashBackground.id = "splashBackground";
+ 
+  // add start button
+  var startButton = new ImageElement();
+  startButton.src = "images/start_8bit.png";
+  startButton.id = "startButton";
+  
+  // create div for splash slide and add to slideshow behind the map
+  var slideElement = new DivElement();
+  slideElement.insertAdjacentElement("beforeEnd",splashBackground);
+  slideElement.insertAdjacentElement("beforeEnd", startButton);
+  var slide = slideshow.addElementSlide(slideElement, 1.0, 0, 0, -2000, 0, 0, 0);
+  
+  // set camera at splash slide and script start button
+  slideshow.cam.focusOnSlide(slide, 0);
+  startButton.on.click.add((event) =>  startTest());
+  // sets splash as the current slide and gives it focus
+  slideshow.start();
+}
+
 /**
  * call back method is called by the HttpRequest get method
  * processes the the response text by passing it to the test 
@@ -163,18 +200,14 @@ void scriptButton()
  * method also serves as user input entry point
  */ 
 onSuccess(HttpRequest request)
-{ 
+{
   for(int i=1; i<5; i++)
   {
     test.sections.add(new TestSection(i, request.responseText));
   }
   
   addBackground();
-  // why are these x and y coordinates needed to center the background?
-  slideshow.cam.move(0, 1330, 400, 50000, 0, 0, 0);
-  nextQuestion();
-  slideshow.start();
-  scriptButton();
+  addSplash();
 }
 
 void main()
