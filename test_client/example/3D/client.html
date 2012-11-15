@@ -13,16 +13,27 @@
 	  </div>
 	  
     <div id="container">
+    
       <div id="viewBox">
-        <!--<img src="web/images/pixel_map_generic_wloc.png"/>-->
-        
       </div>
-      <div id="explainSection">
+      
+			<div id= "splash" class = "staticSlideContent">
+			  <img id= "splashBackground" src = "images/splash_8bit.png" />
+			  <img id = "startButton" src = "images/start_8bit.png" />
+			</div>
+      <div id="explainSection" class = "staticSlideContent">
+        <div id="explainContent"></div>
         <input id="return" class="advance" type="button" value="Go Back"/>
       </div>
+      <!--
+      <div id="summary" class="summary staticSlideContent">
+        <img id= "passport" src = "../3D/images/passport_m.png" />
+        <p class="detail"></p>
+      </div>
+      -->
       <input id="nextQuestion" class="advance" type="button" value="Next Question"/>
       <input id="continue" class="advance" type="button" value="Continue"/>
-      <input id="explain" class="advance" type="button" value="More Info"/>
+      <input id="explainBtn" class="advance" type="button" value="More Info"/>
     </div>
 
     <script type="application/dart" src="client.dart"></script>

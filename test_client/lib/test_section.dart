@@ -214,7 +214,10 @@ class TestSection
   void explain()
   {
     print("Explaining section.");
-    var output = query("#explainSection");
+    var output = query("#explainContent");
+    
+    // reset the content portion of explainSection
+    output.innerHTML = "";
      
     //Explanation section
     //output.id = "explanation";
@@ -283,7 +286,10 @@ class TestSection
   Element summary()
   {
     print("Summary section.");
+    //content for the right side
+    
     var output = new DivElement();
+    //  var output = query("#summary");
     var best = 0;
     var agile = 0;
     output.id = "summary${star}";
@@ -298,6 +304,7 @@ class TestSection
     
     //content for the right side
     var content = new ParagraphElement();
+    //var content = query(".detail");
     content.classes.add("detail");
     content.addHTML("<h4>Destination ${this.star}: ${this.name}<br/>Summary</h4>");
     

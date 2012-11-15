@@ -7,8 +7,7 @@ body {
   font-size: 1em;
   font-weight: normal;
   line-height: 1.2em;
-  margin: 0em 0.0em;
-  padding: 0;
+  margin: 0em 0.25em;
 }
 
 p {
@@ -23,19 +22,14 @@ p {
 p .italicIndent {
   text-indent: 1em;
   font-style:italic;
-  text-align: left;
 }
 
 p .smallerLeft {
   font-size: smaller;
   text-align: left;
 }
-h1 {
-  margin: 0.25em;
-  text-align: center;
-}
+
 h4 {
-  margin: 0.25em;
   text-align: center;
 }
 
@@ -120,25 +114,17 @@ li list-style {
   -webkit-perspective: 800px;
 }
 
-/* content to be given a slide is not visible immediately */
-.staticSlideContent {
-  display: none;
-  /*visibility: hidden;*/
-}
-
 /* common css for all slides */
 .slide {
-  width: 80%;
-  height: 26em; /* slightly smaller than the viewBox */
-  border: 0.3em solid #FFF;
-  /*background-color: rgba(255, 255, 255, 0.85);*/
+  width: 90%;
+  height: 25em;
+  border: 2px solid #CCC;
+  background-color: rgba(255, 255, 255, 0.7);;
   margin: 0;
-  display: block;
   
   padding: 1em;
-  border-radius:1.5em;
-  -moz-border-radius:1.5em; /* Firefox 3.6 and earlier */
-  
+  border-radius:1.0em;
+  -moz-border-radius:1.0em; /* Firefox 3.6 and earlier */
   overflow-y: auto;
   
   transform-style: preserve-3d;
@@ -149,44 +135,9 @@ li list-style {
 .backgroundSlide {
   margin: 0;
   padding: 0;
-  height: auto;
-  width: auto;
   overflow:visible;
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
-}
-
-/* The slide in focus gains this style */ 
-.focused {
-  /*width: 80%;*/ /*dynamically altering width of slides breaks the code that centers them*/
-  opacity: 1;
-  background-color: rgba(255, 255, 255, 0.80);
-}
-
-/* Non-background out of focus slides should use this style. */ 
-.unfocused {
-  /*width: 26em;*/
-  opacity: 1; 
-  background-color: rgba(255, 0, 0, 1.0);
-}
-
-/*-----------------------------------------------------*/
-/***** Splash Page *****/
-
-#startButton {
-  position: absolute;
-  bottom: 5em;
-  left: 55%;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#splashBackground {
-  height: 98%;
-  width: auto;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /*-----------------------------------------------------*/
@@ -201,9 +152,9 @@ li list-style {
 /* formatting for answers within the container */
 /* id added by multiple_choice.dart */
 #answers {
-  height: auto;
+  height:auto;
   margin: 0.2em 0.5em;
-  text-align: left;
+  text-align:left;
 }
 
 /*-----------------------------------------------------*/
@@ -211,11 +162,9 @@ li list-style {
 
 .summary
 {
-/*
-  width: 95%;
+  width: 100%;
   height: 50%;
   height: 26em;
-  */
 }
 /*
 .summary p
@@ -238,21 +187,17 @@ li list-style {
 }
 
 .passportImage {
+  height: 100%;
+  width: 100%;
   position: absolute;
-  height: 94%;
-  width: 94%;
-  left: 2%;
-  top: 2%;
-  background-color: none;
-  /* shadow doesn't appear under transparency! */
-  /*box-shadow: 0.9em 0.9em 0.9em rgba(0,0,0,0.3);*/
+  left: 0;
+  top: 0;
   text-align:center;
 }
 
 /* summary/passport right side details */
 .detail {
   position: absolute;
-  margin: 0em;
   left: 50%;
   width: 40%;
   text-align: center;
@@ -281,7 +226,6 @@ li list-style {
   padding: 1em;
   display: block;
   position: absolute;
-  
   /*
   bottom: 1em;
   */
@@ -298,21 +242,22 @@ li list-style {
 
 #explainSection
 {
-  width: 85%;
-  font-size: 1.0em;
-  /*
+  width: 80%;
+  font-size: 0.7em;
   overflow: 300px;
+}
+
+#explanation {
   clear:both;
   text-align: left;
   font-size: smaller;
-  */
 }
 
-#explainSection h4 {
+#explanation h4 {
   text-align: center;
   font-size: larger;
 }
 
-#explainSection ul {
-  /*font-size: larger;*/
+#explanation ul {
+  font-size: larger;
 }
