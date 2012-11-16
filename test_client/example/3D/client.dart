@@ -69,27 +69,24 @@ void nextQuestion()
   }
   
   slideshow.useDynamic = true;
+  currentSlidePosition += 1;
   //create and add a new slide for this next test step
   var x = currentSlidePosition * slidePositionXScale;
   var y = sin(currentSlidePosition) * slidePositionYScale;
   var slide = slideshow.addElementSlide(slideElement, 1.0, currentSlidePosition * slidePositionXScale, y, 0, 0, 0, 0);
-  currentSlidePosition += 1;
-  
-  //create and add the transition to this next test step
-  //var transition = new BasicTransition(slide, presentation.currentSlide);
-  //presentation.transitions.add(transition);
   
   //use the presentation to progress to this next step
   slideshow.next();
 }
 
+/**
+ * Shows the explanation and return button.
+ * Hides the summary and explain button.
+ */
 void displaySectionExplanation()
 {
-  explainBtn.style
-  ..visibility = "hidden";
-  
-  query("#return").style
-  ..visibility = "visible";
+  explainBtn.style.visibility = "hidden";
+  query("#return").style.visibility = "visible";
   
   String summaryId = "#summary${test.currentSection.star}";
   Element explainDiv = query("#explainSection");
@@ -106,7 +103,7 @@ void displaySectionExplanation()
   slideshow.next();
 }
 
-///Adds on click event to the next question button
+///Adds on click events to the buttons
 void scriptButton()
 {  
   Element nextButton = query('#nextButton');
