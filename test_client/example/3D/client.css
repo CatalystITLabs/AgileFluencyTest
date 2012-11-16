@@ -20,13 +20,13 @@ p {
   width: 100%;
 }
 
-p .italicIndent {
+p.italicIndent {
   text-indent: 1em;
   font-style:italic;
   text-align: left;
 }
 
-p .smallerLeft {
+p.smallerLeft {
   font-size: smaller;
   text-align: left;
 }
@@ -52,12 +52,18 @@ li list-style {
 /***** Outside 3d Scene / Page Frame *****/
 
 /* navigation buttons */
+#buttonContainer
+{
+  text-align:center;
+}
 .advance
 {
   visibility: hidden;
   width:auto;
   position: relative;
   bottom:30px;
+  margin-left:auto;
+  margin-right:auto;
   border:none;
 }
 
@@ -110,7 +116,7 @@ li list-style {
   border-radius:1.25em;
   -moz-border-radius:1.25em; /* Firefox 3.6 and earlier */
   background-color: #fff;
-  text-align: center;
+  /*text-align: center;*/
   padding: 1.0em;
   overflow-y:hidden;
   overflow-x:hidden;
@@ -185,6 +191,10 @@ li list-style {
 
 /*-----------------------------------------------------*/
 /***** Splash Page *****/
+#splash
+{
+  text-align:center;
+}
 
 #startButton {
   position: absolute;

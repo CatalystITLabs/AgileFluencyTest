@@ -2,14 +2,15 @@ import 'dart:html';
 import "../../lib/test.dart";
 import "../../packages/presentation/presentation.dart";
 
-Test test = new Test();
+//Test test = new Test();
 SlideShow presentation = new BasicSlideShow(query("#viewBox"));
 
 void addTestSlide()
 {
   // your content here
   //var slideElement = test.currentSection.displayCurrentQuestion();
-  var slideElement = test.currentSection.explain();
+  var slideElement = query("#finalSection");
+  
   //var slideElement = test.currentSection.summary();
   
   //your callbacks here
@@ -43,11 +44,13 @@ void addBackground()
  */ 
 onSuccess(HttpRequest request)
 { 
+  /*
   for(int i=1; i<5; i++)
   {
     test.sections.add(new TestSection(i, request.responseText));
   }
   test.next();
+  */
   addBackground();
   addTestSlide();
   presentation.start();
