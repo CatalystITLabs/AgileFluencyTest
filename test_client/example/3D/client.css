@@ -61,6 +61,19 @@ li list-style {
   border:none;
 }
 
+#nextButton{
+  position: absolute;
+  right: 1.5em;
+  top: 1.5em;
+}
+
+#previousButton{
+  position: absolute;
+  left: 1.5em;
+  top: 1.5em;
+}
+
+
 /*title and subtitle */
 #banner {
   background-color:#CCC;

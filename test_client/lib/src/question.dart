@@ -61,7 +61,7 @@ abstract class Question {
   
   void enableNextButton()
   {
-    InputElement nextButton = query("#nextQuestion");
+    InputElement nextButton = query("#nextButton");
     nextButton.disabled = false;
   }
 }

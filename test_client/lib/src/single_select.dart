@@ -56,7 +56,7 @@ class SingleSelect extends MultipleChoice{
     this.selected = this.answers[number];
     print("answer: ${this.selected.text}");
     
-    Element nxtQuBtn = query("#nextQuestion");
+    Element nxtQuBtn = query("#nextButton");
     enableNextButton();
     /*
      * Code programmatically calls a click event on the next button when an answer is selected

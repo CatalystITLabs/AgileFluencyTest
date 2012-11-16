@@ -92,13 +92,13 @@ class TestSection
   
   void enableNextButton()
   {
-    InputElement nextButton = query("#nextQuestion");
+    InputElement nextButton = query("#nextButton");
     nextButton.disabled = false;
   }
   
   void disableNextButton()
   {
-    InputElement nextButton = query("#nextQuestion");
+    InputElement nextButton = query("#nextButton");
     nextButton.disabled = true;
   }
   
