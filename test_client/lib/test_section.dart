@@ -326,7 +326,7 @@ class TestSection
      */
     
     //stamp image placeholder. The plan will be to zoom into this, to show the summary information.
-//    output.addHTML("<img src='$image' alt='Placeholder for stamp'/>");
+    //output.addHTML("<img src='$image' alt='Placeholder for stamp'/>");
     
     //Progress information...
     content.addHTML("<h4>Estimated Progress: ${percentageScore}%</h4>");
@@ -335,16 +335,10 @@ class TestSection
     
     //section summary
     content.addHTML("<p class=\"italicIndent\">${this.description}</p>");
-    content.addHTML("<p class=\"smallerLeft\">Learn more about ${this.name} <a href='${this.reference}'>here</a></p>");
+    content.addHTML("<p class=\"smallerLeft\">Learn more about ${this.name} <a href='${this.reference}' target='_blank'>here</a></p>");
    
     output.insertAdjacentElement("beforeEnd", content);
-    //link explanation
-    //TODO: modify on click event to actually do something
-//    var link = new ButtonElement();
-//    link.on.click.add(
-//        (event) => toExplanation());
-//    link.text = "Question Explanations";
-//    output.insertAdjacentElement("beforeEnd", link);
+
     return output;
   }
 }
