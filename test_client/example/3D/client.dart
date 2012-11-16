@@ -203,9 +203,17 @@ onSuccess(HttpRequest request)
   {
     test.sections.add(new TestSection(i, request.responseText));
   }
-  
-  addBackground();
-  addSplash();
+  var viewBox = query("#viewBox");
+  viewBox.style.transition = "0.5";
+  //viewBox.style.backgroundImage = "url('images/static.gif')";
+  window.setTimeout(()
+  {
+    viewBox.style.backgroundImage = "none";
+    viewBox.innerHTML = "";
+    //viewBox.style.backgroundImage = "none";
+    addBackground();
+    addSplash();
+  }, 500);
 }
 
 void main()

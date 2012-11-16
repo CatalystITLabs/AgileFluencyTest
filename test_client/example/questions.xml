@@ -1,31 +1,4 @@
 <assessment>
-<section level="1">
-			<name>Debug Test Section</name>
-			<description>This section is here to avoid a rediculous click fest through 9 questions during testing.</description>
-	    <reference>http://martinfowler.com/articles/agileFluency.html#One-starTeamsCreateBusinessValue</reference>
-	    <questionList>
-			<question id="1" type="SingleSelect">
-				<text>How often in development do you produce fully working, documented, and tested software?</text>
-				<answerList>
-					<answer>
-						<points>0</points>
-						<text>When it's finished</text>
-						<explanation>This corresponds to the waterfall method. Agile's most fundamental principal is replacing this model with a cyclical and time boxed process. This way the customer gets software earlier and can change requirements of the software during development as needed.</explanation>
-					</answer>
-					<answer>
-						<points>1</points>
-						<text>We go through many iterations</text>
-						<explanation>Any iterative process is closer to Agile than Waterfall development, but simply iterating may be closer to the spiral method of development.</explanation>
-					</answer>
-					<answer>
-						<points>2</points>
-						<text>We do iterations of a fixed length less than 4 weeks</text>
-						<explanation>This is the most agile option. The third principle of Agile states, "Agile seeks to deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale."</explanation>
-					</answer>
-				</answerList>
-			</question>
-		</questionList>
-	</section>
 	<section level="1">
 			<name>Focus on Value</name>
 			<description>Your team is shifting culture to focus on the overall success of the team, instead of personal contribution. You are learning and practicing with tools such as Scrum and Kanban to deliver business value in terms of what the client, business, or user wants. As a result, your team will be able to focus on the parts of work that deliver maximum value!</description>
@@ -52,7 +25,7 @@
 				</answerList>
 			</question>
 			<question id="2" type="SingleSelect">
-			    <text>How much is documented before start of implementation?</text>
+			    <text>How much is documented before start of programming?</text>
 			    <answerList>
 			        <answer>
 			            <points>0</points>
@@ -82,7 +55,7 @@
 			    <answerList>
 			        <answer>
 			            <points>0</points>
-			            <text>Nearly never, management takes care</text>
+			            <text>Almost never, management takes care</text>
 			            <explanation>Agile encourages team meetings to address issues, not intervention from above.</explanation>
 			        </answer>
 			        <answer>
@@ -113,7 +86,7 @@
 			        </answer>
 			        <answer>
 			            <points>1</points>
-			            <text>List prioritized by customer/business needs</text>
+			            <text>A list prioritized by customer/business needs</text>
 			            <explanation></explanation>
 			        </answer>
 			        <answer>
@@ -123,7 +96,7 @@
 			        </answer>
 			        <answer>
 			            <points>1</points>
-			            <text>List with user stories and estimated difficulty</text>
+			            <text>A list with user stories and estimated difficulty</text>
 			            <explanation></explanation>
 			        </answer>
 			    </answerList>
@@ -144,7 +117,7 @@
 			        </answer>
 			        <answer>
 			            <points>0</points>
-			            <text>Group of people is responsible</text>
+			            <text>A group of people is responsible</text>
 			            <explanation></explanation>
 			        </answer>
 			        <answer>
