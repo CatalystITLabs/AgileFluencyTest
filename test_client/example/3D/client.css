@@ -339,3 +339,11 @@ li list-style {
 #explainSection ul {
   /*font-size: larger;*/
 }
+
+/*-----------------------------------------------------*/
+/******Final Page*******/
+
+#shareButtonContainer
+{
+  text-align: center;
+}

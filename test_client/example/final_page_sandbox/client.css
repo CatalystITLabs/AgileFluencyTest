@@ -318,7 +318,6 @@ li list-style {
   /*height: 15em;*/
 }
 
-
 #explainSection
 {
   width: 85%;
@@ -338,4 +337,12 @@ li list-style {
 
 #explainSection ul {
   /*font-size: larger;*/
+}
+
+/*-----------------------------------------------------*/
+/******Final Page*******/
+
+#shareButtonContainer
+{
+  text-align: center;
 }

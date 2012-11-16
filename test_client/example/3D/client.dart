@@ -21,6 +21,7 @@ num camZr = 0;
 InputElement nextBtn = query("#nextButton");
 InputElement continueBtn = query("#nextButton");
 InputElement explainBtn = query("#explainBtn");
+InputElement finishBtn = query("#finishBtn");
 
 /// adds a huge map to the scene
 void addBackground()
@@ -32,6 +33,14 @@ void addBackground()
   //no transitions because this slide is never focused / transitioned to.
 }
 
+/// adds a new slide on the map
+Slide addSlideToMap(Element slideContents)
+{
+  var x = currentSlidePosition * slidePositionXScale;
+  var y = sin(currentSlidePosition) * slidePositionYScale;
+  return slideshow.addElementSlide(slideContents, 1.0, currentSlidePosition * slidePositionXScale, y, 0, 0, 0, 0);
+}
+
 /**
  * wrapper method for the camera move method that sets the default camera
  * positions as arguments
@@ -41,6 +50,24 @@ void lookAtMap()
   slideshow.cam.move(camTransDuration, camX, camY, camZ, camXr, camYr, camZr);
 }
 
+/// Reset all buttons to hidden
+void hideButtons()
+{
+  nextBtn.style.visibility = "hidden";
+  continueBtn.style.visibility = "hidden";
+  explainBtn.style.visibility = "hidden";
+  finishBtn.style.visibility = "hidden";
+}
+
+/// Make visible all buttons used by the summary page
+void enableSummaryButtons()
+{
+  finishBtn.style.visibility = "visible";
+  if(test.currentSection != test.sections.last)
+    continueBtn.style.visibility = "visible";
+  explainBtn.style.visibility = "visible";
+}
+
 ///Advance the test to the next question or step
 void nextQuestion()
 {
@@ -48,32 +75,17 @@ void nextQuestion()
   var slideElement = test.next();
   assert(slideElement != null);
   
+  hideButtons();
 
   if(slideElement.id.startsWith("summary"))
   {
-    if(test.currentSection != test.sections.last)
-    {
-      continueBtn.style.visibility = "visible";
-    }
-    else
-    {
-      continueBtn.style.visibility = "hidden";
-    }
-    explainBtn.style
-    ..visibility = "visible";
-  }
-  else
-  {
-    explainBtn.style
-    ..visibility = "hidden";
+    enableSummaryButtons();
   }
   
   slideshow.useDynamic = true;
   currentSlidePosition += 1;
-  //create and add a new slide for this next test step
-  var x = currentSlidePosition * slidePositionXScale;
-  var y = sin(currentSlidePosition) * slidePositionYScale;
-  var slide = slideshow.addElementSlide(slideElement, 1.0, currentSlidePosition * slidePositionXScale, y, 0, 0, 0, 0);
+  //create and add a new slide for this next test stepaddSlideToMap
+  addSlideToMap(slideElement);
   
   //use the presentation to progress to this next step
   slideshow.next();
@@ -85,7 +97,6 @@ void nextQuestion()
  */
 void displaySectionExplanation()
 {
-  explainBtn.style.visibility = "hidden";
   query("#return").style.visibility = "visible";
   
   String summaryId = "#summary${test.currentSection.star}";
@@ -95,9 +106,7 @@ void displaySectionExplanation()
   
   test.currentSection.explain();
   
-  var x = currentSlidePosition * slidePositionXScale;
-  var y = sin(currentSlidePosition) * slidePositionXScale * 2;
-  var slide = slideshow.addElementSlide(explainDiv, 1.0, currentSlidePosition * slidePositionXScale, y, 0, 0, 0, 0);
+  var slide = addSlideToMap(explainDiv);
 
   slideshow.cam.lookAtSlide(slide, 1);
   slideshow.next();
@@ -109,47 +118,48 @@ void scriptButton()
   Element nextButton = query('#nextButton');
   
   nextButton.on.click.add((event)
-  {
-    nextBtn.style
-    ..visibility = "hidden";
-      
+  {      
     if(test.currentSection.atSummary)
     {
       String summaryId = "#summary${test.currentSection.star}";
       Element summaryDiv = query(summaryId);
       summaryDiv.style.visibility = "visible";
     }
-
+    
     lookAtMap();
     nextQuestion();
-    
   });
     
   explainBtn.on.click.add((event)
   {  
+    hideButtons();
     displaySectionExplanation();
   });
   
   query("#return").on.click.add((event)
-  {
-    explainBtn.style
-    ..visibility = "visible";
-    
-    query("#return").style
-    ..visibility = "hidden";
+  {    
+    hideButtons();
+    enableSummaryButtons();
     
     String summaryId = "#summary${test.currentSection.star}";
     Element explainDiv = query("#explainSection");
     Element summaryDiv = query(summaryId);
     summaryDiv.style.visibility = "visible";
-    
-    //test.currentSection.explain();
-    
-    var x = currentSlidePosition * slidePositionXScale;
-    var y = sin(currentSlidePosition) * slidePositionXScale * 2;
-    var slide = slideshow.addElementSlide(summaryDiv, 1.0, currentSlidePosition * slidePositionXScale, y, 0, 0, 0, 0);
-    //xPosition += 1;
+
+    addSlideToMap(summaryDiv);
+
     lookAtMap();
+    slideshow.next();
+  });
+  
+  finishBtn.on.click.add((event)
+  {
+    hideButtons();
+    Element finalSection = query("#finalSection");
+    
+    var slide = slideshow.addElementSlide(finalSection, 1.0, 0,0,0,0,0,0);
+    
+    slideshow.cam.lookAtSlide(slide, 1);
     slideshow.next();
   });
 }

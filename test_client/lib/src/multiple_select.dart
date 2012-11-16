@@ -42,8 +42,7 @@ class MultipleSelect extends MultipleChoice{
     else
       this.selectedAnswers.removeAt(selectedIndex);
     
-    query("#nextButton").style
-    ..visibility = "visible";
+    query("#nextButton").style.visibility = "visible";
     enableNextButton();
   }
   
