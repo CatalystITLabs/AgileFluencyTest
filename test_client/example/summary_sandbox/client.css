@@ -186,6 +186,46 @@ li list-style {
   height: auto;
 }
 
+#stamp1 {
+	left: 3%;
+	top: 6%;
+	transform: rotateZ(10deg);
+	-ms-transform:rotate(10deg); /* IE 9 */
+	-moz-transform:rotate(10deg); /* Firefox */
+	-webkit-transform:rotate(10deg); /* Safari and Chrome */
+	-o-transform:rotate(10deg); /* Opera */
+}
+
+#stamp2 {
+  left: 26%;
+  top: 3%;
+  transform: rotateZ(-18deg);
+  -ms-transform:rotate(18deg); /* IE 9 */
+  -moz-transform:rotate(18deg); /* Firefox */
+  -webkit-transform:rotate(18deg); /* Safari and Chrome */
+  -o-transform:rotate(18deg); /* Opera */
+}
+
+#stamp3 {
+  left: 6%;
+  top: 44%;
+  transform: rotateZ(-7deg);
+  -ms-transform:rotate(7deg); /* IE 9 */
+  -moz-transform:rotate(7deg); /* Firefox */
+  -webkit-transform:rotate(7deg); /* Safari and Chrome */
+  -o-transform:rotate(7deg); /* Opera */
+}
+
+#stamp4 {
+  left: 24%;
+  top: 42%;
+  transform: rotateZ(5deg);
+  -ms-transform:rotate(5deg); /* IE 9 */
+  -moz-transform:rotate(5deg); /* Firefox */
+  -webkit-transform:rotate(5deg); /* Safari and Chrome */
+  -o-transform:rotate(5deg); /* Opera */
+}
+
 .passportImage {
   height: 100%;
   width: 100%;

@@ -28,6 +28,17 @@ InputElement continueButton = query("#nextButton");
 InputElement explainButton = query("#explainButton");
 InputElement finishButton = query("#finishButton");
 
+/// returns an element with the section stamp
+Element getStamp(int number)
+{
+  var stamp = new ImageElement();
+  
+  stamp.classes.add("stamp");
+  stamp.src = "images/stamp_$number.png";
+  stamp.id = "stamp$number";
+
+  return stamp;
+}
 
 /// adds a huge map to the scene
 void addBackground()
@@ -93,6 +104,10 @@ void nextQuestion()
   if(slideElement.id.startsWith("summary"))
   {
     enableSummaryButtons();
+    for( int x = 1; x<= test.currentSection.star; x++)
+    {
+      slideElement.insertAdjacentElement("beforeEnd", getStamp(x));
+    }
   }
   
   slideshow.useDynamic = true;

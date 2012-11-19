@@ -5,6 +5,17 @@ import "../../packages/presentation/presentation.dart";
 Test test = new Test();
 SlideShow presentation = new BasicSlideShow(query("#viewBox"));
 
+Element getStamp(int number)
+{
+  var stamp = new ImageElement();
+  
+  stamp.classes.add("stamp");
+  stamp.src = "images/stamp_$number.png";
+  stamp.id = "stamp$number";
+
+  return stamp;
+}
+
 void addTestSlide()
 {
   // your content here
@@ -12,35 +23,10 @@ void addTestSlide()
   //var slideElement = test.currentSection.explain();
   var slideElement = test.currentSection.summary();
   
-  var stamp1 = new ImageElement();
-  stamp1.classes.add("stamp");
-  stamp1.src = "images/stamp_1.png";
-  stamp1.style.left = "3%";
-  stamp1.style.top = "6%";
-  stamp1.style.transform = "rotateZ(10deg)";
-  var stamp2 = new ImageElement();
-  stamp2.classes.add("stamp");
-  stamp2.src = "images/stamp_2.png";
-  stamp2.style.left = "26%";
-  stamp2.style.top = "3%";
-  stamp2.style.transform = "rotateZ(-18deg)";
-  var stamp3 = new ImageElement();
-  stamp3.classes.add("stamp");
-  stamp3.src = "images/stamp_3.png";
-  stamp3.style.left = "6%";
-  stamp3.style.top = "44%";
-  stamp3.style.transform = "rotateZ(-7deg)";
-  var stamp4 = new ImageElement();
-  stamp4.classes.add("stamp");
-  stamp4.src = "images/stamp_4.png";
-  stamp4.style.left = "24%";
-  stamp4.style.top = "42%";
-  stamp4.style.transform = "rotateZ(5deg)";
-  
-  slideElement.insertAdjacentElement("beforeEnd", stamp1);
-  slideElement.insertAdjacentElement("beforeEnd", stamp2);
-  slideElement.insertAdjacentElement("beforeEnd", stamp3);
-  slideElement.insertAdjacentElement("beforeEnd", stamp4);
+  slideElement.insertAdjacentElement("beforeEnd", getStamp(1));
+  slideElement.insertAdjacentElement("beforeEnd", getStamp(2));
+  slideElement.insertAdjacentElement("beforeEnd", getStamp(3));
+  slideElement.insertAdjacentElement("beforeEnd", getStamp(4));
   
   //your callbacks here
   //slideElement.on.click.add((event) => done());
