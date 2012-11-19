@@ -5,7 +5,7 @@ import "../../packages/presentation/presentation.dart";
 
 Test test = new Test();
 SlideShow slideshow = new BasicSlideShow(query("#viewBox"));
-num currentSlidePosition = -10;
+num currentSlidePosition = -10.5;
 num slidePositionXScale = 2000;
 num slidePositionYScale = 4000;
 
