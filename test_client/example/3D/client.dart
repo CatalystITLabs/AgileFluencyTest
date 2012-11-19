@@ -18,10 +18,12 @@ num camXr = 0;
 num camYr = 0;
 num camZr = 0;
 
-InputElement nextBtn = query("#nextButton");
-InputElement continueBtn = query("#nextButton");
-InputElement explainBtn = query("#explainBtn");
-InputElement finishBtn = query("#finishBtn");
+InputElement nextButton = query("#nextButton");
+InputElement backButton = query("#backButton");
+InputElement continueButton = query("#nextButton");
+InputElement explainButton = query("#explainButton");
+InputElement finishButton = query("#finishButton");
+
 
 /// adds a huge map to the scene
 void addBackground()
@@ -53,19 +55,20 @@ void lookAtMap()
 /// Reset all buttons to hidden
 void hideButtons()
 {
-  nextBtn.style.visibility = "hidden";
-  continueBtn.style.visibility = "hidden";
-  explainBtn.style.visibility = "hidden";
-  finishBtn.style.visibility = "hidden";
+  nextButton.style.visibility = "hidden";
+  continueButton.style.visibility = "hidden";
+  backButton.style.visibility = "hidden";
+  explainButton.style.visibility = "hidden";
+  finishButton.style.visibility = "hidden";
 }
 
 /// Make visible all buttons used by the summary page
 void enableSummaryButtons()
 {
-  finishBtn.style.visibility = "visible";
+  finishButton.style.visibility = "visible";
   if(test.currentSection != test.sections.last)
-    continueBtn.style.visibility = "visible";
-  explainBtn.style.visibility = "visible";
+    continueButton.style.visibility = "visible";
+  explainButton.style.visibility = "visible";
 }
 
 ///Advance the test to the next question or step
@@ -97,7 +100,8 @@ void nextQuestion()
  */
 void displaySectionExplanation()
 {
-  query("#return").style.visibility = "visible";
+  backButton.style.visibility = "visible";
+  nextButton.style.visibility = "visible";
   
   String summaryId = "#summary${test.currentSection.star}";
   Element explainDiv = query("#explainSection");
@@ -130,13 +134,13 @@ void scriptButton()
     nextQuestion();
   });
     
-  explainBtn.on.click.add((event)
+  explainButton.on.click.add((event)
   {  
     hideButtons();
     displaySectionExplanation();
   });
   
-  query("#return").on.click.add((event)
+  backButton.on.click.add((event)
   {    
     hideButtons();
     enableSummaryButtons();
@@ -152,7 +156,7 @@ void scriptButton()
     slideshow.next();
   });
   
-  finishBtn.on.click.add((event)
+  finishButton.on.click.add((event)
   {
     hideButtons();
     Element finalSection = query("#finalSection");
