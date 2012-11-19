@@ -5,11 +5,11 @@ import "../../packages/presentation/presentation.dart";
 
 Test test = new Test();
 SlideShow slideshow = new BasicSlideShow(query("#viewBox"));
-num currentSlidePosition = -10.5;
-num slidePositionXScale = 2000;
-num slidePositionYScale = 4000;
 
-/*********default camera position*********/
+// slide placement settings
+num currentSlidePosition = -15.5;
+
+// camera default settings
 num camTransDuration = 1;
 num camX = 1330;
 num camY = 400;
@@ -18,6 +18,7 @@ num camXr = 0;
 num camYr = 0;
 num camZr = 0;
 
+// page controls
 InputElement nextButton = query("#nextButton");
 InputElement backButton = query("#backButton");
 InputElement continueButton = query("#nextButton");
@@ -38,8 +39,13 @@ void addBackground()
 /// adds a new slide on the map
 Slide addSlideToMap(Element slideContents)
 {
+  // use a sin wave and scale it to look like a global journey
+  num slidePositionXScale = 2000;
+  num slidePositionYScale = 10000;
+  num waveScale = 2.0;
+  num waveShift = -3.0;
   var x = currentSlidePosition * slidePositionXScale;
-  var y = sin(currentSlidePosition) * slidePositionYScale;
+  var y = sin(currentSlidePosition / waveScale + waveShift) * slidePositionYScale;
   return slideshow.addElementSlide(slideContents, 1.0, currentSlidePosition * slidePositionXScale, y, 0, 0, 0, 0);
 }
 
