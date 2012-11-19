@@ -3,7 +3,10 @@ import 'dart:math';
 import "../../lib/test.dart";
 import "../../packages/presentation/presentation.dart";
 
+// generates test content and grades
 Test test = new Test();
+
+// powers 3d transitions 
 SlideShow slideshow = new BasicSlideShow(query("#viewBox"));
 
 // slide placement settings
@@ -35,6 +38,7 @@ void addBackground()
   slideshow.addBackgroundSlide(slide);
   //no transitions because this slide is never focused / transitioned to.
 }
+
 
 /// adds a new slide on the map
 Slide addSlideToMap(Element slideContents)
@@ -209,18 +213,22 @@ void addSplash()
  */ 
 onSuccess(HttpRequest request)
 {
+  // load test content from xml
   for(int i=1; i<5; i++)
   {
     test.sections.add(new TestSection(i, request.responseText));
   }
+  
   var viewBox = query("#viewBox");
   viewBox.style.transition = "0.5";
-  //viewBox.style.backgroundImage = "url('images/static.gif')";
+  
   window.setTimeout(()
   {
+    //clear loading screen
     viewBox.style.backgroundImage = "none";
     viewBox.innerHTML = "";
-    //viewBox.style.backgroundImage = "none";
+    
+    //add map and first slide
     addBackground();
     addSplash();
   }, 500);
