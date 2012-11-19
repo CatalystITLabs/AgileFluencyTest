@@ -206,6 +206,10 @@ li list-style {
 #splash
 {
   text-align:center;
+  background-image: url('images/splash_8bit.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position:center; 
 }
 
 #startButton {
@@ -224,6 +228,16 @@ li list-style {
   margin-right: auto;
 }
 
+#splash p
+{
+  width: 23em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8.5em;
+  padding-left: 6em;
+  text-shadow: 0.0em 0.0em 0.9em #FFF, 0.0em 0.0em 0.6em #FFF, 0.0em 0.0em 0.3em #FFF;
+  font-weight:800;
+}
 /*-----------------------------------------------------*/
 /***** Questions and Answers *****/
 
