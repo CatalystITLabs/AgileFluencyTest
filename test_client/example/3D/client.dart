@@ -138,10 +138,12 @@ void displaySectionExplanation()
   Element summaryDiv = query(summaryId);
   summaryDiv.style.visibility = "hidden";
   
-  test.currentSection.explain();
+  //Just copy the output from Test into our existing div
+  var explainContent = query("#explainContent");
+  explainContent.innerHTML = test.currentSection.explain().innerHTML;
   
+  //add to slide, zoomin, and focus the slide
   var slide = addSlideToMap(explainDiv);
-
   slideshow.cam.lookAtSlide(slide, 1);
   slideshow.next();
 }
