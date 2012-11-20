@@ -30,13 +30,22 @@
       
 			<div id= "splash" class = "staticSlideContent">
 			  <!--img id= "splashBackground" src = "images/splash_8bit.png" />-->
-			  <img id = "startButton" src = "images/start_8bit.png" />
+			  <input id = "startButton" type="image" src="images/start_8bit.png" />
 			  <p>A self-assessment inspired by the article <a src='http://martinfowler.com/articles/agileFluency.html'>"Your Path through Agile Fluency"</a> by
 			  Diana Larsen and James Shore. </p>
 			</div>
       <div id="explainSection" class = "staticSlideContent">
-        <div id="explainContent"></div>
-        <input id="return" class="advance" type="button" value="Go Back"/>
+        <h4>Question and Answer Explanations</h4>
+        <p>Here you can find out more about how we rated your progress toward this level of agile fluency.</p>
+        <p>Key:
+        <ul>
+	        <li>Not agile answer.</li>
+	        <li><font color="rgb(0,0,7f)">Somewhat agile answer.</font></li>
+	        <li><font color="rgb(0,0,ff)">Completely agile answer.</font></li>
+	        <li>=> An answer you selected. <=</li>
+	        <li>An answer with further explanation. Just click the question mark button that looks like this &nbsp<image src="images/question_8bit.png"/></li>
+	      </ul></p>
+	      <div id="explainContent"></div>
       </div>
       <div id="finalSection" class="staticSlideContent">
         <h4>Thank you for taking the Agile Fluency Self-Assessment.</h4>
@@ -52,7 +61,8 @@
           <span class='st_googleplus_hcount' displayText='Google +'></span>
           <span class='st_email_hcount' displayText='Email'></span>
         </div>
-        <button id="retake" onclick="location.reload()">Retake Test?</button>
+        <input id="retake" type="image" src="images/retake_8bit.png" onclick="location.reload()"/>
+        
       </div>
       <!--
       <div id="summary" class="summary staticSlideContent">

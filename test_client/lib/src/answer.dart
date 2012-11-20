@@ -25,7 +25,7 @@ class Answer {
   String displayForExplanation(bool selectedByUser, int maxPoints)
   {
     var answerString = this.text;
-    var pointsColorNum = (255 * this.points ~/ maxPoints).toInt();
+    var pointsColorNum = (255 * Math.min(this.points, maxPoints) ~/ maxPoints).toInt();
     
     //Hex value for the answer formatting, based on points.
     var pointsColorHex = pointsColorNum.toRadixString(16);
@@ -72,7 +72,8 @@ class Answer {
     if (this.explanation != null && this.explanation != "" && displayExplanationMode == 3)
     {
       //Add explanation button
-      var explainButton = new ImageElement();
+      var explainButton = new InputElement();
+      explainButton.type = "image";
       explainButton.src = "images/question_8bit.png";
       output.insertAdjacentElement("beforeEnd", explainButton);
       

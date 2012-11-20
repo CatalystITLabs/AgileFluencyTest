@@ -211,24 +211,15 @@ class TestSection
   /**
    * Provide questions and explanations, to be drilled down using CSS3 3D effects
    */
-  void explain()
+  Element explain()
   {
-    print("Explaining section.");
-    var output = query("#explainContent");
-    
-    // reset the content portion of explainSection
-    output.innerHTML = "";
-     
-    //Explanation section
-    //output.id = "explanation";
-    
+    var output = new DivElement();
+
     for (var questionExplanation in this.explanations())
     {
-      //DivElement questionExplanation = question.explain();
-      //questionExplanation.id = "explanation";
-      output.insertAdjacentElement('afterBegin', questionExplanation);
+      output.insertAdjacentElement('beforeEnd', questionExplanation);
     }
-    //return output;
+    return output;
   }
   
   /**
