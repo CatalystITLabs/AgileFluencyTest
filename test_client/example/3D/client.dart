@@ -106,7 +106,12 @@ void nextQuestion()
     enableSummaryButtons();
     for( int x = 1; x<= test.currentSection.star; x++)
     {
-      slideElement.insertAdjacentElement("beforeEnd", getStamp(x));
+      num sectionFluency = 100*(test.currentSection.getUserAnswerPoints()/test.currentSection.getMaxPoints());
+      //stamp passport if the user has earned an acceptable level of fluency for the section
+      if(sectionFluency > 70)
+      {
+        slideElement.insertAdjacentElement("beforeEnd", getStamp(x));
+      }
     }
   }
   

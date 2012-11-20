@@ -329,7 +329,7 @@ class TestSection
     //output.addHTML("<img src='$image' alt='Placeholder for stamp'/>");
     
     //Progress information...
-    content.addHTML("<h4>Estimated Progress: ${percentageScore}%</h4>");
+    content.addHTML("<h4>Estimated Fluency: ${percentageScore}%</h4>");
     content.addHTML("<li>Total Agile Answers: $agile/${this.questions.length}</li>");
     content.addHTML("<li>Most Fluent Answers: $best/${this.questions.length}</li></ul>");
     
