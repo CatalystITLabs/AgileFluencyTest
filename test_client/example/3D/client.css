@@ -280,50 +280,149 @@ li list-style {
   
 }
 */
+
+/*****Stamp**********/
+
 .stamp {
   position: absolute;
   width: 20%;
   height: auto;
 }
 
-#stamp1 {
+#stamp1Unplaced {
   left: 3%;
   top: 6%;
-  transform: rotateZ(10deg);
-  -ms-transform:rotate(10deg); /* IE 9 */
-  -moz-transform:rotate(10deg); /* Firefox */
-  -webkit-transform:rotate(10deg); /* Safari and Chrome */
-  -o-transform:rotate(10deg); /* Opera */
+  transform:rotateZ(10deg);
+  -ms-transform:scale(5) rotate(10deg); /* IE 9 */
+  -moz-transform:scale(5) rotate(10deg); /* Firefox */
+  -webkit-transform:scale(5) rotate(10deg); /* Safari and Chrome */
+  -o-transform:scale(5) rotate(10deg); /* Opera */
+	 opacity: 0.0;
+   filter:alpha(opacity=0);
 }
 
-#stamp2 {
+#stamp1Placed
+{
+  left: 3%;
+  top: 6%;
+  transform:rotateZ(20deg);
+  -ms-transform:scale(1) rotate(20deg); /* IE 9 */
+  -moz-transform:scale(1) rotate(20deg); /* Firefox */
+  -webkit-transform:scale(1) rotate(20deg); /* Safari and Chrome */
+  -o-transform:scale(1) rotate(20deg); /* Opera */
+   -webkit-transition: all 1s ease-in-out; 
+   -moz-transition: all 1s ease-in-out; 
+   -o-transition: all 1s ease-in-out; 
+   -ms-transition: all 1s ease-in-out; 
+   transition: all 1s ease-in-out;
+   transition-delay: 1s;
+   -moz-transition-delay: 1s; /* Firefox 4 */
+   -webkit-transition-delay: 1s; /* Safari and Chrome */
+   -o-transition-delay: 1s; /* Opera */ 
+   opacity: 1.0;
+   filter:alpha(opacity=100);
+}
+
+#stamp2Unplaced {
   left: 26%;
   top: 3%;
-  transform: rotateZ(-18deg);
-  -ms-transform:rotate(18deg); /* IE 9 */
-  -moz-transform:rotate(18deg); /* Firefox */
-  -webkit-transform:rotate(18deg); /* Safari and Chrome */
-  -o-transform:rotate(18deg); /* Opera */
+  transform:rotateZ(10deg);
+  -ms-transform:scale(5) rotate(10deg); /* IE 9 */
+  -moz-transform:scale(5) rotate(10deg); /* Firefox */
+  -webkit-transform:scale(5) rotate(10deg); /* Safari and Chrome */
+  -o-transform:scale(5) rotate(10deg); /* Opera */
+   opacity: 0.0;
+   filter:alpha(opacity=0);
 }
 
-#stamp3 {
+#stamp2Placed
+{
+  left: 26%;
+  top: 3%;
+  transform:rotateZ(20deg);
+  -ms-transform:scale(1) rotate(20deg); /* IE 9 */
+  -moz-transform:scale(1) rotate(20deg); /* Firefox */
+  -webkit-transform:scale(1) rotate(20deg); /* Safari and Chrome */
+  -o-transform:scale(1) rotate(20deg); /* Opera */
+   -webkit-transition: all 1s ease-in-out; 
+   -moz-transition: all 1s ease-in-out; 
+   -o-transition: all 1s ease-in-out; 
+   -ms-transition: all 1s ease-in-out; 
+   transition: all 1s ease-in-out;
+   transition-delay: 1s;
+   -moz-transition-delay: 1s; /* Firefox 4 */
+   -webkit-transition-delay: 1s; /* Safari and Chrome */
+   -o-transition-delay: 1s; /* Opera */ 
+   opacity: 1.0;
+   filter:alpha(opacity=100);
+}
+
+#stamp3Unplaced {
   left: 6%;
   top: 44%;
-  transform: rotateZ(-7deg);
-  -ms-transform:rotate(7deg); /* IE 9 */
-  -moz-transform:rotate(7deg); /* Firefox */
-  -webkit-transform:rotate(7deg); /* Safari and Chrome */
-  -o-transform:rotate(7deg); /* Opera */
+  transform:rotateZ(10deg);
+  -ms-transform:scale(5) rotate(10deg); /* IE 9 */
+  -moz-transform:scale(5) rotate(10deg); /* Firefox */
+  -webkit-transform:scale(5) rotate(10deg); /* Safari and Chrome */
+  -o-transform:scale(5) rotate(10deg); /* Opera */
+   opacity: 0.0;
+   filter:alpha(opacity=0);
 }
 
-#stamp4 {
+#stamp3Placed
+{
+  left: 6%;
+  top: 44%;
+  transform:rotateZ(20deg);
+  -ms-transform:scale(1) rotate(20deg); /* IE 9 */
+  -moz-transform:scale(1) rotate(20deg); /* Firefox */
+  -webkit-transform:scale(1) rotate(20deg); /* Safari and Chrome */
+  -o-transform:scale(1) rotate(20deg); /* Opera */
+   -webkit-transition: all 1s ease-in-out; 
+   -moz-transition: all 1s ease-in-out; 
+   -o-transition: all 1s ease-in-out; 
+   -ms-transition: all 1s ease-in-out; 
+   transition: all 1s ease-in-out;
+   transition-delay: 1s;
+   -moz-transition-delay: 1s; /* Firefox 4 */
+   -webkit-transition-delay: 1s; /* Safari and Chrome */
+   -o-transition-delay: 1s; /* Opera */ 
+   opacity: 1.0;
+   filter:alpha(opacity=100);
+}
+
+#stamp4Unplaced {
   left: 24%;
   top: 42%;
-  transform: rotateZ(5deg);
-  -ms-transform:rotate(5deg); /* IE 9 */
-  -moz-transform:rotate(5deg); /* Firefox */
-  -webkit-transform:rotate(5deg); /* Safari and Chrome */
-  -o-transform:rotate(5deg); /* Opera */
+  transform:rotateZ(10deg);
+  -ms-transform:scale(5) rotate(10deg); /* IE 9 */
+  -moz-transform:scale(5) rotate(10deg); /* Firefox */
+  -webkit-transform:scale(5) rotate(10deg); /* Safari and Chrome */
+  -o-transform:scale(5) rotate(10deg); /* Opera */
+   opacity: 0.0;
+   filter:alpha(opacity=0);
+}
+
+#stamp4Placed
+{
+  left: 24%;
+  top: 42%;
+  transform:rotateZ(20deg);
+  -ms-transform:scale(2) rotate(20deg); /* IE 9 */
+  -moz-transform:scale(2) rotate(20deg); /* Firefox */
+  -webkit-transform:scale(2) rotate(20deg); /* Safari and Chrome */
+  -o-transform:scale(2) rotate(20deg); /* Opera */
+   -webkit-transition: all 1s ease-in-out; 
+   -moz-transition: all 1s ease-in-out; 
+   -o-transition: all 1s ease-in-out; 
+   -ms-transition: all 1s ease-in-out; 
+   transition: all 1s ease-in-out;
+   transition-delay: 1s;
+   -moz-transition-delay: 1s; /* Firefox 4 */
+   -webkit-transition-delay: 1s; /* Safari and Chrome */
+   -o-transition-delay: 1s; /* Opera */ 
+   opacity: 1.0;
+   filter:alpha(opacity=100);
 }
 
 .passportImage {

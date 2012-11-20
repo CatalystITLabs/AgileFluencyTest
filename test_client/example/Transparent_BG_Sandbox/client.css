@@ -363,3 +363,42 @@ li list-style {
 {
   text-align: center;
 }
+
+/*----------------------------------------------------*/
+.stamp 
+{
+  position: absolute;
+  width: 20%;
+  height: auto;
+  opacity: 0.1;
+  filter:alpha(opacity=10);
+}
+
+#stamp1 
+{
+  left: 3%;
+  top: 6%;
+  transform:rotateZ(10deg);
+  -ms-transform:scale(5) rotate(10deg); /* IE 9 */
+  -moz-transform:scale(5) rotate(10deg); /* Firefox */
+  -webkit-transform:scale(5) rotate(10deg); /* Safari and Chrome */
+  -o-transform:rotate(10deg); /* Opera */
+   -webkit-transition: all 1s ease-in-out; 
+   -moz-transition: all 1s ease-in-out; 
+   -o-transition: all 1s ease-in-out; 
+   -ms-transition: all 1s ease-in-out; 
+   transition: all 1s ease-in-out;
+}
+
+#stamp1:hover
+{
+  left: 3%;
+  top: 6%;
+  transform:rotateZ(20deg);
+  -ms-transform:scale(1) rotate(20deg);
+  -moz-transform:scale(1) rotate(20deg); 
+  -webkit-transform:scale(1) rotate(20deg);
+  -o-transform:scale(1) rotate(20deg);
+  opacity: 1.0;
+  filter:alpha(opacity=100);
+}

@@ -28,15 +28,30 @@ InputElement continueButton = query("#nextButton");
 InputElement explainButton = query("#explainButton");
 InputElement finishButton = query("#finishButton");
 
+// track earned stamps
+List<Element> stampsEarned = new List<Element>();
+
 /// returns an element with the section stamp
-Element getStamp(int number)
+Element getStamp(int number, bool placed)
 {
   var stamp = new ImageElement();
   
   stamp.classes.add("stamp");
   stamp.src = "images/stamp_$number.png";
-  stamp.id = "stamp$number";
-
+  if(!placed)
+  {
+    stamp.id = "stamp${number}Unplaced";
+    window.setTimeout(()
+        {
+          stamp.id = "stamp${number}Placed";
+        }, 0);
+  }
+  else
+  {
+    stamp.id = "stamp${number}Placed";
+  }
+  
+  
   return stamp;
 }
 
@@ -96,7 +111,7 @@ void enableSummaryButtons()
 void nextQuestion()
 {
   //get next step from test
-  var slideElement = test.next();
+  Element slideElement = test.next();
   assert(slideElement != null);
   
   hideButtons();
@@ -104,15 +119,26 @@ void nextQuestion()
   if(slideElement.id.startsWith("summary"))
   {
     enableSummaryButtons();
-    for( int x = 1; x<= test.currentSection.star; x++)
-    {
+    
+    //for( int x = 1; x<= test.currentSection.star; x++)
+    //{
       num sectionFluency = 100*(test.currentSection.getUserAnswerPoints()/test.currentSection.getMaxPoints());
+      
       //stamp passport if the user has earned an acceptable level of fluency for the section
       if(sectionFluency > 70)
       {
-        slideElement.insertAdjacentElement("beforeEnd", getStamp(x));
+        Element stamp = getStamp(test.currentSection.star, false);
+        stampsEarned.add(getStamp(test.currentSection.star, true));
+        slideElement.insertAdjacentElement("beforeEnd", stamp);
       }
-    }
+      else
+      {
+        for(Element stamp in stampsEarned)
+        {
+          slideElement.insertAdjacentElement("beforeEnd", stamp);
+        }
+      }
+    //}
   }
   
   slideshow.useDynamic = true;
