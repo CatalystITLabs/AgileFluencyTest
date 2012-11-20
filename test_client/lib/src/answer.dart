@@ -72,7 +72,8 @@ class Answer {
     if (this.explanation != null && this.explanation != "" && displayExplanationMode == 3)
     {
       //Add explanation button
-      var explainButton = new ImageElement();
+      var explainButton = new InputElement();
+      explainButton.type = "image";
       explainButton.src = "images/question_8bit.png";
       output.insertAdjacentElement("beforeEnd", explainButton);
       

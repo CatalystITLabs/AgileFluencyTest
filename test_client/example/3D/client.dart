@@ -225,7 +225,7 @@ void addSplash()
  * section constructor
  * 
  * method also serves as user input entry point
- */ 
+ */
 onSuccess(HttpRequest request)
 {
   // load test content from xml
