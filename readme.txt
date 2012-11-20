@@ -1,5 +1,7 @@
 The Agile Fluency Test project is an open-source project, inspired by "Your Path through Agile Fluency" (http://martinfowler.com/articles/agileFluency.html), an article written by Diana Larsen and James Shore. The purpose of this project is help developments teams assess if they are reaching their agile goals.
 
+It should be noted that it is NOT our opinion that all four levels of "agile fluency" are appropriate for all developers, all products, and all markets.
+
 There are a number of great resources available for agile fluency test questions, following the concepts introduced in the article above. Here are some of the articles we used to develop and inspire test questions:
 
 One Star Fluency:
