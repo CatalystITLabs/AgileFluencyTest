@@ -140,7 +140,7 @@ void displaySectionExplanation()
   
   //Just copy the output from Test into our existing div
   var explainContent = query("#explainContent");
-  explainContent.innerHTML = test.currentSection.explain().innerHTML;
+  explainContent.elements = test.currentSection.explain().elements;
   
   //add to slide, zoomin, and focus the slide
   var slide = addSlideToMap(explainDiv);

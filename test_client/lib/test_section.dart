@@ -213,7 +213,8 @@ class TestSection
    */
   Element explain()
   {
-    var output= new DivElement();
+    var output = new DivElement();
+
     for (var questionExplanation in this.explanations())
     {
       output.insertAdjacentElement('beforeEnd', questionExplanation);
