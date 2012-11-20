@@ -64,7 +64,7 @@
 			            <explanation>Agile encourages team meetings to address issues, not intervention from above.</explanation>
 			        </answer>
 			        <answer>
-			            <points>1</points>
+			            <points>2</points>
 			            <text>We hold regular meetings and change things</text>
 			            <explanation></explanation>
 			        </answer>
@@ -74,14 +74,9 @@
 			            <explanation>Agile encourages regular meetings. In Scrum every day starts with a standup meeting to briefly discuss the prior days work, current tasks, and any issues blocking progress.</explanation>
 			        </answer>
 			        <answer>
-			            <points>1</points>
-			            <text>Every day we identify issues and take actions.</text>
-			            <explanation></explanation>
-			        </answer>
-			        <answer>
 			            <points>3</points>
-			            <text>An improvement meeting or retrospective at the end of each iteration</text>
-			            <explanation></explanation>
+			            <text>A meeting or retrospective at the end of each iteration is focused on improving how we work</text>
+			            <explanation>Scrum style retrospectives are very effective.</explanation>
 			        </answer>
 			    </answerList>
 			</question>
@@ -95,7 +90,7 @@
 			            <explanation></explanation>
 			        </answer>
 			        <answer>
-			            <points>1</points>
+			            <points>1/points>
 			            <text>A list prioritized by customer/business needs</text>
 			            <explanation></explanation>
 			        </answer>
@@ -111,7 +106,7 @@
 			        </answer>
 			        <answer>
 			            <points>3</points>
-			            <text>A list with user stories with priorities from the product owner and estimated difficulty</text>
+			            <text>A list with user stories with priorities from the product owner and estimated difficulty from the developers</text>
 			            <explanation></explanation>
 			        </answer>
 			    </answerList>
@@ -152,7 +147,7 @@
 			            <explanation></explanation>
 			        </answer>
 			        <answer>
-			            <points>1</points>
+			            <points>2</points>
 			            <text>Team implements high value items first</text>
 			            <explanation></explanation>
 			        </answer>
@@ -162,7 +157,7 @@
 			            <explanation></explanation>
 			        </answer>
 			        <answer>
-			            <points>1</points>
+			            <points>2/points>
 			            <text>Team and customer plan each iteration together.</text>
 			            <explanation></explanation>
 			        </answer>
@@ -190,11 +185,6 @@
 			        <answer>
 			            <points>0</points>
 			            <text>Write periodic status report</text>
-			            <explanation></explanation>
-			        </answer>
-			        <answer>
-			            <points>1</points>
-			            <text>Update daily how much work is remaining</text>
 			            <explanation></explanation>
 			        </answer>
 			        <answer>
@@ -242,7 +232,7 @@
 			        <answer>
 			            <points>1</points>
 			            <text>The project leader or tech leader decides how we solve problems.</text>
-			            <explanation>In Agile, there should be a self-organized team, with a flat management structure, not a heirarchy.</explanation>
+			            <explanation>In Agile, there should be a self-organized team, with a flat management structure, not a tall heirarchy.</explanation>
 			        </answer>
 			        <answer>
 			            <points>0</points>
@@ -251,7 +241,7 @@
 			        </answer>
 			        <answer>
 			            <points>3</points>
-			            <text>Senior developers on the team help facilitate discusions with the whole team.</text>
+			            <text>Discusions with the whole team. Senior developers may help facilitate discussion, but not control it.</text>
 			            <explanation>Agile encourages regular meetings where the whole team makes collective decisions.</explanation>
 			        </answer>
 			    </answerList>
