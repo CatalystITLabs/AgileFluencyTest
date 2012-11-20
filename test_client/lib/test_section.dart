@@ -226,7 +226,7 @@ class TestSection
     {
       //DivElement questionExplanation = question.explain();
       //questionExplanation.id = "explanation";
-      output.insertAdjacentElement('afterBegin', questionExplanation);
+      output.insertAdjacentElement('beforeEnd', questionExplanation);
     }
     //return output;
   }

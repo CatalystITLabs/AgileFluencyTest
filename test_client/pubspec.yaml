@@ -5,4 +5,4 @@ dependencies:
   xml:
     git: https://github.com/prujohn/dart-xml.git
   presentation:
-    git: https://github.com/StephenLujan/presentation.dart
+    git: https://github.com/CatalystItLabs/presentation.dart
