@@ -291,6 +291,7 @@ class TestSection
     passport.classes.add("passportImage");
     //TODO: add logic to use the correct passport (with animation).
     passport.src = "../3D/images/passport_m.png";
+    passport.style.zIndex = "-10";
     output.insertAdjacentElement("beforeEnd", passport);
     
     //content for the right side

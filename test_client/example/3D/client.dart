@@ -29,30 +29,48 @@ InputElement explainButton = query("#explainButton");
 InputElement finishButton = query("#finishButton");
 
 // track earned stamps
+//ImageElement stamp = new ImageElement();
 List<Element> stampsEarned = new List<Element>();
 
-/// returns an element with the section stamp
+/// returns an element with the section stamp Element
 Element getStamp(int number, bool placed)
 {
+  var stampContainer = new DivElement();
+  var dateTxt = new ParagraphElement();
   var stamp = new ImageElement();
-  
+  //String id;
+  /*Date today = new Date.now();
+  //var dfmt = new DateFormat();
+  dateTxt.style
+  ..textAlign = "center"
+  ..fontFamily = "Courier New"
+  ..fontSize = "1.2em"
+  ..transform = "rotate(20deg)";
+  dateTxt.innerHTML = today.toLocal().toString();
+  dateTxt.style.zIndex = "1";*/
+ 
   stamp.classes.add("stamp");
   stamp.src = "images/stamp_$number.png";
   if(!placed)
   {
     stamp.id = "stamp${number}Unplaced";
+    
     window.setTimeout(()
-        {
-          stamp.id = "stamp${number}Placed";
-        }, 0);
+      {
+        stamp.id = "stamp${number}Placed";
+        stampsEarned.add(stamp);
+        
+      }, 100);
   }
   else
   {
     stamp.id = "stamp${number}Placed";
   }
+  stampContainer.style.width = "250px";
+  //stampContainer.insertAdjacentElement("beforeEnd", dateTxt);
+  stampContainer.insertAdjacentElement("beforeEnd", stamp);
   
-  
-  return stamp;
+  return stampContainer;
 }
 
 /// adds a huge map to the scene
@@ -124,19 +142,26 @@ void nextQuestion()
     //{
       num sectionFluency = 100*(test.currentSection.getUserAnswerPoints()/test.currentSection.getMaxPoints());
       
+      //if(!stampsEarned.isEmpty)
+      //{
+        for(Element stamp in stampsEarned)
+        {
+          //if(stampsEarned.last != stamp)
+          //{
+            slideElement.insertAdjacentElement("beforeEnd", stamp);
+          //}
+        }
+      //}
+      
       //stamp passport if the user has earned an acceptable level of fluency for the section
       if(sectionFluency > 70)
       {
-        Element stamp = getStamp(test.currentSection.star, false);
-        stampsEarned.add(getStamp(test.currentSection.star, true));
-        slideElement.insertAdjacentElement("beforeEnd", stamp);
-      }
-      else
-      {
-        for(Element stamp in stampsEarned)
-        {
-          slideElement.insertAdjacentElement("beforeEnd", stamp);
-        }
+         // stamp is not place...set id to unplaced, then use callback function to switch it to placed
+         Element stamp = getStamp(test.currentSection.star, false); 
+         slideElement.insertAdjacentElement("beforeEnd", stamp);
+         // set the stamp to placed...no animation needed
+         //stamp = getStamp(test.currentSection.star, true);
+         //stampsEarned.add(stamp);
       }
     //}
   }
