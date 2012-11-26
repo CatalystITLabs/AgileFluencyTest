@@ -3,8 +3,8 @@ description:  A sample application
 
 dependencies:
   xml:
-    git: https://github.com/prujohn/dart-xml.git
+    git: git://github.com/prujohn/dart-xml.git
   presentation:
-    git: https://github.com/CatalystItLabs/presentation.dart
+    git: git://github.com/CatalystITLabs/presentation.dart.git
   intl:
     sdk: intl
