@@ -7,15 +7,6 @@ SlideShow presentation = new BasicSlideShow(query("#viewBox"));
 
 void addTestSlide()
 {
-  // your content here
-  //var slideElement = test.currentSection.displayCurrentQuestion();
-  //var slideElement = test.currentSection.explain();
-  //var slideElement = test.currentSection.summary();
-  
-  //your callbacks here
-  //slideElement.on.click.add((event) => done());
-  
-  //presentation.addElementSlide(slideElement, 1.0, 200, 200, 0, 0, 0, 0);
   
 }
 
@@ -57,12 +48,15 @@ onSuccess(HttpRequest request)
     //addBackground();
     //addSplash();
   }, 1000);
+  
 }
 
 void main()
 {
   // relative location of the questions on the server
-  var url = "../questions.xml";
+  //var url = "../questions.xml";
   // async request to get the file at the given url
-  var request = new HttpRequest.get(url, onSuccess);
+  //var request = new HttpRequest.get(url, onSuccess);
+  
+  
 }

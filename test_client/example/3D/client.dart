@@ -28,16 +28,49 @@ InputElement continueButton = query("#nextButton");
 InputElement explainButton = query("#explainButton");
 InputElement finishButton = query("#finishButton");
 
-/// returns an element with the section stamp
-Element getStamp(int number)
+// track earned stamps
+//ImageElement stamp = new ImageElement();
+List<Element> stampsEarned = new List<Element>();
+
+/// returns an element with the section stamp Element
+Element getStamp(int number, bool placed)
 {
+  var stampContainer = new DivElement();
+  var dateTxt = new ParagraphElement();
   var stamp = new ImageElement();
-  
+  //String id;
+  /*Date today = new Date.now();
+  //var dfmt = new DateFormat();
+  dateTxt.style
+  ..textAlign = "center"
+  ..fontFamily = "Courier New"
+  ..fontSize = "1.2em"
+  ..transform = "rotate(20deg)";
+  dateTxt.innerHTML = today.toLocal().toString();
+  dateTxt.style.zIndex = "1";*/
+ 
   stamp.classes.add("stamp");
   stamp.src = "images/stamp_$number.png";
-  stamp.id = "stamp$number";
-
-  return stamp;
+  if(!placed)
+  {
+    stamp.id = "stamp${number}Unplaced";
+    
+    window.setTimeout(()
+      {
+        stamp.id = "stamp${number}Placed";
+        stampsEarned.add(stamp);
+        
+      }, 100);
+  }
+  else
+  {
+    stamp.id = "stamp${number}Placed";
+  }
+  stampContainer.style.width = "250px";
+  //stampContainer.insertAdjacentElement("beforeEnd", dateTxt);
+  stampContainer.insertAdjacentElement("beforeEnd", stamp);
+  
+  return stampContainer;
 }
 
 /// adds a huge map to the scene
@@ -96,7 +129,7 @@ void enableSummaryButtons()
 void nextQuestion()
 {
   //get next step from test
-  var slideElement = test.next();
+  Element slideElement = test.next();
   assert(slideElement != null);
   
   hideButtons();
@@ -104,15 +137,33 @@ void nextQuestion()
   if(slideElement.id.startsWith("summary"))
   {
     enableSummaryButtons();
-    for( int x = 1; x<= test.currentSection.star; x++)
-    {
+    
+    //for( int x = 1; x<= test.currentSection.star; x++)
+    //{
       num sectionFluency = 100*(test.currentSection.getUserAnswerPoints()/test.currentSection.getMaxPoints());
+      
+      //if(!stampsEarned.isEmpty)
+      //{
+        for(Element stamp in stampsEarned)
+        {
+          //if(stampsEarned.last != stamp)
+          //{
+            slideElement.insertAdjacentElement("beforeEnd", stamp);
+          //}
+        }
+      //}
+      
       //stamp passport if the user has earned an acceptable level of fluency for the section
       if(sectionFluency > 70)
       {
-        slideElement.insertAdjacentElement("beforeEnd", getStamp(x));
+         // stamp is not place...set id to unplaced, then use callback function to switch it to placed
+         Element stamp = getStamp(test.currentSection.star, false); 
+         slideElement.insertAdjacentElement("beforeEnd", stamp);
+         // set the stamp to placed...no animation needed
+         //stamp = getStamp(test.currentSection.star, true);
+         //stampsEarned.add(stamp);
       }
-    }
+    //}
   }
   
   slideshow.useDynamic = true;
@@ -259,7 +310,7 @@ onSuccess(HttpRequest request)
 void main()
 {
   // relative location of the questions on the server
-  var url = "../questions.xml";//"../testQs.xml";//"../questions.xml";
+  var url = "../AgileFluency/questions.xml";
   // async request to get the file at the given url
   var request = new HttpRequest.get(url, onSuccess);
 }

@@ -6,3 +6,5 @@ dependencies:
     git: https://github.com/prujohn/dart-xml.git
   presentation:
     git: https://github.com/CatalystItLabs/presentation.dart
+  intl:
+    sdk: intl
