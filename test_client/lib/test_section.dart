@@ -161,9 +161,7 @@ class TestSection
    * Display the current question or page
    */
   Element display()
-  {
-    enableNextButton();
-    
+  { 
     //if the test section is finished stop returning pages
     if (finished)
       return null;
@@ -176,7 +174,6 @@ class TestSection
     
     if (currentQuestion != null)
     {
-      disableNextButton();
       return displayCurrentQuestion();
     }
     return null;
@@ -280,7 +277,6 @@ class TestSection
     //content for the right side
     
     var output = new DivElement();
-    //  var output = query("#summary");
     var best = 0;
     var agile = 0;
     output.id = "summary${star}";
@@ -295,7 +291,6 @@ class TestSection
     
     //content for the right side
     var content = new ParagraphElement();
-    //var content = query(".detail");
     content.classes.add("detail");
     content.addHTML("<h4>Destination ${this.star}: ${this.name}<br/>Summary</h4>");
     

@@ -78,7 +78,7 @@ class Test {
     {
       var section = this.nextSection();
       
-      if (section == null || currentSection == null)
+      if (section == null)
       {
         return new Element.html("<p>Its finished! Do something here.</p>");
       }
