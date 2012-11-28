@@ -486,7 +486,7 @@
 	</section>
 	<section level="4">
 			<name>Optimize for Systems</name>
-			<description>Your team contributes to enterprise-wide success, and are working at the \“bleeding edge\” of Agile practice. Adapting ideas from advanced management theories and innovating product development methods, your members understand organizational priorities and business direction, and will sacrifice their own needs to support the needs of a product more critical to business success. Techniques include Agile portfolio management, systems thinking, value stream analysis, whole system planning, intact teams, open book management, and radical self-organization.</description>
+			<description>Your team contributes to enterprise-wide success, and are working at the “bleeding edge” of Agile practice. Adapting ideas from advanced management theories and innovating product development methods, your members understand organizational priorities and business direction, and will sacrifice their own needs to support the needs of a product more critical to business success. Techniques include Agile portfolio management, systems thinking, value stream analysis, whole system planning, intact teams, open book management, and radical self-organization.</description>
 	    <reference>http://martinfowler.com/articles/agileFluency.html#Four-starTeamsContributeToOptimizingTheSystem</reference>
 	    <questionList>
 	        <question id="1" type="SingleSelect">
