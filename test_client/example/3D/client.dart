@@ -310,7 +310,7 @@ onSuccess(HttpRequest request)
 void main()
 {
   // relative location of the questions on the server
-  var url = "../AgileFluency/questions.xml";
+  var url = "../questions.xml";
   // async request to get the file at the given url
   var request = new HttpRequest.get(url, onSuccess);
 }

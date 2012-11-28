@@ -152,7 +152,7 @@ class TestSection
     var questionNumber = this.questions.indexOf(this.currentQuestion,0) + 1;
     var sectionLength = this.questions.length;
     var header = "$sectionHeader<br/> Question $questionNumber of $sectionLength";
-    output.addHTML("<h4>$header</h4>");
+    output.addHtml("<h4>$header</h4>");
     output.insertAdjacentElement("beforeEnd",this.currentQuestion.display());
     return output;
   }
@@ -293,7 +293,7 @@ class TestSection
     //content for the right side
     var content = new ParagraphElement();
     content.classes.add("detail");
-    content.addHTML("<h4>Destination ${this.star}: ${this.name}<br/>Summary</h4>");
+    content.addHtml("<h4>Destination ${this.star}: ${this.name}<br/>Summary</h4>");
     
 //    var image = "../3D/images/stamp_${this.star}.png";
     
@@ -313,16 +313,16 @@ class TestSection
      */
     
     //stamp image placeholder. The plan will be to zoom into this, to show the summary information.
-    //output.addHTML("<img src='$image' alt='Placeholder for stamp'/>");
+    //output.addHtml("<img src='$image' alt='Placeholder for stamp'/>");
     
     //Progress information...
-    content.addHTML("<h4>Estimated Fluency: ${percentageScore}%</h4>");
-    content.addHTML("<li>Total Agile Answers: $agile/${this.questions.length}</li>");
-    content.addHTML("<li>Most Fluent Answers: $best/${this.questions.length}</li></ul>");
+    content.addHtml("<h4>Estimated Fluency: ${percentageScore}%</h4>");
+    content.addHtml("<li>Total Agile Answers: $agile/${this.questions.length}</li>");
+    content.addHtml("<li>Most Fluent Answers: $best/${this.questions.length}</li></ul>");
     
     //section summary
-    content.addHTML("<p class=\"italicIndent\">${this.description}</p>");
-    content.addHTML("<p class=\"smallerLeft\">Learn more about ${this.name} <a href='${this.reference}' target='_blank'>here</a></p>");
+    content.addHtml("<p class=\"italicIndent\">${this.description}</p>");
+    content.addHtml("<p class=\"smallerLeft\">Learn more about ${this.name} <a href='${this.reference}' target='_blank'>here</a></p>");
    
     output.insertAdjacentElement("beforeEnd", content);
 

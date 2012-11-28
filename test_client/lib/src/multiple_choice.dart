@@ -38,7 +38,7 @@ abstract class MultipleChoice extends Question
       number++;
       output.insertAdjacentElement('beforeEnd', button);
       output.addText(iterator.text);
-      output.addHTML("<br/>");
+      output.addHtml("<br/>");
     }
     return output;
   }
@@ -52,7 +52,7 @@ abstract class MultipleChoice extends Question
     output.id = "question";
     output.insertAdjacentElement('beforeEnd', new Element.html("""<p>${this.text}</p>"""));
     output.insertAdjacentElement('beforeEnd', this.displayAnswers());
-    //output.addHTML("<input id=\"nextQuestion\" type=\"button\" value=\"Next Question\">");
+    //output.addHtml("<input id=\"nextQuestion\" type=\"button\" value=\"Next Question\">");
     return output;
   }
 }
