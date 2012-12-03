@@ -286,7 +286,7 @@ class TestSection
     var passport = new ImageElement();
     passport.classes.add("passportImage");
     //TODO: add logic to use the correct passport (with animation).
-    passport.src = "../3D/images/passport_m.png";
+    passport.src = "../web/images/passport_m.png";
     passport.style.zIndex = "-10";
     output.insertAdjacentElement("beforeEnd", passport);
     
