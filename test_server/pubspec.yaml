@@ -1,9 +1,0 @@
-name:  test_server
-description:  Test Server Application
-
-dependencies:
-  crimsonhttp: 
-    git: git://github.com/chrisbu/CrimsonHttp
-    
-  mongo_dart: 
-    git: git://github.com/vadimtsushko/mongo_dart

@@ -1,0 +1,610 @@
+
+/*******Global*******/
+
+body {
+  background-color: #CCC;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  font-weight: normal;
+  line-height: 1.2em;
+  margin: 0em 0.0em;
+  padding: 0;
+}
+
+p {
+  clear: both;
+  width: 100%;
+}
+
+p.italicIndent {
+  text-indent: 1em;
+  font-style:italic;
+  text-align: left;
+}
+
+p.smallerLeft {
+  font-size: smaller;
+  text-align: left;
+}
+h1 {
+  margin: 0.25em;
+  text-align: center;
+}
+h4 {
+  margin: 0.25em;
+  text-align: center;
+}
+
+ul {
+  text-align: left;
+}
+
+li list-style {
+  height: 1em;
+  width: 1em;
+}
+
+/*-----------------------------------------------------*/
+/***** Banner styling *****/
+#banner {
+  background-color:#CCC;
+  width: 100%;
+  margin: 0em;
+  top: 0em;
+}
+
+/*title and subtitle */
+#banner h1 {
+  color: #333;
+  text-shadow: 0.1em 0.1em 0.1em #FFF;
+  line-height: 1em;
+  margin: 0.1em 0.25em;
+}
+
+#banner h4 {
+  color: #333;
+  line-height: 1em;
+  margin: 0.2em 0.5em;
+}
+
+#banner .logoLeft {
+  float:left;
+  position: relative;
+  text-align:right;
+  top: 0em;
+  left: 2em;
+}
+
+#banner .logoRight {
+  float:right;
+  position: relative;
+  text-align:left;
+  top: 0em;
+  right: 2em;
+}
+/*-----------------------------------------------------*/
+/***** Outside 3d Scene / Page Frame *****/
+
+/* navigation buttons */
+#buttonContainer
+{
+  text-align:center;
+}
+.advance
+{
+  visibility: hidden;
+  width:auto;
+  position: relative;
+  bottom:30px;
+  margin-left:auto;
+  margin-right:auto;
+  border:none;
+}
+
+#nextButton{
+  position: absolute;
+  right: 1.5em;
+  top: 1.5em;
+}
+
+#backButton{
+  position: absolute;
+  left: 1.5em;
+  top: 1.5em;
+}
+
+/*-----------------------------------------------------*/
+/***** 3d Scene *****/
+#container {
+  width: 96%;
+  margin: auto;
+  height: auto;
+  position: relative;
+  border:2px solid #333;
+  border-radius:1.25em;
+  -moz-border-radius:1.25em; /* Firefox 3.6 and earlier */
+  background-color: #333;
+  text-align: center;
+  padding: 1.0em;
+  overflow-y:hidden;
+  overflow-x:hidden;
+}
+
+/* viewport into the 3d scene */
+#viewBox {
+  width: 100%;
+  height: 30em;
+  position: relative;
+  border: 1px solid #ccc;
+  background-color: #DDDDDD;
+  /*
+  background-image:url('images/static.gif');
+  background-repeat: repeat-x;
+  background-size:contain;
+  */
+  overflow-y:hidden;
+  overflow-x:hidden;
+  
+  perspective: 800px;
+  -ms-perspective: 800px;
+  -moz-perspective: 800px;
+  -webkit-perspective: 800px;
+}
+
+#loadingImage {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  top:45%;
+}
+
+/* content to be given a slide is not visible immediately */
+.staticSlideContent {
+  display: none;
+  /*visibility: hidden;*/
+}
+
+/* common css for all slides */
+.slide {
+  width: 80%;
+  height: 26em; /* slightly smaller than the viewBox */
+  border: 0.3em solid #FFF;
+  /*background-color: rgba(255, 255, 255, 0.85);*/
+  margin: 0;
+  display: block;
+  
+  padding: 1em;
+  border-radius:1.5em;
+  -moz-border-radius:1.5em; /* Firefox 3.6 and earlier */
+  
+  overflow-y: auto;
+  
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+/* used to add background images like the map into the scene */
+.backgroundSlide {
+  margin: 0;
+  padding: 0;
+  height: auto;
+  width: auto;
+  overflow:visible;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+/* The slide in focus gains this style */ 
+.focused {
+  /*width: 80%;*/ /*dynamically altering width of slides breaks the code that centers them*/
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.80);
+}
+
+/* Non-background out of focus slides should use this style. */ 
+.unfocused {
+  /*width: 26em;*/
+  opacity: 1; 
+  background-color: rgba(255, 0, 0, 1.0);
+}
+
+/*-----------------------------------------------------*/
+/***** Splash Page *****/
+#splash
+{
+  text-align:center;
+  background-image: url('images/splash_8bit.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position:center; 
+}
+
+#startButton {
+  position: absolute;
+  bottom: 5em;
+  left: 55%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#splashBackground {
+  height: 98%;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#splash p
+{
+  width: 23em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8.5em;
+  padding-left: 6em;
+  text-shadow: 0.0em 0.0em 0.9em #FFF, 0.0em 0.0em 0.6em #FFF, 0.0em 0.0em 0.3em #FFF;
+  font-weight:800;
+}
+/*-----------------------------------------------------*/
+/***** Questions and Answers *****/
+
+/* within container */
+#container.question {
+  color: #000;
+  text-align: center;
+}
+
+/* formatting for answers within the container */
+/* id added by multiple_choice.dart */
+#answers {
+  height: auto;
+  margin: 0.2em 0.5em;
+  text-align: left;
+  background-color: transparent;
+}
+
+/*-----------------------------------------------------*/
+/******Section Summary Page*******/
+
+.summary
+{
+/*
+  width: 95%;
+  height: 50%;
+  height: 26em;
+  */
+}
+/*
+.summary p
+{
+  width: 5%;
+  height: 15%;
+}
+
+.summary {
+  text-align: center;
+  font-size: 1em;
+  margin: 0.2em 0.5em;
+  
+}
+*/
+
+/*****Stamp**********/
+
+.stamp {
+  position: absolute;
+  width: 20%;
+  height: auto;
+}
+
+#stamp1Unplaced {
+  left: 3%;
+  top: 6%;
+  transform:rotateZ(10deg);
+  -ms-transform:scale(5) rotate(10deg); /* IE 9 */
+  -moz-transform:scale(5) rotate(10deg); /* Firefox */
+  -webkit-transform:scale(5) rotate(10deg); /* Safari and Chrome */
+  -o-transform:scale(5) rotate(10deg); /* Opera */
+	 opacity: 0.0;
+   filter:alpha(opacity=0);
+}
+
+#stamp1Placed
+{
+  left: 3%;
+  top: 6%;
+  transform:rotateZ(20deg);
+  -ms-transform:scale(1) rotate(20deg); /* IE 9 */
+  -moz-transform:scale(1) rotate(20deg); /* Firefox */
+  -webkit-transform:scale(1) rotate(20deg); /* Safari and Chrome */
+  -o-transform:scale(1) rotate(20deg); /* Opera */
+   -webkit-transition: all 1s ease-in-out; 
+   -moz-transition: all 1s ease-in-out; 
+   -o-transition: all 1s ease-in-out; 
+   -ms-transition: all 1s ease-in-out; 
+   transition: all 1s ease-in-out;
+   transition-delay: 1s;
+   -moz-transition-delay: 1s; /* Firefox 4 */
+   -webkit-transition-delay: 1s; /* Safari and Chrome */
+   -o-transition-delay: 1s; /* Opera */ 
+   opacity: 1.0;
+   filter:alpha(opacity=100);
+}
+
+#stamp2Unplaced {
+  left: 26%;
+  top: 3%;
+  transform:rotateZ(10deg);
+  -ms-transform:scale(5) rotate(10deg); /* IE 9 */
+  -moz-transform:scale(5) rotate(10deg); /* Firefox */
+  -webkit-transform:scale(5) rotate(10deg); /* Safari and Chrome */
+  -o-transform:scale(5) rotate(10deg); /* Opera */
+   opacity: 0.0;
+   filter:alpha(opacity=0);
+}
+
+#stamp2Placed
+{
+  left: 26%;
+  top: 3%;
+  transform:rotateZ(20deg);
+  -ms-transform:scale(1) rotate(20deg); /* IE 9 */
+  -moz-transform:scale(1) rotate(20deg); /* Firefox */
+  -webkit-transform:scale(1) rotate(20deg); /* Safari and Chrome */
+  -o-transform:scale(1) rotate(20deg); /* Opera */
+   -webkit-transition: all 1s ease-in-out; 
+   -moz-transition: all 1s ease-in-out; 
+   -o-transition: all 1s ease-in-out; 
+   -ms-transition: all 1s ease-in-out; 
+   transition: all 1s ease-in-out;
+   transition-delay: 1s;
+   -moz-transition-delay: 1s; /* Firefox 4 */
+   -webkit-transition-delay: 1s; /* Safari and Chrome */
+   -o-transition-delay: 1s; /* Opera */ 
+   opacity: 1.0;
+   filter:alpha(opacity=100);
+}
+
+#stamp3Unplaced {
+  left: 6%;
+  top: 44%;
+  transform:rotateZ(10deg);
+  -ms-transform:scale(5) rotate(10deg); /* IE 9 */
+  -moz-transform:scale(5) rotate(10deg); /* Firefox */
+  -webkit-transform:scale(5) rotate(10deg); /* Safari and Chrome */
+  -o-transform:scale(5) rotate(10deg); /* Opera */
+   opacity: 0.0;
+   filter:alpha(opacity=0);
+}
+
+#stamp3Placed
+{
+  left: 6%;
+  top: 44%;
+  transform:rotateZ(20deg);
+  -ms-transform:scale(1) rotate(20deg); /* IE 9 */
+  -moz-transform:scale(1) rotate(20deg); /* Firefox */
+  -webkit-transform:scale(1) rotate(20deg); /* Safari and Chrome */
+  -o-transform:scale(1) rotate(20deg); /* Opera */
+   -webkit-transition: all 1s ease-in-out; 
+   -moz-transition: all 1s ease-in-out; 
+   -o-transition: all 1s ease-in-out; 
+   -ms-transition: all 1s ease-in-out; 
+   transition: all 1s ease-in-out;
+   transition-delay: 1s;
+   -moz-transition-delay: 1s; /* Firefox 4 */
+   -webkit-transition-delay: 1s; /* Safari and Chrome */
+   -o-transition-delay: 1s; /* Opera */ 
+   opacity: 1.0;
+   filter:alpha(opacity=100);
+}
+
+#stamp4Unplaced {
+  left: 24%;
+  top: 42%;
+  transform:rotateZ(10deg);
+  -ms-transform:scale(5) rotate(10deg); /* IE 9 */
+  -moz-transform:scale(5) rotate(10deg); /* Firefox */
+  -webkit-transform:scale(5) rotate(10deg); /* Safari and Chrome */
+  -o-transform:scale(5) rotate(10deg); /* Opera */
+   opacity: 0.0;
+   filter:alpha(opacity=0);
+}
+
+#stamp4Placed
+{
+  left: 24%;
+  top: 42%;
+  transform:rotateZ(20deg);
+  -ms-transform:scale(2) rotate(20deg); /* IE 9 */
+  -moz-transform:scale(2) rotate(20deg); /* Firefox */
+  -webkit-transform:scale(2) rotate(20deg); /* Safari and Chrome */
+  -o-transform:scale(2) rotate(20deg); /* Opera */
+   -webkit-transition: all 1s ease-in-out; 
+   -moz-transition: all 1s ease-in-out; 
+   -o-transition: all 1s ease-in-out; 
+   -ms-transition: all 1s ease-in-out; 
+   transition: all 1s ease-in-out;
+   transition-delay: 1s;
+   -moz-transition-delay: 1s; /* Firefox 4 */
+   -webkit-transition-delay: 1s; /* Safari and Chrome */
+   -o-transition-delay: 1s; /* Opera */ 
+   opacity: 1.0;
+   filter:alpha(opacity=100);
+}
+
+.passportImage {
+  position: absolute;
+  height: 94%;
+  width: 94%;
+  left: 2%;
+  top: 2%;
+  background-color: none;
+  /* shadow doesn't appear under transparency! */
+  /*box-shadow: 0.9em 0.9em 0.9em rgba(0,0,0,0.3);*/
+  text-align:center;
+}
+
+/* summary/passport right side details */
+.detail {
+  position: absolute;
+  margin: 0em;
+  left: 50%;
+  width: 40%;
+  text-align: center;
+}
+
+.detail h4 {
+  line-height: 1em;
+}
+
+.detail li {
+  clear:both;
+  text-align: left;
+  margin: 0em;
+  text-indent: 0em;
+  padding: 0em;
+}
+
+/*-----------------------------------------------------*/
+/******Explanation Page*******/
+
+ /* CSS for the modal dialogue window used in the explanation section */
+.modal {
+  background-color: #EEEEEE;
+  color: black;
+  border: 0.1em solid #CCCCCC;
+  padding: 1em;
+  display: block;
+  position: absolute;
+  
+  /*
+  bottom: 1em;
+  */
+  right: 1em;
+  width: 25em;
+  
+  transition: 0.5s;
+  -moz-transition: 0.5s; /* Firefox 4 */
+  -webkit-transition: 0.5s; /* Safari and Chrome */
+  -o-transition: 0.5s; /* Opera */
+  /*height: 15em;*/
+}
+
+
+#explainSection
+{
+  width: 85%;
+  font-size: 1.0em;
+  /*
+  overflow: 300px;
+  clear:both;
+  text-align: left;
+  font-size: smaller;
+  */
+}
+
+#explainSection h4 {
+  text-align: center;
+  font-size: larger;
+}
+
+#explainSection ul {
+  /*font-size: larger;*/
+}
+
+/*-----------------------------------------------------*/
+/******Final Page*******/
+
+#button {
+  left: 5%;
+  top: 35%;
+  transform:rotateZ(0deg);
+  -ms-transform:scale(1) rotate(0deg); /* IE 9 */
+  -moz-transform:scale(1) rotate(0deg); /* Firefox */
+  -webkit-transform:scale(1) rotate(0deg); /* Safari and Chrome */
+  -o-transform:scale(1) rotate(0deg); /* Opera */
+  margin: 0em;
+}
+
+#buttonLink {
+  text-indent: 0em;
+  height: 5.1em;
+}
+
+.buttonContent {
+  float:left;
+  width: 48%;
+  text-align: center;
+}
+
+.buttonUrl {
+    overflowY: scroll;
+    width: 49%;
+    float: right;
+    background-color: #FFFFFF;
+    height: 5em;
+    border: solid 1px #000000;
+    text-wrap: unrestricted;
+    padding: 0.1em;
+    padding-right: 1.4em;
+}
+
+#shareButtonContainer {
+  text-align: center;
+}
+
+#finalSection {
+  line-height: 1.1em;
+  text-indent: 0em;
+  text-align: center;
+}
+
+#finalSection h4 {
+  line-height: 1em;  
+}
+
+#finalSection p {
+  padding: 0em;
+  margin: 0em;
+}
+
+#buttonLink {
+  text-align: left;  
+}
+
+#finalSection ul {
+  clear: both;
+  margin-left: 0em;
+  text-align: left;
+  text-indent: -2.5em;  
+}
+
+#finalSection li {
+  text-indent: 0em;
+}
+
+/*--------------------------------------------*/
+/***** Results page link to AF Assessment *****/
+.takeAssessment {
+  width: 98%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; 
+}
+
+.takeAssessment input {
+  margin-top: 0.25em;
+  margin-bottom: -1em;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  line-height: 1em;
+}
+
+/*--------------------------------------------*/
+/*footer for github project url and other misc. information*/
+#footer {
+  height: 2em;
+}
