@@ -1,8 +1,11 @@
 
 /*******Global*******/
-
+html {
+  height: 98%;
+}
 body {
   background-color: #CCC;
+  height: 98%;
   font-family: 'Open Sans', sans-serif;
   font-size: 1em;
   font-weight: normal;
@@ -51,9 +54,26 @@ li list-style {
 /*-----------------------------------------------------*/
 /***** Outside 3d Scene / Page Frame *****/
 
+#container {
+  width: 96%;
+  margin: auto;
+  height: 75%;
+  position: relative;
+  border:2px solid #333;
+  border-radius:1.25em;
+  -moz-border-radius:1.25em; /* Firefox 3.6 and earlier */
+  background-color: #333;
+  /*text-align: center;*/
+  padding: 1.0em;
+  padding-bottom:5em;
+  overflow-y:hidden;
+  overflow-x:hidden;
+}
+
 /* navigation buttons */
 #buttonContainer
 {
+  padding:0.5em;
   text-align:center;
 }
 .advance
@@ -61,7 +81,7 @@ li list-style {
   visibility: hidden;
   width:auto;
   position: relative;
-  bottom:30px;
+  bottom:0.0em;
   margin-left:auto;
   margin-right:auto;
   border:none;
@@ -107,25 +127,11 @@ li list-style {
 
 /*-----------------------------------------------------*/
 /***** 3d Scene *****/
-#container {
-  width: 96%;
-  margin: auto;
-  height: auto;
-  position: relative;
-  border:2px solid #333;
-  border-radius:1.25em;
-  -moz-border-radius:1.25em; /* Firefox 3.6 and earlier */
-  background-color: #333;
-  /*text-align: center;*/
-  padding: 1.0em;
-  overflow-y:hidden;
-  overflow-x:hidden;
-}
 
 /* viewport into the 3d scene */
 #viewBox {
   width: 100%;
-  height: 30em;
+  height: 100%;
   position: relative;
   border: 1px solid #ccc;
   background-color: #DDDDDD;
@@ -160,7 +166,7 @@ li list-style {
 /* common css for all slides */
 .slide {
   width: 80%;
-  height: 26em; /* slightly smaller than the viewBox */
+  height: 85%; /* slightly smaller than the viewBox */
   border: 0.3em solid #FFF;
   /*background-color: rgba(255, 255, 255, 0.85);*/
   margin: 0;
