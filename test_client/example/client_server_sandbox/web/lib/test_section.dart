@@ -298,6 +298,12 @@ class TestSection
     passport.style.zIndex = "-10";
     output.insertAdjacentElement("beforeEnd", passport);
     
+    //content container for left side of passport :
+    var leftSide = new DivElement();
+    leftSide.id = "stampsDiv$star";
+    leftSide.classes.add("stampsDiv");
+    output.insertAdjacentElement("beforeEnd", leftSide);
+    
     //content for the right side
     var content = new ParagraphElement();
     content.classes.add("detail");

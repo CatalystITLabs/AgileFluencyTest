@@ -1,6 +1,6 @@
 import 'dart:html';
-import 'dart:math';
 import 'dart:json';
+import 'dart:math';
 import "../lib/test.dart";
 import "../packages/presentation/presentation.dart";
 
@@ -91,12 +91,67 @@ Slide addSlideToMap(Element slideContents)
   return slideshow.addElementSlide(slideContents, 1.0, x, y, 0, 0, 0, 0);
 }
 
+/// returns an element with the section stamp Element
+Element getStamp(int number, bool placed, String theDate)
+{
+  var stampContainer = new DivElement();
+  var dateTxt = new DivElement();
+  var stamp = new ImageElement();
+  
+  stampContainer.classes.add("stampContainer");
+  
+  dateTxt.classes.add("dateStamp");
+  dateTxt.innerHTML = theDate;
+  dateTxt.style.zIndex = "1";
+  dateTxt.id = "dateStamp$number";
+  
+  stamp.classes.add("passportStamp");
+  stamp.src = "images/stamp_$number.png";
+  
+  stamp.id = "stamp${number}Img";
+  
+  if(!placed)
+  {
+//    stamp.id = "stamp${number}Unplaced";
+    stampContainer.id = "stamp${number}Hidden";
+    
+    window.setTimeout(()
+      {
+//        stamp.id = "stamp${number}Placed";
+      stampContainer.id = "stamp${number}Show";
+      }, 1500);
+  }
+  else
+  {
+//    stamp.id = "stamp${number}Placed";
+    stampContainer.id = "stamp${number}Show";
+  }
+  stampContainer.style.width = "250px";
+  stampContainer.insertAdjacentElement("beforeEnd", dateTxt);
+  stampContainer.insertAdjacentElement("beforeEnd", stamp);
+  
+  return stampContainer;
+}
+
+String stripNameHtml(String theName)
+{
+  int startIdx = theName.indexOf("<name>") + 6;
+  int endIdx = theName.indexOf("</name>");
+  
+  return theName.substring(startIdx, endIdx);
+}
+
 ///create summary slide, then add to map
 void addSummary(jsonResults)
 {
   /// Summary for each completed section: stamp and progress.
   //content for the right side
   var output = new DivElement();
+  
+  var stampsDiv = new DivElement();
+  
+  stampsDiv.id = "stampsDiv";
+  stampsDiv.classes.add("stampsDiv");
   
   //stamp image placeholder. The plan will be to zoom into this, to show the summary information.
   
@@ -111,6 +166,8 @@ void addSummary(jsonResults)
   passport.src = "images/passport_m.png";
   passport.style.zIndex = "-10";
   output.insertAdjacentElement("beforeEnd", passport);
+
+  output.insertAdjacentElement("beforeEnd", stampsDiv);
   
   //content for the right side
   var content = new ParagraphElement();
@@ -118,7 +175,7 @@ void addSummary(jsonResults)
 
   var theDate = jsonResults['date'];
   
-  content.addHtml("<h3>Date of assessment: $theDate</h3>");
+  content.addHtml("<h4>Date of assessment: $theDate</h4><br />");
 
   var sectionList = jsonResults['stampList'];
   
@@ -129,14 +186,34 @@ void addSummary(jsonResults)
     var MostAgile = sectionList[i]['mostAgile'];
     var Section = sectionList[i]['section'];
     
-    content.addHtml("<h4>Section $Section : $Fluency% fluency</h4>");
+    content.addHtml("<h4>${stripNameHtml(sectionList[i]['name'])} : $Fluency%</h4>");
     
     //Progress information...
     content.addHtml("<li>Total Agile Answers: $TotalAgile</li>");
     content.addHtml("<li>Most Fluent Answers: $MostAgile</li></ul>");
+    
+    if (i != (sectionList.length - 1))
+    {
+      content.addHtml("<hr />");
+    }
   }
   
   output.insertAdjacentElement("beforeEnd", content);
+  
+  for(var i=0; i<sectionList.length; i++)
+  {
+    int fluencyInt = parseInt(sectionList[i]['fluency']);
+    int sectionInt = sectionList[i]['section'];
+    
+    if (fluencyInt > 70)
+    {
+      // stamp is not place...set id to unplaced, then use callback function to switch it to placed
+      Element stamp = getStamp(sectionInt, false, theDate); 
+      stampsDiv.insertAdjacentElement("beforeEnd", stamp);
+      // set the stamp to placed...no animation needed
+      stamp = getStamp(sectionInt, true, theDate);
+    }
+  }
   
   var slideElement = query("#summary");
   var slide = slideshow.addElementSlide(output, 1.0, 0, 0, 2000, 0, 0, 0);

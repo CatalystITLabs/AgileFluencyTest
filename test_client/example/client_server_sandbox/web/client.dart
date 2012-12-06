@@ -38,40 +38,39 @@ InputElement finishButton = query("#finishButton");
 List<Element> stampsEarned = new List<Element>();
 
 /// returns an element with the section stamp Element
-Element getStamp(int number, bool placed)
+Element getStamp(int number, bool placed, String theDate)
 {
   var stampContainer = new DivElement();
-  var dateTxt = new ParagraphElement();
+  var dateTxt = new DivElement();
   var stamp = new ImageElement();
-  //String id;
-  Date today = new Date.now();
-  //var dfmt = new DateFormat();
-  dateTxt.style
-  ..textAlign = "center"
-  ..fontFamily = "Courier New"
-  ..fontSize = "1.2em"
-  ..position = "relative"
-  ..top = "0.5em"
-  ..transform = "rotate(20deg)";
-  dateTxt.innerHTML = today.toLocal().toString();
-  dateTxt.style.zIndex = "1";
   
-  stamp.classes.add("stamp");
+  stampContainer.classes.add("stampContainer");
+  
+  dateTxt.classes.add("dateStamp");
+  dateTxt.innerHTML = theDate;
+  dateTxt.style.zIndex = "1";
+  dateTxt.id = "dateStamp$number";
+  
+  stamp.classes.add("passportStamp");
   stamp.src = "images/stamp_$number.png";
+  
+  stamp.id = "stamp${number}Img";
+  
   if(!placed)
   {
-    stamp.id = "stamp${number}Unplaced";
+//    stamp.id = "stamp${number}Unplaced";
+    stampContainer.id = "stamp${number}Hidden";
     
     window.setTimeout(()
       {
-        stamp.id = "stamp${number}Placed";
-        stampsEarned.add(stamp);
-        
-      }, 100);
+//        stamp.id = "stamp${number}Placed";
+      stampContainer.id = "stamp${number}Show";
+      }, 1500);
   }
   else
   {
-    stamp.id = "stamp${number}Placed";
+//    stamp.id = "stamp${number}Placed";
+    stampContainer.id = "stamp${number}Show";
   }
   stampContainer.style.width = "250px";
   stampContainer.insertAdjacentElement("beforeEnd", dateTxt);
@@ -139,7 +138,7 @@ void nextQuestion()
   Element slideElement = test.next();
   assert(slideElement != null);
 
-
+  Date today = new Date.now();
   
   hideButtons();
 
@@ -149,6 +148,7 @@ void nextQuestion()
     
     //for( int x = 1; x<= test.currentSection.star; x++)
     //{
+      Element stampsDiv = slideElement.query("#stampsDiv${test.currentSection.star}");
       
       //if(!stampsEarned.isEmpty)
       //{
@@ -156,7 +156,7 @@ void nextQuestion()
         {
           //if(stampsEarned.last != stamp)
           //{
-            slideElement.insertAdjacentElement("beforeEnd", stamp);
+            stampsDiv.insertAdjacentElement("beforeEnd", stamp);
           //}
         }
       //}
@@ -165,10 +165,10 @@ void nextQuestion()
       if(checkSectionFluency())
       {
          // stamp is not place...set id to unplaced, then use callback function to switch it to placed
-         Element stamp = getStamp(test.currentSection.star, false); 
-         slideElement.insertAdjacentElement("beforeEnd", stamp);
+         Element stamp = getStamp(test.currentSection.star, false, formatTheDate(today)); 
+         stampsDiv.insertAdjacentElement("beforeEnd", stamp);
          // set the stamp to placed...no animation needed
-         stamp = getStamp(test.currentSection.star, true);
+         stamp = getStamp(test.currentSection.star, true, formatTheDate(today));
          stampsEarned.add(stamp);
       }
     //}
