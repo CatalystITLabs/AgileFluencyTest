@@ -164,6 +164,14 @@ class MongoTestServer
     return completer.future;
   }
   
+  /**
+   *  Method  : getObjectIdNumber
+   *  
+   *  Purpose : This method strips the string which is the object ID number (hex) for the document
+   *            in a Mongo database.  The expected format of the string is "Object(######)" where ##### is
+   *            the hex number we are stripping out.  So the hex string starts after the first and only 
+   *            parenthesis, and ends with the character before the last character.
+   */
   String getObjectIdNumber(String docId)
   {
     String endParenRemoved = docId.substring(0, docId.length-1);
