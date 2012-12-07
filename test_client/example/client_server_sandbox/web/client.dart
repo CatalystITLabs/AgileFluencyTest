@@ -5,7 +5,7 @@ import "lib/test.dart";
 import "package:presentation/presentation.dart";
 
 // Server Info :  
-String _serverAddress = "172.16.6.26";
+String _serverAddress = "172.16.4.27";
 String _serverPort = "8083";
 
 // generates test content and grades

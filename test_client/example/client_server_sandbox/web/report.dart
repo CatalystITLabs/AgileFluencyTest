@@ -5,7 +5,7 @@ import "../lib/test.dart";
 import "../packages/presentation/presentation.dart";
 
 // Server Info :  
-String _serverAddress = "172.16.6.26";
+String _serverAddress = "172.16.4.27";
 String _serverPort = "8083";
 
 // powers 3d transitions 
@@ -142,18 +142,15 @@ Element getStamp(int number, bool placed, String theDate)
   
   if(!placed)
   {
-//    stamp.id = "stamp${number}Unplaced";
     stampContainer.id = "stamp${number}Hidden";
     
     window.setTimeout(()
       {
-//        stamp.id = "stamp${number}Placed";
       stampContainer.id = "stamp${number}Show";
       }, 1500);
   }
   else
   {
-//    stamp.id = "stamp${number}Placed";
     stampContainer.id = "stamp${number}Show";
   }
   stampContainer.style.width = "250px";
@@ -207,7 +204,7 @@ void addSummary(jsonResults)
   passportBottomLeftDiv.classes.add("passportBottomLeftDiv");
   
   output.insertAdjacentElement("beforeEnd", passportBottomLeftDiv);
-  passportBottomLeftDiv.insertAdjacentHTML("beforeEnd", "Results from the Agile Fluency Assessment.<br /><br />Read more about it at <a href='http://labs.catalystsolves.com/?q=AgileFluency'>our blog</a>.");
+  passportBottomLeftDiv.insertAdjacentHTML("beforeEnd", "Results from the <b>Agile Fluency Assessment</b>.<br /><br />Read more about it at <a href='http://labs.catalystsolves.com/?q=AgileFluency'>our blog</a>.");
   
   var passportBottomRightDiv = new DivElement();
   passportBottomRightDiv.id = "passportBottomRightDiv";
