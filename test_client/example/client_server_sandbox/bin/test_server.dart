@@ -18,13 +18,14 @@ class MongoTestServer
 {
   DbCollection _testResults;
   const num _port = 8083;
-  const String _serverAddress = "172.16.6.26";
+  const String _serverAddress = "172.16.4.27";
+  const String _filepath = "example/client_server_sandbox/web";
   
   /*
    * Database collection should follow the following format for it's objects : 
    *  
 
-  Map dbRow = {"_id":null, "date":"2012/01/01",
+  Map dbRow = {"_id":null, "date":"2012/01/01", "name":"<name>Section Name</name>",
                            "stampList":[
                                         {
                                           "section":"1",
@@ -63,6 +64,22 @@ class MongoTestServer
           return this.run();
         });
   }
+
+  /**
+   *  Method  : getCurrentWorkingDirectory
+   *  
+   *  Purpose : This method will simply return the current working directory as a string.  
+   *            The _filepath string gets files based off the appending of the 
+   *            current working directory and _filepath.
+   *            ie : Looks for files at getCurrentWorkignDirectory()+_filepath  (Java/C string addition syntax)
+   */
+  String getCurrentWorkingDirectory()
+  {
+    Directory cwd() => new Directory(new File(".").fullPathSync());
+
+    var d = cwd();
+    return d.path;
+  }
   
   /**
    *  Method  : run
@@ -76,14 +93,11 @@ class MongoTestServer
     CrimsonHttpServer server = new CrimsonHttpServer();
     CrimsonModule module = new CrimsonModule(server);
 
-    Directory cwd() => new Directory(new File(".").fullPathSync());
-
-    var d = cwd();
-    print("Working Directory :${d.path}");
+    print("Working Directory :${getCurrentWorkingDirectory()}");
     
     module.handlers.addEndpoint(new Route("/results", "GET", getResults));
     module.handlers.addEndpoint(new Route("/persist", "POST", saveResults));
-    module.handlers.addEndpoint(new StaticFile("test_client/example/client_server_sandbox/web"));
+    module.handlers.addEndpoint(new StaticFile(_filepath));
     
     server.modules["*"] = module;
     

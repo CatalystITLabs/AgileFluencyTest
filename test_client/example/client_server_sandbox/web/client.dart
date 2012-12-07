@@ -282,12 +282,11 @@ void saveFinalSummary()
   // The callback for the AJAX request : 
   req.on.load.add((Event e) {
     var theId = req.responseText;
-    var buttonUrl = new SpanElement();
+    var buttonUrl = query(".buttonUrl");
     var buttonLink = query("#buttonLink");  
 
     // Drop the link text with the database ID into the box : 
-    buttonUrl = query(".buttonUrl");
-    buttonUrl.insertAdjacentText("afterBegin", "<a href='report.html?id=$theId'><img src='http://labs.catalystsolves.com/Projects/AgileFluency/images/badge.png' alt='Agile Fluency Assessment Report'/></a>");
+    buttonUrl.insertAdjacentText("afterBegin", "<a href='http://${_serverAddress}:${_serverPort}/report.html?id=$theId'><img src='http://labs.catalystsolves.com/Projects/AgileFluency/images/badge.png' alt='Agile Fluency Assessment Report'/></a>");
     buttonLink.insertAdjacentElement("afterBegin", buttonUrl);
   }
   );
