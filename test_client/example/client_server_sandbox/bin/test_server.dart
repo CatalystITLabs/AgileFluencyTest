@@ -18,7 +18,7 @@ class MongoTestServer
 {
   DbCollection _testResults;
   const num _port = 8083;
-  const String _serverAddress = "172.16.4.27";
+  const String _serverAddress = "172.16.6.26";
   
   /*
    * Database collection should follow the following format for it's objects : 
@@ -75,10 +75,15 @@ class MongoTestServer
   {
     CrimsonHttpServer server = new CrimsonHttpServer();
     CrimsonModule module = new CrimsonModule(server);
+
+    Directory cwd() => new Directory(new File(".").fullPathSync());
+
+    var d = cwd();
+    print("Working Directory :${d.path}");
     
     module.handlers.addEndpoint(new Route("/results", "GET", getResults));
     module.handlers.addEndpoint(new Route("/persist", "POST", saveResults));
-    module.handlers.addEndpoint(new StaticFile("example/client_server_sandbox/web"));
+    module.handlers.addEndpoint(new StaticFile("test_client/example/client_server_sandbox/web"));
     
     server.modules["*"] = module;
     
