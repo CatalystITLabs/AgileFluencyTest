@@ -5,7 +5,7 @@ import "lib/test.dart";
 import "package:presentation/presentation.dart";
 
 // Server Info :  
-String _serverAddress = "172.16.4.27";
+String _serverAddress = "172.16.6.26";
 String _serverPort = "8083";
 
 // generates test content and grades
@@ -37,7 +37,13 @@ InputElement finishButton = query("#finishButton");
 //ImageElement stamp = new ImageElement();
 List<Element> stampsEarned = new List<Element>();
 
-/// returns an element with the section stamp Element
+/**
+ *  Method  : getStamp
+ *  
+ *  Purpose : This method creates a stampContainer element for presentation.
+ *            It receives the stamp number, placed flag, and date string. The
+ *            method returns a DivElement.
+ */
 Element getStamp(int number, bool placed, String theDate)
 {
   var stampContainer = new DivElement();
@@ -79,7 +85,12 @@ Element getStamp(int number, bool placed, String theDate)
   return stampContainer;
 }
 
-/// adds a huge map to the scene
+/**
+ *  Method  : addBackground
+ *  
+ *  Purpose : This method creates the background slide, and adds it to the presentation
+ *            object. This method does not have inputs or outputs.
+ */
 void addBackground()
 {
   var element = new ImageElement();
@@ -89,8 +100,12 @@ void addBackground()
   //no transitions because this slide is never focused / transitioned to.
 }
 
-
-/// adds a new slide on the map
+/**
+ *  Method  : addSlideToMap
+ *  
+ *  Purpose : This method adds a slide to the presentation, and places it along
+ *            a sin curve. The method receives an Element, and returns a Slide.
+ */
 Slide addSlideToMap(Element slideContents)
 {
   // use a sin wave and scale it to look like a global journey
@@ -104,15 +119,22 @@ Slide addSlideToMap(Element slideContents)
 }
 
 /**
- * wrapper method for the camera move method that sets the default camera
- * positions as arguments
+ *  Method  : lookAtMap
+ *  
+ *  Purpose : This method is a wrapper for the camera move method. It sets the default
+ *            camera positions as arguments. This method does not have inputs or outputs.
  */
 void lookAtMap()
 {
   slideshow.cam.move(camTransDuration, camX, camY, camZ, camXr, camYr, camZr);
 }
 
-/// Reset all buttons to hidden
+/**
+ *  Method  : hideButtons
+ *  
+ *  Purpose : This method resets button visibility to hidden. This method does not have
+ *            inputs or outputs.
+ */
 void hideButtons()
 {
   nextButton.style.visibility = "hidden";
@@ -122,7 +144,12 @@ void hideButtons()
   finishButton.style.visibility = "hidden";
 }
 
-/// Make visible all buttons used by the summary page
+/**
+ *  Method  : enableSummaryButtons
+ *  
+ *  Purpose : This method makes summary buttons visible for the summary slide. This method
+ *            does not have inputs or outputs.
+ */
 void enableSummaryButtons()
 {
   finishButton.style.visibility = "visible";
@@ -131,7 +158,12 @@ void enableSummaryButtons()
   explainButton.style.visibility = "visible";
 }
 
-///Advance the test to the next question or step
+/**
+ *  Method  : hideButtons
+ *  
+ *  Purpose : This method advances the test to the next question or step. This method does
+ *            not have inputs or outputs.
+ */
 void nextQuestion()
 {
   //get next step from test
@@ -183,6 +215,11 @@ void nextQuestion()
   slideshow.next();
 }
 
+/**
+ *  Method  : checkSectionFluency
+ *  
+ *  Purpose : This method compares the fluency (%) with a percentage, and returns the results as a boolean.
+ */
 bool checkSectionFluency()
 {
   bool result = false;
@@ -198,8 +235,10 @@ bool checkSectionFluency()
 }
 
 /**
- * Shows the explanation and return button.
- * Hides the summary and explain button.
+ *  Method  : displaySectionExplanation
+ *  
+ *  Purpose : This method hides the summary and explain buttons, and shows the explanation and
+ *            return buttons. This method does not have inputs or outputs.
  */
 void displaySectionExplanation()
 {
@@ -297,7 +336,12 @@ void saveFinalSummary()
   req.send(jsonString);
 }
 
-///Adds on click events to the buttons
+/**
+ *  Method  : scriptButton
+ *  
+ *  Purpose : This method adds on-click events to the buttons. This method does
+ *            not have inputs or outputs.
+ */
 void scriptButton()
 {  
   Element nextButton = query('#nextButton');
@@ -360,7 +404,12 @@ void scriptButton()
   });
 }
 
-/// move the camera back to see the map and trigger the test to begin
+/**
+ *  Method  : startTest
+ *  
+ *  Purpose : This method moves the camera back to see the map, then triggers the test to begin.
+ *            This method does not have inputs or outputs.
+ */
 void startTest()
 {
   lookAtMap();
@@ -371,7 +420,12 @@ void startTest()
   }, 1500);
 }
 
-/// add splash screen and event to trigger the test
+/**
+ *  Method  : addSplash
+ *  
+ *  Purpose : This method adds the splash (start) screen and event to trigger the test. This method
+ *            does not have inputs or outputs.
+ */
 void addSplash()
 {
   // div for splash slide and add to slideshow behind the map
@@ -387,11 +441,11 @@ void addSplash()
 }
 
 /**
- * call back method is called by the HttpRequest get method
- * processes the the response text by passing it to the test 
- * section constructor
- * 
- * method also serves as user input entry point
+ *  Method  : onSuccess
+ *  
+ *  Purpose : This method is a callback method. It is called by the HttpRequest get method, and processes
+ *            the response text by passing it to the test section constructor. This method also serves as
+ *            the user input entry point. This method receives a HttpRequest.
  */
 onSuccess(HttpRequest request)
 {
@@ -416,6 +470,12 @@ onSuccess(HttpRequest request)
   }, 500);
 }
 
+/**
+ *  Method  : main
+ *  
+ *  Purpose : This method sets the question.xml url, and sets up the HttpRequest to begin the assessment.
+ *            This method does not have inputs or outputs.
+ */
 void main()
 {
   // relative location of the questions on the server

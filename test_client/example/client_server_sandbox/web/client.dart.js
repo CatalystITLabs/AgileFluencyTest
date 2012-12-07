@@ -5952,7 +5952,7 @@ $$.Camera = {"": ["viewBox", "scene>", "scale", "position", "rotation"],
   t2.set$marginTop(t1);
 },
  move$7: function(time, x, y, z, xr, yr, zr) {
-  var t1, xOffset, yOffset, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14;
+  var t1, xOffset, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14;
   t1 = this.position;
   t1.set$x(x);
   t1.set$y(y);
@@ -5963,10 +5963,9 @@ $$.Camera = {"": ["viewBox", "scene>", "scale", "position", "rotation"],
   t1.z = zr;
   t1 = this.scene;
   xOffset = $.tdiv(t1.get$clientWidth(), 2);
-  yOffset = $.tdiv(t1.get$clientHeight(), 2);
   t2 = $.add($.neg(x), xOffset);
   t3 = "scale(1) translateX(" + $.S($.getInterceptor(t2).toInt$0(t2)) + "px) translateY(";
-  t4 = $.add($.neg(y), yOffset);
+  t4 = $.add($.neg(y), 0);
   t5 = t3 + $.S($.getInterceptor(t4).toInt$0(t4)) + "px) translateZ(";
   t6 = $.neg(z);
   t7 = t5 + $.S($.getInterceptor(t6).toInt$0(t6)) + "px) rotateZ(" + $.S($.neg($.getInterceptor(zr).toInt$0(zr))) + "deg) rotateY(" + $.S($.neg($.getInterceptor(yr).toInt$0(yr))) + "deg) rotateX(" + $.S($.neg($.getInterceptor(xr).toInt$0(xr))) + "deg)";
@@ -5988,6 +5987,7 @@ $$.Camera = {"": ["viewBox", "scene>", "scale", "position", "rotation"],
   var xOffset, yOffset, t1, t2, t3, t4;
   xOffset = $.tdiv(slide.get$element().get$clientWidth(), 2);
   yOffset = $.tdiv(slide.get$element().get$clientHeight(), 2);
+  $.print("centering slide... xOffset:" + $.S(xOffset) + " yOffset:" + $.S(yOffset));
   t1 = $.add(slide.get$position().get$x(), xOffset);
   t2 = $.add(slide.get$position().get$y(), yOffset);
   t3 = slide.get$position().get$z();
@@ -5995,14 +5995,13 @@ $$.Camera = {"": ["viewBox", "scene>", "scale", "position", "rotation"],
   this.move$7(time, t1, t2, t3, t4.get$x(), t4.get$y(), t4.get$z());
 },
  Camera$1: function(viewBox) {
-  var t1, t2, t3;
+  var t1, t2;
   t1 = this.viewBox;
   t2 = this.scene;
   t1.insertAdjacentElement$2("beforeEnd", t2);
   this.centerFocalPoint$0();
-  t3 = $.S(t1.get$clientHeight());
   t2 = t2.get$style();
-  t2.set$height(t3);
+  t2.set$height("100%");
   t2.set$width("100%");
   t2.set$position("relative");
   t2.set$transformStyle("preserve-3d");
@@ -8713,11 +8712,11 @@ $.main = function() {
 };
 
 $.saveFinalSummary = function() {
-  var assessmentRun, sectionList, aSection, i, t1, jsonString, req;
+  var assessmentRun, sectionList, i, aSection, t1, jsonString, req;
   assessmentRun = $.Map_Map();
   $.indexSet(assessmentRun, "date", $.formatTheDate($.Date_Date$now()));
   sectionList = $.List_List(null);
-  for (aSection = null, i = 0; t1 = $.get$test().get$sections(), $.ltB(i, $.getInterceptor(t1).get$length(t1)); ++i)
+  for (i = 0, aSection = null; t1 = $.get$test().get$sections(), $.ltB(i, $.getInterceptor(t1).get$length(t1)); ++i)
     if ($.index($.get$test().get$sections(), i).get$done() === true) {
       aSection = $.Map_Map();
       $.indexSet(aSection, "section", $.index($.get$test().get$sections(), i).get$star());
@@ -8793,51 +8792,52 @@ $.BodyElementEvents$ = function(_ptr) {
   return new $.BodyElementEvents(_ptr);
 };
 
+$.LIElement_LIElement = function() {
+  return $.document().$$dom_createElement$1("li");
+};
+
 $._DocumentFragmentFactoryProvider_createDocumentFragment_html = function(html) {
   var fragment = $.DocumentFragment_DocumentFragment();
   fragment.set$innerHTML(html);
   return fragment;
 };
 
-$.LIElement_LIElement = function() {
-  return $.document().$$dom_createElement$1("li");
+$.JSON_stringify = function(object) {
+  return $._JsonStringifier_stringify(object);
 };
 
 $.MediaStreamTrackEvents$ = function(_ptr) {
   return new $.MediaStreamTrackEvents(_ptr);
 };
 
-$._JsonStringifier$ = function(sb) {
-  return new $._JsonStringifier(sb, []);
-};
-
-$._JsonStringifier_stringify = function(object) {
-  var output = $.StringBuffer_StringBuffer("");
-  $._JsonStringifier$(output).stringifyValue$1(object);
-  return $.getInterceptor(output).toString$0(output);
-};
-
-$.JsonUnsupportedObjectError$withCause = function(unsupportedObject, cause) {
-  return new $.JsonUnsupportedObjectError(unsupportedObject, cause);
+$.InputElement_InputElement = function(type) {
+  var e = $.document().$$dom_createElement$1("input");
+  if (!(type == null))
+    e.set$type(type);
+  return e;
 };
 
 $.MediaStreamTrackListEvents$ = function(_ptr) {
   return new $.MediaStreamTrackListEvents(_ptr);
 };
 
+$._JsonStringifier$ = function(sb) {
+  return new $._JsonStringifier(sb, []);
+};
+
 $.JsonUnsupportedObjectError$ = function(unsupportedObject) {
   return new $.JsonUnsupportedObjectError(unsupportedObject, null);
 };
 
-$.JSON_stringify = function(object) {
-  return $._JsonStringifier_stringify(object);
+$.JsonUnsupportedObjectError$withCause = function(unsupportedObject, cause) {
+  return new $.JsonUnsupportedObjectError(unsupportedObject, cause);
 };
 
 $._JsonStringifier_escape = function(sb, s) {
-  var length$, charCodes, i, needsEscape, charCode, t1, t2;
+  var length$, charCodes, needsEscape, i, charCode, t1, t2;
   length$ = $.getInterceptor(s).get$length(s);
   charCodes = $.List_List(null);
-  for (i = 0, needsEscape = false; $.ltB(i, length$); ++i) {
+  for (needsEscape = false, i = 0; $.ltB(i, length$); ++i) {
     charCode = $.getInterceptor(s).charCodeAt$1(s, i);
     if ($.ltB(charCode, 32)) {
       $.getInterceptor(charCodes).add$1(charCodes, 92);
@@ -8925,11 +8925,10 @@ $.MessagePortEvents$ = function(_ptr) {
   return new $.MessagePortEvents(_ptr);
 };
 
-$.InputElement_InputElement = function(type) {
-  var e = $.document().$$dom_createElement$1("input");
-  if (!(type == null))
-    e.set$type(type);
-  return e;
+$._JsonStringifier_stringify = function(object) {
+  var output = $.StringBuffer_StringBuffer("");
+  $._JsonStringifier$(output).stringifyValue$1(object);
+  return $.getInterceptor(output).toString$0(output);
 };
 
 $.ImageElement_ImageElement = function(height, src, width) {
@@ -8941,10 +8940,6 @@ $.ImageElement_ImageElement = function(height, src, width) {
   if (!(height == null))
     e.set$height(height);
   return e;
-};
-
-$.Test$ = function() {
-  return new $.Test($.List_List(null), null);
 };
 
 $._convertDartToNative_EventTarget = function(e) {
@@ -9062,6 +9057,10 @@ $._window = function() {
 
 $._timerFactory = function(millis, callback, repeating) {
   return repeating === true ? $._Timer$repeating(millis, callback) : $._Timer$(millis, callback);
+};
+
+$.Test$ = function() {
+  return new $.Test($.List_List(null), null);
 };
 
 $._globalState0 = function(val) {
@@ -9697,9 +9696,9 @@ $.Primitives_stringFromCharCodes = function(charCodes) {
 };
 
 $.Primitives__fromCharCodeApply = function(array) {
-  var end, t1, result, i, subarray, t2;
+  var end, t1, i, result, subarray, t2;
   end = array.length;
-  for (t1 = end <= 500, result = "", i = 0; i < end; i += 500) {
+  for (t1 = end <= 500, i = 0, result = ""; i < end; i += 500) {
     if (t1)
       subarray = array;
     else {
@@ -10392,12 +10391,12 @@ $.XmlToken_NAMESPACE = 18;
 $._HashMapImpl__DELETED_KEY = Isolate.$isolateProperties.CTC8;
 $._HashMapImpl__INITIAL_CAPACITY = 8;
 $._JsonParser_BACKSPACE = 8;
+$._JsonParser_FORM_FEED = 12;
+$._JsonParser_CARRIAGE_RETURN = 13;
+$._JsonParser_QUOTE = 34;
 $._JsonParser_TAB = 9;
 $._JsonParser_NEW_LINE = 10;
-$._JsonParser_QUOTE = 34;
-$._JsonParser_CARRIAGE_RETURN = 13;
-$._JsonParser_FORM_FEED = 12;
-$._serverAddress = "172.16.4.27";
+$._serverAddress = "172.16.6.26";
 $._serverPort = "8083";
 $.XmlNodeType_Element = Isolate.$isolateProperties.CTC16;
 $.XmlNodeType_Attribute = Isolate.$isolateProperties.CTC18;
@@ -10413,15 +10412,15 @@ $.camXr = 0;
 $.camZr = 0;
 $.camYr = 0;
 $.currentSlidePosition = -15.5;
+$._JsonParser_CHAR_N = 110;
 $._JsonParser_CHAR_B = 98;
-$._JsonParser_CHAR_T = 116;
 $._JsonParser_BACKSLASH = 92;
+$._JsonParser_CHAR_U = 117;
+$._JsonParser_CHAR_T = 116;
+$.Primitives_hashCodeSeed = 0;
+$.Primitives_mirrorsEnabled = false;
 $._JsonParser_CHAR_R = 114;
 $._JsonParser_CHAR_F = 102;
-$.Primitives_hashCodeSeed = 0;
-$._JsonParser_CHAR_N = 110;
-$.Primitives_mirrorsEnabled = false;
-$._JsonParser_CHAR_U = 117;
 $.Primitives_DOLLAR_CHAR_VALUE = 36;
 Isolate.$lazy($, 'stampsEarned', 'stampsEarned', 'get$stampsEarned', function() {
   return $.List_List(null);

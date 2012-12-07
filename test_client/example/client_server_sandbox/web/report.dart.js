@@ -4013,7 +4013,7 @@ $$.Camera = {"": ["viewBox", "scene>", "scale", "position", "rotation"],
   t2.set$marginTop(t1);
 },
  move$7: function(time, x, y, z, xr, yr, zr) {
-  var t1, xOffset, yOffset, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14;
+  var t1, xOffset, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14;
   t1 = this.position;
   t1.set$x(x);
   t1.set$y(y);
@@ -4024,10 +4024,9 @@ $$.Camera = {"": ["viewBox", "scene>", "scale", "position", "rotation"],
   t1.z = zr;
   t1 = this.scene;
   xOffset = $.tdiv(t1.get$clientWidth(), 2);
-  yOffset = $.tdiv(t1.get$clientHeight(), 2);
   t2 = $.add($.neg(x), xOffset);
   t3 = "scale(1) translateX(" + $.S($.getInterceptor(t2).toInt$0(t2)) + "px) translateY(";
-  t4 = $.add($.neg(y), yOffset);
+  t4 = $.add($.neg(y), 0);
   t5 = t3 + $.S($.getInterceptor(t4).toInt$0(t4)) + "px) translateZ(";
   t6 = $.neg(z);
   t7 = t5 + $.S($.getInterceptor(t6).toInt$0(t6)) + "px) rotateZ(" + $.S($.neg($.getInterceptor(zr).toInt$0(zr))) + "deg) rotateY(" + $.S($.neg($.getInterceptor(yr).toInt$0(yr))) + "deg) rotateX(" + $.S($.neg($.getInterceptor(xr).toInt$0(xr))) + "deg)";
@@ -4049,6 +4048,7 @@ $$.Camera = {"": ["viewBox", "scene>", "scale", "position", "rotation"],
   var xOffset, yOffset, t1, t2, t3, t4;
   xOffset = $.tdiv(slide.get$element().get$clientWidth(), 2);
   yOffset = $.tdiv(slide.get$element().get$clientHeight(), 2);
+  $.print("centering slide... xOffset:" + $.S(xOffset) + " yOffset:" + $.S(yOffset));
   t1 = $.add(slide.get$position().get$x(), xOffset);
   t2 = $.add(slide.get$position().get$y(), yOffset);
   t3 = slide.get$position().get$z();
@@ -4056,14 +4056,13 @@ $$.Camera = {"": ["viewBox", "scene>", "scale", "position", "rotation"],
   this.move$7(time, t1, t2, t3, t4.get$x(), t4.get$y(), t4.get$z());
 },
  Camera$1: function(viewBox) {
-  var t1, t2, t3;
+  var t1, t2;
   t1 = this.viewBox;
   t2 = this.scene;
   t1.insertAdjacentElement$2("beforeEnd", t2);
   this.centerFocalPoint$0();
-  t3 = $.S(t1.get$clientHeight());
   t2 = t2.get$style();
-  t2.set$height(t3);
+  t2.set$height("100%");
   t2.set$width("100%");
   t2.set$position("relative");
   t2.set$transformStyle("preserve-3d");
@@ -7265,7 +7264,7 @@ $._JsonParser_CARRIAGE_RETURN = 13;
 $._JsonParser_SPACE = 32;
 $._HashMapImpl__DELETED_KEY = Isolate.$isolateProperties.CTC8;
 $._HashMapImpl__INITIAL_CAPACITY = 8;
-$._serverAddress = "172.16.4.27";
+$._serverAddress = "172.16.6.26";
 $._JsonParser_QUOTE = 34;
 $._serverPort = "8083";
 $._JsonParser_COMMA = 44;

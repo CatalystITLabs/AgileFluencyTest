@@ -5,7 +5,7 @@ import "../lib/test.dart";
 import "../packages/presentation/presentation.dart";
 
 // Server Info :  
-String _serverAddress = "172.16.4.27";
+String _serverAddress = "172.16.6.26";
 String _serverPort = "8083";
 
 // powers 3d transitions 
@@ -23,7 +23,12 @@ num camXr = 0;
 num camYr = 0;
 num camZr = 0;
 
-/// adds a huge map to the scene
+/**
+ *  Method  : addBackground
+ *  
+ *  Purpose : This method creates the background slide, and adds it to the presentation
+ *            object. This method does not have inputs or outputs.
+ */
 void addBackground()
 {
   var element = new ImageElement();
@@ -33,7 +38,12 @@ void addBackground()
   //no transitions because this slide is never focused / transitioned to.
 }
 
-///Gets information from the URI parameter ../report.dart?id=HEXSTRING
+/**
+ *  Method  : getUriParams
+ *  
+ *  Purpose : This method gets information from the URI parameter (../report.dart?id=HEX).
+ *            This method receives a string, and returns a mapping with the id.
+ */
 Map<String, String> getUriParams(String uriSearch) {
   if (uriSearch != '') {
     final List<String> paramValuePairs = uriSearch.substring(1).split('&');
@@ -52,14 +62,23 @@ Map<String, String> getUriParams(String uriSearch) {
 }
 
 /**
- * wrapper method for the camera move method that sets the default camera
- * positions as arguments
+ *  Method  : lookAtMap
+ *  
+ *  Purpose : This method is a wrapper for the camera move method. It sets the default
+ *            camera positions as arguments. This method does not have inputs or outputs.
  */
 void lookAtMap()
 {
   slideshow.cam.move(camTransDuration, camX, camY, camZ, camXr, camYr, camZr);
 }
 
+/**
+ *  Method  : displayResults
+ *  
+ *  Purpose : This method adds content to the presentation viewbox. It calls
+ *            addBackground, lookAtMap, and addSummary. This method receives
+ *            jsonResults, and does not have outputs.
+ */
 void displayResults(jsonResults)
 {
   var viewBox = query("#viewBox");
@@ -78,7 +97,12 @@ void displayResults(jsonResults)
   }, 1500);
 }
 
-/// adds a new slide on the map
+/**
+ *  Method  : addSlideToMap
+ *  
+ *  Purpose : This method adds a slide to the presentation, and places it along
+ *            a sin curve. The method receives an Element, and returns a Slide.
+ */
 Slide addSlideToMap(Element slideContents)
 {
   // use a sin wave and scale it to look like a global journey
@@ -91,7 +115,13 @@ Slide addSlideToMap(Element slideContents)
   return slideshow.addElementSlide(slideContents, 1.0, x, y, 0, 0, 0, 0);
 }
 
-/// returns an element with the section stamp Element
+/**
+ *  Method  : getStamp
+ *  
+ *  Purpose : This method creates a stampContainer element for presentation.
+ *            It receives the stamp number, placed flag, and date string. The
+ *            method returns a DivElement.
+ */
 Element getStamp(int number, bool placed, String theDate)
 {
   var stampContainer = new DivElement();
@@ -141,7 +171,12 @@ String stripNameHtml(String theName)
   return theName.substring(startIdx, endIdx);
 }
 
-///create summary slide, then add to map
+/**
+ *  Method  : addSummary
+ *  
+ *  Purpose : This method creates a summary slide, and adds it to the presentation map.
+ *            This method receives jsonResults, and does not have outputs.
+ */
 void addSummary(jsonResults)
 {
   /// Summary for each completed section: stamp and progress.
@@ -224,6 +259,12 @@ void addSummary(jsonResults)
   slideshow.start();
 }
 
+/**
+ *  Method  : getIdFromUri
+ *  
+ *  Purpose : This method retrieves the Uri, and parses for the id parameter. This method does not have
+ *            inputs, and returns the id as a string.
+ */
 String getIdFromUri()
 {
   var uriSearch = window.location.search;
@@ -237,7 +278,12 @@ String getIdFromUri()
   return hexString;
 }
 
-/// request information should be passed to server application. This will then be presented on a slide.
+/**
+ *  Method  : main
+ *  
+ *  Purpose : This method sends request information to the server application. When successful, it will
+ *            be presented on a slide. This method does not have inputs or outputs.
+ */
 void main()
 {
   var hexstring = getIdFromUri();
