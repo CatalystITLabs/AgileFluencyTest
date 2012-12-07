@@ -201,7 +201,21 @@ void addSummary(jsonResults)
   passport.src = "images/passport_m.png";
   passport.style.zIndex = "-10";
   output.insertAdjacentElement("beforeEnd", passport);
-
+  
+  var passportBottomLeftDiv = new DivElement();
+  passportBottomLeftDiv.id = "passportBottomLeftDiv";
+  passportBottomLeftDiv.classes.add("passportBottomLeftDiv");
+  
+  output.insertAdjacentElement("beforeEnd", passportBottomLeftDiv);
+  passportBottomLeftDiv.insertAdjacentHTML("beforeEnd", "Results from the Agile Fluency Assessment.<br /><br />Read more about it at <a href='http://labs.catalystsolves.com/?q=AgileFluency'>our blog</a>.");
+  
+  var passportBottomRightDiv = new DivElement();
+  passportBottomRightDiv.id = "passportBottomRightDiv";
+  passportBottomRightDiv.classes.add("passportBottomRightDiv");
+  
+  output.insertAdjacentElement("beforeEnd", passportBottomRightDiv);
+//  passportBottomRightDiv.insertAdjacentHTML("beforeEnd", "Take the assessment yourself!");
+  
   output.insertAdjacentElement("beforeEnd", stampsDiv);
   
   //content for the right side
