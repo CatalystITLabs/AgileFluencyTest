@@ -21,7 +21,7 @@ class MongoTestServer
   const String _serverAddress = "172.16.6.26";
   
   /*
-   * Database collection should follow the following format for it's objects : 
+   * Database collection should follow the following format for its objects : 
    *  
 
   Map dbRow = {"_id":null, "date":"2012/01/01",
@@ -93,7 +93,7 @@ class MongoTestServer
   /**
    *  Method  : getResults
    *  
-   *  Purpose : This method will handle a get request for an object given it's ID in the query parameter.
+   *  Purpose : This method will handle a get request for an object given its ID in the query parameter.
    *            It will build a Mongo ObjectId out of that and query the database for the object that
    *            matches, stringifying that object into a json string and putting that in the response body. 
    */
