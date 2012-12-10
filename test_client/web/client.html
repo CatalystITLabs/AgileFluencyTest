@@ -3,17 +3,24 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Client</title>
+    <title>AF Client</title>
     <link rel="stylesheet" href="client.css">
+    <link rel="SHORTCUT ICON" href="favicon.ico">
     <script type="text/javascript">var switchTo5x=true;</script>
     <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
     <script type="text/javascript">stLight.options({publisher: "ur-83d26748-c3c9-d6ed-b64d-7ee1d78a66a5"});</script>
   </head>
   <body>
 	  <div id="banner">
-	   <h1>Agile Fluency</h1>
-	   <h4>A resource for development teams for self-assessment</h4>
-	  </div>
+      <span class="logoLeft">
+        <img src="images/badge.png" alt="Agile Fluency Assessment"/>
+      </span>
+      <span class="logoRight">
+        <img src="images/badge.png" alt="Agile Fluency Assessment"/>
+      </span>
+      <h1>Agile Fluency</h1>
+      <h4>A resource for development teams for self-assessment</h4>
+    </div>
 	  
     <div id="container">
     
@@ -48,11 +55,24 @@
 	      <div id="explainContent"></div>
       </div>
       <div id="finalSection" class="staticSlideContent">
-        <h4>Thank you for taking the Agile Fluency Self-Assessment.</h4>
+        <h4>Thank you for taking the Agile Fluency Self-Assessment!</h4>
         <p class='italicIndent'>As you continue your Agile Journey, please feel free to stop back to see if your answers have changed! We encourage you to share this test with your teams and throughout the development community.</p>
-        <br/><br/>
-        Check out our links for more resources:
-        <ul><li>Visit our <a href="http://labs.catalystsolves.com/">blog</a>!</li></ul>
+        <br/>
+        <div id="buttonLink">
+          <textarea id="reportLinkTextArea" class="buttonUrl" readonly="readonly"></textarea>
+          <div class="buttonContent">
+            <img class="button"/>
+            <p>Put this stamp on your website by adding the following code to your page:</p>
+          </div>
+          <br/>
+        </div>
+        <br/>
+        <br/>
+        <ul>Check out our links for more resources:
+          <li><a href='http://martinfowler.com/articles/agileFluency.html'>Your Path through Agile Fluency</a></li>
+          <li><a href="http://labs.catalystsolves.com/?q=AgileFluency">Project Blog</a></li>
+          <li><a href="https://github.com/CatalystITLabs/AgileFluencyTest">GitHub</a></li>
+        </ul>
         <br/>
         <div id="shareButtonContainer">
           <span class='st_facebook_hcount' displayText='Facebook'></span>
@@ -61,19 +81,14 @@
           <span class='st_googleplus_hcount' displayText='Google +'></span>
           <span class='st_email_hcount' displayText='Email'></span>
         </div>
+        <br/>
         <input id="retake" type="image" src="images/retake_8bit.png" onclick="location.reload()"/>
-        
       </div>
-      <!--
-      <div id="summary" class="summary staticSlideContent">
-        <img id= "passport" src = "../3D/images/passport_m.png" />
-        <p class="detail"></p>
-      </div>
-      -->
-      
     </div>
 
     <script type="application/dart" src="client.dart"></script>
     <script src="https://dart.googlecode.com/svn/branches/bleeding_edge/dart/client/dart.js"></script>
+    
+    <div id="footer"></div>
   </body>
 </html>

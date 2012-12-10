@@ -2,15 +2,14 @@ name:  test_client
 description:  A sample application
 
 dependencies:
+  intl:
+    git: git://github.com/CatalystITLabs/intl.git
   xml:
-    git: git://github.com/prujohn/dart-xml.git
+    git: git://github.com/CatalystITLabs/dart-xml.git
   presentation:
     git: git://github.com/CatalystITLabs/presentation.dart.git
-  intl:
-    sdk: intl
-
-  crimsonhttp: 
-    git: git://github.com/chrisbu/CrimsonHttp
-  mongo_dart: 
-    git: git://github.com/vadimtsushko/mongo_dart
+  crimsonhttp:
+    git: git://github.com/CatalystITLabs/CrimsonHttp.git
+  mongo_dart:
+    git: git://github.com/vadimtsushko/mongo_dart.git
     

@@ -1,21 +1,14 @@
 
 /*******Global*******/
-html {
-  height: 98%;
-}
+
 body {
   background-color: #CCC;
-  height: 98%;
   font-family: 'Open Sans', sans-serif;
   font-size: 1em;
   font-weight: normal;
   line-height: 1.2em;
   margin: 0em 0.0em;
   padding: 0;
-}
-
-p {
-  text-indent: 1em;
 }
 
 p {
@@ -52,28 +45,49 @@ li list-style {
 }
 
 /*-----------------------------------------------------*/
-/***** Outside 3d Scene / Page Frame *****/
-
-#container {
-  width: 96%;
-  margin: auto;
-  height: 75%;
-  position: relative;
-  border:2px solid #333;
-  border-radius:1.25em;
-  -moz-border-radius:1.25em; /* Firefox 3.6 and earlier */
-  background-color: #333;
-  /*text-align: center;*/
-  padding: 1.0em;
-  padding-bottom:5em;
-  overflow-y:hidden;
-  overflow-x:hidden;
+/***** Banner styling *****/
+#banner {
+  background-color:#CCC;
+  width: 100%;
+  margin: 0em;
+  top: 0em;
 }
+
+/*title and subtitle */
+#banner h1 {
+  color: #333;
+  text-shadow: 0.1em 0.1em 0.1em #FFF;
+  line-height: 1em;
+  margin: 0.1em 0.25em;
+}
+
+#banner h4 {
+  color: #333;
+  line-height: 1em;
+  margin: 0.2em 0.5em;
+}
+
+#banner .logoLeft {
+  float:left;
+  position: relative;
+  text-align:right;
+  top: 0em;
+  left: 2em;
+}
+
+#banner .logoRight {
+  float:right;
+  position: relative;
+  text-align:left;
+  top: 0em;
+  right: 2em;
+}
+/*-----------------------------------------------------*/
+/***** Outside 3d Scene / Page Frame *****/
 
 /* navigation buttons */
 #buttonContainer
 {
-  padding:0.5em;
   text-align:center;
 }
 .advance
@@ -81,7 +95,7 @@ li list-style {
   visibility: hidden;
   width:auto;
   position: relative;
-  bottom:0.0em;
+  bottom:30px;
   margin-left:auto;
   margin-right:auto;
   border:none;
@@ -99,39 +113,27 @@ li list-style {
   top: 1.5em;
 }
 
-
-/*title and subtitle */
-#banner {
-  background-color:#CCC;
-  width: 100%;
-  margin: 0em;
-}
-
-#banner h1 {
-  color: #333;
-  text-shadow: 0.1em 0.1em 0.1em #FFF;
-  line-height: 1em;
-  margin: 0.1em 0.25em;
-}
-
-#banner h4 {
-  color: #333;
-  line-height: 1em;
-  margin: 0.2em 0.5em;
-}
-
-/*footer for github project url and other misc. information*/
-#footer {
-  height: 2em;
-}
-
 /*-----------------------------------------------------*/
 /***** 3d Scene *****/
+#container {
+  width: 96%;
+  margin: auto;
+  height: auto;
+  position: relative;
+  border:2px solid #333;
+  border-radius:1.25em;
+  -moz-border-radius:1.25em; /* Firefox 3.6 and earlier */
+  background-color: #333;
+  text-align: center;
+  padding: 1.0em;
+  overflow-y:hidden;
+  overflow-x:hidden;
+}
 
 /* viewport into the 3d scene */
 #viewBox {
   width: 100%;
-  height: 100%;
+  height: 30em;
   position: relative;
   border: 1px solid #ccc;
   background-color: #DDDDDD;
@@ -166,7 +168,7 @@ li list-style {
 /* common css for all slides */
 .slide {
   width: 80%;
-  height: 85%; /* slightly smaller than the viewBox */
+  height: 26em; /* slightly smaller than the viewBox */
   border: 0.3em solid #FFF;
   /*background-color: rgba(255, 255, 255, 0.85);*/
   margin: 0;
@@ -259,6 +261,7 @@ li list-style {
   height: auto;
   margin: 0.2em 0.5em;
   text-align: left;
+  background-color: transparent;
 }
 
 /*-----------------------------------------------------*/
@@ -291,99 +294,91 @@ li list-style {
 
 .stamp {
   position: absolute;
-  width: 20%;
+  width: 70%;
   height: auto;
 }
 
-#stamp1Unplaced {
-  left: 3%;
-  top: 6%;
-  transform:rotateZ(10deg);
-  -ms-transform:scale(5) rotate(10deg); /* IE 9 */
-  -moz-transform:scale(5) rotate(10deg); /* Firefox */
-  -webkit-transform:scale(5) rotate(10deg); /* Safari and Chrome */
-  -o-transform:scale(5) rotate(10deg); /* Opera */
-	 opacity: 0.0;
-   filter:alpha(opacity=0);
+.stampsDiv{
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 48%;
+  height: 100%;
 }
 
-#stamp1Placed
-{
-  left: 3%;
-  top: 6%;
-  transform:rotateZ(20deg);
-  -ms-transform:scale(1) rotate(20deg); /* IE 9 */
-  -moz-transform:scale(1) rotate(20deg); /* Firefox */
-  -webkit-transform:scale(1) rotate(20deg); /* Safari and Chrome */
-  -o-transform:scale(1) rotate(20deg); /* Opera */
-   -webkit-transition: all 1s ease-in-out; 
-   -moz-transition: all 1s ease-in-out; 
-   -o-transition: all 1s ease-in-out; 
-   -ms-transition: all 1s ease-in-out; 
-   transition: all 1s ease-in-out;
-   transition-delay: 1s;
-   -moz-transition-delay: 1s; /* Firefox 4 */
-   -webkit-transition-delay: 1s; /* Safari and Chrome */
-   -o-transition-delay: 1s; /* Opera */ 
-   opacity: 1.0;
-   filter:alpha(opacity=100);
-}
-
-#stamp2Unplaced {
-  left: 26%;
-  top: 3%;
-  transform:rotateZ(10deg);
-  -ms-transform:scale(5) rotate(10deg); /* IE 9 */
-  -moz-transform:scale(5) rotate(10deg); /* Firefox */
-  -webkit-transform:scale(5) rotate(10deg); /* Safari and Chrome */
-  -o-transform:scale(5) rotate(10deg); /* Opera */
-   opacity: 0.0;
-   filter:alpha(opacity=0);
-}
-
-#stamp2Placed
-{
-  left: 26%;
-  top: 3%;
-  transform:rotateZ(20deg);
-  -ms-transform:scale(1) rotate(20deg); /* IE 9 */
-  -moz-transform:scale(1) rotate(20deg); /* Firefox */
-  -webkit-transform:scale(1) rotate(20deg); /* Safari and Chrome */
-  -o-transform:scale(1) rotate(20deg); /* Opera */
-   -webkit-transition: all 1s ease-in-out; 
-   -moz-transition: all 1s ease-in-out; 
-   -o-transition: all 1s ease-in-out; 
-   -ms-transition: all 1s ease-in-out; 
-   transition: all 1s ease-in-out;
-   transition-delay: 1s;
-   -moz-transition-delay: 1s; /* Firefox 4 */
-   -webkit-transition-delay: 1s; /* Safari and Chrome */
-   -o-transition-delay: 1s; /* Opera */ 
-   opacity: 1.0;
-   filter:alpha(opacity=100);
-}
-
-#stamp3Unplaced {
+.passportBottomLeftDiv{
+  z-index: 1;
+  font-size: 1em;
+  position: absolute;
+  bottom: 0%;
+  height: 20%;
+  width: 41%;
   left: 6%;
-  top: 44%;
-  transform:rotateZ(10deg);
-  -ms-transform:scale(5) rotate(10deg); /* IE 9 */
-  -moz-transform:scale(5) rotate(10deg); /* Firefox */
-  -webkit-transform:scale(5) rotate(10deg); /* Safari and Chrome */
-  -o-transform:scale(5) rotate(10deg); /* Opera */
-   opacity: 0.0;
-   filter:alpha(opacity=0);
 }
 
-#stamp3Placed
-{
-  left: 6%;
+.passportBottomRightDiv{
+  position: absolute;
+  bottom: 0%;
+  right: 10%;
+  height: 20%;
+  width: 40%;
+}
+
+.stampContainer{
+}
+
+.dateStamp{
+  font-family: Courier New;
+}
+
+#dateStamp1{
+  position: absolute;
+  top: 40%;
+  left: 31%;
+}
+
+#dateStamp2{
+  position: absolute;
+  top: 56%;
+  left: 29%;
+}
+
+#dateStamp3{
+  position: absolute;
+  top: 45%;
+  left: 32%;
+}
+
+#dateStamp4{
+  position: absolute;
   top: 44%;
-  transform:rotateZ(20deg);
-  -ms-transform:scale(1) rotate(20deg); /* IE 9 */
-  -moz-transform:scale(1) rotate(20deg); /* Firefox */
-  -webkit-transform:scale(1) rotate(20deg); /* Safari and Chrome */
-  -o-transform:scale(1) rotate(20deg); /* Opera */
+  left: 43%;
+}
+
+.passportStamp{
+  width: 85%
+}
+
+#stamp1Hidden {
+  position: absolute;
+  top: 5%
+  left: 0%;
+  -ms-transform:scale(5) rotate(-7deg); /* IE 9 */
+  -moz-transform:scale(5) rotate(-7deg); /* Firefox */
+  -webkit-transform:scale(5) rotate(-7deg); /* Safari and Chrome */
+  -o-transform:scale(5) rotate(-7deg); /* Opera */
+  opacity: 0.0;
+  filter:alpha(opacity=0);
+}
+
+#stamp1Show {
+  position: absolute;
+  top: 5%;
+  left: 0%;
+  -ms-transform:scale(0.9) rotate(-15deg); /* IE 9 */
+  -moz-transform:scale(0.9) rotate(-15deg); /* Firefox */
+  -webkit-transform:scale(0.9) rotate(-15deg); /* Safari and Chrome */
+  -o-transform:scale(0.9) rotate(-15deg); /* Opera */
    -webkit-transition: all 1s ease-in-out; 
    -moz-transition: all 1s ease-in-out; 
    -o-transition: all 1s ease-in-out; 
@@ -393,31 +388,30 @@ li list-style {
    -moz-transition-delay: 1s; /* Firefox 4 */
    -webkit-transition-delay: 1s; /* Safari and Chrome */
    -o-transition-delay: 1s; /* Opera */ 
-   opacity: 1.0;
-   filter:alpha(opacity=100);
+  opacity: 1.0;
+  filter:alpha(opacity=100);
 }
 
-#stamp4Unplaced {
-  left: 24%;
-  top: 42%;
-  transform:rotateZ(10deg);
+#stamp2Hidden {
+  position: absolute;
+  top: 0%;
+  right: -10%;
   -ms-transform:scale(5) rotate(10deg); /* IE 9 */
   -moz-transform:scale(5) rotate(10deg); /* Firefox */
   -webkit-transform:scale(5) rotate(10deg); /* Safari and Chrome */
   -o-transform:scale(5) rotate(10deg); /* Opera */
-   opacity: 0.0;
-   filter:alpha(opacity=0);
+  opacity: 0.0;
+  filter:alpha(opacity=0);
 }
 
-#stamp4Placed
-{
-  left: 24%;
-  top: 42%;
-  transform:rotateZ(20deg);
-  -ms-transform:scale(2) rotate(20deg); /* IE 9 */
-  -moz-transform:scale(2) rotate(20deg); /* Firefox */
-  -webkit-transform:scale(2) rotate(20deg); /* Safari and Chrome */
-  -o-transform:scale(2) rotate(20deg); /* Opera */
+#stamp2Show {
+  position: absolute;
+  top: 0%;
+  right: -10%;
+  -ms-transform:scale(0.8) rotate(20deg); /* IE 9 */
+  -moz-transform:scale(0.8) rotate(20deg); /* Firefox */
+  -webkit-transform:scale(0.8) rotate(20deg); /* Safari and Chrome */
+  -o-transform:scale(0.8) rotate(20deg); /* Opera */
    -webkit-transition: all 1s ease-in-out; 
    -moz-transition: all 1s ease-in-out; 
    -o-transition: all 1s ease-in-out; 
@@ -427,8 +421,78 @@ li list-style {
    -moz-transition-delay: 1s; /* Firefox 4 */
    -webkit-transition-delay: 1s; /* Safari and Chrome */
    -o-transition-delay: 1s; /* Opera */ 
-   opacity: 1.0;
-   filter:alpha(opacity=100);
+  opacity: 1.0;
+  filter:alpha(opacity=100);
+}
+
+#stamp3Hidden {
+  position: absolute;
+  bottom: 30%;
+  left: 0%;
+  -ms-transform:scale(5) rotate(27deg); /* IE 9 */
+  -moz-transform:scale(5) rotate(27deg); /* Firefox */
+  -webkit-transform:scale(5) rotate(27deg); /* Safari and Chrome */
+  -o-transform:scale(5) rotate(27deg); /* Opera */
+  opacity: 0.0;
+  filter:alpha(opacity=0);
+}
+
+#stamp3Show {
+  position: absolute;
+  bottom: 30%;
+  left: 0%;
+  -ms-transform:scale(0.8) rotate(55deg); /* IE 9 */
+  -moz-transform:scale(0.8) rotate(55deg); /* Firefox */
+  -webkit-transform:scale(0.8) rotate(55deg); /* Safari and Chrome */
+  -o-transform:scale(0.8) rotate(55deg); /* Opera */
+   -webkit-transition: all 1s ease-in-out; 
+   -moz-transition: all 1s ease-in-out; 
+   -o-transition: all 1s ease-in-out; 
+   -ms-transition: all 1s ease-in-out; 
+   transition: all 1s ease-in-out;
+   transition-delay: 1s;
+   -moz-transition-delay: 1s; /* Firefox 4 */
+   -webkit-transition-delay: 1s; /* Safari and Chrome */
+   -o-transition-delay: 1s; /* Opera */ 
+  opacity: 1.0;
+  filter:alpha(opacity=100);
+}
+
+#stamp4Hidden {
+  position: absolute;
+  bottom: 25%;
+  right: 0%;
+  -ms-transform:scale(5) rotate(5deg); /* IE 9 */
+  -moz-transform:scale(5) rotate(5deg); /* Firefox */
+  -webkit-transform:scale(5) rotate(5deg); /* Safari and Chrome */
+  -o-transform:scale(5) rotate(5deg); /* Opera */
+  opacity: 0.0;
+  filter:alpha(opacity=0);
+}
+
+#stamp4Show {
+  position: absolute;
+  bottom: 25%;
+  right: 0%;
+  -ms-transform:scale(1) rotate(10deg); /* IE 9 */
+  -moz-transform:scale(1) rotate(10deg); /* Firefox */
+  -webkit-transform:scale(1) rotate(10deg); /* Safari and Chrome */
+  -o-transform:scale(1) rotate(10deg); /* Opera */
+   -webkit-transition: all 1s ease-in-out; 
+   -moz-transition: all 1s ease-in-out; 
+   -o-transition: all 1s ease-in-out; 
+   -ms-transition: all 1s ease-in-out; 
+   transition: all 1s ease-in-out;
+   transition-delay: 1s;
+   -moz-transition-delay: 1s; /* Firefox 4 */
+   -webkit-transition-delay: 1s; /* Safari and Chrome */
+   -o-transition-delay: 1s; /* Opera */ 
+  opacity: 1.0;
+  filter:alpha(opacity=100);
+}
+
+#stamp4Img {
+  width: 130%;
 }
 
 .passportImage {
@@ -514,7 +578,100 @@ li list-style {
 /*-----------------------------------------------------*/
 /******Final Page*******/
 
-#shareButtonContainer
-{
+#button {
+  left: 5%;
+  top: 35%;
+  transform:rotateZ(0deg);
+  -ms-transform:scale(1) rotate(0deg); /* IE 9 */
+  -moz-transform:scale(1) rotate(0deg); /* Firefox */
+  -webkit-transform:scale(1) rotate(0deg); /* Safari and Chrome */
+  -o-transform:scale(1) rotate(0deg); /* Opera */
+  margin: 0em;
+}
+
+#buttonLink {
+  text-indent: 0em;
+  height: 5.1em;
+}
+
+.buttonContent {
+  width: 48%;
   text-align: center;
+}
+
+#reportLinkTextArea {
+  position: absolute;
+  right: 2.5%;
+  height: 25%;
+  resize: none;
+}
+
+.buttonUrl {
+    overflowY: scroll;
+    width: 49%;
+    float: right;
+    background-color: #FFFFFF;
+    height: 5em;
+    border: solid 1px #000000;
+    text-wrap: unrestricted;
+    padding: 0.1em;
+    padding-right: 1.4em;
+}
+
+#shareButtonContainer {
+  text-align: center;
+}
+
+#finalSection {
+  line-height: 1.1em;
+  text-indent: 0em;
+  text-align: center;
+}
+
+#finalSection h4 {
+  line-height: 1em;  
+}
+
+#finalSection p {
+  padding: 0em;
+  margin: 0em;
+}
+
+#buttonLink {
+  text-align: left;  
+}
+
+#finalSection ul {
+  clear: both;
+  margin-left: 0em;
+  text-align: left;
+  text-indent: -2.5em;  
+}
+
+#finalSection li {
+  text-indent: 0em;
+}
+
+/*--------------------------------------------*/
+/***** Results page link to AF Assessment *****/
+.takeAssessment {
+  width: 98%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; 
+}
+
+.takeAssessment input {
+  margin-top: 0.25em;
+  margin-bottom: -1em;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  line-height: 1em;
+}
+
+/*--------------------------------------------*/
+/*footer for github project url and other misc. information*/
+#footer {
+  height: 2em;
 }

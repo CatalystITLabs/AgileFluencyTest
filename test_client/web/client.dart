@@ -1,7 +1,12 @@
 import 'dart:html';
 import 'dart:math';
-import "../lib/test.dart";
-import "packages/presentation/presentation.dart";
+import 'dart:json';
+import "lib/test.dart";
+import "package:presentation/presentation.dart";
+
+// Server Info :  
+String _serverAddress = "172.16.4.27";
+String _serverPort = "8083";
 
 // generates test content and grades
 Test test = new Test();
@@ -32,48 +37,57 @@ InputElement finishButton = query("#finishButton");
 //ImageElement stamp = new ImageElement();
 List<Element> stampsEarned = new List<Element>();
 
-/// returns an element with the section stamp Element
-Element getStamp(int number, bool placed)
+/**
+ *  Method  : getStamp
+ *  
+ *  Purpose : This method creates a stampContainer element for presentation.
+ *            It receives the stamp number, placed flag, and date string. The
+ *            method returns a DivElement.
+ */
+Element getStamp(int number, bool placed, String theDate)
 {
   var stampContainer = new DivElement();
-  var dateTxt = new ParagraphElement();
+  var dateTxt = new DivElement();
   var stamp = new ImageElement();
-  //String id;
-  /*Date today = new Date.now();
-  //var dfmt = new DateFormat();
-  dateTxt.style
-  ..textAlign = "center"
-  ..fontFamily = "Courier New"
-  ..fontSize = "1.2em"
-  ..transform = "rotate(20deg)";
-  dateTxt.innerHTML = today.toLocal().toString();
-  dateTxt.style.zIndex = "1";*/
- 
-  stamp.classes.add("stamp");
+  
+  stampContainer.classes.add("stampContainer");
+  
+  dateTxt.classes.add("dateStamp");
+  dateTxt.innerHTML = theDate;
+  dateTxt.style.zIndex = "1";
+  dateTxt.id = "dateStamp$number";
+  
+  stamp.classes.add("passportStamp");
   stamp.src = "images/stamp_$number.png";
+  
+  stamp.id = "stamp${number}Img";
+  
   if(!placed)
   {
-    stamp.id = "stamp${number}Unplaced";
+    stampContainer.id = "stamp${number}Hidden";
     
     window.setTimeout(()
       {
-        stamp.id = "stamp${number}Placed";
-        stampsEarned.add(stamp);
-        
-      }, 100);
+      stampContainer.id = "stamp${number}Show";
+      }, 1500);
   }
   else
   {
-    stamp.id = "stamp${number}Placed";
+    stampContainer.id = "stamp${number}Show";
   }
   stampContainer.style.width = "250px";
-  //stampContainer.insertAdjacentElement("beforeEnd", dateTxt);
+  stampContainer.insertAdjacentElement("beforeEnd", dateTxt);
   stampContainer.insertAdjacentElement("beforeEnd", stamp);
   
   return stampContainer;
 }
 
-/// adds a huge map to the scene
+/**
+ *  Method  : addBackground
+ *  
+ *  Purpose : This method creates the background slide, and adds it to the presentation
+ *            object. This method does not have inputs or outputs.
+ */
 void addBackground()
 {
   var element = new ImageElement();
@@ -83,8 +97,12 @@ void addBackground()
   //no transitions because this slide is never focused / transitioned to.
 }
 
-
-/// adds a new slide on the map
+/**
+ *  Method  : addSlideToMap
+ *  
+ *  Purpose : This method adds a slide to the presentation, and places it along
+ *            a sin curve. The method receives an Element, and returns a Slide.
+ */
 Slide addSlideToMap(Element slideContents)
 {
   // use a sin wave and scale it to look like a global journey
@@ -94,19 +112,26 @@ Slide addSlideToMap(Element slideContents)
   num waveShift = -3.0;
   var x = currentSlidePosition * slidePositionXScale;
   var y = sin(currentSlidePosition / waveScale + waveShift) * slidePositionYScale;
-  return slideshow.addElementSlide(slideContents, 1.0, currentSlidePosition * slidePositionXScale, y, 0, 0, 0, 0);
+  return slideshow.addElementSlide(slideContents, 1.0, x, y, 0, 0, 0, 0);
 }
 
 /**
- * wrapper method for the camera move method that sets the default camera
- * positions as arguments
+ *  Method  : lookAtMap
+ *  
+ *  Purpose : This method is a wrapper for the camera move method. It sets the default
+ *            camera positions as arguments. This method does not have inputs or outputs.
  */
 void lookAtMap()
 {
   slideshow.cam.move(camTransDuration, camX, camY, camZ, camXr, camYr, camZr);
 }
 
-/// Reset all buttons to hidden
+/**
+ *  Method  : hideButtons
+ *  
+ *  Purpose : This method resets button visibility to hidden. This method does not have
+ *            inputs or outputs.
+ */
 void hideButtons()
 {
   nextButton.style.visibility = "hidden";
@@ -116,7 +141,12 @@ void hideButtons()
   finishButton.style.visibility = "hidden";
 }
 
-/// Make visible all buttons used by the summary page
+/**
+ *  Method  : enableSummaryButtons
+ *  
+ *  Purpose : This method makes summary buttons visible for the summary slide. This method
+ *            does not have inputs or outputs.
+ */
 void enableSummaryButtons()
 {
   finishButton.style.visibility = "visible";
@@ -125,12 +155,19 @@ void enableSummaryButtons()
   explainButton.style.visibility = "visible";
 }
 
-///Advance the test to the next question or step
+/**
+ *  Method  : hideButtons
+ *  
+ *  Purpose : This method advances the test to the next question or step. This method does
+ *            not have inputs or outputs.
+ */
 void nextQuestion()
 {
   //get next step from test
   Element slideElement = test.next();
   assert(slideElement != null);
+
+  Date today = new Date.now();
   
   hideButtons();
 
@@ -140,7 +177,7 @@ void nextQuestion()
     
     //for( int x = 1; x<= test.currentSection.star; x++)
     //{
-      num sectionFluency = 100*(test.currentSection.getUserAnswerPoints()/test.currentSection.getMaxPoints());
+      Element stampsDiv = slideElement.query("#stampsDiv${test.currentSection.star}");
       
       //if(!stampsEarned.isEmpty)
       //{
@@ -148,20 +185,20 @@ void nextQuestion()
         {
           //if(stampsEarned.last != stamp)
           //{
-            slideElement.insertAdjacentElement("beforeEnd", stamp);
+            stampsDiv.insertAdjacentElement("beforeEnd", stamp);
           //}
         }
       //}
       
       //stamp passport if the user has earned an acceptable level of fluency for the section
-      if(sectionFluency > 70)
+      if(checkSectionFluency())
       {
          // stamp is not place...set id to unplaced, then use callback function to switch it to placed
-         Element stamp = getStamp(test.currentSection.star, false); 
-         slideElement.insertAdjacentElement("beforeEnd", stamp);
+         Element stamp = getStamp(test.currentSection.star, false, formatTheDate(today)); 
+         stampsDiv.insertAdjacentElement("beforeEnd", stamp);
          // set the stamp to placed...no animation needed
-         //stamp = getStamp(test.currentSection.star, true);
-         //stampsEarned.add(stamp);
+         stamp = getStamp(test.currentSection.star, true, formatTheDate(today));
+         stampsEarned.add(stamp);
       }
     //}
   }
@@ -176,8 +213,29 @@ void nextQuestion()
 }
 
 /**
- * Shows the explanation and return button.
- * Hides the summary and explain button.
+ *  Method  : checkSectionFluency
+ *  
+ *  Purpose : This method compares the fluency (%) with a percentage, and returns the results as a boolean.
+ */
+bool checkSectionFluency()
+{
+  bool result = false;
+  
+  //calculate sectionFluency
+  num sectionFluency = 100*(test.currentSection.getUserAnswerPoints()/test.currentSection.getMaxPoints());
+  
+  // 70% required for fluency stamp
+  if (sectionFluency > 70)
+    result = true;
+  
+  return result;  
+}
+
+/**
+ *  Method  : displaySectionExplanation
+ *  
+ *  Purpose : This method hides the summary and explain buttons, and shows the explanation and
+ *            return buttons. This method does not have inputs or outputs.
  */
 void displaySectionExplanation()
 {
@@ -199,7 +257,87 @@ void displaySectionExplanation()
   slideshow.next();
 }
 
-///Adds on click events to the buttons
+
+/**
+ *  Method  : formatTheDate
+ *  
+ *  Purpose : This method will quickly format a date into MM/DD/YYYY form with
+ *            leading zeros in month and day.
+ */
+String formatTheDate(Date theDate)
+{
+  String mon = (theDate.month < 10) ? "0${theDate.month}" : "${theDate.month}";
+  String day = (theDate.day < 10) ? "0${theDate.day}" : "${theDate.day}";
+  
+  return "$mon/$day/${theDate.year}";
+}
+
+/**
+ *  Method  : saveFinalSummary
+ *  
+ *  Purpose : This method will perform the actual AJAX request to the server
+ *            which will save the json object that is built from the test 
+ *            section data into the database.  The request's result
+ *            will return an ID which on the callback will be placed in the
+ *            report url link.
+ */
+void saveFinalSummary()
+{
+  Map assessmentRun = new Map();
+  
+  assessmentRun['date'] = "${formatTheDate(new Date.now())}";
+  
+  List sectionList = new List();
+  Map aSection;
+  
+  // Loop through the sections adding each section to the sectionList if the
+  // section was completed by the user.  (done is used and not finished since
+  // finished is related to content management and not section completion)
+  for (int i=0; i<test.sections.length; i++)
+  {
+    if (test.sections[i].done)
+    {
+      aSection = new Map();
+      
+      aSection['section'] = test.sections[i].star;
+      aSection['fluency'] = test.sections[i].finalPercentage;
+      aSection['totalAgile'] = test.sections[i].finalTotalAns;
+      aSection['mostAgile'] = test.sections[i].finalFluentAns;
+      aSection['name'] = test.sections[i].name;
+      
+      sectionList.add(aSection);
+    }
+  }
+  
+  assessmentRun['stampList'] = sectionList;
+
+  String jsonString = JSON.stringify(assessmentRun);
+  
+  HttpRequest req = new HttpRequest();
+
+  // The callback for the AJAX request : 
+  req.on.load.add((Event e) {
+    var theId = req.responseText;
+    var buttonUrl = query(".buttonUrl");
+    var buttonLink = query("#buttonLink");  
+
+    // Drop the link text with the database ID into the box : 
+    buttonUrl.insertAdjacentText("afterBegin", "<a href='http://${_serverAddress}:${_serverPort}/report.html?id=$theId'><img src='http://labs.catalystsolves.com/Projects/AgileFluency/images/badge.png' alt='Agile Fluency Assessment Report'/></a>");
+    buttonLink.insertAdjacentElement("afterBegin", buttonUrl);
+  }
+  );
+
+  // Make the actual AJAX call : 
+  req.open("POST", "http://$_serverAddress:$_serverPort/persist");
+  req.send(jsonString);
+}
+
+/**
+ *  Method  : scriptButton
+ *  
+ *  Purpose : This method adds on-click events to the buttons. This method does
+ *            not have inputs or outputs.
+ */
 void scriptButton()
 {  
   Element nextButton = query('#nextButton');
@@ -244,6 +382,16 @@ void scriptButton()
     hideButtons();
     Element finalSection = query("#finalSection");
     
+    var buttonContent = query(".buttonContent");
+    var button = new ImageElement();
+    button.id = "button";
+    button.src = "images/badge.png";
+
+    saveFinalSummary();
+    
+    //add the stamp image
+    buttonContent.appendHtml("<a href='report.html'><img src='images/badge.png' alt='Agile Fluency Assessment Report'/></a>");
+    
     var slide = slideshow.addElementSlide(finalSection, 1.0, 0,0,0,0,0,0);
     
     slideshow.cam.lookAtSlide(slide, 1);
@@ -251,7 +399,12 @@ void scriptButton()
   });
 }
 
-/// move the camera back to see the map and trigger the test to begin
+/**
+ *  Method  : startTest
+ *  
+ *  Purpose : This method moves the camera back to see the map, then triggers the test to begin.
+ *            This method does not have inputs or outputs.
+ */
 void startTest()
 {
   lookAtMap();
@@ -262,7 +415,12 @@ void startTest()
   }, 1500);
 }
 
-/// add splash screen and event to trigger the test
+/**
+ *  Method  : addSplash
+ *  
+ *  Purpose : This method adds the splash (start) screen and event to trigger the test. This method
+ *            does not have inputs or outputs.
+ */
 void addSplash()
 {
   // div for splash slide and add to slideshow behind the map
@@ -278,11 +436,11 @@ void addSplash()
 }
 
 /**
- * call back method is called by the HttpRequest get method
- * processes the the response text by passing it to the test 
- * section constructor
- * 
- * method also serves as user input entry point
+ *  Method  : onSuccess
+ *  
+ *  Purpose : This method is a callback method. It is called by the HttpRequest get method, and processes
+ *            the response text by passing it to the test section constructor. This method also serves as
+ *            the user input entry point. This method receives a HttpRequest.
  */
 onSuccess(HttpRequest request)
 {
@@ -307,6 +465,12 @@ onSuccess(HttpRequest request)
   }, 500);
 }
 
+/**
+ *  Method  : main
+ *  
+ *  Purpose : This method sets the question.xml url, and sets up the HttpRequest to begin the assessment.
+ *            This method does not have inputs or outputs.
+ */
 void main()
 {
   // relative location of the questions on the server
